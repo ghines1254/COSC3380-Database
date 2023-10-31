@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lexend Deca:wght@400;500;600;700;800;900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&display=swap"
+    />
+  </head>
+  <body>
+    <div class="home-page">
+      <div class="home-page-child"></div>
+      <div class="minibackground-parent">
+        <div class="minibackground">
+          <img class="image-1-icon" alt="" src="./public/image-1@2x.png" />
+        </div>
+        <div class="homepage-scroll">
+          <div class="welcome-to-cougar-container">
+            <p class="blank-line">&nbsp;</p>
+            <p class="blank-line">&nbsp;</p>
+            <p class="welcome-to-cougar">Welcome to Cougar Courier!</p>
+            <p class="blank-line">&nbsp;</p>
+            <p class="mission-statement">Mission Statement:</p>
+            <p class="blank-line">&nbsp;</p>
+            <p class="blank-line">
+              At Cougar Courier, we believe in the power of community. As your
+              local post office, we are committed to weaving the fabric of our
+              neighborhood tighter, one letter, one parcel, one smile at a time.
+              Guided by the spirit of Uma, our beloved Puma mascot, we pledge to
+              provide prompt, reliable, and personal postal services, ensuring
+              that every piece of mail bridges hearts and nurtures connections.
+            </p>
+            <p class="blank-line">&nbsp;</p>
+            <p class="mission-statement">Background:</p>
+            <p class="blank-line">&nbsp;</p>
+            <p class="blank-line">
+              Nestled in the heart of our town, Cougar Courier stands as more
+              than just a post office; it's a cornerstone of community memories,
+              stories, and interactions. The name, inspired by the nimbleness of
+              the cougar, embodies our drive for quick and efficient postal
+              solutions. Yet, amidst the hustle of mails and parcels, there's a
+              heart that beats in sync with our community's rhythm, and that's
+              Uma, the Puma.
+            </p>
+            <p class="blank-line">&nbsp;</p>
+            <p class="blank-line">
+              Uma isn't just a mascot; she's our essence. She personifies the
+              trust, the warmth, and the personal touch that we bring to our
+              services. Over the years, while technology and logistics evolved,
+              one thing remained unchanged: our dedication to our community.
+              Residents have seen their joys, sorrows, celebrations, and
+              everyday moments pass through our doors, always assured that with
+              Uma's spirit guiding us, every piece of mail is treated with care,
+              respect, and love. Today, Cougar Courier stands not just as a post
+              office, but as a testament to the power of local bonds, community
+              trust, and the magic of traditional communication in our
+              ever-digital world.
+            </p>
+          </div>
+        </div>
+        <div class="navigation-bar-light">
+          <div class="navigation-bar"></div>
+          <div class="vector-parent">
+            <img class="frame-child" alt="" src="./public/line-1.svg" />
+
+            <b class="shipping">Shipping</b>
+            <img class="frame-item" alt="" src="./public/line-3.svg" />
+
+            <b class="tracking">Tracking</b>
+            <img class="frame-inner" alt="" src="./public/line-4.svg" />
+
+            <b class="tracking">Products</b>
+            <img class="frame-child" alt="" src="./public/line-5.svg" />
+
+            <a class="group-wrapper" href="./login-page.html" id="groupLink">
+              <div class="rectangle-parent" id="groupContainer">
+                <div class="group-child"></div>
+                <b class="login">Login</b>
+              </div>
+            </a>
+          </div>
+          <div class="cougarcourier1-4-parent">
+            <img
+              class="cougarcourier1-4-icon"
+              alt=""
+              src="./public/cougarcourier1-4@2x.png"
+            />
+
+            <b class="cougar-courier">Cougar Courier</b>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var groupContainer = document.getElementById("groupContainer");
+      if (groupContainer) {
+        groupContainer.addEventListener("click", function (e) {
+          window.location.href = "./component.html";
+        });
+      }
+      
+      var groupLink = document.getElementById("groupLink");
+      if (groupLink) {
+        groupLink.addEventListener("click", function (e) {
+          window.location.href = "./login-page.html";
+        });
+      }
+      </script>
+  </body>
+</html>
