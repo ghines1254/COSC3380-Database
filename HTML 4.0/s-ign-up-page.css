@@ -1,4 +1,4 @@
-.image-1-icon186,
+.image-1-icon366,
 .sign-up-page-child {
   position: absolute;
   height: 100%;
@@ -11,13 +11,13 @@
 .sign-up-page-child {
   background-color: var(--lightmain);
 }
-.image-1-icon186 {
+.image-1-icon366 {
   max-width: 100%;
   overflow: hidden;
   max-height: 100%;
   object-fit: cover;
 }
-.minibackground186 {
+.minibackground366 {
   position: absolute;
   height: calc(100% - 24px);
   width: calc(100% - 40px);
@@ -292,24 +292,24 @@
   width: 453px;
   height: 77px;
 }
-.frame-parent27,
-.frame-parent28 {
+.frame-parent36,
+.frame-parent37 {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.frame-parent28 {
+.frame-parent37 {
   width: 1065px;
   height: 577px;
   justify-content: space-between;
   padding: var(--padding-8xs);
   box-sizing: border-box;
 }
-.frame-parent27 {
+.frame-parent36 {
   width: 1101px;
   justify-content: center;
 }
-.group-child19 {
+.group-child23 {
   position: absolute;
   width: 100%;
   top: 0;
@@ -319,7 +319,7 @@
   background-color: var(--lightaccent);
   height: 35px;
 }
-.sign-up1 {
+.sign-up3 {
   position: absolute;
   width: calc(100% - 39.4px);
   top: 5px;
@@ -328,14 +328,14 @@
   display: inline-block;
   height: 26.5px;
 }
-.rectangle-parent40 {
+.rectangle-parent63 {
   position: relative;
   width: 122px;
   height: 35px;
   cursor: pointer;
   font-size: var(--minitext-size);
 }
-.navigation-bar10,
+.navigation-bar14,
 .new-user-signup-info {
   position: absolute;
   border-radius: var(--br-3xs);
@@ -358,7 +358,7 @@
   gap: 27px;
   z-index: 0;
 }
-.navigation-bar10 {
+.navigation-bar14 {
   width: 100%;
   top: 0;
   right: 0;
@@ -366,63 +366,56 @@
   background-color: var(--lightsecond);
   height: 70px;
 }
-.frame-child74 {
-  position: relative;
+.frame-child126 {
   width: 15.3px;
   height: 37.9px;
   mix-blend-mode: normal;
 }
-.shipping10 {
+.frame-child126,
+.frame-child127,
+.shipping14 {
   position: relative;
-  text-align: center;
 }
-.frame-child75 {
+.frame-child127 {
   width: 15.3px;
   height: 37.9px;
 }
-.frame-child75,
-.tracking18 {
+.tracking24 {
   position: relative;
+  text-align: left;
 }
-.frame-child76,
-.group-child20 {
+.frame-child128,
+.group-child24 {
   position: relative;
   border-radius: var(--br-3xs);
   width: 15.3px;
   height: 37.9px;
 }
-.group-child20 {
+.group-child24 {
   position: absolute;
-  top: calc(50% - 19.5px);
+  top: calc(50% - 16px);
   left: 0;
   background-color: var(--fullblack);
   width: 98.9px;
-  height: 39px;
+  height: 32px;
 }
-.login11 {
+.login17 {
   position: absolute;
   width: 65.12%;
-  top: calc(50% - 12.5px);
-  left: 18.1%;
+  top: calc(50% - 12px);
+  left: 17.19%;
   display: inline-block;
-  height: 30px;
+  height: 24.6px;
 }
-.rectangle-parent41 {
-  position: absolute;
-  top: calc(50% - 19.5px);
-  left: 0;
-  width: 98.9px;
-  height: 39px;
-}
-.group-wrapper10 {
+.rectangle-parent64 {
   position: relative;
   width: 98.9px;
-  height: 39px;
+  height: 32px;
   color: var(--lightsecond);
 }
-.vector-parent12 {
+.vector-parent16 {
   position: absolute;
-  top: 16px;
+  top: calc(50% - 16.5px);
   right: 0;
   width: 644px;
   display: flex;
@@ -433,7 +426,7 @@
   box-sizing: border-box;
   gap: var(--gap-11xl);
 }
-.cougarcourier1-4-icon10 {
+.cougarcourier1-4-icon14 {
   position: relative;
   border-radius: var(--br-3xs);
   width: 87px;
@@ -441,7 +434,7 @@
   object-fit: cover;
   mix-blend-mode: multiply;
 }
-.cougar-courier10 {
+.cougar-courier14 {
   position: relative;
   display: flex;
   align-items: center;
@@ -450,7 +443,7 @@
   height: 55px;
   flex-shrink: 0;
 }
-.cougarcourier1-4-parent8 {
+.cougarcourier1-4-parent11 {
   position: absolute;
   top: 6px;
   left: 0;
@@ -463,11 +456,10 @@
   box-sizing: border-box;
   gap: var(--gap-base);
   cursor: pointer;
-  text-align: center;
   font-size: var(--largetext-size);
   color: var(--fullblack);
 }
-.navigation-bar-light10 {
+.navigation-bar-light14 {
   position: absolute;
   margin: 0 !important;
   width: calc(100% - 11px);
@@ -478,7 +470,6 @@
   background-color: var(--lightsecond);
   height: 70px;
   z-index: 1;
-  text-align: left;
   font-size: var(--minitext-size);
   color: var(--lighttext);
 }

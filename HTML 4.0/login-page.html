@@ -16,62 +16,69 @@
     />
   </head>
   <body>
-    <div class="login-page">
-      <div class="login-page-child"></div>
-      <div class="login-page-wrapper">
-        <div class="login-page1">
-          <div class="minibackground1">
-            <img class="image-1-icon1" alt="" src="./public/image-1@2x.png" />
+    <div class="customer-login-page">
+      <div class="customer-login-page-child"></div>
+      <div class="login-page2">
+        <div class="minibackground270">
+          <img class="image-1-icon270" alt="" src="./public/image-1@2x.png" />
+        </div>
+        <div class="login-light2">
+          <div class="main-shape2"></div>
+          <div class="forgot-user-id-or-password-container">
+            <div class="forgot-user-id2">FORGOT USER ID OR PASSWORD?</div>
+            <div class="frame-child72"></div>
           </div>
-          <div class="login-light">
-            <div class="main-shape"></div>
-            <div class="forgot-user-id-or-password-parent">
-              <div class="forgot-user-id">FORGOT USER ID OR PASSWORD?</div>
-              <div class="line-div"></div>
-            </div>
-            <div class="sign-up-wrapper" id="frameContainer1">
-              <div class="sign-up">Sign Up</div>
-            </div>
-            <div class="login-wrapper" id="frameContainer2">
-              <div class="sign-up">Login</div>
-            </div>
-            <div class="usernamepasswordgroup">
-              <input class="usernamebar" placeholder="USER ID" type="text" />
+          <div class="sign-up-frame" id="frameContainer1">
+            <div class="sign-up2">Sign Up</div>
+          </div>
+          <div class="login-frame" id="frameContainer2">
+            <div class="sign-up2">Login</div>
+          </div>
+          <div class="usernamepasswordgroup2">
+            <input class="usernamebar2" placeholder="USER ID" type="text" />
 
-              <input class="usernamebar" placeholder="PASSWORD" type="text" />
+            <input class="usernamebar2" placeholder="PASSWORD" type="text" />
+          </div>
+          <div class="frame-parent9">
+            <div class="customer-frame">
+              <b class="customer2">Customer Login</b>
+            </div>
+            <div class="employee-frame" id="frameContainer4">
+              <b class="customer2">Employee</b>
+            </div>
+            <div class="employee-frame" id="frameContainer5">
+              <b class="customer2">Admin</b>
             </div>
           </div>
-          <div class="navigation-bar-light1">
-            <div class="navigation-bar1"></div>
-            <div class="vector-group">
-              <img class="frame-child1" alt="" src="./public/line-1.svg" />
+        </div>
+        <div class="navigation-bar-light6">
+          <div class="navigation-bar6"></div>
+          <div class="vector-parent4">
+            <img class="frame-child73" alt="" src="./public/line-1.svg" />
 
-              <b class="shipping1">Shipping</b>
-              <img class="frame-child2" alt="" src="./public/line-3.svg" />
+            <b class="customer2">Shipping</b>
+            <img class="frame-child74" alt="" src="./public/line-3.svg" />
 
-              <b class="tracking1">Tracking</b>
-              <img class="frame-child3" alt="" src="./public/line-4.svg" />
+            <b class="tracking9">Tracking</b>
+            <img class="frame-child75" alt="" src="./public/line-4.svg" />
 
-              <b class="tracking1">Products</b>
-              <img class="frame-child1" alt="" src="./public/line-5.svg" />
+            <b class="tracking9">Products</b>
+            <img class="frame-child73" alt="" src="./public/line-5.svg" />
 
-              <div class="group-container">
-                <button class="rectangle-group">
-                  <div class="group-item"></div>
-                  <b class="login2">Login</b>
-                </button>
-              </div>
+            <div class="rectangle-parent30">
+              <div class="group-child4"></div>
+              <b class="login9">Login</b>
             </div>
-            <button class="cougarcourier1-4-group" id="frameButton">
-              <img
-                class="cougarcourier1-4-icon1"
-                alt=""
-                src="./public/cougarcourier1-41@2x.png"
-              />
-
-              <b class="cougar-courier1">Cougar Courier</b>
-            </button>
           </div>
+          <button class="cougarcourier1-4-parent3" id="frameButton">
+            <img
+              class="cougarcourier1-4-icon6"
+              alt=""
+              src="./public/cougarcourier1-41@2x.png"
+            />
+
+            <b class="cougar-courier6">Cougar Courier</b>
+          </button>
         </div>
       </div>
     </div>
@@ -87,7 +94,21 @@
       var frameContainer2 = document.getElementById("frameContainer2");
       if (frameContainer2) {
         frameContainer2.addEventListener("click", function (e) {
-          window.location.href = "./cutomer-portal-nofications-p.html";
+          window.location.href = "./cutomer-portal-nofications-page.html";
+        });
+      }
+      
+      var frameContainer4 = document.getElementById("frameContainer4");
+      if (frameContainer4) {
+        frameContainer4.addEventListener("click", function (e) {
+          window.location.href = "./employee-login-page.html";
+        });
+      }
+      
+      var frameContainer5 = document.getElementById("frameContainer5");
+      if (frameContainer5) {
+        frameContainer5.addEventListener("click", function (e) {
+          window.location.href = "./admin-login-page.html";
         });
       }
       

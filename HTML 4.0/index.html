@@ -80,12 +80,10 @@
             <b class="tracking">Products</b>
             <img class="frame-child" alt="" src="./public/line-5.svg" />
 
-            <a class="group-wrapper" href="./login-page.html" id="groupLink">
-              <div class="rectangle-parent" id="groupContainer">
-                <div class="group-child"></div>
-                <b class="login">Login</b>
-              </div>
-            </a>
+            <div class="rectangle-parent" id="groupContainer">
+              <div class="group-child"></div>
+              <b class="login">Login</b>
+            </div>
           </div>
           <div class="cougarcourier1-4-parent">
             <img
@@ -104,13 +102,6 @@
       var groupContainer = document.getElementById("groupContainer");
       if (groupContainer) {
         groupContainer.addEventListener("click", function (e) {
-          window.location.href = "./component.html";
-        });
-      }
-      
-      var groupLink = document.getElementById("groupLink");
-      if (groupLink) {
-        groupLink.addEventListener("click", function (e) {
           window.location.href = "./login-page.html";
         });
       }
