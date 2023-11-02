@@ -23,3 +23,5 @@ def accountPage():
     cursor.execute(query, insertionData)
     
     db_connection.commit()
+
+    #and also testing here
