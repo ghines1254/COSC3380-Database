@@ -1,5 +1,8 @@
 import mysql.connector
 from mysql.connector import Error
+import smtplib
+
+smtpObj = smtplib.SMTP()
 
 def openConnection():
     connection = mysql.connector.connect(host = '34.68.154.206', database = 'Post_Office_Schema',
@@ -30,7 +33,8 @@ def getLowStock():
 
         for y in lowStock:
             #("???? how do i notify employees cryingemoji.gif")
-
+            emailReceiver = ["ghines1254@gmail.com"]
+            smtpObj.sendmail("cougarcourier2023@gmail.com", emailReceiver, "Low stock")
         
 
 

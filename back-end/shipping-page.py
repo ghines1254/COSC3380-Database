@@ -29,7 +29,7 @@ def shippingPage():
     receiverPhone = request.forms.get('receiver-phone')
 
     receiverFullName = receiverFirst + " " + receiverLast
-    receiverFullAddress = receiverAddress1 + " " + receiverAddress2
+    receiverFullAddress = receiverAddress1 + " " + receiverAddress2 + " " + receiverCity
 
     dimensions = 25
     weight = 3.5
