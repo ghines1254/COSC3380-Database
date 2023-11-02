@@ -8,6 +8,7 @@ from bottle import route, run, template, request, static_file
 def accountPage():
     customerID = get_unique_id()
     firstName = request.forms.get('firstname')
+    print(firstName)
     lastName = request.forms.get('lastname')
     address1 = request.forms.get('address-line-1')
     address2 = request.forms.get('address-line-2')
