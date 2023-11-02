@@ -21,12 +21,21 @@ def shippingPage():
     receiverMiddle = request.forms.get('receiver-middle-initial')
     receiverLast = request.forms.get('receiver-last-name')
     receiverAddress1 = request.forms.get('receiver-address-line1')
-    recevierAddress2 = request.forms.get('receiver-address-line-2')
+    receiverAddress2 = request.forms.get('receiver-address-line-2')
     receiverCity = request.forms.get('receiver-city')
     receiverState = request.forms.get('receiver-state')
     receiverZip = request.forms.get('receiver-zip')
     receiverEmail = request.forms.get("receiver-email")
     receiverPhone = request.forms.get('receiver-phone')
+
+    receiverFullName = receiverFirst + " " + receiverLast
+    receiverFullAddress = receiverAddress1 + " " + receiverAddress2
+
+    dimensions = 25
+    weight = 3.5
+    contents = "puma"
+    CustID = 1
+    postOfficeID = 1
 
     query = "SELECT package_id FROM PACKAGE"
     cursor.execute(query)
@@ -40,3 +49,11 @@ def shippingPage():
                 return tempNum
 
     packageID = generate_unique_number(result)
+    trackingNumber = packageID
+    packageQuery = "INSERT INTO PACKAGE VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+    insertionData = (packageID, dimensions, trackingNumber, weight, contents, receiverFullName, receiverFullAddress, CustID, postOfficeID, receiverZip, receiverState)
+
+    cursor.execute(packageQuery, insertionData)
+    
+    db_connection.commit()
+
