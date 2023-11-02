@@ -29,6 +29,13 @@
               <div class="forgot-user-id">FORGOT USER ID OR PASSWORD?</div>
               <div class="line-div"></div>
             </div>
+
+            <div class="sign-up-wrapper" id="frameContainer1">
+              <div class="sign-up">Sign Up</div>
+            </div>
+            <div class="login-wrapper" id="frameContainer2">
+              <div class="sign-up">Login</div>
+            </div>
             
             <div class="usernamepasswordgroup">
               <input class="usernamebar" placeholder="USER ID" type="text" />
@@ -79,7 +86,12 @@
         </div>
       </div>
     </div>
-
+      var frameContainer1 = document.getElementById("frameContainer1");
+      if (frameContainer1) {
+        frameContainer1.addEventListener("click", function (e) {
+          window.location.href = "./s-ign-up-page.html";
+        });
+      }
     <script>
 
 
