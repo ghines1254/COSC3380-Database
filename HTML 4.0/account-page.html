@@ -17,7 +17,7 @@
   </head>
   <body>
     <!--Creating the form-->
-    <form action="account-page.py" method="post">
+    <form action="/account-page" method="post">
       <div class="account-page">
         <div class="minibackground271">
           <img class="image-1-icon271" alt="" src="./public/image-11@2x.png" />
@@ -222,13 +222,14 @@
             <div class="group-child6"></div>
             <div class="save">
               <p class="save1">Save</p>
+                <!--Submitting form-->
+                <input class="submit" type="button" value="Submit" onclick="submitForm()" required>
             </div>
           </div>
           <b class="customer-id">Customer ID:</b>
           <div class="account-outline-item"></div>
         </div>
-        <!--Submitting form-->
-        <input type="submit" value="Submit">
+     
       </div>
       <!--Ending the form-->
       </form>
@@ -236,7 +237,7 @@
         var frameContainer1 = document.getElementById("frameContainer1");
         if (frameContainer1) {
           frameContainer1.addEventListener("click", function (e) {
-            window.location.href = "./home-page.html";
+            window.location.href = "./index.html";
           });
         }
         
@@ -288,6 +289,9 @@
             window.location.href = "./cutomer-portal-nofications-page.html";
           });
         }
+        function submitForm() {
+          window.location.href = 'index.html';  // Change 'new_page.html' to the desired URL
+      }
         </script>
 
   </body>
