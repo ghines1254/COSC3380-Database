@@ -25,7 +25,7 @@ def accountPage():
     
     db_connection.commit()
 
-def get_unique_id(new_id):
+def get_unique_id():
     
     query = "SELECT customer_id FROM CUSTOMER;"
     cursor.execute(query)
