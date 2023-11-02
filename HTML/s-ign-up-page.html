@@ -16,6 +16,8 @@
     />
   </head>
   <body>
+     <!--Creating the form-->
+    <form action="/sign-up-page.py" method="post">
     <div class="sign-up-page">
       <div class="sign-up-page-child"></div>
       <div class="minibackground">
@@ -40,18 +42,24 @@
               <div class="firstname-parent">
                 <div class="firstname">
                   <div class="firstname-child"></div>
-                  <input
-                    class="first-name"
-                    placeholder="First Name"
-                    type="text"
-                  />
+                   <input 
+                     class="first-name" 
+                     id="firstname" 
+                     name="firstname" 
+                     placeholder="First Name" 
+                     type="text"
+                  oninvalid="this.setCustomValidity('Required')"
+                  oninput="setCustomValidity('')"
+                  required/>
                 </div>
-                <div class="middleinitial">
-                  <div class="middleinitial-child"></div>
-                  <input
-                    class="middle-initial"
-                    placeholder="Middle Initial"
-                    type="text"
+              <div class="middleinitial">
+                <div class="middleinitial-child"></div>
+                <input
+                  class="middle-initial"
+                  id="middle-initial"
+                  name="middle-initial"
+                  placeholder="Middle Initial"
+                  type="text"
                   />
                 </div>
                 <div class="firstname">
@@ -62,9 +70,10 @@
                   />
 
                   <input
-                    class="middle-initial"
-                    placeholder="Last Name"
-                    type="text"
+                     <input class="last-name" id="last-name" name="last-name "placeholder="Last Name" type="text"
+                  oninvalid="this.setCustomValidity('Required')"
+                  oninput="setCustomValidity('')"
+                  required
                   />
                 </div>
               </div>
@@ -77,9 +86,14 @@
                   />
 
                   <input
-                    class="address-line-1"
-                    placeholder="Address Line 1"
-                    type="text"
+                   class="address-line-1"
+                  id="address-line-1"
+                  name="address-line-1"
+                  placeholder="Address Line 1"
+                  type="text"
+                  oninvalid="this.setCustomValidity('Required')"
+                  oninput="setCustomValidity('')"
+                  required
                   />
                 </div>
                 <div class="addressline2">
@@ -90,16 +104,21 @@
                   />
 
                   <input
-                    class="address-line-2"
-                    placeholder="Address Line 2"
-                    type="text"
+                   class="address-line-2"
+                  id="address-line-2"
+                  name="address-line-2"
+                  placeholder="Address Line 2"
+                  type="text"
                   />
                 </div>
               </div>
               <div class="firstname-parent">
                 <div class="city">
                   <div class="city-child"></div>
-                  <input class="city1" placeholder="City" type="text" />
+                  <input class="city1" id="city1" name="city1" placeholder="City" type="text"
+                  oninvalid="this.setCustomValidity('Required')"
+                  oninput="setCustomValidity('')"
+                  required />
                 </div>
                 <div class="state">
                   <div class="state-child"></div>
@@ -107,7 +126,10 @@
                 </div>
                 <div class="firstname">
                   <div class="firstname-child"></div>
-                  <input class="zip1" placeholder="Zip Code" type="text" />
+                <input class="state1" id="state" name="state" placeholder="State" type="text"
+                  oninvalid="this.setCustomValidity('Required')"
+                  oninput="setCustomValidity('')"
+                  required />
                 </div>
               </div>
               <div class="firstname-parent">
@@ -118,7 +140,10 @@
                     src="./public/rectangle-22.svg"
                   />
 
-                  <input class="email1" placeholder="Email" type="email" />
+                   <input class="email1" id="email1" name="email1" placeholder="Email" type="email"
+                  oninvalid="this.setCustomValidity('Required')"
+                  oninput="setCustomValidity('')"
+                  required />
                 </div>
                 <div class="email">
                   <img
@@ -127,17 +152,16 @@
                     src="./public/rectangle-22.svg"
                   />
 
-                  <input
-                    class="address-line-1"
-                    placeholder="Phone #"
-                    type="tel"
-                  />
+                   <input class="phone1" id="phone1" name="phone1" placeholder="Phone #" type="tel"
+                  oninvalid="this.setCustomValidity('Required')"
+                  oninput="setCustomValidity('')"
+                  required/>
                 </div>
               </div>
             </div>
           </div>
-          <button class="rectangle-parent" id="groupButton">
-            <div class="group-child"></div>
+          <button class="rectangle-parent" id="groupButton" type="submit">
+            <div class="group-item"></div>
             <div class="sign-up">
               <p class="welcome-lets-get">Sign Up</p>
             </div>
