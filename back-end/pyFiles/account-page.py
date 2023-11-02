@@ -1,11 +1,12 @@
 import mysql.connector as mysql
 from dbConnector import *
+from uuid import uuid4
 
 from bottle import route, run, template, request, static_file
 
 @route('/account-page', method = 'post')
 def accountPage():
-    customerID = 1
+    customerID = int(str(uuid4().int)[:10])
     firstName = request.forms.get('firstname')
     lastName = request.forms.get('lastname')
     address1 = request.forms.get('address-line-1')
