@@ -122,8 +122,17 @@
                 </div>
                 <div class="state">
                   <div class="state-child"></div>
-                  <input class="state1" placeholder="State" type="text" />
+                   <input class="state1" id="state" name="state" placeholder="State" type="text"
+                  oninvalid="this.setCustomValidity('Required')"
+                  oninput="setCustomValidity('')"
+                  required />
                 </div>
+                <div class="zip">
+                <div class="zip-child"></div>
+                <input class="zip7" id="zip" name="zip" placeholder="Zip Code" type="text"
+                  oninvalid="this.setCustomValidity('Required')"
+                  oninput="setCustomValidity('')"
+                  required />
                 <div class="firstname">
                   <div class="firstname-child"></div>
                 <input class="state1" id="state" name="state" placeholder="State" type="text"
