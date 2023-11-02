@@ -7,4 +7,4 @@ def homePage():
     return static_file('index.html', root='.')
 
 if __name__ == '__main__':
-    run(host='0.0.0.0', port=8000, debug=True)
+    run(host='34.174.156.167', port=3306, debug=True)
