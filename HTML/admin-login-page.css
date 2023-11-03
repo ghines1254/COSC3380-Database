@@ -3,8 +3,8 @@
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 .admin-login-page-child,
-.image-1-icon268,
-.minibackground268 {
+.image-1-icon92,
+.minibackground92 {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -13,13 +13,13 @@
   bottom: 0;
   left: 0;
 }
-.image-1-icon268 {
+.image-1-icon92 {
   max-width: 100%;
   overflow: hidden;
   max-height: 100%;
   object-fit: cover;
 }
-.minibackground268 {
+.minibackground92 {
   opacity: 0.05;
 }
 .main-shape {
@@ -140,7 +140,7 @@
 }
 .admin-wrapper,
 .customer-wrapper,
-.frame-parent7 {
+.frame-parent5 {
   display: flex;
   flex-direction: row;
 }
@@ -152,7 +152,7 @@
   padding: var(--padding-3xs);
   color: var(--lightmain);
 }
-.frame-parent7 {
+.frame-parent5 {
   position: absolute;
   top: 12px;
   left: calc(50% - 436.5px);
@@ -183,27 +183,27 @@
   background-color: var(--lightsecond);
   height: 70px;
 }
-.frame-child63 {
+.frame-child31 {
   mix-blend-mode: normal;
 }
-.frame-child63,
-.frame-child64 {
+.frame-child31,
+.frame-child32 {
   position: relative;
   width: 15.3px;
   height: 37.9px;
 }
-.tracking7 {
+.tracking4 {
   position: relative;
   text-align: left;
 }
-.frame-child65,
-.group-child2 {
+.frame-child33,
+.group-child6 {
   position: relative;
   border-radius: var(--br-3xs);
   width: 15.3px;
   height: 37.9px;
 }
-.group-child2 {
+.group-child6 {
   position: absolute;
   top: calc(50% - 16px);
   left: 0;
@@ -219,13 +219,13 @@
   display: inline-block;
   height: 24.6px;
 }
-.rectangle-parent28 {
+.rectangle-parent16 {
   position: relative;
   width: 98.9px;
   height: 32px;
   color: var(--lightsecond);
 }
-.vector-parent2 {
+.vector-parent3 {
   position: absolute;
   top: calc(50% - 16.5px);
   right: 0;
