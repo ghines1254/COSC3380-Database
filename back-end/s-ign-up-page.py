@@ -35,4 +35,4 @@ def get_unique_id():
     for row in existing_ids:
         while new_id in existing_ids:
             new_id = int(str(uuid4().int)[:10])
-        return new_id
+    return new_id
