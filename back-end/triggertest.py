@@ -18,18 +18,25 @@ def closeConnection(connection):
 def getLowStock():
     try:
         connection = openConnection()
+        
         #Cursor to interact with server
         cursor = connection.cursor() 
+        
         #Select statement for tuples with low stock.
-        selectStock = "SELECT product_id FROM IN_STORE_PRODUCTS WHERE stock_remaining < 10;"
-        cursor.execute(selectStock)
+        lowStockQuery = "SELECT product_name FROM IN_STORE_PRODUCTS WHERE stock_remaining < 10;"
+        noStockQuery = "SELECT product_name FROM IN_STORE_PRODUCTS WHERE stock_remaining = 0;"
+        cursor.execute(lowStockQuery)
 
-        #Storing all the low stock items in a variable.
+        cursor2 = connection.cursor()
+        cursor2.execute(noStockQuery)
+
+        #Storing all the low and no stock items in variables.
         lowStock = cursor.fetchall()
+        noStock = cursor2.fetchall()
+        
 
-        for x in lowStock:
-            if x == 0:
-                raise Exception("Out of stock")
+        for x in noStock:
+            raise Exception("Out of stock")
 
         for y in lowStock:
             #("???? how do i notify employees cryingemoji.gif")
@@ -43,6 +50,7 @@ def getLowStock():
     
     finally:
         cursor.close()
+        cursor2.close()
         closeConnection(connection)
 
 
