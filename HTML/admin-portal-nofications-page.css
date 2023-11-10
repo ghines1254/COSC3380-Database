@@ -145,7 +145,7 @@
   top: 1px;
   left: 5px;
   border-radius: var(--br-3xs);
-  background-color: var(--lightaccent);
+  background-color: var(--color-orangered);
   width: 227px;
   height: 44px;
 }
@@ -171,7 +171,7 @@
   top: 0.5px;
   left: calc(50% - 116.5px);
   border-radius: var(--br-3xs);
-  background-color: var(--lightaccent);
+  background-color: var(--color-orangered);
   width: 227px;
   height: 44px;
 }
@@ -601,3 +601,4 @@
   color: var(--lightsecond);
   font-family: var(--largetext);
 }
+
