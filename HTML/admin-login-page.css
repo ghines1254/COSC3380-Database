@@ -61,7 +61,7 @@
   top: 496px;
   right: 237px;
   left: 219px;
-  display: none;
+  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -80,7 +80,7 @@
   right: 390px;
   left: 412px;
   background-color: var(--fullblack);
-  display: none;
+  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
