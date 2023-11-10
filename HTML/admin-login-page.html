@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Cougar Courier Admin Login</title>
+    <link rel="icon" type="image/x-icon" href="/images/coogpawfavicon.png">
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
@@ -8,15 +10,15 @@
     <link rel="stylesheet" href="./admin-login-page.css" />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Lexend Deca:wght@500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lexend Deca:wght@400;500;600;700;800;900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&display=swap"
     />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600&display=swap"
     />
   </head>
   <body>
@@ -24,14 +26,14 @@
       <div class="admin-login-page-child"></div>
       <div class="login-page-wrapper">
         <div class="login-page">
-          <div class="minibackground">
-            <img class="image-1-icon" alt="" src="./public/image-1@2x.png" />
+          <div class="minibackground92">
+            <img class="image-1-icon92" alt="" src="./public/image-14@2x.png" />
           </div>
           <div class="login-light">
             <div class="main-shape"></div>
             <div class="forgot-user-id-or-password-parent">
               <div class="forgot-user-id">FORGOT USER ID OR PASSWORD?</div>
-              <div class="frame-child"></div>
+              <div class="line-div"></div>
             </div>
             <div class="sign-up-wrapper" id="frameContainer1">
               <div class="sign-up">Sign Up</div>
@@ -44,7 +46,7 @@
 
               <input class="usernamebar" placeholder="PASSWORD" type="text" />
             </div>
-            <div class="frame-parent">
+            <div class="frame-parent5">
               <div class="customer-wrapper" id="frameContainer3">
                 <b class="customer">Customer</b>
               </div>
@@ -56,22 +58,33 @@
               </div>
             </div>
           </div>
-          <div class="navigation-bar-light">
-            <div class="navigation-bar"></div>
-            <div class="navigation-bar-light-inner">
-              <div class="rectangle-parent">
-                <div class="group-child"></div>
-                <b class="login1">Login</b>
+          <div class="navigation-bar-light4">
+            <div class="navigation-bar4"></div>
+            <div class="vector-parent3">
+<!--               <img class="frame-child31" alt="" src="./public/line-11.svg" />
+
+              <b class="customer">Shipping</b>
+              <img class="frame-child32" alt="" src="./public/line-31.svg" />
+
+              <b class="tracking4">Tracking</b>
+              <img class="frame-child33" alt="" src="./public/line-41.svg" />
+
+              <b class="tracking4">Products</b>
+              <img class="frame-child31" alt="" src="./public/line-51.svg" />
+ -->
+              <div class="rectangle-parent16">
+                <div class="group-child6"></div>
+                <b class="login5">Login</b>
               </div>
             </div>
-            <button class="cougarcourier1-4-parent" id="frameButton">
+            <button class="frame-button" id="frameButton">
               <img
-                class="cougarcourier1-4-icon"
+                class="cougarcourier1-4-icon4"
                 alt=""
-                src="./public/cougarcourier1-4@2x.png"
+                src="./public/cougarcourier1-41@2x.png"
               />
 
-              <b class="cougar-courier">Cougar Courier</b>
+              <b class="cougar-courier4">Cougar Courier</b>
             </button>
           </div>
         </div>
@@ -82,28 +95,28 @@
       var frameContainer1 = document.getElementById("frameContainer1");
       if (frameContainer1) {
         frameContainer1.addEventListener("click", function (e) {
-          // Please sync "SIgn Up Page" to the project
+          window.location.href = "./s-ign-up-page.html";
         });
       }
       
       var frameContainer2 = document.getElementById("frameContainer2");
       if (frameContainer2) {
         frameContainer2.addEventListener("click", function (e) {
-          window.location.href = "./admin-portal-nofications-pag.html";
+          window.location.href = "./admin-portal-nofications-page.html";
         });
       }
       
       var frameContainer3 = document.getElementById("frameContainer3");
       if (frameContainer3) {
         frameContainer3.addEventListener("click", function (e) {
-          // Please sync "Customer Login Page" to the project
+          window.location.href = "./login-page.html";
         });
       }
       
       var frameContainer4 = document.getElementById("frameContainer4");
       if (frameContainer4) {
         frameContainer4.addEventListener("click", function (e) {
-          // Please sync "Employee Login Page" to the project
+          window.location.href = "./employee-login-page.html";
         });
       }
       
