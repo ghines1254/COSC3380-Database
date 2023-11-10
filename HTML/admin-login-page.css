@@ -3,8 +3,8 @@
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 .admin-login-page-child,
-.image-1-icon2,
-.minibackground2 {
+.image-1-icon,
+.minibackground {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -13,13 +13,13 @@
   bottom: 0;
   left: 0;
 }
-.image-1-icon2 {
+.image-1-icon {
   max-width: 100%;
   overflow: hidden;
   max-height: 100%;
   object-fit: cover;
 }
-.minibackground2 {
+.minibackground {
   opacity: 0.05;
 }
 .main-shape {
@@ -43,14 +43,14 @@
   flex-shrink: 0;
   z-index: 0;
 }
-.frame-item {
+.frame-child {
   position: absolute;
   margin: 0 !important;
   width: calc(100% - 19px);
   top: 32px;
   right: 10px;
   left: 9px;
-  border-top: 4px solid var(--lightaccent);
+  border-top: 4px solid var(--color-orangered);
   box-sizing: border-box;
   height: 4px;
   z-index: 1;
@@ -61,13 +61,13 @@
   top: 496px;
   right: 237px;
   left: 219px;
-  display: flex;
+  display: none;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: var(--gap-3xs);
   font-size: var(--font-size-5xl);
-  color: var(--lightaccent);
+  color: var(--color-orangered);
 }
 .sign-up {
   position: relative;
@@ -80,7 +80,7 @@
   right: 390px;
   left: 412px;
   background-color: var(--fullblack);
-  display: flex;
+  display: none;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -109,7 +109,7 @@
   cursor: pointer;
 }
 .usernamebar {
-  border: 1px solid var(--lightaccent);
+  border: 1px solid var(--color-orangered);
   background-color: transparent;
   position: relative;
   width: 650px;
@@ -130,37 +130,40 @@
 .customer {
   position: relative;
 }
-.admin-wrapper,
 .customer-wrapper {
   border-radius: var(--br-3xs);
-  display: flex;
-  flex-direction: row;
+  background-color: var(--darktext);
   align-items: center;
   justify-content: center;
   padding: var(--padding-3xs);
-}
-.customer-wrapper {
-  background-color: var(--darktext);
   cursor: pointer;
 }
+.admin-wrapper,
+.customer-wrapper,
+.frame-parent {
+  display: flex;
+  flex-direction: row;
+}
 .admin-wrapper {
+  border-radius: var(--br-3xs);
   background-color: var(--fullblack);
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-3xs);
   color: var(--lightmain);
 }
-.frame-container {
+.frame-parent {
   position: absolute;
   top: 12px;
   left: calc(50% - 436.5px);
-  display: flex;
-  flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 136px;
   color: var(--lighttext);
 }
-.group-inner,
+.group-child,
 .login-light,
-.navigation-bar2 {
+.navigation-bar {
   position: absolute;
   border-radius: var(--br-3xs);
 }
@@ -168,29 +171,29 @@
   top: 220px;
   left: calc(50% - 448px);
   background-color: var(--lightmain);
-  border: 10px solid var(--lightaccent);
+  border: 10px solid var(--color-orangered);
   box-sizing: border-box;
   width: 895px;
   height: 561px;
 }
-.group-inner,
-.navigation-bar2 {
+.group-child,
+.navigation-bar {
   left: 0;
 }
-.navigation-bar2 {
+.navigation-bar {
   width: 100%;
   top: 0;
   right: 0;
   background-color: var(--lightsecond);
   height: 70px;
 }
-.group-inner {
+.group-child {
   top: calc(50% - 16px);
   background-color: var(--fullblack);
   width: 98.9px;
   height: 32px;
 }
-.login3 {
+.login1 {
   position: absolute;
   width: 65.12%;
   top: calc(50% - 12px);
@@ -198,12 +201,12 @@
   display: inline-block;
   height: 24.6px;
 }
-.group-div {
+.rectangle-parent {
   position: relative;
   width: 98.9px;
   height: 32px;
 }
-.frame-div {
+.navigation-bar-light-inner {
   position: absolute;
   top: calc(50% - 16.5px);
   right: 0;
@@ -215,7 +218,7 @@
   padding: 0 var(--padding-mini);
   box-sizing: border-box;
 }
-.cougarcourier1-4-icon2 {
+.cougarcourier1-4-icon {
   position: relative;
   border-radius: var(--br-3xs);
   width: 87px;
@@ -223,7 +226,7 @@
   object-fit: cover;
   mix-blend-mode: multiply;
 }
-.cougar-courier2 {
+.cougar-courier {
   position: relative;
   font-size: var(--largetext-size);
   display: flex;
@@ -236,7 +239,7 @@
   height: 55px;
   flex-shrink: 0;
 }
-.cougarcourier1-4-container {
+.cougarcourier1-4-parent {
   cursor: pointer;
   border: 0;
   padding: 0 var(--padding-mini);
@@ -252,7 +255,7 @@
   box-sizing: border-box;
   gap: var(--gap-base);
 }
-.navigation-bar-light2 {
+.navigation-bar-light {
   position: absolute;
   width: calc(100% - 5px);
   top: 13px;
