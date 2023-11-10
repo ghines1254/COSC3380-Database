@@ -3,8 +3,8 @@
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 .admin-login-page-child,
-.image-1-icon92,
-.minibackground92 {
+.image-1-icon2,
+.minibackground2 {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -13,13 +13,13 @@
   bottom: 0;
   left: 0;
 }
-.image-1-icon92 {
+.image-1-icon2 {
   max-width: 100%;
   overflow: hidden;
   max-height: 100%;
   object-fit: cover;
 }
-.minibackground92 {
+.minibackground2 {
   opacity: 0.05;
 }
 .main-shape {
@@ -43,7 +43,7 @@
   flex-shrink: 0;
   z-index: 0;
 }
-.line-div {
+.frame-item {
   position: absolute;
   margin: 0 !important;
   width: calc(100% - 19px);
@@ -84,9 +84,9 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: var(--padding-11xs) var(--padding-6xs);
+  padding: 2px 7px;
   cursor: pointer;
-  font-size: var(--minitext-size);
+  font-size: var(--font-size-xl);
 }
 .login-wrapper,
 .sign-up-wrapper,
@@ -105,7 +105,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: var(--padding-8xs) var(--padding-9xl);
+  padding: 5px 28px;
   cursor: pointer;
 }
 .usernamebar {
@@ -125,44 +125,42 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--gap-5xl);
+  gap: 24px;
 }
 .customer {
   position: relative;
 }
+.admin-wrapper,
 .customer-wrapper {
   border-radius: var(--br-3xs);
-  background-color: var(--darktext);
-  align-items: center;
-  justify-content: center;
-  padding: var(--padding-3xs);
-  cursor: pointer;
-}
-.admin-wrapper,
-.customer-wrapper,
-.frame-parent5 {
   display: flex;
   flex-direction: row;
-}
-.admin-wrapper {
-  border-radius: var(--br-3xs);
-  background-color: var(--fullblack);
   align-items: center;
   justify-content: center;
   padding: var(--padding-3xs);
+}
+.customer-wrapper {
+  background-color: var(--darktext);
+  cursor: pointer;
+}
+.admin-wrapper {
+  background-color: var(--fullblack);
   color: var(--lightmain);
 }
-.frame-parent5 {
+.frame-container {
   position: absolute;
   top: 12px;
   left: calc(50% - 436.5px);
+  display: flex;
+  flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: var(--gap-117xl);
+  gap: 136px;
   color: var(--lighttext);
 }
+.group-inner,
 .login-light,
-.navigation-bar4 {
+.navigation-bar2 {
   position: absolute;
   border-radius: var(--br-3xs);
 }
@@ -175,43 +173,24 @@
   width: 895px;
   height: 561px;
 }
-.navigation-bar4 {
+.group-inner,
+.navigation-bar2 {
+  left: 0;
+}
+.navigation-bar2 {
   width: 100%;
   top: 0;
   right: 0;
-  left: 0;
   background-color: var(--lightsecond);
   height: 70px;
 }
-.frame-child31 {
-  mix-blend-mode: normal;
-}
-.frame-child31,
-.frame-child32 {
-  position: relative;
-  width: 15.3px;
-  height: 37.9px;
-}
-.tracking4 {
-  position: relative;
-  text-align: left;
-}
-.frame-child33,
-.group-child6 {
-  position: relative;
-  border-radius: var(--br-3xs);
-  width: 15.3px;
-  height: 37.9px;
-}
-.group-child6 {
-  position: absolute;
+.group-inner {
   top: calc(50% - 16px);
-  left: 0;
   background-color: var(--fullblack);
   width: 98.9px;
   height: 32px;
 }
-.login5 {
+.login3 {
   position: absolute;
   width: 65.12%;
   top: calc(50% - 12px);
@@ -219,13 +198,12 @@
   display: inline-block;
   height: 24.6px;
 }
-.rectangle-parent16 {
+.group-div {
   position: relative;
   width: 98.9px;
   height: 32px;
-  color: var(--lightsecond);
 }
-.vector-parent3 {
+.frame-div {
   position: absolute;
   top: calc(50% - 16.5px);
   right: 0;
@@ -236,9 +214,8 @@
   justify-content: flex-end;
   padding: 0 var(--padding-mini);
   box-sizing: border-box;
-  gap: var(--gap-11xl);
 }
-.cougarcourier1-4-icon4 {
+.cougarcourier1-4-icon2 {
   position: relative;
   border-radius: var(--br-3xs);
   width: 87px;
@@ -246,7 +223,7 @@
   object-fit: cover;
   mix-blend-mode: multiply;
 }
-.cougar-courier4 {
+.cougar-courier2 {
   position: relative;
   font-size: var(--largetext-size);
   display: flex;
@@ -259,7 +236,7 @@
   height: 55px;
   flex-shrink: 0;
 }
-.frame-button {
+.cougarcourier1-4-container {
   cursor: pointer;
   border: 0;
   padding: 0 var(--padding-mini);
@@ -275,7 +252,7 @@
   box-sizing: border-box;
   gap: var(--gap-base);
 }
-.navigation-bar-light4 {
+.navigation-bar-light2 {
   position: absolute;
   width: calc(100% - 5px);
   top: 13px;
@@ -284,8 +261,7 @@
   border-radius: var(--br-3xs);
   background-color: var(--lightsecond);
   height: 70px;
-  font-size: var(--minitext-size);
-  color: var(--lighttext);
+  font-size: var(--font-size-xl);
 }
 .login-page {
   position: absolute;
