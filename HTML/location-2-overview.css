@@ -1,4 +1,4 @@
-.image-1-icon2,
+.image-1-icon4,
 .location-2-overview-child {
   position: absolute;
   height: 100%;
@@ -11,13 +11,13 @@
 .location-2-overview-child {
   background-color: var(--lightmain);
 }
-.image-1-icon2 {
+.image-1-icon4 {
   max-width: 100%;
   overflow: hidden;
   max-height: 100%;
   object-fit: cover;
 }
-.minibackground2 {
+.minibackground4 {
   position: absolute;
   height: calc(100% - 24px);
   width: calc(100% - 35px);
@@ -27,50 +27,26 @@
   left: 17px;
   opacity: 0.05;
 }
-.navigation-bar2 {
+.group-child3,
+.navigation-bar4 {
   position: absolute;
+  left: 0;
+  border-radius: var(--br-3xs);
+}
+.navigation-bar4 {
   width: 100%;
   top: 0;
   right: 0;
-  left: 0;
-  border-radius: var(--br-3xs);
   background-color: var(--lightsecond);
   height: 70px;
 }
-.frame-child5 {
-  width: 15.3px;
-  height: 37.9px;
-  mix-blend-mode: normal;
-}
-.frame-child5,
-.frame-child6,
-.shipping2 {
-  position: relative;
-}
-.frame-child6 {
-  width: 15.3px;
-  height: 37.9px;
-}
-.tracking2 {
-  position: relative;
-  text-align: left;
-}
-.frame-child7,
-.group-child2 {
-  position: relative;
-  border-radius: var(--br-3xs);
-  width: 15.3px;
-  height: 37.9px;
-}
-.group-child2 {
-  position: absolute;
+.group-child3 {
   top: calc(50% - 16px);
-  left: 0;
   background-color: var(--fullblack);
   width: 98.9px;
   height: 32px;
 }
-.login2 {
+.login5 {
   position: absolute;
   width: 65.12%;
   top: calc(50% - 12px);
@@ -78,13 +54,12 @@
   display: inline-block;
   height: 24.6px;
 }
-.rectangle-parent2 {
+.rectangle-parent5 {
   position: relative;
   width: 98.9px;
   height: 32px;
-  color: var(--lightsecond);
 }
-.frame-div {
+.navigation-bar-light-inner2 {
   position: absolute;
   top: calc(50% - 16.5px);
   right: 0;
@@ -95,9 +70,8 @@
   justify-content: flex-end;
   padding: 0 var(--padding-mini);
   box-sizing: border-box;
-  gap: var(--gap-11xl);
 }
-.cougarcourier1-4-icon2 {
+.cougarcourier1-4-icon4 {
   position: relative;
   border-radius: var(--br-3xs);
   width: 87px;
@@ -105,7 +79,7 @@
   object-fit: cover;
   mix-blend-mode: multiply;
 }
-.cougar-courier2 {
+.cougar-courier4 {
   position: relative;
   display: flex;
   align-items: center;
@@ -114,7 +88,7 @@
   height: 55px;
   flex-shrink: 0;
 }
-.cougarcourier1-4-container {
+.cougarcourier1-4-parent2 {
   position: absolute;
   top: 6px;
   left: 0;
@@ -130,7 +104,7 @@
   font-size: var(--largetext-size);
   color: var(--fullblack);
 }
-.navigation-bar-light2 {
+.navigation-bar-light4 {
   position: absolute;
   width: calc(100% - 45px);
   top: 24px;
@@ -139,15 +113,15 @@
   border-radius: var(--br-3xs);
   background-color: var(--lightsecond);
   height: 70px;
-  font-size: var(--minitext-size);
-  color: var(--lighttext);
+  font-size: var(--font-size-xl);
+  color: var(--lightsecond);
 }
-.frame-child9 {
+.frame-child1 {
   align-self: stretch;
   position: relative;
   width: 10px;
 }
-.welcome-to-your1 {
+.welcome-to-your2 {
   position: absolute;
   top: 0.5px;
   left: 0;
@@ -157,7 +131,7 @@
   width: 800px;
   height: 100px;
 }
-.welcome-to-your-portal-page-container {
+.welcome-to-your-portal-page-frame {
   position: relative;
   border-radius: var(--br-mini);
   background-color: var(--lightmain);
@@ -166,7 +140,7 @@
   width: 800px;
   height: 100px;
 }
-.rectangle-parent3 {
+.rectangle-parent6 {
   width: 1050px;
   display: flex;
   flex-direction: row;
@@ -184,8 +158,7 @@
   height: 44px;
 }
 .button-22,
-.button22,
-.button23 {
+.button22 {
   position: absolute;
   left: 0;
   width: 237px;
@@ -197,16 +170,11 @@
   align-items: center;
   justify-content: center;
 }
-.button22,
-.button23 {
-  top: 106px;
+.button22 {
+  top: 59px;
   cursor: pointer;
 }
-.button23 {
-  top: 20px;
-  left: 2px;
-}
-.button3-item {
+.button3-inner {
   position: absolute;
   top: 0.5px;
   left: calc(50% - 116.5px);
@@ -215,52 +183,47 @@
   width: 227px;
   height: 44px;
 }
-.button31,
-.button41,
-.button51,
-.button61,
-.button71 {
+.button32,
+.button43,
+.button52,
+.button72 {
   position: absolute;
   width: 237px;
   height: 46px;
   cursor: pointer;
 }
-.button31 {
-  top: 192px;
-  left: calc(50% - 116.5px);
+.button32 {
+  top: 168px;
+  left: calc(50% - 118.5px);
 }
-.button41,
-.button51,
-.button61,
-.button71 {
-  top: 278px;
+.button43,
+.button52,
+.button72 {
+  top: 277px;
   left: 0;
 }
-.button51,
-.button61,
-.button71 {
-  top: 364px;
+.button52,
+.button72 {
+  top: 386px;
+  left: 2px;
 }
-.button61,
-.button71 {
-  top: 450px;
+.button72 {
+  top: 495px;
+  left: 5px;
 }
-.button71 {
-  top: 536px;
-}
-.button2-group {
+.button2-container {
   position: relative;
   width: 237px;
   height: 662px;
 }
-.frame-wrapper1,
-.portal-page1 {
+.frame-wrapper2,
+.portal-page2 {
   border-radius: var(--br-mini);
   background-color: var(--lightmain);
   border: 5px solid var(--fullblack);
   box-sizing: border-box;
 }
-.frame-wrapper1 {
+.frame-wrapper2 {
   align-self: stretch;
   width: 291px;
   display: flex;
@@ -269,17 +232,17 @@
   justify-content: space-between;
   padding: var(--padding-lgi) var(--padding-8xl);
 }
-.portal-page1 {
+.portal-page2 {
   position: relative;
   width: 900px;
   height: 700px;
 }
-.frame-container,
-.frame-parent1 {
+.frame-parent3,
+.frame-parent4 {
   display: flex;
   justify-content: flex-start;
 }
-.frame-parent1 {
+.frame-parent4 {
   height: 700px;
   flex-direction: row;
   align-items: center;
@@ -287,7 +250,7 @@
   font-size: var(--largetext-size);
   color: var(--lightmain);
 }
-.frame-container {
+.frame-parent3 {
   position: absolute;
   width: calc(100% - 140px);
   top: 20px;
@@ -297,7 +260,7 @@
   align-items: flex-start;
   gap: var(--gap-16xl);
 }
-.admin-portal-outline1 {
+.admin-portal-outline2 {
   position: absolute;
   top: 149px;
   left: calc(50% - 720px);
@@ -305,7 +268,7 @@
   height: 875px;
   font-size: var(--font-size-29xl);
 }
-.group-child3 {
+.group-child4 {
   position: absolute;
   top: 0;
   left: calc(50% - 351px);
@@ -327,7 +290,7 @@
   width: 702px;
   height: 277px;
 }
-.rectangle-parent4 {
+.rectangle-parent7 {
   position: absolute;
   top: 687px;
   left: calc(50% - 164px);
@@ -337,14 +300,14 @@
   text-align: left;
   color: var(--lightaccent);
 }
-.vector-icon2 {
+.vector-icon3 {
   position: absolute;
   top: 33px;
   left: calc(50% - 123.5px);
   width: 242px;
   height: 221px;
 }
-.group-child4 {
+.group-child5 {
   position: absolute;
   width: 100%;
   top: 0;
@@ -365,7 +328,7 @@
   display: inline-block;
   height: 32.2px;
 }
-.rectangle-parent5 {
+.rectangle-parent8 {
   position: absolute;
   width: calc(100% - 114px);
   top: 311px;
@@ -373,7 +336,7 @@
   left: 54px;
   height: 52px;
 }
-.vector-parent1 {
+.vector-group {
   position: absolute;
   top: 298px;
   left: calc(50% + 46px);
@@ -381,7 +344,7 @@
   height: 389px;
   overflow: hidden;
 }
-.vector-icon3 {
+.vector-icon4 {
   position: absolute;
   top: 169px;
   left: calc(50% + 567px);
@@ -398,3 +361,4 @@
   color: var(--fullblack);
   font-family: var(--largetext);
 }
+
