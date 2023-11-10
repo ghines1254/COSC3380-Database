@@ -1,5 +1,5 @@
 .admin-account-page-child,
-.image-1-icon93 {
+.image-1-icon5 {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -11,13 +11,13 @@
 .admin-account-page-child {
   background-color: var(--lightmain);
 }
-.image-1-icon93 {
+.image-1-icon5 {
   max-width: 100%;
   overflow: hidden;
   max-height: 100%;
   object-fit: cover;
 }
-.minibackground93 {
+.minibackground5 {
   position: absolute;
   height: calc(100% - 24px);
   width: calc(100% - 35px);
@@ -27,45 +27,21 @@
   left: 17px;
   opacity: 0.05;
 }
+.group-child6,
 .navigation-bar5 {
   position: absolute;
+  left: 0;
+  border-radius: var(--br-3xs);
+}
+.navigation-bar5 {
   width: 100%;
   top: 0;
   right: 0;
-  left: 0;
-  border-radius: var(--br-3xs);
   background-color: var(--lightsecond);
   height: 70px;
 }
-.frame-child35 {
-  width: 15.3px;
-  height: 37.9px;
-  mix-blend-mode: normal;
-}
-.frame-child35,
-.frame-child36,
-.shipping5 {
-  position: relative;
-}
-.frame-child36 {
-  width: 15.3px;
-  height: 37.9px;
-}
-.tracking5 {
-  position: relative;
-  text-align: left;
-}
-.frame-child37,
-.group-child7 {
-  position: relative;
-  border-radius: var(--br-3xs);
-  width: 15.3px;
-  height: 37.9px;
-}
-.group-child7 {
-  position: absolute;
+.group-child6 {
   top: calc(50% - 16px);
-  left: 0;
   background-color: var(--fullblack);
   width: 98.9px;
   height: 32px;
@@ -78,13 +54,12 @@
   display: inline-block;
   height: 24.6px;
 }
-.rectangle-parent17 {
+.rectangle-parent9 {
   position: relative;
   width: 98.9px;
   height: 32px;
-  color: var(--lightsecond);
 }
-.vector-parent4 {
+.navigation-bar-light-inner3 {
   position: absolute;
   top: calc(50% - 16.5px);
   right: 0;
@@ -95,7 +70,6 @@
   justify-content: flex-end;
   padding: 0 var(--padding-mini);
   box-sizing: border-box;
-  gap: var(--gap-11xl);
 }
 .cougarcourier1-4-icon5 {
   position: relative;
@@ -114,7 +88,7 @@
   height: 55px;
   flex-shrink: 0;
 }
-.cougarcourier1-4-parent2 {
+.cougarcourier1-4-parent3 {
   position: absolute;
   top: 6px;
   left: 0;
@@ -140,7 +114,7 @@
   background-color: var(--lightsecond);
   height: 70px;
 }
-.frame-child39 {
+.frame-child2 {
   align-self: stretch;
   position: relative;
   width: 10px;
@@ -164,7 +138,7 @@
   width: 800px;
   height: 100px;
 }
-.rectangle-parent18 {
+.rectangle-parent10 {
   width: 1050px;
   display: flex;
   flex-direction: row;
@@ -172,7 +146,7 @@
   justify-content: flex-start;
   gap: var(--gap-11xl);
 }
-.button2-child4 {
+.button2-child1 {
   position: absolute;
   top: 1px;
   left: 5px;
@@ -181,28 +155,22 @@
   width: 227px;
   height: 44px;
 }
-.button-26,
-.button26,
-.button27 {
+.button-23,
+.button23 {
   position: absolute;
   left: 0;
   width: 237px;
   height: 46px;
 }
-.button-26 {
+.button-23 {
   top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.button26,
-.button27 {
-  top: 106px;
+.button23 {
+  top: 59px;
   cursor: pointer;
-}
-.button27 {
-  top: 20px;
-  left: 2px;
 }
 .button3-child1 {
   position: absolute;
@@ -213,53 +181,48 @@
   width: 227px;
   height: 44px;
 }
-.button33,
-.button43 {
+.button33 {
   position: absolute;
+  top: 168px;
+  left: calc(50% - 118.5px);
   width: 237px;
   height: 46px;
   cursor: pointer;
 }
-.button33 {
-  top: 192px;
-  left: calc(50% - 116.5px);
-}
-.button43 {
-  top: 278px;
+.button44 {
+  top: 277px;
   left: 0;
+  cursor: pointer;
+}
+.button44,
+.button53,
+.button73 {
+  position: absolute;
+  width: 237px;
+  height: 46px;
 }
 .button53 {
-  top: 364px;
-  cursor: pointer;
-}
-.button53,
-.button63,
-.button73 {
-  position: absolute;
-  left: 0;
-  width: 237px;
-  height: 46px;
-}
-.button63 {
-  top: 450px;
+  top: 386px;
+  left: 2px;
   cursor: pointer;
 }
 .button73 {
-  top: 536px;
+  top: 495px;
+  left: 5px;
 }
 .button2-parent1 {
   position: relative;
   width: 237px;
   height: 662px;
 }
-.frame-wrapper4,
+.frame-wrapper3,
 .portal-page3 {
   border-radius: var(--br-mini);
   background-color: var(--lightmain);
   border: 5px solid var(--fullblack);
   box-sizing: border-box;
 }
-.frame-wrapper4 {
+.frame-wrapper3 {
   align-self: stretch;
   width: 291px;
   display: flex;
@@ -273,12 +236,12 @@
   width: 900px;
   height: 700px;
 }
-.frame-parent6,
-.frame-parent7 {
+.frame-parent5,
+.frame-parent6 {
   display: flex;
   justify-content: flex-start;
 }
-.frame-parent7 {
+.frame-parent6 {
   height: 700px;
   flex-direction: row;
   align-items: center;
@@ -286,7 +249,7 @@
   font-size: var(--largetext-size);
   color: var(--lightmain);
 }
-.frame-parent6 {
+.frame-parent5 {
   position: absolute;
   width: calc(100% - 140px);
   top: 20px;
@@ -325,7 +288,7 @@
   width: 189.9px;
   height: 50px;
 }
-.first-name {
+.first-name1 {
   border: 0;
   display: flex;
   font-family: var(--largetext);
@@ -388,11 +351,11 @@
   border-radius: var(--br-3xs);
 }
 .firstname-parent,
-.last-name {
+.last-name1 {
   display: flex;
   align-items: center;
 }
-.last-name {
+.last-name1 {
   border: 0;
   font-family: var(--largetext);
   font-size: var(--font-size-sm);
@@ -602,14 +565,14 @@
   width: 134px;
   height: 27px;
 }
-.frame-parent8,
+.frame-parent7,
 .phone1,
 .to-update-your {
   position: absolute;
   display: flex;
   align-items: center;
 }
-.frame-parent8 {
+.frame-parent7 {
   width: 67.09%;
   top: calc(50% - 109.5px);
   right: 17.44%;
@@ -617,7 +580,7 @@
   height: 271px;
   flex-direction: column;
   justify-content: flex-start;
-  gap: var(--gap-2xs);
+  gap: 11px;
 }
 .to-update-your {
   top: 147px;
@@ -626,7 +589,7 @@
   justify-content: center;
   width: 498.9px;
 }
-.group-child8 {
+.group-child7 {
   position: absolute;
   top: 0;
   left: 0;
@@ -647,7 +610,7 @@
   width: 63px;
   height: 30px;
 }
-.rectangle-parent19 {
+.rectangle-parent11 {
   position: absolute;
   top: 541px;
   left: 375px;
@@ -683,7 +646,7 @@
   height: 661px;
   color: var(--lightaccent);
 }
-.vector-icon12 {
+.vector-icon5 {
   position: absolute;
   top: 184px;
   left: calc(50% + 567px);
@@ -696,7 +659,7 @@
   width: 100%;
   height: 1024px;
   text-align: center;
-  font-size: var(--minitext-size);
-  color: var(--lighttext);
+  font-size: var(--font-size-xl);
+  color: var(--lightsecond);
   font-family: var(--largetext);
 }
