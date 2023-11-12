@@ -4,7 +4,7 @@
 }
 .customer-login-page-child,
 .image-1-icon270,
-.minibackground270 {
+.minibackground {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -19,7 +19,7 @@
   max-height: 100%;
   object-fit: cover;
 }
-.minibackground270 {
+.minibackground {
   opacity: 0.05;
 }
 .main-shape2 {
@@ -127,9 +127,6 @@
   justify-content: center;
   gap: var(--gap-5xl);
 }
-.customer2 {
-  position: relative;
-}
 .customer-frame,
 .employee-frame {
   border-radius: var(--br-3xs);
@@ -159,7 +156,7 @@
   color: var(--lighttext);
 }
 .login-light2,
-.navigation-bar6 {
+.navigation-bar {
   position: absolute;
   border-radius: var(--br-3xs);
 }
@@ -172,7 +169,7 @@
   width: 895px;
   height: 561px;
 }
-.navigation-bar6 {
+.navigation-bar {
   width: 100%;
   top: 0;
   right: 0;
@@ -180,27 +177,13 @@
   background-color: var(--lightsecond);
   height: 70px;
 }
-.frame-child73 {
-  mix-blend-mode: normal;
-}
-.frame-child73,
-.frame-child74 {
-  position: relative;
-  width: 15.3px;
-  height: 37.9px;
-}
-.tracking9 {
-  position: relative;
-  text-align: left;
-}
-.frame-child75,
-.group-child4 {
+.group-child {
   position: relative;
   border-radius: var(--br-3xs);
   width: 15.3px;
   height: 37.9px;
 }
-.group-child4 {
+.group-child {
   position: absolute;
   top: calc(50% - 16px);
   left: 0;
@@ -208,7 +191,7 @@
   width: 98.9px;
   height: 32px;
 }
-.login9 {
+.login {
   position: absolute;
   width: 65.12%;
   top: calc(50% - 12px);
@@ -216,13 +199,13 @@
   display: inline-block;
   height: 24.6px;
 }
-.rectangle-parent30 {
+.rectangle-parent {
   position: relative;
   width: 98.9px;
   height: 32px;
   color: var(--lightsecond);
 }
-.vector-parent4 {
+.vector-parent {
   position: absolute;
   top: calc(50% - 16.5px);
   right: 0;
@@ -272,7 +255,7 @@
   box-sizing: border-box;
   gap: var(--gap-base);
 }
-.navigation-bar-light6 {
+.navigation-bar-light {
   position: absolute;
   width: calc(100% - 5px);
   top: 13px;

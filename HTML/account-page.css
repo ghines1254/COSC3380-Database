@@ -11,7 +11,7 @@
   max-height: 100%;
   object-fit: cover;
 }
-.minibackground271 {
+.minibackground {
   position: absolute;
   height: calc(100% - 24px);
   width: calc(100% - 34.3px);
@@ -21,7 +21,7 @@
   left: 17px;
   opacity: 0.05;
 }
-.navigation-bar7 {
+.navigation-bar {
   position: absolute;
   width: 100%;
   top: 0;
@@ -31,32 +31,13 @@
   background-color: var(--lightsecond);
   height: 70px;
 }
-.frame-child77 {
-  width: 15.3px;
-  height: 37.9px;
-  mix-blend-mode: normal;
-}
-.frame-child77,
-.frame-child78,
-.shipping7 {
-  position: relative;
-}
-.frame-child78 {
-  width: 15.3px;
-  height: 37.9px;
-}
-.tracking10 {
-  position: relative;
-  text-align: left;
-}
-.frame-child79,
-.group-child5 {
+.group-child {
   position: relative;
   border-radius: var(--br-3xs);
   width: 15.3px;
   height: 37.9px;
 }
-.group-child5 {
+.group-child {
   position: absolute;
   top: calc(50% - 16px);
   left: 0;
@@ -64,7 +45,7 @@
   width: 98.9px;
   height: 32px;
 }
-.login10 {
+.login {
   position: absolute;
   width: 65.12%;
   top: calc(50% - 12px);
@@ -72,13 +53,13 @@
   display: inline-block;
   height: 24.6px;
 }
-.rectangle-parent31 {
+.rectangle-parent {
   position: relative;
   width: 98.9px;
   height: 32px;
   color: var(--lightsecond);
 }
-.vector-parent5 {
+.vector-parent {
   position: absolute;
   top: calc(50% - 16.5px);
   right: 0;
@@ -124,7 +105,7 @@
   font-size: var(--largetext-size);
   color: var(--fullblack);
 }
-.navigation-bar-light7 {
+.navigation-bar-light {
   position: absolute;
   width: calc(100% - 45px);
   top: 25px;
