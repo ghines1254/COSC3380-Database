@@ -205,25 +205,6 @@
 	background-color: var(--lightsecond);
 	height: 70px;
 }
-.frame-child74 {
-	position: relative;
-	width: 15.3px;
-	height: 37.9px;
-	mix-blend-mode: normal;
-}
-.shipping10 {
-	position: relative;
-	text-align: center;
-}
-.frame-child75 {
-	width: 15.3px;
-	height: 37.9px;
-}
-.frame-child75,
-.tracking18 {
-	position: relative;
-}
-.frame-child76,
 .group-child20 {
 	position: relative;
 	border-radius: var(--br-3xs);
@@ -251,19 +232,6 @@
 	width: 98.9px;
 	height: 39px;
 	color: var(--lightsecond);
-}
-.vector-parent12 {
-	position: absolute;
-	top: 16px;
-	right: 0;
-	width: 644px;
-	display: flex;
-	flex-direction: row;
-	align-items: flex-start;
-	justify-content: flex-end;
-	padding: 0 var(--padding-mini);
-	box-sizing: border-box;
-	gap: var(--gap-11xl);
 }
 .cougarcourier1-4-icon10 {
 	position: relative;

@@ -31,20 +31,6 @@
   background-color: var(--lightsecond);
   height: 70px;
 }
-.frame-child10 {
-  mix-blend-mode: normal;
-}
-.frame-child10,
-.frame-child11 {
-  position: relative;
-  width: 15.3px;
-  height: 37.9px;
-}
-.tracking3 {
-  position: relative;
-  text-align: left;
-}
-.frame-child12,
 .group-child5 {
   position: relative;
   border-radius: var(--br-3xs);
