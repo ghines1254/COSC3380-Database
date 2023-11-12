@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./admin-p-o-locations.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lexend Deca:wght@400;500;600;700;800;900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="admin-po-locations">
+      <div class="admin-po-locations-child"></div>
+      <div class="minibackground21">
+        <img class="image-1-icon21" alt="" src="./public/image-12@2x.png" />
+      </div>
+      <div class="navigation-bar-light21">
+        <div class="navigation-bar21"></div>
+        <div class="navigation-bar-light-inner19">
+          <div class="rectangle-parent106">
+            <div class="group-child72"></div>
+            <b class="login22">Login</b>
+          </div>
+        </div>
+        <div class="cougarcourier1-4-parent18" id="frameContainer1">
+          <img
+            class="cougarcourier1-4-icon21"
+            alt=""
+            src="./public/cougarcourier1-4@2x.png"
+          />
+
+          <b class="cougar-courier21">Cougar Courier</b>
+        </div>
+      </div>
+      <div class="admin-portal-outline6">
+        <div class="frame-parent41">
+          <div class="rectangle-parent107">
+            <div class="frame-child41"></div>
+            <div class="welcome-to-your-portal-page-wrapper16">
+              <b class="welcome-to-your18">Post Office Locations</b>
+            </div>
+          </div>
+          <div class="frame-parent42">
+            <div class="frame-wrapper30">
+              <div class="button2-parent16">
+                <div class="button230">
+                  <div class="button2-child28"></div>
+                  <b class="button-230">PO Locations</b>
+                </div>
+                <div class="button318" id="button3Container">
+                  <div class="button3-child16"></div>
+                  <b class="button-230">Products</b>
+                </div>
+                <div class="button431" id="button4Container">
+                  <div class="button2-child28"></div>
+                  <b class="button-230">Departments</b>
+                </div>
+                <div class="button56" id="button5Container">
+                  <div class="button2-child28"></div>
+                  <b class="button-230">Employees</b>
+                </div>
+                <div class="button718" id="button7Container">
+                  <div class="button2-child28"></div>
+                  <b class="button-230">Account</b>
+                </div>
+              </div>
+            </div>
+            <div class="portal-page18"></div>
+          </div>
+        </div>
+      </div>
+      <div class="vector-parent5" id="frameContainer8">
+        <img class="vector-icon45" alt="" src="./public/vector14.svg" />
+
+        <div class="rectangle-parent108">
+          <div class="group-child73"></div>
+          <div class="location-22">
+            <p class="location-23">Location 2</p>
+          </div>
+        </div>
+      </div>
+      <div class="vector-parent6" id="frameContainer9">
+        <img class="vector-icon45" alt="" src="./public/vector14.svg" />
+
+        <div class="rectangle-parent108">
+          <div class="group-child73"></div>
+          <div class="location-22">
+            <p class="location-23">Location 1</p>
+          </div>
+        </div>
+      </div>
+      <img
+        class="vector-icon47"
+        alt=""
+        src="./public/vector15.svg"
+        id="vector2"
+      />
+    </div>
+
+    <script>
+      var frameContainer1 = document.getElementById("frameContainer1");
+      if (frameContainer1) {
+        frameContainer1.addEventListener("click", function (e) {
+          window.location.href = "./home-page.html";
+        });
+      }
+      
+      var button3Container = document.getElementById("button3Container");
+      if (button3Container) {
+        button3Container.addEventListener("click", function (e) {
+          window.location.href = "./admin-products-page.html";
+        });
+      }
+      
+      var button4Container = document.getElementById("button4Container");
+      if (button4Container) {
+        button4Container.addEventListener("click", function (e) {
+          window.location.href = "./admin-departments-page.html";
+        });
+      }
+      
+      var button5Container = document.getElementById("button5Container");
+      if (button5Container) {
+        button5Container.addEventListener("click", function (e) {
+          window.location.href = "./admin-employees-page.html";
+        });
+      }
+      
+      var button7Container = document.getElementById("button7Container");
+      if (button7Container) {
+        button7Container.addEventListener("click", function (e) {
+          window.location.href = "./admin-account-page.html";
+        });
+      }
+      
+      var frameContainer8 = document.getElementById("frameContainer8");
+      if (frameContainer8) {
+        frameContainer8.addEventListener("click", function (e) {
+          window.location.href = "./location-2-overview.html";
+        });
+      }
+      
+      var frameContainer9 = document.getElementById("frameContainer9");
+      if (frameContainer9) {
+        frameContainer9.addEventListener("click", function (e) {
+          window.location.href = "./location-1-overview.html";
+        });
+      }
+      
+      var vector2 = document.getElementById("vector2");
+      if (vector2) {
+        vector2.addEventListener("click", function (e) {
+          window.location.href = "./admin-portal-nofications-page.html";
+        });
+      }
+      </script>
+  </body>
+</html>

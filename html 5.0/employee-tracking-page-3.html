@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./employee-tracking-page-3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lexend Deca:wght@400;500;600;700;800;900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="employee-tracking-page-3">
+      <div class="minibackground3">
+        <img class="image-1-icon3" alt="" src="./public/image-1@2x.png" />
+      </div>
+      <div class="navigation-bar-light3">
+        <div class="navigation-bar3"></div>
+        <div class="navigation-bar-light-inner1">
+          <div class="rectangle-parent5">
+            <div class="group-child4"></div>
+            <b class="login3">Login</b>
+          </div>
+        </div>
+        <div class="cougarcourier1-4-parent1" id="frameContainer1">
+          <img
+            class="cougarcourier1-4-icon3"
+            alt=""
+            src="./public/cougarcourier1-4@2x.png"
+          />
+
+          <b class="cougar-courier3">Cougar Courier</b>
+        </div>
+      </div>
+      <div class="portal-centering-frame1">
+        <div class="employee-portal-outline1">
+          <div class="frame-parent2">
+            <div class="rectangle-parent6">
+              <div class="frame-item"></div>
+              <div class="welcome-to-your-portal-page-container">
+                <b class="welcome-to-your1">Welcome to your portal page!</b>
+              </div>
+            </div>
+            <div class="frame-parent3">
+              <div class="frame-wrapper2">
+                <div class="frame-wrapper3">
+                  <div class="button2-group">
+                    <div class="button22">
+                      <div class="button2-inner"></div>
+                      <b class="button-22">Shipping</b>
+                    </div>
+                    <div class="button22">
+                      <div class="button2-inner"></div>
+                      <b class="button-22">Tracking</b>
+                    </div>
+                    <div class="button22">
+                      <div class="button3-item"></div>
+                      <b class="button-22">Check Out</b>
+                    </div>
+                    <div class="button22">
+                      <div class="button2-inner"></div>
+                      <b class="button-22">Delivery</b>
+                    </div>
+                    <div class="button22">
+                      <div class="button2-inner"></div>
+                      <b class="button-22">Dependent</b>
+                    </div>
+                    <div class="button22">
+                      <div class="button2-inner"></div>
+                      <b class="button-22">Account</b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="portal-page1"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tracking2">
+        <div class="tracking-item"></div>
+      </div>
+      <div class="tracking3">Tracking #:</div>
+      <div class="status1">Status:</div>
+      <div class="rectangle-parent7">
+        <div class="group-child5"></div>
+        <div class="at-post-office1">At Post Office</div>
+      </div>
+      <div class="rectangle-parent8">
+        <div class="group-child6"></div>
+        <div class="at-post-office1">En Route</div>
+      </div>
+      <div class="rectangle-parent9">
+        <div class="group-child5"></div>
+        <div class="at-post-office1">Delivered</div>
+      </div>
+      <div class="frame2" id="frameContainer9">
+        <img
+          class="portal-home-button1"
+          alt=""
+          src="./public/portal-home-button.svg"
+        />
+      </div>
+    </div>
+
+    <script>
+      var frameContainer1 = document.getElementById("frameContainer1");
+      if (frameContainer1) {
+        frameContainer1.addEventListener("click", function (e) {
+          window.location.href = "./home-page.html";
+        });
+      }
+      
+      var frameContainer9 = document.getElementById("frameContainer9");
+      if (frameContainer9) {
+        frameContainer9.addEventListener("click", function (e) {
+          window.location.href = "./employee-portal-nofications-page.html";
+        });
+      }
+      </script>
+  </body>
+</html>
