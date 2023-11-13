@@ -1,4 +1,4 @@
-.image-1-icon10 {
+.image-1-icon9 {
   position: absolute;
   height: 100%;
   width: calc(100% + 0.3px);
@@ -11,7 +11,7 @@
   max-height: 100%;
   object-fit: cover;
 }
-.minibackground10 {
+.minibackground9 {
   position: absolute;
   height: calc(100% - 24px);
   width: calc(100% - 34.3px);
@@ -21,26 +21,26 @@
   left: 17px;
   opacity: 0.05;
 }
-.group-child46,
-.navigation-bar10 {
+.group-child44,
+.navigation-bar9 {
   position: absolute;
   left: 0;
   border-radius: var(--br-3xs);
 }
-.navigation-bar10 {
+.navigation-bar9 {
   width: 100%;
   top: 0;
   right: 0;
   background-color: var(--lightsecond);
   height: 70px;
 }
-.group-child46 {
+.group-child44 {
   top: calc(50% - 16px);
   background-color: var(--fullblack);
   width: 98.9px;
   height: 32px;
 }
-.login10 {
+.login9 {
   position: absolute;
   width: 65.12%;
   top: calc(50% - 12px);
@@ -48,12 +48,12 @@
   display: inline-block;
   height: 24.6px;
 }
-.rectangle-parent62 {
+.rectangle-parent60 {
   position: relative;
   width: 98.9px;
   height: 32px;
 }
-.navigation-bar-light-inner8 {
+.navigation-bar-light-inner7 {
   position: absolute;
   top: calc(50% - 16.5px);
   right: 0;
@@ -65,7 +65,7 @@
   padding: 0 var(--padding-mini);
   box-sizing: border-box;
 }
-.cougarcourier1-4-icon10 {
+.cougarcourier1-4-icon9 {
   position: relative;
   border-radius: var(--br-3xs);
   width: 87px;
@@ -73,7 +73,7 @@
   object-fit: cover;
   mix-blend-mode: multiply;
 }
-.cougar-courier10 {
+.cougar-courier9 {
   position: relative;
   display: flex;
   align-items: center;
@@ -82,7 +82,7 @@
   height: 55px;
   flex-shrink: 0;
 }
-.cougarcourier1-4-parent8 {
+.cougarcourier1-4-parent7 {
   position: absolute;
   top: 6px;
   left: 0;
@@ -98,7 +98,7 @@
   font-size: var(--largetext-size);
   color: var(--fullblack);
 }
-.navigation-bar-light10 {
+.navigation-bar-light9 {
   position: absolute;
   width: calc(100% - 45px);
   top: 25px;
@@ -132,7 +132,7 @@
   width: 800px;
   height: 100px;
 }
-.rectangle-parent63 {
+.rectangle-parent61 {
   width: 1050px;
   display: flex;
   flex-direction: row;
@@ -149,20 +149,27 @@
   width: 227px;
   height: 44px;
 }
-.button-216 {
+.button-216,
+.button216,
+.button217 {
   position: absolute;
-  top: 0;
   left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 237px;
   height: 46px;
 }
-.button216 {
-  position: relative;
-  width: 237px;
-  height: 46px;
+.button-216 {
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button216,
+.button217 {
+  top: 25px;
+  cursor: pointer;
+}
+.button217 {
+  top: 130px;
 }
 .button3-child6 {
   position: absolute;
@@ -173,29 +180,45 @@
   width: 227px;
   height: 44px;
 }
-.button2-parent6 {
+.button38,
+.button416,
+.button417,
+.button78 {
   position: absolute;
-  top: 20px;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-18xl);
+  width: 237px;
+  height: 46px;
+  cursor: pointer;
 }
-.frame-wrapper17 {
+.button38 {
+  top: 235px;
+  left: calc(50% - 113.5px);
+}
+.button416,
+.button417,
+.button78 {
+  top: 340px;
+  left: 0;
+}
+.button417,
+.button78 {
+  top: 445px;
+}
+.button78 {
+  top: 550px;
+}
+.button2-parent6 {
   position: relative;
   width: 237px;
   height: 662px;
 }
-.frame-wrapper16,
+.frame-wrapper8,
 .portal-page8 {
   border-radius: var(--br-mini);
   background-color: var(--lightmain);
   border: 5px solid var(--fullblack);
   box-sizing: border-box;
 }
-.frame-wrapper16 {
+.frame-wrapper8 {
   align-self: stretch;
   width: 291px;
   display: flex;
@@ -209,12 +232,12 @@
   width: 900px;
   height: 700px;
 }
-.frame-parent18,
-.frame-parent19 {
+.frame-parent16,
+.frame-parent17 {
   display: flex;
   justify-content: flex-start;
 }
-.frame-parent19 {
+.frame-parent17 {
   height: 700px;
   flex-direction: row;
   align-items: center;
@@ -222,7 +245,7 @@
   font-size: var(--largetext-size);
   color: var(--lightmain);
 }
-.frame-parent18 {
+.frame-parent16 {
   position: absolute;
   width: calc(100% - 140px);
   top: 20px;
@@ -449,7 +472,7 @@
   width: 70px;
   height: 70px;
 }
-.frame9 {
+.frame8 {
   position: absolute;
   top: 157px;
   left: 1287px;

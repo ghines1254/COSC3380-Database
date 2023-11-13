@@ -1,4 +1,4 @@
-.image-1-icon14 {
+.image-1-icon12 {
   position: absolute;
   height: 100%;
   width: calc(100% + 0.3px);
@@ -11,7 +11,7 @@
   max-height: 100%;
   object-fit: cover;
 }
-.minibackground14 {
+.minibackground12 {
   position: absolute;
   height: calc(100% - 24px);
   width: calc(100% - 34.3px);
@@ -21,26 +21,26 @@
   left: 17px;
   opacity: 0.05;
 }
-.group-child52,
-.navigation-bar14 {
+.group-child49,
+.navigation-bar12 {
   position: absolute;
   left: 0;
   border-radius: var(--br-3xs);
 }
-.navigation-bar14 {
+.navigation-bar12 {
   width: 100%;
   top: 0;
   right: 0;
   background-color: var(--lightsecond);
   height: 70px;
 }
-.group-child52 {
+.group-child49 {
   top: calc(50% - 16px);
   background-color: var(--fullblack);
   width: 98.9px;
   height: 32px;
 }
-.login15 {
+.login12 {
   position: absolute;
   width: 65.12%;
   top: calc(50% - 12px);
@@ -48,12 +48,12 @@
   display: inline-block;
   height: 24.6px;
 }
-.rectangle-parent71 {
+.rectangle-parent68 {
   position: relative;
   width: 98.9px;
   height: 32px;
 }
-.navigation-bar-light-inner12 {
+.navigation-bar-light-inner10 {
   position: absolute;
   top: calc(50% - 16.5px);
   right: 0;
@@ -65,7 +65,7 @@
   padding: 0 var(--padding-mini);
   box-sizing: border-box;
 }
-.cougarcourier1-4-icon14 {
+.cougarcourier1-4-icon12 {
   position: relative;
   border-radius: var(--br-3xs);
   width: 87px;
@@ -73,7 +73,7 @@
   object-fit: cover;
   mix-blend-mode: multiply;
 }
-.cougar-courier14 {
+.cougar-courier12 {
   position: relative;
   display: flex;
   align-items: center;
@@ -82,7 +82,7 @@
   height: 55px;
   flex-shrink: 0;
 }
-.cougarcourier1-4-parent11 {
+.cougarcourier1-4-parent10 {
   position: absolute;
   top: 6px;
   left: 0;
@@ -98,7 +98,7 @@
   font-size: var(--largetext-size);
   color: var(--fullblack);
 }
-.navigation-bar-light14 {
+.navigation-bar-light12 {
   position: absolute;
   width: calc(100% - 45px);
   top: 25px;
@@ -133,7 +133,7 @@
   width: 800px;
   height: 100px;
 }
-.rectangle-parent72 {
+.rectangle-parent69 {
   width: 1050px;
   display: flex;
   flex-direction: row;
@@ -150,20 +150,27 @@
   width: 227px;
   height: 44px;
 }
-.button-222 {
+.button-222,
+.button222,
+.button223 {
   position: absolute;
-  top: 0;
   left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 237px;
   height: 46px;
 }
-.button222 {
-  position: relative;
-  width: 237px;
-  height: 46px;
+.button-222 {
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button222,
+.button223 {
+  top: 25px;
+  cursor: pointer;
+}
+.button223 {
+  top: 130px;
 }
 .button3-child9 {
   position: absolute;
@@ -174,29 +181,45 @@
   width: 227px;
   height: 44px;
 }
-.button2-parent9 {
+.button311,
+.button422,
+.button423,
+.button711 {
   position: absolute;
-  top: 20px;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-18xl);
+  width: 237px;
+  height: 46px;
+  cursor: pointer;
 }
-.frame-wrapper23 {
+.button311 {
+  top: 235px;
+  left: calc(50% - 113.5px);
+}
+.button422,
+.button423,
+.button711 {
+  top: 340px;
+  left: 0;
+}
+.button423,
+.button711 {
+  top: 445px;
+}
+.button711 {
+  top: 550px;
+}
+.button2-parent9 {
   position: relative;
   width: 237px;
   height: 662px;
 }
-.frame-wrapper22,
+.frame-wrapper11,
 .portal-page11 {
   border-radius: var(--br-mini);
   background-color: var(--lightmain);
   border: 5px solid var(--fullblack);
   box-sizing: border-box;
 }
-.frame-wrapper22 {
+.frame-wrapper11 {
   align-self: stretch;
   width: 291px;
   display: flex;
@@ -210,12 +233,12 @@
   width: 900px;
   height: 700px;
 }
-.frame-parent26,
-.frame-parent27 {
+.frame-parent23,
+.frame-parent24 {
   display: flex;
   justify-content: flex-start;
 }
-.frame-parent27 {
+.frame-parent24 {
   height: 700px;
   flex-direction: row;
   align-items: center;
@@ -223,7 +246,7 @@
   font-size: var(--largetext-size);
   color: var(--lightmain);
 }
-.frame-parent26 {
+.frame-parent23 {
   position: absolute;
   width: calc(100% - 140px);
   top: 20px;
@@ -270,11 +293,11 @@
   position: relative;
 }
 .b,
-.rectangle-parent73 {
+.rectangle-parent70 {
   display: flex;
   align-items: center;
 }
-.rectangle-parent73 {
+.rectangle-parent70 {
   width: 312px;
   flex-direction: row;
   justify-content: flex-start;

@@ -1,4 +1,4 @@
-.image-1-icon11 {
+.image-1-icon10 {
   position: absolute;
   height: 100%;
   width: calc(100% + 0.3px);
@@ -11,7 +11,7 @@
   max-height: 100%;
   object-fit: cover;
 }
-.minibackground11 {
+.minibackground10 {
   position: absolute;
   height: calc(100% - 24px);
   width: calc(100% - 34.3px);
@@ -21,26 +21,26 @@
   left: 17px;
   opacity: 0.05;
 }
-.group-child47,
-.navigation-bar11 {
+.group-child45,
+.navigation-bar10 {
   position: absolute;
   left: 0;
   border-radius: var(--br-3xs);
 }
-.navigation-bar11 {
+.navigation-bar10 {
   width: 100%;
   top: 0;
   right: 0;
   background-color: var(--lightsecond);
   height: 70px;
 }
-.group-child47 {
+.group-child45 {
   top: calc(50% - 16px);
   background-color: var(--fullblack);
   width: 98.9px;
   height: 32px;
 }
-.login11 {
+.login10 {
   position: absolute;
   width: 65.12%;
   top: calc(50% - 12px);
@@ -48,12 +48,12 @@
   display: inline-block;
   height: 24.6px;
 }
-.rectangle-parent64 {
+.rectangle-parent62 {
   position: relative;
   width: 98.9px;
   height: 32px;
 }
-.navigation-bar-light-inner9 {
+.navigation-bar-light-inner8 {
   position: absolute;
   top: calc(50% - 16.5px);
   right: 0;
@@ -65,7 +65,7 @@
   padding: 0 var(--padding-mini);
   box-sizing: border-box;
 }
-.cougarcourier1-4-icon11 {
+.cougarcourier1-4-icon10 {
   position: relative;
   border-radius: var(--br-3xs);
   width: 87px;
@@ -73,7 +73,7 @@
   object-fit: cover;
   mix-blend-mode: multiply;
 }
-.cougar-courier11 {
+.cougar-courier10 {
   position: relative;
   display: flex;
   align-items: center;
@@ -82,7 +82,7 @@
   height: 55px;
   flex-shrink: 0;
 }
-.cougarcourier1-4-parent9 {
+.cougarcourier1-4-parent8 {
   position: absolute;
   top: 6px;
   left: 0;
@@ -98,7 +98,7 @@
   font-size: var(--largetext-size);
   color: var(--fullblack);
 }
-.navigation-bar-light11 {
+.navigation-bar-light10 {
   position: absolute;
   width: calc(100% - 45px);
   top: 25px;
@@ -134,7 +134,7 @@
   width: 800px;
   height: 100px;
 }
-.rectangle-parent65 {
+.rectangle-parent63 {
   width: 1050px;
   display: flex;
   flex-direction: row;
@@ -151,20 +151,27 @@
   width: 227px;
   height: 44px;
 }
-.button-218 {
+.button-218,
+.button218,
+.button219 {
   position: absolute;
-  top: 0;
   left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 237px;
   height: 46px;
 }
-.button218 {
-  position: relative;
-  width: 237px;
-  height: 46px;
+.button-218 {
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button218,
+.button219 {
+  top: 25px;
+  cursor: pointer;
+}
+.button219 {
+  top: 130px;
 }
 .button3-child7 {
   position: absolute;
@@ -175,29 +182,45 @@
   width: 227px;
   height: 44px;
 }
-.button2-parent7 {
+.button39,
+.button418,
+.button419,
+.button79 {
   position: absolute;
-  top: 20px;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-18xl);
+  width: 237px;
+  height: 46px;
+  cursor: pointer;
 }
-.frame-wrapper19 {
+.button39 {
+  top: 235px;
+  left: calc(50% - 113.5px);
+}
+.button418,
+.button419,
+.button79 {
+  top: 340px;
+  left: 0;
+}
+.button419,
+.button79 {
+  top: 445px;
+}
+.button79 {
+  top: 550px;
+}
+.button2-parent7 {
   position: relative;
   width: 237px;
   height: 662px;
 }
-.frame-wrapper18,
+.frame-wrapper9,
 .portal-page9 {
   border-radius: var(--br-mini);
   background-color: var(--lightmain);
   border: 5px solid var(--fullblack);
   box-sizing: border-box;
 }
-.frame-wrapper18 {
+.frame-wrapper9 {
   align-self: stretch;
   width: 291px;
   display: flex;
@@ -211,12 +234,12 @@
   width: 900px;
   height: 700px;
 }
-.frame-parent20,
-.frame-parent21 {
+.frame-parent18,
+.frame-parent19 {
   display: flex;
   justify-content: flex-start;
 }
-.frame-parent21 {
+.frame-parent19 {
   height: 700px;
   flex-direction: row;
   align-items: center;
@@ -224,7 +247,7 @@
   font-size: var(--largetext-size);
   color: var(--lightmain);
 }
-.frame-parent20 {
+.frame-parent18 {
   position: absolute;
   width: calc(100% - 140px);
   top: 20px;
@@ -332,7 +355,7 @@
   color: var(--lightaccent);
   font-family: var(--font-lexend);
 }
-.group-child48 {
+.group-child46 {
   position: absolute;
   top: 0;
   left: 0;
@@ -350,12 +373,13 @@
   width: 63px;
   height: 30px;
 }
-.rectangle-parent66 {
+.rectangle-parent64 {
   position: absolute;
   top: 445px;
   left: 36px;
   width: 93px;
   height: 39.5px;
+  cursor: pointer;
   text-align: center;
   font-size: var(--font-size-xl);
 }
@@ -375,7 +399,7 @@
   width: 70px;
   height: 70px;
 }
-.frame10 {
+.frame9 {
   position: absolute;
   top: 157px;
   left: 1287px;

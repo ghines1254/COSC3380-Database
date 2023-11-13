@@ -1,4 +1,4 @@
-.image-1-icon6 {
+.image-1-icon5 {
   position: absolute;
   height: 100%;
   width: calc(100% + 0.3px);
@@ -11,7 +11,7 @@
   max-height: 100%;
   object-fit: cover;
 }
-.minibackground6 {
+.minibackground5 {
   position: absolute;
   height: calc(100% - 24px);
   width: calc(100% - 34.3px);
@@ -21,26 +21,26 @@
   left: 17px;
   opacity: 0.05;
 }
-.group-child13,
-.navigation-bar6 {
+.group-child11,
+.navigation-bar5 {
   position: absolute;
   left: 0;
   border-radius: var(--br-3xs);
 }
-.navigation-bar6 {
+.navigation-bar5 {
   width: 100%;
   top: 0;
   right: 0;
   background-color: var(--lightsecond);
   height: 70px;
 }
-.group-child13 {
+.group-child11 {
   top: calc(50% - 16px);
   background-color: var(--fullblack);
   width: 98.9px;
   height: 32px;
 }
-.login6 {
+.login5 {
   position: absolute;
   width: 65.12%;
   top: calc(50% - 12px);
@@ -48,12 +48,12 @@
   display: inline-block;
   height: 24.6px;
 }
-.rectangle-parent17 {
+.rectangle-parent15 {
   position: relative;
   width: 98.9px;
   height: 32px;
 }
-.navigation-bar-light-inner4 {
+.navigation-bar-light-inner3 {
   position: absolute;
   top: calc(50% - 16.5px);
   right: 0;
@@ -65,7 +65,7 @@
   padding: 0 var(--padding-mini);
   box-sizing: border-box;
 }
-.cougarcourier1-4-icon6 {
+.cougarcourier1-4-icon5 {
   position: relative;
   border-radius: var(--br-3xs);
   width: 87px;
@@ -73,7 +73,7 @@
   object-fit: cover;
   mix-blend-mode: multiply;
 }
-.cougar-courier6 {
+.cougar-courier5 {
   position: relative;
   display: flex;
   align-items: center;
@@ -82,7 +82,7 @@
   height: 55px;
   flex-shrink: 0;
 }
-.cougarcourier1-4-parent4 {
+.cougarcourier1-4-parent3 {
   position: absolute;
   top: 6px;
   left: 0;
@@ -98,7 +98,7 @@
   font-size: var(--largetext-size);
   color: var(--fullblack);
 }
-.navigation-bar-light6 {
+.navigation-bar-light5 {
   position: absolute;
   width: calc(100% - 45px);
   top: 25px;
@@ -132,7 +132,7 @@
   width: 800px;
   height: 100px;
 }
-.rectangle-parent18 {
+.rectangle-parent16 {
   width: 1050px;
   display: flex;
   flex-direction: row;
@@ -150,20 +150,26 @@
   height: 44px;
 }
 .button-28,
-.button28 {
+.button28,
+.button29 {
+  position: absolute;
+  left: 0;
   width: 237px;
   height: 46px;
 }
 .button-28 {
-  position: absolute;
   top: 0;
-  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.button28 {
-  position: relative;
+.button28,
+.button29 {
+  top: 25px;
+  cursor: pointer;
+}
+.button29 {
+  top: 130px;
 }
 .button3-child2 {
   position: absolute;
@@ -174,29 +180,45 @@
   width: 227px;
   height: 44px;
 }
-.button2-parent2 {
+.button34,
+.button48,
+.button49,
+.button74 {
   position: absolute;
-  top: 20px;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-18xl);
+  width: 237px;
+  height: 46px;
+  cursor: pointer;
 }
-.frame-wrapper9 {
+.button34 {
+  top: 235px;
+  left: calc(50% - 113.5px);
+}
+.button48,
+.button49,
+.button74 {
+  top: 340px;
+  left: 0;
+}
+.button49,
+.button74 {
+  top: 445px;
+}
+.button74 {
+  top: 550px;
+}
+.button2-parent2 {
   position: relative;
   width: 237px;
   height: 662px;
 }
-.frame-wrapper8,
+.frame-wrapper4,
 .portal-page4 {
   border-radius: var(--br-mini);
   background-color: var(--lightmain);
   border: 5px solid var(--fullblack);
   box-sizing: border-box;
 }
-.frame-wrapper8 {
+.frame-wrapper4 {
   align-self: stretch;
   width: 291px;
   display: flex;
@@ -210,12 +232,12 @@
   width: 900px;
   height: 700px;
 }
-.frame-parent8,
-.frame-parent9 {
+.frame-parent6,
+.frame-parent7 {
   display: flex;
   justify-content: flex-start;
 }
-.frame-parent9 {
+.frame-parent7 {
   height: 700px;
   flex-direction: row;
   align-items: center;
@@ -223,7 +245,7 @@
   font-size: var(--largetext-size);
   color: var(--lightmain);
 }
-.frame-parent8 {
+.frame-parent6 {
   position: absolute;
   width: calc(100% - 140px);
   top: 20px;
@@ -252,7 +274,7 @@
   color: var(--fullblack);
 }
 .dependant-outline-child,
-.firstname-item {
+.firstname-child {
   position: absolute;
   top: 0;
   left: 0;
@@ -264,14 +286,14 @@
   right: 0;
   bottom: 0;
 }
-.firstname-item {
+.firstname-child {
   border-radius: var(--br-3xs);
   border: 3px solid var(--lightaccent);
   box-sizing: border-box;
   width: 189.9px;
   height: 50px;
 }
-.first-name1 {
+.first-name {
   border: 0;
   display: flex;
   font-family: var(--largetext);
@@ -288,7 +310,12 @@
   width: 115px;
   height: 27px;
 }
-.middleinitial-item {
+.firstname {
+  position: relative;
+  width: 189.9px;
+  height: 50px;
+}
+.middleinitial-child {
   position: absolute;
   top: 0;
   left: 0;
@@ -299,7 +326,7 @@
   width: 175.9px;
   height: 50px;
 }
-.middle-initial1 {
+.middle-initial {
   border: 0;
   display: flex;
   font-family: var(--largetext);
@@ -316,20 +343,24 @@
   width: 161px;
   height: 49px;
 }
-.lastname-item {
+.lastname-child,
+.middleinitial {
+  position: relative;
+  width: 175.9px;
+  height: 50px;
+}
+.lastname-child {
   position: absolute;
   top: 0;
   left: 0;
   border-radius: var(--br-3xs);
-  width: 175.9px;
-  height: 50px;
 }
-.firstname-group,
-.last-name1 {
+.firstname-parent,
+.last-name {
   display: flex;
   align-items: center;
 }
-.last-name1 {
+.last-name {
   border: 0;
   font-family: var(--largetext);
   font-size: var(--font-size-sm);
@@ -344,27 +375,18 @@
   width: 115px;
   height: 43px;
 }
-.firstname-group {
+.firstname-parent {
   align-self: stretch;
   flex-direction: row;
   justify-content: space-between;
 }
-.dob,
-.sex {
-  position: relative;
-  width: 189.9px;
-  height: 50px;
-}
-.sex {
-  width: 175.9px;
-}
-.frame-parent10,
+.frame-parent8,
 .to-add-dependent {
   position: absolute;
   display: flex;
   align-items: center;
 }
-.frame-parent10 {
+.frame-parent8 {
   width: 67.09%;
   top: calc(50% - 109.5px);
   right: 17.44%;
@@ -381,7 +403,7 @@
   justify-content: center;
   width: 498.9px;
 }
-.group-child14 {
+.group-child12 {
   position: absolute;
   top: 0;
   left: 0;
@@ -402,12 +424,13 @@
   width: 63px;
   height: 30px;
 }
-.rectangle-parent19 {
+.rectangle-parent17 {
   position: absolute;
   top: 541px;
   left: 375px;
   width: 93px;
   height: 39.5px;
+  cursor: pointer;
   color: var(--fullblack);
 }
 .customer-id {
@@ -443,7 +466,7 @@
   width: 70px;
   height: 70px;
 }
-.frame5 {
+.frame4 {
   position: absolute;
   top: 157px;
   left: 1287px;

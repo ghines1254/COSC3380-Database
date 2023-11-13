@@ -21,64 +21,62 @@
   </head>
   <body>
     <div class="employee-tracking-page-4">
-      <div class="minibackground2">
-        <img class="image-1-icon2" alt="" src="./public/image-1@2x.png" />
+      <div class="minibackground1">
+        <img class="image-1-icon1" alt="" src="./public/image-1@2x.png" />
       </div>
-      <div class="navigation-bar-light2">
-        <div class="navigation-bar2"></div>
-        <div class="frame-div">
-          <div class="group-div">
-            <div class="rectangle-div"></div>
-            <b class="login2">Login</b>
+      <div class="navigation-bar-light1">
+        <div class="navigation-bar1"></div>
+        <div class="navigation-bar-light-child">
+          <div class="rectangle-group">
+            <div class="group-item"></div>
+            <b class="login1">Login</b>
           </div>
         </div>
-        <div class="cougarcourier1-4-container" id="frameContainer1">
+        <div class="cougarcourier1-4-group" id="frameContainer1">
           <img
-            class="cougarcourier1-4-icon2"
+            class="cougarcourier1-4-icon1"
             alt=""
             src="./public/cougarcourier1-4@2x.png"
           />
 
-          <b class="cougar-courier2">Cougar Courier</b>
+          <b class="cougar-courier1">Cougar Courier</b>
         </div>
       </div>
       <div class="portal-centering-frame">
         <div class="employee-portal-outline">
-          <div class="frame-container">
-            <div class="rectangle-parent1">
+          <div class="frame-parent">
+            <div class="rectangle-container">
               <div class="frame-child"></div>
               <div class="welcome-to-your-portal-page-wrapper">
                 <b class="welcome-to-your">Welcome to your portal page!</b>
               </div>
             </div>
-            <div class="frame-parent1">
+            <div class="frame-group">
               <div class="frame-wrapper">
-                <div class="frame-wrapper1">
-                  <div class="button2-parent">
-                    <div class="button2">
-                      <div class="button2-child"></div>
-                      <b class="delivery">Shipping</b>
-                    </div>
-                    <div class="button2">
-                      <div class="button2-child"></div>
-                      <b class="delivery">Tracking</b>
-                    </div>
-                    <div class="button2">
-                      <div class="button3-child"></div>
-                      <b class="delivery">Check Out</b>
-                    </div>
-                    <div class="button2">
-                      <div class="button2-child"></div>
-                      <b class="delivery">Delivery</b>
-                    </div>
-                    <div class="button2">
-                      <div class="button2-child"></div>
-                      <b class="delivery">Dependent</b>
-                    </div>
-                    <div class="button2">
-                      <div class="button2-child"></div>
-                      <b class="delivery">Account</b>
-                    </div>
+                <div class="button2-parent">
+                  <div class="button2" id="button2Container">
+                    <div class="button2-child"></div>
+                    <b class="delivery">Shipping</b>
+                  </div>
+                  <div class="button21" id="button2Container1">
+                    <div class="button2-child"></div>
+                    <b class="delivery">Tracking</b>
+                  </div>
+                  <div class="button3" id="button3Container">
+                    <div class="button3-child"></div>
+                    <b class="delivery">Check Out</b>
+                  </div>
+                  <div class="button4" id="button4Container">
+                    <div class="button2-child"></div>
+                    <b class="delivery">Delivery</b>
+                  </div>
+                  <div class="button41" id="button4Container1">
+                    <div class="button2-child"></div>
+                    <b class="delivery">Dependent</b>
+                  </div>
+                  <div class="button7" id="button7Container">
+                    <div class="button2-child"></div>
+                    <b class="delivery">Account</b>
                   </div>
                 </div>
               </div>
@@ -92,19 +90,19 @@
       </div>
       <div class="tracking1">Tracking #:</div>
       <div class="status">Status:</div>
-      <div class="rectangle-parent2">
-        <div class="group-child1"></div>
+      <div class="group-div">
+        <div class="group-inner"></div>
         <div class="at-post-office">At Post Office</div>
       </div>
-      <div class="rectangle-parent3">
-        <div class="group-child1"></div>
+      <div class="rectangle-parent1">
+        <div class="group-inner"></div>
         <div class="at-post-office">En Route</div>
       </div>
-      <div class="rectangle-parent4">
-        <div class="group-child3"></div>
+      <div class="rectangle-parent2">
+        <div class="group-child1"></div>
         <div class="at-post-office">Delivered</div>
       </div>
-      <div class="frame1" id="frameContainer9">
+      <div class="frame" id="frameContainer8">
         <img
           class="portal-home-button"
           alt=""
@@ -121,9 +119,51 @@
         });
       }
       
-      var frameContainer9 = document.getElementById("frameContainer9");
-      if (frameContainer9) {
-        frameContainer9.addEventListener("click", function (e) {
+      var button2Container = document.getElementById("button2Container");
+      if (button2Container) {
+        button2Container.addEventListener("click", function (e) {
+          window.location.href = "./employee-shipping-page.html";
+        });
+      }
+      
+      var button2Container1 = document.getElementById("button2Container1");
+      if (button2Container1) {
+        button2Container1.addEventListener("click", function (e) {
+          window.location.href = "./employee-tracking-page.html";
+        });
+      }
+      
+      var button3Container = document.getElementById("button3Container");
+      if (button3Container) {
+        button3Container.addEventListener("click", function (e) {
+          window.location.href = "./employee-checkout-page.html";
+        });
+      }
+      
+      var button4Container = document.getElementById("button4Container");
+      if (button4Container) {
+        button4Container.addEventListener("click", function (e) {
+          window.location.href = "./employee-delivery-page.html";
+        });
+      }
+      
+      var button4Container1 = document.getElementById("button4Container1");
+      if (button4Container1) {
+        button4Container1.addEventListener("click", function (e) {
+          window.location.href = "./employee-dependent-page.html";
+        });
+      }
+      
+      var button7Container = document.getElementById("button7Container");
+      if (button7Container) {
+        button7Container.addEventListener("click", function (e) {
+          window.location.href = "./employee-account-page.html";
+        });
+      }
+      
+      var frameContainer8 = document.getElementById("frameContainer8");
+      if (frameContainer8) {
+        frameContainer8.addEventListener("click", function (e) {
           window.location.href = "./employee-portal-nofications-page.html";
         });
       }

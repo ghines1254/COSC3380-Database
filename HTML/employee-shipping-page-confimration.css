@@ -1,4 +1,4 @@
-.image-1-icon7 {
+.image-1-icon6 {
   position: absolute;
   height: 100%;
   width: calc(100% + 0.3px);
@@ -11,7 +11,7 @@
   max-height: 100%;
   object-fit: cover;
 }
-.minibackground7 {
+.minibackground6 {
   position: absolute;
   height: calc(100% - 24px);
   width: calc(100% - 34.3px);
@@ -21,26 +21,26 @@
   left: 17px;
   opacity: 0.05;
 }
-.group-child15,
-.navigation-bar7 {
+.group-child13,
+.navigation-bar6 {
   position: absolute;
   left: 0;
   border-radius: var(--br-3xs);
 }
-.navigation-bar7 {
+.navigation-bar6 {
   width: 100%;
   top: 0;
   right: 0;
   background-color: var(--lightsecond);
   height: 70px;
 }
-.group-child15 {
+.group-child13 {
   top: calc(50% - 16px);
   background-color: var(--fullblack);
   width: 98.9px;
   height: 32px;
 }
-.login7 {
+.login6 {
   position: absolute;
   width: 65.12%;
   top: calc(50% - 12px);
@@ -48,12 +48,12 @@
   display: inline-block;
   height: 24.6px;
 }
-.rectangle-parent20 {
+.rectangle-parent18 {
   position: relative;
   width: 98.9px;
   height: 32px;
 }
-.navigation-bar-light-inner5 {
+.navigation-bar-light-inner4 {
   position: absolute;
   top: calc(50% - 16.5px);
   right: 0;
@@ -65,7 +65,7 @@
   padding: 0 var(--padding-mini);
   box-sizing: border-box;
 }
-.cougarcourier1-4-icon7 {
+.cougarcourier1-4-icon6 {
   position: relative;
   border-radius: var(--br-3xs);
   width: 87px;
@@ -73,7 +73,7 @@
   object-fit: cover;
   mix-blend-mode: multiply;
 }
-.cougar-courier7 {
+.cougar-courier6 {
   position: relative;
   display: flex;
   align-items: center;
@@ -82,7 +82,7 @@
   height: 55px;
   flex-shrink: 0;
 }
-.cougarcourier1-4-parent5 {
+.cougarcourier1-4-parent4 {
   position: absolute;
   top: 6px;
   left: 0;
@@ -98,7 +98,7 @@
   font-size: var(--largetext-size);
   color: var(--fullblack);
 }
-.navigation-bar-light7 {
+.navigation-bar-light6 {
   position: absolute;
   width: calc(100% - 45px);
   top: 25px;
@@ -133,7 +133,7 @@
   width: 800px;
   height: 100px;
 }
-.rectangle-parent21 {
+.rectangle-parent19 {
   width: 1050px;
   display: flex;
   flex-direction: row;
@@ -150,20 +150,27 @@
   width: 227px;
   height: 44px;
 }
-.button-210 {
+.button-210,
+.button210,
+.button211 {
   position: absolute;
-  top: 0;
   left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 237px;
   height: 46px;
 }
-.button210 {
-  position: relative;
-  width: 237px;
-  height: 46px;
+.button-210 {
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button210,
+.button211 {
+  top: 25px;
+  cursor: pointer;
+}
+.button211 {
+  top: 130px;
 }
 .button3-child3 {
   position: absolute;
@@ -174,29 +181,45 @@
   width: 227px;
   height: 44px;
 }
-.button2-parent3 {
+.button35,
+.button410,
+.button411,
+.button75 {
   position: absolute;
-  top: 20px;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-18xl);
+  width: 237px;
+  height: 46px;
+  cursor: pointer;
 }
-.frame-wrapper11 {
+.button35 {
+  top: 235px;
+  left: calc(50% - 113.5px);
+}
+.button410,
+.button411,
+.button75 {
+  top: 340px;
+  left: 0;
+}
+.button411,
+.button75 {
+  top: 445px;
+}
+.button75 {
+  top: 550px;
+}
+.button2-parent3 {
   position: relative;
   width: 237px;
   height: 662px;
 }
-.frame-wrapper10,
+.frame-wrapper5,
 .portal-page5 {
   border-radius: var(--br-mini);
   background-color: var(--lightmain);
   border: 5px solid var(--fullblack);
   box-sizing: border-box;
 }
-.frame-wrapper10 {
+.frame-wrapper5 {
   align-self: stretch;
   width: 291px;
   display: flex;
@@ -210,12 +233,12 @@
   width: 900px;
   height: 700px;
 }
-.frame-parent11,
-.frame-parent12 {
+.frame-parent10,
+.frame-parent9 {
   display: flex;
   justify-content: flex-start;
 }
-.frame-parent12 {
+.frame-parent10 {
   height: 700px;
   flex-direction: row;
   align-items: center;
@@ -223,7 +246,7 @@
   font-size: var(--largetext-size);
   color: var(--lightmain);
 }
-.frame-parent11 {
+.frame-parent9 {
   position: absolute;
   width: calc(100% - 140px);
   top: 20px;
@@ -310,7 +333,7 @@
   width: 70px;
   height: 70px;
 }
-.frame6 {
+.frame5 {
   position: absolute;
   top: 157px;
   left: 1287px;
