@@ -1,4 +1,4 @@
-.image-1-icon1 {
+.image-1-icon3 {
   position: absolute;
   height: 100%;
   width: calc(100% + 0.3px);
@@ -11,7 +11,7 @@
   max-height: 100%;
   object-fit: cover;
 }
-.minibackground1 {
+.minibackground3 {
   position: absolute;
   height: calc(100% - 24px);
   width: calc(100% - 34.3px);
@@ -21,26 +21,26 @@
   left: 17px;
   opacity: 0.05;
 }
-.group-item,
-.navigation-bar1 {
+.group-child2,
+.navigation-bar3 {
   position: absolute;
   left: 0;
   border-radius: var(--br-3xs);
 }
-.navigation-bar1 {
+.navigation-bar3 {
   width: 100%;
   top: 0;
   right: 0;
   background-color: var(--lightsecond);
   height: 70px;
 }
-.group-item {
+.group-child2 {
   top: calc(50% - 16px);
   background-color: var(--fullblack);
   width: 98.9px;
   height: 32px;
 }
-.login1 {
+.login3 {
   position: absolute;
   width: 65.12%;
   top: calc(50% - 12px);
@@ -48,12 +48,12 @@
   display: inline-block;
   height: 24.6px;
 }
-.rectangle-group {
+.rectangle-parent4 {
   position: relative;
   width: 98.9px;
   height: 32px;
 }
-.navigation-bar-light-child {
+.navigation-bar-light-inner1 {
   position: absolute;
   top: calc(50% - 16.5px);
   right: 0;
@@ -65,7 +65,7 @@
   padding: 0 var(--padding-mini);
   box-sizing: border-box;
 }
-.cougarcourier1-4-icon1 {
+.cougarcourier1-4-icon3 {
   position: relative;
   border-radius: var(--br-3xs);
   width: 87px;
@@ -73,7 +73,7 @@
   object-fit: cover;
   mix-blend-mode: multiply;
 }
-.cougar-courier1 {
+.cougar-courier3 {
   position: relative;
   display: flex;
   align-items: center;
@@ -82,7 +82,7 @@
   height: 55px;
   flex-shrink: 0;
 }
-.cougarcourier1-4-group {
+.cougarcourier1-4-parent1 {
   position: absolute;
   top: 6px;
   left: 0;
@@ -98,7 +98,7 @@
   font-size: var(--largetext-size);
   color: var(--fullblack);
 }
-.navigation-bar-light1 {
+.navigation-bar-light3 {
   position: absolute;
   width: calc(100% - 45px);
   top: 25px;
@@ -109,12 +109,12 @@
   height: 70px;
   color: var(--lightsecond);
 }
-.frame-child {
+.frame-inner {
   align-self: stretch;
   position: relative;
   width: 10px;
 }
-.welcome-to-your {
+.welcome-to-your2 {
   position: absolute;
   top: 0.5px;
   left: 0;
@@ -124,7 +124,7 @@
   width: 800px;
   height: 100px;
 }
-.welcome-to-your-portal-page-wrapper {
+.welcome-to-your-portal-page-frame {
   position: relative;
   border-radius: var(--br-mini);
   background-color: var(--lightmain);
@@ -133,7 +133,7 @@
   width: 800px;
   height: 100px;
 }
-.rectangle-container {
+.rectangle-parent5 {
   width: 1050px;
   display: flex;
   flex-direction: row;
@@ -141,28 +141,29 @@
   justify-content: flex-start;
   gap: var(--gap-11xl);
 }
-.button2-child {
+.button-24,
+.button24,
+.button25 {
   position: absolute;
-  top: 1px;
-  left: 5px;
-  border-radius: var(--br-3xs);
-  background-color: var(--lightaccent);
-  width: 227px;
-  height: 44px;
-}
-.button2,
-.button21 {
-  position: absolute;
-  top: 25px;
   left: 0;
   width: 237px;
   height: 46px;
+}
+.button-24 {
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button24,
+.button25 {
+  top: 25px;
   cursor: pointer;
 }
-.button21 {
+.button25 {
   top: 130px;
 }
-.button3-child {
+.button3-inner {
   position: absolute;
   top: 0.5px;
   left: calc(50% - 116.5px);
@@ -171,55 +172,56 @@
   width: 227px;
   height: 44px;
 }
-.button3 {
+.button32,
+.button44,
+.button45 {
   position: absolute;
-  top: 235px;
-  left: calc(50% - 113.5px);
   width: 237px;
   height: 46px;
   cursor: pointer;
 }
-.button4,
-.button41,
-.button7,
-.delivery {
+.button32 {
+  top: 235px;
+  left: calc(50% - 113.5px);
+}
+.button44,
+.button45 {
+  top: 340px;
+  left: 0;
+}
+.button45 {
+  top: 445px;
+}
+.button7-inner {
   position: absolute;
+  top: 1px;
+  left: 5px;
+  border-radius: var(--br-3xs);
+  background-color: var(--lightaccent);
+  width: 227px;
+  height: 44px;
+}
+.button72 {
+  position: absolute;
+  top: 550px;
   left: 0;
   width: 237px;
   height: 46px;
-}
-.delivery {
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.button4,
-.button41,
-.button7 {
-  top: 340px;
   cursor: pointer;
 }
-.button41,
-.button7 {
-  top: 445px;
-}
-.button7 {
-  top: 550px;
-}
-.button2-parent {
+.button2-container {
   position: relative;
   width: 237px;
   height: 662px;
 }
-.frame-wrapper,
-.portal-page {
+.frame-wrapper2,
+.portal-page2 {
   border-radius: var(--br-mini);
   background-color: var(--lightmain);
   border: 5px solid var(--fullblack);
   box-sizing: border-box;
 }
-.frame-wrapper {
+.frame-wrapper2 {
   align-self: stretch;
   width: 291px;
   display: flex;
@@ -228,17 +230,17 @@
   justify-content: space-between;
   padding: var(--padding-lgi) var(--padding-8xl);
 }
-.portal-page {
+.portal-page2 {
   position: relative;
   width: 900px;
   height: 700px;
 }
-.frame-group,
-.frame-parent {
+.frame-parent3,
+.frame-parent4 {
   display: flex;
   justify-content: flex-start;
 }
-.frame-group {
+.frame-parent4 {
   height: 700px;
   flex-direction: row;
   align-items: center;
@@ -246,7 +248,7 @@
   font-size: var(--largetext-size);
   color: var(--lightmain);
 }
-.frame-parent {
+.frame-parent3 {
   position: absolute;
   width: calc(100% - 140px);
   top: 20px;
@@ -256,12 +258,12 @@
   align-items: flex-start;
   gap: var(--gap-16xl);
 }
-.employee-portal-outline {
+.employee-portal-outline2 {
   position: relative;
   width: 1440px;
   height: 875px;
 }
-.portal-centering-frame {
+.portal-centering-frame2 {
   position: absolute;
   top: 98px;
   left: calc(50% - 720px);
@@ -306,7 +308,7 @@
 .status {
   top: 581px;
 }
-.group-inner {
+.group-child3 {
   position: absolute;
   top: 0;
   left: calc(50% - 76.2px);
@@ -326,28 +328,28 @@
   width: 129.2px;
   height: 28px;
 }
-.group-div,
-.rectangle-parent1 {
+.rectangle-parent6,
+.rectangle-parent7 {
   top: 649px;
   font-size: var(--font-size-base);
 }
-.group-div {
+.rectangle-parent6 {
   position: absolute;
   left: calc(50% - 140px);
   width: 152.4px;
   height: 37px;
 }
-.rectangle-parent1 {
+.rectangle-parent7 {
   left: calc(50% + 126px);
 }
-.group-child1,
-.rectangle-parent1,
-.rectangle-parent2 {
+.group-child5,
+.rectangle-parent7,
+.rectangle-parent8 {
   position: absolute;
   width: 152.4px;
   height: 37px;
 }
-.group-child1 {
+.group-child5 {
   top: 0;
   left: calc(50% - 76.2px);
   border-radius: var(--br-3xs);
@@ -355,17 +357,17 @@
   border: 1px solid var(--lightaccent);
   box-sizing: border-box;
 }
-.rectangle-parent2 {
+.rectangle-parent8 {
   top: 648px;
   left: calc(50% + 392px);
   font-size: var(--font-size-base);
 }
-.portal-home-button {
+.portal-home-button2 {
   position: relative;
   width: 70px;
   height: 70px;
 }
-.frame {
+.frame2 {
   position: absolute;
   top: 157px;
   left: 1287px;
