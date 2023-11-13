@@ -3,8 +3,8 @@
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 .employee-login-page-child,
-.image-1-icon14,
-.minibackground14 {
+.image-1-icon15,
+.minibackground15 {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -13,13 +13,13 @@
   bottom: 0;
   left: 0;
 }
-.image-1-icon14 {
+.image-1-icon15 {
   max-width: 100%;
   overflow: hidden;
   max-height: 100%;
   object-fit: cover;
 }
-.minibackground14 {
+.minibackground15 {
   opacity: 0.05;
 }
 .main-shape {
@@ -147,7 +147,7 @@
   background-color: var(--fullblack);
   color: var(--lightmain);
 }
-.frame-parent27 {
+.frame-parent29 {
   position: absolute;
   top: 12px;
   left: calc(50% - 436.5px);
@@ -169,26 +169,26 @@
   width: 895px;
   height: 561px;
 }
-.group-child52,
-.navigation-bar14 {
+.group-child53,
+.navigation-bar15 {
   position: absolute;
   left: 0;
   border-radius: var(--br-3xs);
 }
-.navigation-bar14 {
+.navigation-bar15 {
   width: 100%;
   top: 0;
   right: 0;
   background-color: var(--lightsecond);
   height: 70px;
 }
-.group-child52 {
+.group-child53 {
   top: calc(50% - 16px);
   background-color: var(--fullblack);
   width: 98.9px;
   height: 32px;
 }
-.login15 {
+.login16 {
   position: absolute;
   width: 65.12%;
   top: calc(50% - 12px);
@@ -196,12 +196,12 @@
   display: inline-block;
   height: 24.6px;
 }
-.rectangle-parent80 {
+.rectangle-parent90 {
   position: relative;
   width: 98.9px;
   height: 32px;
 }
-.navigation-bar-light-inner12 {
+.navigation-bar-light-inner13 {
   position: absolute;
   top: calc(50% - 16.5px);
   right: 0;
@@ -213,7 +213,7 @@
   padding: 0 var(--padding-mini);
   box-sizing: border-box;
 }
-.cougarcourier1-4-icon14 {
+.cougarcourier1-4-icon15 {
   position: relative;
   border-radius: var(--br-3xs);
   width: 87px;
@@ -221,7 +221,7 @@
   object-fit: cover;
   mix-blend-mode: multiply;
 }
-.cougar-courier14 {
+.cougar-courier15 {
   position: relative;
   font-size: var(--largetext-size);
   display: flex;
@@ -250,7 +250,7 @@
   box-sizing: border-box;
   gap: var(--gap-base);
 }
-.navigation-bar-light14 {
+.navigation-bar-light15 {
   position: absolute;
   width: calc(100% - 5px);
   top: 13px;
