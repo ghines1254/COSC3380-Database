@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Employee Login</title>
-    <link rel="icon" type="image/x-icon" href="/images/coogpawfavicon.png">
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
@@ -14,73 +12,66 @@
     />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
     />
   </head>
   <body>
     <div class="employee-login-page">
       <div class="employee-login-page-child"></div>
-      <div class="login-page-container">
-        <div class="login-page1">
-          <div class="minibackground269">
-            <img class="image-1-icon269" alt="" src="./public/background.png" />
+      <div class="login-page-wrapper">
+        <div class="login-page">
+          <div class="minibackground13">
+            <img class="image-1-icon13" alt="" src="./public/image-11@2x.png" />
           </div>
-          <div class="login-light1">
-            <div class="main-shape1"></div>
-            <div class="forgot-user-id-or-password-group">
-              <div class="forgot-user-id1">FORGOT USER ID OR PASSWORD?</div>
-              <div class="frame-child67"></div>
+          <div class="login-light">
+            <div class="main-shape"></div>
+            <div class="forgot-user-id-or-password-parent">
+              <div class="forgot-user-id">FORGOT USER ID OR PASSWORD?</div>
+              <div class="line-div"></div>
             </div>
-            <div class="sign-up-container" id="frameContainer1">
-              <div class="sign-up1">Sign Up</div>
+            <div class="sign-up-wrapper" id="frameContainer1">
+              <div class="sign-up2">Sign Up</div>
             </div>
-            <div class="login-container" id="frameContainer2">
-              <div class="sign-up1">Login</div>
+            <div class="login-wrapper" id="frameContainer2">
+              <div class="sign-up2">Login</div>
             </div>
-            <div class="usernamepasswordgroup1">
-              <input class="usernamebar1" placeholder="USER ID" type="text" />
+            <div class="usernamepasswordgroup">
+              <input class="usernamebar" placeholder="USER ID" type="text" />
 
-              <input class="usernamebar1" placeholder="PASSWORD" type="text" />
+              <input class="usernamebar" placeholder="PASSWORD" type="text" />
             </div>
-            <div class="frame-parent8">
-              <div class="customer-container" id="frameContainer3">
-                <b class="customer1">Customer</b>
+            <div class="frame-parent25">
+              <div class="customer-wrapper" id="frameContainer3">
+                <b class="customer">Customer</b>
               </div>
-              <div class="employee-container">
-                <b class="customer1">Employee Login</b>
+              <div class="employee-wrapper">
+                <b class="customer">Employee Login</b>
               </div>
-              <div class="customer-container" id="frameContainer5">
-                <b class="customer1">Admin</b>
+              <div class="customer-wrapper" id="frameContainer5">
+                <b class="customer">Admin</b>
               </div>
             </div>
           </div>
-          <div class="navigation-bar-light5">
-            <div class="navigation-bar5"></div>
-            <div class="vector-parent3">
-<!--               <img class="frame-child68" alt="" src="./public/navbar-line.svg" />
-
-              <b class="customer1">Shipping</b>
-              <img class="frame-child69" alt="" src="./public/navbar-line.svg" />
-
-              <b class="tracking8">Tracking</b>
-              <img class="frame-child70" alt="" src="./public/navbar-line.svg" />
-
-              <b class="tracking8">Products</b>
-              <img class="frame-child68" alt="" src="./public/navbar-line.svg" /> -->
-
-              <div class="rectangle-parent29">
-                <div class="group-child3"></div>
-                <b class="login7">Login</b>
+          <div class="navigation-bar-light13">
+            <div class="navigation-bar13"></div>
+            <div class="navigation-bar-light-inner11">
+              <div class="rectangle-parent70">
+                <div class="group-child51"></div>
+                <b class="login14">Login</b>
               </div>
             </div>
-            <button class="cougarcourier1-4-parent2" id="frameButton">
+            <button class="frame-button" id="frameButton">
               <img
-                class="cougarcourier1-4-icon5"
+                class="cougarcourier1-4-icon13"
                 alt=""
-                src="./public/cougarcourier.png"
+                src="./public/cougarcourier1-4@2x.png"
               />
 
-              <b class="cougar-courier5">Cougar Courier</b>
+              <b class="cougar-courier13">Cougar Courier</b>
             </button>
           </div>
         </div>
@@ -94,32 +85,32 @@
           window.location.href = "./s-ign-up-page.html";
         });
       }
-
+      
       var frameContainer2 = document.getElementById("frameContainer2");
       if (frameContainer2) {
         frameContainer2.addEventListener("click", function (e) {
           window.location.href = "./employee-portal-nofications-page.html";
         });
       }
-
+      
       var frameContainer3 = document.getElementById("frameContainer3");
       if (frameContainer3) {
         frameContainer3.addEventListener("click", function (e) {
-          window.location.href = "./login-page.html";
+          window.location.href = "./customer-login-page.html";
         });
       }
-
+      
       var frameContainer5 = document.getElementById("frameContainer5");
       if (frameContainer5) {
         frameContainer5.addEventListener("click", function (e) {
           window.location.href = "./admin-login-page.html";
         });
       }
-
+      
       var frameButton = document.getElementById("frameButton");
       if (frameButton) {
         frameButton.addEventListener("click", function (e) {
-          window.location.href = "./index.html";
+          window.location.href = "./home-page.html";
         });
       }
       </script>
