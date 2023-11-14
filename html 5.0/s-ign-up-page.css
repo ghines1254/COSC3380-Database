@@ -1,4 +1,4 @@
-.image-1-icon36,
+.image-1-icon1,
 .sign-up-page-child {
   position: absolute;
   height: 100%;
@@ -11,13 +11,13 @@
 .sign-up-page-child {
   background-color: var(--lightmain);
 }
-.image-1-icon36 {
+.image-1-icon1 {
   max-width: 100%;
   overflow: hidden;
   max-height: 100%;
   object-fit: cover;
 }
-.minibackground36 {
+.minibackground1 {
   position: absolute;
   height: calc(100% - 24px);
   width: calc(100% - 40px);
@@ -65,7 +65,7 @@
   position: relative;
   gap: var(--gap-3xs);
 }
-.firstname-child8 {
+.firstname-child {
   position: absolute;
   top: 0;
   left: 0;
@@ -76,11 +76,11 @@
   width: 270px;
   height: 78px;
 }
-.first-name11 {
+.first-name {
   border: 0;
   display: flex;
   font-family: var(--largetext);
-  font-size: var(--minitext-size);
+  font-size: var(--font-size-xl);
   background-color: transparent;
   position: absolute;
   top: 9px;
@@ -93,13 +93,13 @@
   width: 262px;
   height: 54px;
 }
-.firstname10,
-.middleinitial-child8 {
+.firstname,
+.middleinitial-child {
   position: relative;
   width: 270px;
   height: 78px;
 }
-.middleinitial-child8 {
+.middleinitial-child {
   position: absolute;
   top: 0;
   left: 0.1px;
@@ -108,11 +108,11 @@
   border: 10px solid var(--lightaccent);
   box-sizing: border-box;
 }
-.middle-initial10 {
+.middle-initial {
   border: 0;
   display: flex;
   font-family: var(--largetext);
-  font-size: var(--minitext-size);
+  font-size: var(--font-size-xl);
   background-color: transparent;
   position: absolute;
   top: 6px;
@@ -125,12 +125,12 @@
   width: 270px;
   height: 66px;
 }
-.middleinitial10 {
+.middleinitial {
   position: relative;
   width: 270.1px;
   height: 78px;
 }
-.lastname-child7 {
+.lastname-child {
   position: absolute;
   top: 0;
   left: 0;
@@ -138,29 +138,29 @@
   width: 270px;
   height: 78px;
 }
-.firstname-parent8 {
+.firstname-parent {
   align-self: stretch;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-.address-line-19,
-.addressline1-child7 {
+.address-line-1,
+.addressline1-child {
   position: absolute;
   top: 0;
   left: 0;
   width: 453px;
   height: 78px;
 }
-.addressline1-child7 {
+.addressline1-child {
   border-radius: var(--br-3xs);
 }
-.address-line-19 {
+.address-line-1 {
   border: 0;
   display: flex;
   font-family: var(--largetext);
-  font-size: var(--minitext-size);
+  font-size: var(--font-size-xl);
   background-color: transparent;
   font-weight: 700;
   color: var(--fullblack);
@@ -168,23 +168,23 @@
   align-items: center;
   justify-content: center;
 }
-.addressline19,
-.addressline2-child7 {
+.addressline1,
+.addressline2-child {
   position: relative;
   width: 453px;
   height: 78px;
 }
-.addressline2-child7 {
+.addressline2-child {
   position: absolute;
   top: 14px;
   left: 0;
   border-radius: var(--br-3xs);
 }
-.address-line-29 {
+.address-line-2 {
   border: 0;
   display: flex;
   font-family: var(--largetext);
-  font-size: var(--minitext-size);
+  font-size: var(--font-size-xl);
   background-color: transparent;
   position: absolute;
   top: 0;
@@ -197,12 +197,12 @@
   width: 354px;
   height: 106px;
 }
-.addressline29 {
+.addressline2 {
   position: relative;
   width: 453px;
   height: 106px;
 }
-.city-child7 {
+.city-child {
   position: absolute;
   top: 14px;
   left: 42px;
@@ -213,16 +213,16 @@
   width: 270px;
   height: 78px;
 }
-.city18,
-.city19 {
+.city,
+.city1 {
   width: 354px;
   height: 106px;
 }
-.city19 {
+.city1 {
   border: 0;
   display: flex;
   font-family: var(--largetext);
-  font-size: var(--minitext-size);
+  font-size: var(--font-size-xl);
   background-color: transparent;
   position: absolute;
   top: 0;
@@ -233,28 +233,30 @@
   align-items: center;
   justify-content: center;
 }
-.city18 {
+.city {
   position: relative;
 }
-.state-child7,
-.state19 {
+.state-child,
+.state1,
+.zip1 {
   position: absolute;
   top: 0;
-  width: 270px;
+  width: 269.1px;
   height: 78px;
 }
-.state-child7 {
+.state-child {
   left: 0.9px;
   border-radius: var(--br-3xs);
   background-color: var(--lightmain);
   border: 10px solid var(--lightaccent);
   box-sizing: border-box;
 }
-.state19 {
+.state1,
+.zip1 {
   border: 0;
   display: flex;
   font-family: var(--largetext);
-  font-size: var(--minitext-size);
+  font-size: var(--font-size-xl);
   background-color: transparent;
   left: 0;
   font-weight: 700;
@@ -263,53 +265,74 @@
   align-items: center;
   justify-content: center;
 }
-.state18 {
-  position: relative;
-  width: 270.9px;
+.zip1 {
+  color: var(--lightaccent);
+  width: 270px;
+}
+.email-child,
+.email1 {
+  position: absolute;
+  left: 0;
+  width: 313px;
+}
+.email-child {
+  top: 0;
+  border-radius: var(--br-3xs);
   height: 78px;
 }
-.email19,
-.zip19 {
+.email1 {
   border: 0;
   display: flex;
   font-family: var(--largetext);
-  font-size: var(--minitext-size);
+  font-size: var(--font-size-xl);
+  background-color: transparent;
+  top: 1px;
+  font-weight: 700;
+  color: var(--fullblack);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 77px;
+}
+.email,
+.password1 {
+  position: relative;
+  width: 313px;
+  height: 78px;
+}
+.password1 {
+  border: 0;
+  display: flex;
+  font-family: var(--largetext);
+  font-size: var(--font-size-xl);
   background-color: transparent;
   position: absolute;
   top: 0;
   left: 0;
   font-weight: 700;
-  color: var(--lightaccent);
+  color: var(--fullblack);
   text-align: center;
   align-items: center;
   justify-content: center;
-  width: 270px;
-  height: 78px;
 }
-.email19 {
-  top: 1px;
-  color: var(--fullblack);
-  width: 453px;
-  height: 77px;
-}
-.frame-parent79,
-.frame-parent80 {
+.frame-group,
+.frame-parent {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.frame-parent80 {
+.frame-group {
   width: 1065px;
   height: 577px;
   justify-content: space-between;
   padding: var(--padding-8xs);
   box-sizing: border-box;
 }
-.frame-parent79 {
+.frame-parent {
   width: 1101px;
   justify-content: center;
 }
-.group-child109 {
+.group-item {
   position: absolute;
   width: 100%;
   top: 0;
@@ -319,7 +342,7 @@
   background-color: var(--lightaccent);
   height: 35px;
 }
-.sign-up3 {
+.sign-up {
   position: absolute;
   width: calc(100% - 39.4px);
   top: 5px;
@@ -328,12 +351,12 @@
   display: inline-block;
   height: 26.5px;
 }
-.rectangle-parent180 {
+.rectangle-group {
   position: relative;
   width: 122px;
   height: 35px;
   cursor: pointer;
-  font-size: var(--minitext-size);
+  font-size: var(--font-size-xl);
 }
 .new-user-signup-info {
   margin: 0 !important;
@@ -355,26 +378,26 @@
   gap: 27px;
   z-index: 0;
 }
-.group-child110,
-.navigation-bar36 {
+.group-inner,
+.navigation-bar1 {
   position: absolute;
   left: 0;
   border-radius: var(--br-3xs);
 }
-.navigation-bar36 {
+.navigation-bar1 {
   width: 100%;
   top: 0;
   right: 0;
   background-color: var(--lightsecond);
   height: 70px;
 }
-.group-child110 {
+.group-inner {
   top: calc(50% - 16px);
   background-color: var(--fullblack);
   width: 98.9px;
   height: 32px;
 }
-.login39 {
+.login1 {
   position: absolute;
   width: 65.12%;
   top: calc(50% - 12px);
@@ -382,12 +405,12 @@
   display: inline-block;
   height: 24.6px;
 }
-.rectangle-parent181 {
+.rectangle-container {
   position: relative;
   width: 98.9px;
   height: 32px;
 }
-.navigation-bar-light-inner34 {
+.navigation-bar-light-child {
   position: absolute;
   top: calc(50% - 16.5px);
   right: 0;
@@ -399,7 +422,7 @@
   padding: 0 var(--padding-mini);
   box-sizing: border-box;
 }
-.cougarcourier1-4-icon36 {
+.cougarcourier1-4-icon1 {
   position: relative;
   border-radius: var(--br-3xs);
   width: 87px;
@@ -407,7 +430,7 @@
   object-fit: cover;
   mix-blend-mode: multiply;
 }
-.cougar-courier36 {
+.cougar-courier1 {
   position: relative;
   display: flex;
   align-items: center;
@@ -416,7 +439,7 @@
   height: 55px;
   flex-shrink: 0;
 }
-.cougarcourier1-4-parent33 {
+.cougarcourier1-4-group {
   position: absolute;
   top: 6px;
   left: 0;
@@ -432,7 +455,7 @@
   font-size: var(--largetext-size);
   color: var(--fullblack);
 }
-.navigation-bar-light36 {
+.navigation-bar-light1 {
   position: absolute;
   margin: 0 !important;
   width: calc(100% - 11px);
@@ -443,10 +466,10 @@
   background-color: var(--lightsecond);
   height: 70px;
   z-index: 1;
-  font-size: var(--minitext-size);
+  font-size: var(--font-size-xl);
   color: var(--lightsecond);
 }
-.frame93 {
+.frame {
   position: absolute;
   width: calc(100% - 40px);
   top: 24px;
