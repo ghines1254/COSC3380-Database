@@ -17,7 +17,7 @@ def signupPage():
     email = request.forms.get('email')
     phoneNum = request.forms.get('phone1')
 
-    query = "INSERT INTO CUSTOMER VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+    query = "INSERT INTO CUSTOMER VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, now() )"
     insertionData = (phoneNum, customerID, zipcode, state, address1, city, firstName, lastName, email)
     
     cursor.execute(query, insertionData)
