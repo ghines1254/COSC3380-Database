@@ -295,7 +295,7 @@
 }
 .easily-monitor-all {
   margin: 0;
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-base);
 }
 .begin-tracking-here-container1 {
   line-break: anywhere;
