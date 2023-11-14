@@ -466,7 +466,7 @@
   background-color: var(--lightsecond);
   height: 70px;
   z-index: 1;
-  font-size: var(--font-size-xl);
+  font-size: var(--minitext-size);
   color: var(--lightsecond);
 }
 .frame {
@@ -488,7 +488,7 @@
   width: 100%;
   height: 1024px;
   text-align: center;
-  font-size: var(--largetext-size);
+  font-size: var(--minitext-size);
   color: var(--fullblack);
   font-family: var(--largetext);
 }
