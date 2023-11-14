@@ -107,7 +107,7 @@
   border-radius: var(--br-3xs);
   background-color: var(--lightsecond);
   height: 70px;
-  font-size: var(--font-size-xl);
+  font-size: var(--minitext-size);
   color: var(--lightsecond);
 }
 .frame-child16 {
@@ -389,7 +389,7 @@
   height: 39.5px;
   cursor: pointer;
   text-align: center;
-  font-size: var(--font-size-xl);
+  font-size: var(--minitext-size);
 }
 .employee-tracking-page,
 .tracking-outline {
