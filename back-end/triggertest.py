@@ -1,6 +1,8 @@
 import mysql.connector
 from mysql.connector import Error
 import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 smtpObj = smtplib.SMTP()
 
@@ -13,6 +15,28 @@ def openConnection():
 def closeConnection(connection):
     if connection:
         connection.close()
+
+def send_email():
+    emailRecipient = "ghines1254@gmail.com"
+    subject = "Low Stock Notification"
+    message = "Low stock detected on item"
+
+    emailSender = "cougarcourier2023@gmail.com"
+    senderPassword = "Umapuma123"
+
+    sentEmail = MIMEMultipart()
+    sentEmail['From'] = emailSender
+    sentEmail['To'] = emailRecipient
+    sentEmail['Subject'] = subject
+
+    sentEmail.attach(MIMEText(message,'plain'))
+
+    with smtplib.SMTP('smtp.gmail.com', 587) as server:
+        server.starttls()
+        server.login(emailSender, senderPassword)
+        server.sendmail(emailSender, emailRecipient, sentEmail.as_string())
+
+    return "Email sent Successfully"
 
 
 def getLowStock():
