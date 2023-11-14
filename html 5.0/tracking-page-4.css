@@ -1,4 +1,4 @@
-.image-1-icon113,
+.image-1-icon16,
 .tracking-page-4-child {
   position: absolute;
   height: 100%;
@@ -11,13 +11,13 @@
 .tracking-page-4-child {
   background-color: var(--lightmain);
 }
-.image-1-icon113 {
+.image-1-icon16 {
   max-width: 100%;
   overflow: hidden;
   max-height: 100%;
   object-fit: cover;
 }
-.minibackground113 {
+.minibackground16 {
   position: absolute;
   height: calc(100% - 24px);
   width: calc(100% - 35px);
@@ -27,26 +27,26 @@
   left: 17px;
   opacity: 0.05;
 }
-.group-child79,
-.navigation-bar25 {
+.group-child38,
+.navigation-bar16 {
   position: absolute;
   left: 0;
   border-radius: var(--br-3xs);
 }
-.navigation-bar25 {
+.navigation-bar16 {
   width: 100%;
   top: 0;
   right: 0;
   background-color: var(--lightsecond);
   height: 70px;
 }
-.group-child79 {
+.group-child38 {
   top: calc(50% - 16px);
   background-color: var(--fullblack);
   width: 98.9px;
   height: 32px;
 }
-.login27 {
+.login17 {
   position: absolute;
   width: 65.12%;
   top: calc(50% - 12px);
@@ -54,12 +54,12 @@
   display: inline-block;
   height: 24.6px;
 }
-.rectangle-parent124 {
+.rectangle-parent60 {
   position: relative;
   width: 98.9px;
   height: 32px;
 }
-.navigation-bar-light-inner23 {
+.navigation-bar-light-inner14 {
   position: absolute;
   top: calc(50% - 16.5px);
   right: 0;
@@ -71,7 +71,7 @@
   padding: 0 var(--padding-mini);
   box-sizing: border-box;
 }
-.cougarcourier1-4-icon25 {
+.cougarcourier1-4-icon16 {
   position: relative;
   border-radius: var(--br-3xs);
   width: 87px;
@@ -79,7 +79,7 @@
   object-fit: cover;
   mix-blend-mode: multiply;
 }
-.cougar-courier25 {
+.cougar-courier16 {
   position: relative;
   display: flex;
   align-items: center;
@@ -88,7 +88,7 @@
   height: 55px;
   flex-shrink: 0;
 }
-.cougarcourier1-4-parent22 {
+.cougarcourier1-4-parent13 {
   position: absolute;
   top: 6px;
   left: 0;
@@ -104,7 +104,7 @@
   font-size: var(--largetext-size);
   color: var(--fullblack);
 }
-.navigation-bar-light25 {
+.navigation-bar-light16 {
   position: absolute;
   width: calc(100% - 45px);
   top: 24px;
@@ -114,12 +114,12 @@
   background-color: var(--lightsecond);
   height: 70px;
 }
-.frame-child61 {
+.frame-child28 {
   align-self: stretch;
   position: relative;
   width: 10px;
 }
-.welcome-to-your21 {
+.welcome-to-your14 {
   position: absolute;
   top: 0.5px;
   left: 0;
@@ -129,7 +129,7 @@
   width: 800px;
   height: 100px;
 }
-.welcome-to-your-portal-page-wrapper19 {
+.welcome-to-your-portal-page-wrapper12 {
   position: relative;
   border-radius: var(--br-mini);
   background-color: var(--lightmain);
@@ -138,7 +138,7 @@
   width: 800px;
   height: 100px;
 }
-.rectangle-parent125 {
+.rectangle-parent61 {
   width: 1050px;
   display: flex;
   flex-direction: row;
@@ -146,46 +146,55 @@
   justify-content: flex-start;
   gap: var(--gap-11xl);
 }
-.button-234,
-.button233,
+.button-220,
+.button219,
 .tracking9 {
   position: absolute;
   left: 0;
   width: 237px;
   height: 46px;
 }
-.button-234 {
+.button-220 {
   top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.button233,
+.button219,
 .tracking9 {
   top: 106px;
 }
-.button233 {
+.button219 {
   top: 20px;
   left: 2px;
   cursor: pointer;
 }
-.products-item,
-.products1 {
-  position: absolute;
-  left: calc(50% - 116.5px);
-}
 .products-item {
+  position: absolute;
   top: 0.5px;
+  left: calc(50% - 116.5px);
   border-radius: var(--br-3xs);
   background-color: var(--lightaccent);
   width: 227px;
   height: 44px;
 }
+.button-314,
 .products1 {
-  top: 192px;
+  position: absolute;
   width: 237px;
   height: 46px;
   cursor: pointer;
+}
+.button-314 {
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.products1 {
+  top: 192px;
+  left: calc(50% - 116.5px);
 }
 .quote-item {
   position: absolute;
@@ -205,6 +214,7 @@
   left: 0;
   width: 237px;
   height: 46px;
+  cursor: pointer;
 }
 .account2,
 .history1,
@@ -223,14 +233,14 @@
   width: 237px;
   height: 662px;
 }
-.frame-wrapper34,
-.portal-page21 {
+.frame-wrapper15,
+.portal-page14 {
   border-radius: var(--br-mini);
   background-color: var(--lightmain);
   border: 5px solid var(--fullblack);
   box-sizing: border-box;
 }
-.frame-wrapper34 {
+.frame-wrapper15 {
   align-self: stretch;
   width: 291px;
   display: flex;
@@ -239,12 +249,12 @@
   justify-content: space-between;
   padding: var(--padding-lgi) var(--padding-8xl);
 }
-.portal-page21 {
+.portal-page14 {
   position: relative;
   width: 900px;
   height: 700px;
 }
-.frame-parent51 {
+.frame-parent30 {
   height: 700px;
   display: flex;
   flex-direction: row;
@@ -254,7 +264,7 @@
   font-size: var(--largetext-size);
   color: var(--lightmain);
 }
-.frame-parent50 {
+.frame-parent29 {
   position: absolute;
   width: calc(100% - 140px);
   top: 20px;
@@ -272,7 +282,7 @@
   height: 875px;
   z-index: 0;
 }
-.group-child80 {
+.group-child39 {
   position: absolute;
   top: 0;
   left: calc(50% - 76.2px);
@@ -292,7 +302,7 @@
   width: 129.2px;
   height: 28px;
 }
-.rectangle-parent126,
+.rectangle-parent62,
 .tracking-child5 {
   position: absolute;
   top: 223px;
@@ -310,7 +320,7 @@
   width: 272px;
   height: 46px;
 }
-.group-child81,
+.group-child40,
 .tracking10 {
   position: absolute;
   top: 41px;
@@ -318,7 +328,7 @@
   width: 272px;
   height: 46px;
 }
-.group-child81 {
+.group-child40 {
   top: 0;
   left: calc(50% - 76.2px);
   border-radius: var(--br-3xs);
@@ -328,15 +338,15 @@
   width: 152.4px;
   height: 37px;
 }
-.rectangle-parent127,
-.rectangle-parent128 {
+.rectangle-parent63,
+.rectangle-parent64 {
   position: absolute;
   top: 224px;
   left: calc(50% - 342.2px);
   width: 152.4px;
   height: 37px;
 }
-.rectangle-parent128 {
+.rectangle-parent64 {
   left: calc(50% - 76.2px);
 }
 .status3,
@@ -344,7 +354,7 @@
   position: absolute;
   top: 156px;
   left: calc(50% - 127.2px);
-  font-size: var(--font-size-xl);
+  font-size: var(--minitext-size);
   font-weight: 600;
   font-family: var(--font-lexend);
   color: var(--lightaccent);
@@ -355,7 +365,7 @@
 .tracking11 {
   top: 0;
 }
-.group-parent27 {
+.group-container {
   position: absolute;
   top: 136px;
   left: calc(50% - 342px);
@@ -375,20 +385,20 @@
   z-index: 1;
   font-size: var(--font-size-base);
 }
-.portal-home-button12 {
+.portal-home-button6 {
   position: relative;
   width: 70px;
   height: 70px;
 }
-.frame87,
-.portal-centering-frame14 {
+.frame80,
+.portal-centering-frame7 {
   position: absolute;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.frame87 {
+.frame80 {
   margin: 0 !important;
   width: calc(100% - 1370px);
   top: 27px;
@@ -398,7 +408,7 @@
   cursor: pointer;
   z-index: 2;
 }
-.portal-centering-frame14 {
+.portal-centering-frame7 {
   width: 100%;
   top: 95px;
   right: 18px;
@@ -416,7 +426,7 @@
   width: 100%;
   height: 1024px;
   text-align: center;
-  font-size: var(--font-size-xl);
+  font-size: var(--minitext-size);
   color: var(--lightsecond);
   font-family: var(--largetext);
 }

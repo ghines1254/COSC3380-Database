@@ -1,4 +1,4 @@
-.image-1-icon115,
+.image-1-icon18,
 .tracking-page-2-child {
   position: absolute;
   height: 100%;
@@ -11,13 +11,13 @@
 .tracking-page-2-child {
   background-color: var(--lightmain);
 }
-.image-1-icon115 {
+.image-1-icon18 {
   max-width: 100%;
   overflow: hidden;
   max-height: 100%;
   object-fit: cover;
 }
-.minibackground115 {
+.minibackground18 {
   position: absolute;
   height: calc(100% - 24px);
   width: calc(100% - 35px);
@@ -27,26 +27,26 @@
   left: 17px;
   opacity: 0.05;
 }
-.group-child87,
-.navigation-bar27 {
+.group-child46,
+.navigation-bar18 {
   position: absolute;
   left: 0;
   border-radius: var(--br-3xs);
 }
-.navigation-bar27 {
+.navigation-bar18 {
   width: 100%;
   top: 0;
   right: 0;
   background-color: var(--lightsecond);
   height: 70px;
 }
-.group-child87 {
+.group-child46 {
   top: calc(50% - 16px);
   background-color: var(--fullblack);
   width: 98.9px;
   height: 32px;
 }
-.login29 {
+.login19 {
   position: absolute;
   width: 65.12%;
   top: calc(50% - 12px);
@@ -54,12 +54,12 @@
   display: inline-block;
   height: 24.6px;
 }
-.rectangle-parent134 {
+.rectangle-parent70 {
   position: relative;
   width: 98.9px;
   height: 32px;
 }
-.navigation-bar-light-inner25 {
+.navigation-bar-light-inner16 {
   position: absolute;
   top: calc(50% - 16.5px);
   right: 0;
@@ -71,7 +71,7 @@
   padding: 0 var(--padding-mini);
   box-sizing: border-box;
 }
-.cougarcourier1-4-icon27 {
+.cougarcourier1-4-icon18 {
   position: relative;
   border-radius: var(--br-3xs);
   width: 87px;
@@ -79,7 +79,7 @@
   object-fit: cover;
   mix-blend-mode: multiply;
 }
-.cougar-courier27 {
+.cougar-courier18 {
   position: relative;
   display: flex;
   align-items: center;
@@ -88,7 +88,7 @@
   height: 55px;
   flex-shrink: 0;
 }
-.cougarcourier1-4-parent24 {
+.cougarcourier1-4-parent15 {
   position: absolute;
   top: 6px;
   left: 0;
@@ -104,7 +104,7 @@
   font-size: var(--largetext-size);
   color: var(--fullblack);
 }
-.navigation-bar-light27 {
+.navigation-bar-light18 {
   position: absolute;
   width: calc(100% - 45px);
   top: 24px;
@@ -114,12 +114,12 @@
   background-color: var(--lightsecond);
   height: 70px;
 }
-.frame-child63 {
+.frame-child30 {
   align-self: stretch;
   position: relative;
   width: 10px;
 }
-.welcome-to-your23 {
+.welcome-to-your16 {
   position: absolute;
   top: 0.5px;
   left: 0;
@@ -129,7 +129,7 @@
   width: 800px;
   height: 100px;
 }
-.welcome-to-your-portal-page-wrapper21 {
+.welcome-to-your-portal-page-wrapper14 {
   position: relative;
   border-radius: var(--br-mini);
   background-color: var(--lightmain);
@@ -138,7 +138,7 @@
   width: 800px;
   height: 100px;
 }
-.rectangle-parent135 {
+.rectangle-parent71 {
   width: 1050px;
   display: flex;
   flex-direction: row;
@@ -155,25 +155,25 @@
   width: 227px;
   height: 44px;
 }
-.button-238,
-.button235,
+.button-224,
+.button221,
 .tracking15 {
   position: absolute;
   left: 0;
   width: 237px;
   height: 46px;
 }
-.button-238 {
+.button-224 {
   top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.button235,
+.button221,
 .tracking15 {
   top: 106px;
 }
-.button235 {
+.button221 {
   top: 20px;
   left: 2px;
   cursor: pointer;
@@ -187,7 +187,7 @@
   width: 227px;
   height: 44px;
 }
-.button-323 {
+.button-316 {
   top: 0;
   left: 0;
   display: flex;
@@ -195,7 +195,7 @@
   justify-content: center;
 }
 .account4,
-.button-323,
+.button-316,
 .history3,
 .products3,
 .quote6,
@@ -233,14 +233,14 @@
   width: 237px;
   height: 662px;
 }
-.frame-wrapper36,
-.portal-page23 {
+.frame-wrapper17,
+.portal-page16 {
   border-radius: var(--br-mini);
   background-color: var(--lightmain);
   border: 5px solid var(--fullblack);
   box-sizing: border-box;
 }
-.frame-wrapper36 {
+.frame-wrapper17 {
   align-self: stretch;
   width: 291px;
   display: flex;
@@ -249,12 +249,12 @@
   justify-content: space-between;
   padding: var(--padding-lgi) var(--padding-8xl);
 }
-.portal-page23 {
+.portal-page16 {
   position: relative;
   width: 900px;
   height: 700px;
 }
-.frame-parent55 {
+.frame-parent34 {
   height: 700px;
   display: flex;
   flex-direction: row;
@@ -264,7 +264,7 @@
   font-size: var(--largetext-size);
   color: var(--lightmain);
 }
-.frame-parent54 {
+.frame-parent33 {
   position: absolute;
   width: calc(100% - 140px);
   top: 20px;
@@ -282,7 +282,7 @@
   height: 875px;
   z-index: 0;
 }
-.group-child88 {
+.group-child47 {
   position: absolute;
   top: 0;
   left: calc(50% - 76.2px);
@@ -302,7 +302,7 @@
   width: 129.2px;
   height: 28px;
 }
-.rectangle-parent136,
+.rectangle-parent72,
 .tracking-child9 {
   position: absolute;
   top: 223px;
@@ -320,7 +320,7 @@
   width: 272px;
   height: 46px;
 }
-.group-child89,
+.group-child48,
 .tracking16 {
   position: absolute;
   top: 41px;
@@ -328,7 +328,7 @@
   width: 272px;
   height: 46px;
 }
-.group-child89 {
+.group-child48 {
   top: 0;
   left: calc(50% - 76.2px);
   border-radius: var(--br-3xs);
@@ -338,15 +338,15 @@
   width: 152.4px;
   height: 37px;
 }
-.rectangle-parent137,
-.rectangle-parent138 {
+.rectangle-parent73,
+.rectangle-parent74 {
   position: absolute;
   top: 224px;
   left: calc(50% - 342.2px);
   width: 152.4px;
   height: 37px;
 }
-.rectangle-parent138 {
+.rectangle-parent74 {
   left: calc(50% - 76.2px);
 }
 .status5,
@@ -354,7 +354,7 @@
   position: absolute;
   top: 156px;
   left: calc(50% - 127.2px);
-  font-size: var(--font-size-xl);
+  font-size: var(--minitext-size);
   font-weight: 600;
   font-family: var(--font-lexend);
   color: var(--lightaccent);
@@ -365,7 +365,7 @@
 .tracking17 {
   top: 0;
 }
-.group-parent29 {
+.group-parent2 {
   position: absolute;
   top: 136px;
   left: calc(50% - 342px);
@@ -385,20 +385,20 @@
   z-index: 1;
   font-size: var(--font-size-base);
 }
-.portal-home-button14 {
+.portal-home-button8 {
   position: relative;
   width: 70px;
   height: 70px;
 }
-.frame89,
-.portal-centering-frame16 {
+.frame82,
+.portal-centering-frame9 {
   position: absolute;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.frame89 {
+.frame82 {
   margin: 0 !important;
   width: calc(100% - 1370px);
   top: 27px;
@@ -408,7 +408,7 @@
   cursor: pointer;
   z-index: 2;
 }
-.portal-centering-frame16 {
+.portal-centering-frame9 {
   width: 100%;
   top: 95px;
   right: 18px;
@@ -426,7 +426,7 @@
   width: 100%;
   height: 1024px;
   text-align: center;
-  font-size: var(--font-size-xl);
+  font-size: var(--minitext-size);
   color: var(--lightsecond);
   font-family: var(--largetext);
 }

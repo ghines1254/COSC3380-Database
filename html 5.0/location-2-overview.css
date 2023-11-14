@@ -1,4 +1,4 @@
-.image-1-icon16,
+.image-1-icon7,
 .location-2-overview-child {
   position: absolute;
   height: 100%;
@@ -11,13 +11,13 @@
 .location-2-overview-child {
   background-color: var(--lightmain);
 }
-.image-1-icon16 {
+.image-1-icon7 {
   max-width: 100%;
   overflow: hidden;
   max-height: 100%;
   object-fit: cover;
 }
-.minibackground16 {
+.minibackground7 {
   position: absolute;
   height: calc(100% - 24px);
   width: calc(100% - 35px);
@@ -27,26 +27,26 @@
   left: 17px;
   opacity: 0.05;
 }
-.group-child56,
-.navigation-bar16 {
+.group-child15,
+.navigation-bar7 {
   position: absolute;
   left: 0;
   border-radius: var(--br-3xs);
 }
-.navigation-bar16 {
+.navigation-bar7 {
   width: 100%;
   top: 0;
   right: 0;
   background-color: var(--lightsecond);
   height: 70px;
 }
-.group-child56 {
+.group-child15 {
   top: calc(50% - 16px);
   background-color: var(--fullblack);
   width: 98.9px;
   height: 32px;
 }
-.login17 {
+.login7 {
   position: absolute;
   width: 65.12%;
   top: calc(50% - 12px);
@@ -54,12 +54,12 @@
   display: inline-block;
   height: 24.6px;
 }
-.rectangle-parent85 {
+.rectangle-parent21 {
   position: relative;
   width: 98.9px;
   height: 32px;
 }
-.navigation-bar-light-inner14 {
+.navigation-bar-light-inner5 {
   position: absolute;
   top: calc(50% - 16.5px);
   right: 0;
@@ -71,7 +71,7 @@
   padding: 0 var(--padding-mini);
   box-sizing: border-box;
 }
-.cougarcourier1-4-icon16 {
+.cougarcourier1-4-icon7 {
   position: relative;
   border-radius: var(--br-3xs);
   width: 87px;
@@ -79,7 +79,7 @@
   object-fit: cover;
   mix-blend-mode: multiply;
 }
-.cougar-courier16 {
+.cougar-courier7 {
   position: relative;
   display: flex;
   align-items: center;
@@ -88,7 +88,7 @@
   height: 55px;
   flex-shrink: 0;
 }
-.cougarcourier1-4-parent13 {
+.cougarcourier1-4-parent5 {
   position: absolute;
   top: 6px;
   left: 0;
@@ -104,7 +104,7 @@
   font-size: var(--largetext-size);
   color: var(--fullblack);
 }
-.navigation-bar-light16 {
+.navigation-bar-light7 {
   position: absolute;
   width: calc(100% - 45px);
   top: 24px;
@@ -113,15 +113,15 @@
   border-radius: var(--br-3xs);
   background-color: var(--lightsecond);
   height: 70px;
-  font-size: var(--font-size-xl);
+  font-size: var(--minitext-size);
   color: var(--lightsecond);
 }
-.frame-child36 {
+.frame-child4 {
   align-self: stretch;
   position: relative;
   width: 10px;
 }
-.welcome-to-your13 {
+.welcome-to-your6 {
   position: absolute;
   top: 0.5px;
   left: 0;
@@ -131,7 +131,7 @@
   width: 800px;
   height: 100px;
 }
-.welcome-to-your-portal-page-wrapper11 {
+.welcome-to-your-portal-page-wrapper4 {
   position: relative;
   border-radius: var(--br-mini);
   background-color: var(--lightmain);
@@ -140,7 +140,7 @@
   width: 800px;
   height: 100px;
 }
-.rectangle-parent86 {
+.rectangle-parent22 {
   width: 1050px;
   display: flex;
   flex-direction: row;
@@ -148,24 +148,24 @@
   justify-content: flex-start;
   gap: var(--gap-11xl);
 }
-.button-225,
-.button225 {
+.button-211,
+.button211 {
   position: absolute;
   left: 0;
   width: 237px;
   height: 46px;
 }
-.button-225 {
+.button-211 {
   top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.button225 {
+.button211 {
   top: 59px;
   cursor: pointer;
 }
-.button3-child11 {
+.button3-child4 {
   position: absolute;
   top: 0.5px;
   left: calc(50% - 116.5px);
@@ -174,18 +174,18 @@
   width: 227px;
   height: 44px;
 }
-.button313,
-.button425 {
+.button36,
+.button411 {
   position: absolute;
   width: 237px;
   height: 46px;
   cursor: pointer;
 }
-.button313 {
+.button36 {
   top: 168px;
   left: calc(50% - 118.5px);
 }
-.button425 {
+.button411 {
   top: 277px;
   left: 0;
 }
@@ -199,7 +199,7 @@
   height: 44px;
 }
 .button51,
-.button713 {
+.button76 {
   position: absolute;
   top: 386px;
   left: 2px;
@@ -207,23 +207,23 @@
   height: 46px;
   cursor: pointer;
 }
-.button713 {
+.button76 {
   top: 495px;
   left: 5px;
 }
-.button2-parent11 {
+.button2-parent4 {
   position: relative;
   width: 237px;
   height: 662px;
 }
-.frame-wrapper25,
-.portal-page13 {
+.frame-wrapper6,
+.portal-page6 {
   border-radius: var(--br-mini);
   background-color: var(--lightmain);
   border: 5px solid var(--fullblack);
   box-sizing: border-box;
 }
-.frame-wrapper25 {
+.frame-wrapper6 {
   align-self: stretch;
   width: 291px;
   display: flex;
@@ -232,17 +232,17 @@
   justify-content: space-between;
   padding: var(--padding-lgi) var(--padding-8xl);
 }
-.portal-page13 {
+.portal-page6 {
   position: relative;
   width: 900px;
   height: 700px;
 }
-.frame-parent30,
-.frame-parent31 {
+.frame-parent10,
+.frame-parent11 {
   display: flex;
   justify-content: flex-start;
 }
-.frame-parent31 {
+.frame-parent11 {
   height: 700px;
   flex-direction: row;
   align-items: center;
@@ -250,7 +250,7 @@
   font-size: var(--largetext-size);
   color: var(--lightmain);
 }
-.frame-parent30 {
+.frame-parent10 {
   position: absolute;
   width: calc(100% - 140px);
   top: 20px;
@@ -268,7 +268,7 @@
   height: 875px;
   font-size: var(--font-size-29xl);
 }
-.group-child57 {
+.group-child16 {
   position: absolute;
   top: 0;
   left: calc(50% - 351px);
@@ -290,7 +290,7 @@
   width: 702px;
   height: 277px;
 }
-.rectangle-parent87 {
+.rectangle-parent23 {
   position: absolute;
   top: 687px;
   left: calc(50% - 164px);
@@ -300,14 +300,14 @@
   text-align: left;
   color: var(--lightaccent);
 }
-.vector-icon31 {
+.vector-icon2 {
   position: absolute;
   top: 33px;
   left: calc(50% - 123.5px);
   width: 242px;
   height: 221px;
 }
-.group-child58 {
+.group-child17 {
   position: absolute;
   width: 100%;
   top: 0;
@@ -328,7 +328,7 @@
   display: inline-block;
   height: 32.2px;
 }
-.rectangle-parent88 {
+.rectangle-parent24 {
   position: absolute;
   width: calc(100% - 114px);
   top: 311px;
@@ -336,7 +336,7 @@
   left: 54px;
   height: 52px;
 }
-.vector-parent2 {
+.vector-group {
   position: absolute;
   top: 298px;
   left: calc(50% + 46px);
@@ -344,7 +344,7 @@
   height: 389px;
   overflow: hidden;
 }
-.vector-icon32 {
+.vector-icon3 {
   position: absolute;
   top: 169px;
   left: calc(50% + 567px);

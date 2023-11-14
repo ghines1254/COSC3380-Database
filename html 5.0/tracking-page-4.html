@@ -22,97 +22,97 @@
   <body>
     <div class="tracking-page-4">
       <div class="tracking-page-4-child"></div>
-      <div class="minibackground113">
-        <img class="image-1-icon113" alt="" src="./public/image-12@2x.png" />
+      <div class="minibackground16">
+        <img class="image-1-icon16" alt="" src="./public/image-143@2x.png" />
       </div>
-      <div class="navigation-bar-light25">
-        <div class="navigation-bar25"></div>
-        <div class="navigation-bar-light-inner23">
-          <div class="rectangle-parent124">
-            <div class="group-child79"></div>
-            <b class="login27">Login</b>
+      <div class="navigation-bar-light16">
+        <div class="navigation-bar16"></div>
+        <div class="navigation-bar-light-inner14">
+          <div class="rectangle-parent60">
+            <div class="group-child38"></div>
+            <b class="login17">Login</b>
           </div>
         </div>
-        <div class="cougarcourier1-4-parent22" id="frameContainer1">
+        <div class="cougarcourier1-4-parent13" id="frameContainer1">
           <img
-            class="cougarcourier1-4-icon25"
+            class="cougarcourier1-4-icon16"
             alt=""
-            src="./public/cougarcourier1-4@2x.png"
+            src="./public/cougarcourier1-411@2x.png"
           />
 
-          <b class="cougar-courier25">Cougar Courier</b>
+          <b class="cougar-courier16">Cougar Courier</b>
         </div>
       </div>
-      <div class="portal-centering-frame14">
+      <div class="portal-centering-frame7">
         <div class="customer-portal-outline1">
-          <div class="frame-parent50">
-            <div class="rectangle-parent125">
-              <div class="frame-child61"></div>
-              <div class="welcome-to-your-portal-page-wrapper19">
-                <b class="welcome-to-your21">Tracking Packages</b>
+          <div class="frame-parent29">
+            <div class="rectangle-parent61">
+              <div class="frame-child28"></div>
+              <div class="welcome-to-your-portal-page-wrapper12">
+                <b class="welcome-to-your14">Tracking Packages</b>
               </div>
             </div>
-            <div class="frame-parent51">
-              <div class="frame-wrapper34">
+            <div class="frame-parent30">
+              <div class="frame-wrapper15">
                 <div class="tracking-group">
                   <div class="tracking9">
                     <div class="quote-item"></div>
-                    <b class="button-234">Tracking</b>
+                    <b class="button-220">Tracking</b>
                   </div>
-                  <div class="button233" id="button2Container">
+                  <div class="button219" id="button2Container">
                     <div class="quote-item"></div>
-                    <b class="button-234">Shipping</b>
+                    <b class="button-220">Shipping</b>
                   </div>
                   <div class="products1" id="productsContainer">
                     <div class="products-item"></div>
-                    <b class="button-234">Products</b>
+                    <b class="button-314" id="button3Text">Products</b>
                   </div>
-                  <div class="quote2">
+                  <div class="quote2" id="quoteContainer">
                     <div class="quote-item"></div>
-                    <b class="button-234">Quote</b>
+                    <b class="button-220">Quote</b>
                   </div>
-                  <div class="support1">
+                  <div class="support1" id="supportContainer">
                     <div class="quote-item"></div>
-                    <b class="button-234">Support</b>
+                    <b class="button-220">Support</b>
                   </div>
-                  <div class="history1">
+                  <div class="history1" id="historyContainer">
                     <div class="quote-item"></div>
-                    <b class="button-234">History</b>
+                    <b class="button-220">History</b>
                   </div>
-                  <div class="account2">
+                  <div class="account2" id="accountContainer">
                     <div class="quote-item"></div>
-                    <b class="button-234">Account</b>
+                    <b class="button-220">Account</b>
                   </div>
                 </div>
               </div>
-              <div class="portal-page21"></div>
+              <div class="portal-page14"></div>
             </div>
           </div>
         </div>
         <div class="portal-centering-frame-inner">
-          <div class="group-parent27">
-            <div class="rectangle-parent126">
-              <div class="group-child80"></div>
+          <div class="group-container">
+            <div class="rectangle-parent62">
+              <div class="group-child39"></div>
               <div class="delivered3">Delivered</div>
             </div>
             <div class="tracking10">
               <div class="tracking-child5"></div>
             </div>
-            <div class="rectangle-parent127">
-              <div class="group-child81"></div>
+            <div class="rectangle-parent63">
+              <div class="group-child40"></div>
               <div class="delivered3">At Post Office</div>
             </div>
-            <div class="rectangle-parent128">
-              <div class="group-child81"></div>
+            <div class="rectangle-parent64">
+              <div class="group-child40"></div>
               <div class="delivered3">En Route</div>
             </div>
             <div class="status3">Status:</div>
             <div class="tracking11">Tracking #:</div>
           </div>
         </div>
-        <div class="frame87" id="frameContainer9">
+        <div class="frame80" id="frameContainer9">
           <img
-            class="portal-home-button12"
+            class="portal-home-button6"
             alt=""
             src="./public/portal-home-button.svg"
           />
@@ -135,10 +135,45 @@
         });
       }
       
+      var button3Text = document.getElementById("button3Text");
+      if (button3Text) {
+        button3Text.addEventListener("click", function (e) {
+          // Please sync "Products Page" to the project
+        });
+      }
+      
       var productsContainer = document.getElementById("productsContainer");
       if (productsContainer) {
         productsContainer.addEventListener("click", function (e) {
           window.location.href = "./products-page.html";
+        });
+      }
+      
+      var quoteContainer = document.getElementById("quoteContainer");
+      if (quoteContainer) {
+        quoteContainer.addEventListener("click", function (e) {
+          // Please sync "Quote Page" to the project
+        });
+      }
+      
+      var supportContainer = document.getElementById("supportContainer");
+      if (supportContainer) {
+        supportContainer.addEventListener("click", function (e) {
+          // Please sync "Support Page" to the project
+        });
+      }
+      
+      var historyContainer = document.getElementById("historyContainer");
+      if (historyContainer) {
+        historyContainer.addEventListener("click", function (e) {
+          // Please sync "History Page" to the project
+        });
+      }
+      
+      var accountContainer = document.getElementById("accountContainer");
+      if (accountContainer) {
+        accountContainer.addEventListener("click", function (e) {
+          // Please sync "Account Page" to the project
         });
       }
       

@@ -1,4 +1,4 @@
-.image-1-icon2 {
+.image-1-icon1 {
   position: absolute;
   height: 100%;
   width: calc(100% + 0.3px);
@@ -11,7 +11,7 @@
   max-height: 100%;
   object-fit: cover;
 }
-.minibackground2 {
+.minibackground1 {
   position: absolute;
   height: calc(100% - 24px);
   width: calc(100% - 34.3px);
@@ -21,26 +21,26 @@
   left: 17px;
   opacity: 0.05;
 }
-.navigation-bar2,
-.rectangle-div {
+.group-item,
+.navigation-bar1 {
   position: absolute;
   left: 0;
   border-radius: var(--br-3xs);
 }
-.navigation-bar2 {
+.navigation-bar1 {
   width: 100%;
   top: 0;
   right: 0;
   background-color: var(--lightsecond);
   height: 70px;
 }
-.rectangle-div {
+.group-item {
   top: calc(50% - 16px);
   background-color: var(--fullblack);
   width: 98.9px;
   height: 32px;
 }
-.login2 {
+.login1 {
   position: absolute;
   width: 65.12%;
   top: calc(50% - 12px);
@@ -48,12 +48,12 @@
   display: inline-block;
   height: 24.6px;
 }
-.group-div {
+.rectangle-group {
   position: relative;
   width: 98.9px;
   height: 32px;
 }
-.frame-div {
+.navigation-bar-light-child {
   position: absolute;
   top: calc(50% - 16.5px);
   right: 0;
@@ -65,7 +65,7 @@
   padding: 0 var(--padding-mini);
   box-sizing: border-box;
 }
-.cougarcourier1-4-icon2 {
+.cougarcourier1-4-icon1 {
   position: relative;
   border-radius: var(--br-3xs);
   width: 87px;
@@ -73,7 +73,7 @@
   object-fit: cover;
   mix-blend-mode: multiply;
 }
-.cougar-courier2 {
+.cougar-courier1 {
   position: relative;
   display: flex;
   align-items: center;
@@ -82,7 +82,7 @@
   height: 55px;
   flex-shrink: 0;
 }
-.cougarcourier1-4-container {
+.cougarcourier1-4-group {
   position: absolute;
   top: 6px;
   left: 0;
@@ -98,7 +98,7 @@
   font-size: var(--largetext-size);
   color: var(--fullblack);
 }
-.navigation-bar-light2 {
+.navigation-bar-light1 {
   position: absolute;
   width: calc(100% - 45px);
   top: 25px;
@@ -133,7 +133,7 @@
   width: 800px;
   height: 100px;
 }
-.rectangle-parent1 {
+.rectangle-container {
   width: 1050px;
   display: flex;
   flex-direction: row;
@@ -150,10 +150,17 @@
   width: 227px;
   height: 44px;
 }
-.button2 {
-  position: relative;
+.button2,
+.button21 {
+  position: absolute;
+  top: 25px;
+  left: 0;
   width: 237px;
   height: 46px;
+  cursor: pointer;
+}
+.button21 {
+  top: 130px;
 }
 .button3-child {
   position: absolute;
@@ -164,27 +171,43 @@
   width: 227px;
   height: 44px;
 }
-.button2-parent,
+.button3 {
+  position: absolute;
+  top: 235px;
+  left: calc(50% - 113.5px);
+  width: 237px;
+  height: 46px;
+  cursor: pointer;
+}
+.button4,
+.button41,
+.button7,
 .delivery {
   position: absolute;
   left: 0;
-  display: flex;
-}
-.delivery {
-  top: 0;
-  align-items: center;
-  justify-content: center;
   width: 237px;
   height: 46px;
 }
-.button2-parent {
-  top: 20px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-18xl);
+.delivery {
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.frame-wrapper1 {
+.button4,
+.button41,
+.button7 {
+  top: 340px;
+  cursor: pointer;
+}
+.button41,
+.button7 {
+  top: 445px;
+}
+.button7 {
+  top: 550px;
+}
+.button2-parent {
   position: relative;
   width: 237px;
   height: 662px;
@@ -210,12 +233,12 @@
   width: 900px;
   height: 700px;
 }
-.frame-container,
-.frame-parent1 {
+.frame-group,
+.frame-parent {
   display: flex;
   justify-content: flex-start;
 }
-.frame-parent1 {
+.frame-group {
   height: 700px;
   flex-direction: row;
   align-items: center;
@@ -223,7 +246,7 @@
   font-size: var(--largetext-size);
   color: var(--lightmain);
 }
-.frame-container {
+.frame-parent {
   position: absolute;
   width: calc(100% - 140px);
   top: 20px;
@@ -283,7 +306,7 @@
 .status {
   top: 581px;
 }
-.group-child1 {
+.group-inner {
   position: absolute;
   top: 0;
   left: calc(50% - 76.2px);
@@ -303,28 +326,28 @@
   width: 129.2px;
   height: 28px;
 }
-.rectangle-parent2,
-.rectangle-parent3 {
+.group-div,
+.rectangle-parent1 {
   top: 649px;
   font-size: var(--font-size-base);
 }
-.rectangle-parent2 {
+.group-div {
   position: absolute;
   left: calc(50% - 140px);
   width: 152.4px;
   height: 37px;
 }
-.rectangle-parent3 {
+.rectangle-parent1 {
   left: calc(50% + 126px);
 }
-.group-child3,
-.rectangle-parent3,
-.rectangle-parent4 {
+.group-child1,
+.rectangle-parent1,
+.rectangle-parent2 {
   position: absolute;
   width: 152.4px;
   height: 37px;
 }
-.group-child3 {
+.group-child1 {
   top: 0;
   left: calc(50% - 76.2px);
   border-radius: var(--br-3xs);
@@ -332,7 +355,7 @@
   border: 1px solid var(--lightaccent);
   box-sizing: border-box;
 }
-.rectangle-parent4 {
+.rectangle-parent2 {
   top: 648px;
   left: calc(50% + 392px);
   font-size: var(--font-size-base);
@@ -342,10 +365,10 @@
   width: 70px;
   height: 70px;
 }
-.frame1 {
+.frame {
   position: absolute;
   top: 157px;
-  left: 1287px;
+  left: calc(50% + 567px);
   width: 70px;
   overflow: hidden;
   display: flex;
@@ -361,7 +384,7 @@
   height: 1024px;
   overflow: hidden;
   text-align: center;
-  font-size: var(--font-size-xl);
+  font-size: var(--minitext-size);
   color: var(--fullblack);
   font-family: var(--largetext);
 }

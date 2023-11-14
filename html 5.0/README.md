@@ -1,5 +1,5 @@
 
-  # html 5.0
+  # HTML 4.0
 
   Note: Please ensure you have installed <code><a href="https://nodejs.org/en/download/">nodejs</a></code>
 

@@ -3,8 +3,8 @@
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 .admin-login-page-child,
-.image-1-icon111,
-.minibackground111 {
+.image-1-icon14,
+.minibackground14 {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -13,16 +13,16 @@
   bottom: 0;
   left: 0;
 }
-.image-1-icon111 {
+.image-1-icon14 {
   max-width: 100%;
   overflow: hidden;
   max-height: 100%;
   object-fit: cover;
 }
-.minibackground111 {
+.minibackground14 {
   opacity: 0.05;
 }
-.main-shape1 {
+.main-shape {
   position: absolute;
   width: calc(100% - 248px);
   top: 44px;
@@ -32,7 +32,7 @@
   height: 386px;
   mix-blend-mode: color-burn;
 }
-.forgot-user-id1 {
+.forgot-user-id {
   position: relative;
   font-weight: 600;
   display: flex;
@@ -43,7 +43,7 @@
   flex-shrink: 0;
   z-index: 0;
 }
-.frame-child59 {
+.line-div {
   position: absolute;
   margin: 0 !important;
   width: calc(100% - 19px);
@@ -55,7 +55,7 @@
   height: 4px;
   z-index: 1;
 }
-.forgot-user-id-or-password-group {
+.forgot-user-id-or-password-parent {
   position: absolute;
   width: calc(100% - 456px);
   top: 496px;
@@ -69,11 +69,11 @@
   font-size: var(--font-size-5xl);
   color: var(--lightaccent);
 }
-.sign-up3 {
+.sign-up {
   position: relative;
   font-weight: 600;
 }
-.sign-up-container {
+.sign-up-wrapper {
   position: absolute;
   width: calc(100% - 802px);
   top: 388px;
@@ -86,15 +86,15 @@
   justify-content: center;
   padding: var(--padding-11xs) var(--padding-6xs);
   cursor: pointer;
-  font-size: var(--font-size-xl);
+  font-size: var(--minitext-size);
 }
-.login-container,
-.sign-up-container,
-.usernamebar1 {
+.login-wrapper,
+.sign-up-wrapper,
+.usernamebar {
   border-radius: var(--br-3xs);
   box-sizing: border-box;
 }
-.login-container {
+.login-wrapper {
   position: absolute;
   width: calc(100% - 749px);
   top: 288px;
@@ -108,14 +108,14 @@
   padding: var(--padding-8xs) var(--padding-9xl);
   cursor: pointer;
 }
-.usernamebar1 {
+.usernamebar {
   border: 1px solid var(--lightaccent);
   background-color: transparent;
   position: relative;
   width: 650px;
   height: 60px;
 }
-.usernamepasswordgroup1 {
+.usernamepasswordgroup {
   position: absolute;
   width: calc(100% - 245px);
   top: 122px;
@@ -127,11 +127,11 @@
   justify-content: center;
   gap: var(--gap-5xl);
 }
-.customer1 {
+.customer {
   position: relative;
 }
-.admin-container,
-.customer-container {
+.admin-wrapper,
+.customer-wrapper {
   border-radius: var(--br-3xs);
   display: flex;
   flex-direction: row;
@@ -139,15 +139,15 @@
   justify-content: center;
   padding: var(--padding-3xs);
 }
-.customer-container {
+.customer-wrapper {
   background-color: var(--darktext);
   cursor: pointer;
 }
-.admin-container {
+.admin-wrapper {
   background-color: var(--fullblack);
   color: var(--lightmain);
 }
-.frame-parent46 {
+.frame-parent25 {
   position: absolute;
   top: 12px;
   left: calc(50% - 436.5px);
@@ -158,7 +158,7 @@
   gap: var(--gap-117xl);
   color: var(--lighttext);
 }
-.login-light1 {
+.login-light {
   position: absolute;
   top: 220px;
   left: calc(50% - 448px);
@@ -169,26 +169,26 @@
   width: 895px;
   height: 561px;
 }
-.group-child76,
-.navigation-bar23 {
+.group-child35,
+.navigation-bar14 {
   position: absolute;
   left: 0;
   border-radius: var(--br-3xs);
 }
-.navigation-bar23 {
+.navigation-bar14 {
   width: 100%;
   top: 0;
   right: 0;
   background-color: var(--lightsecond);
   height: 70px;
 }
-.group-child76 {
+.group-child35 {
   top: calc(50% - 16px);
   background-color: var(--fullblack);
   width: 98.9px;
   height: 32px;
 }
-.login25 {
+.login15 {
   position: absolute;
   width: 65.12%;
   top: calc(50% - 12px);
@@ -196,12 +196,12 @@
   display: inline-block;
   height: 24.6px;
 }
-.rectangle-parent120 {
+.rectangle-parent56 {
   position: relative;
   width: 98.9px;
   height: 32px;
 }
-.navigation-bar-light-inner21 {
+.navigation-bar-light-inner12 {
   position: absolute;
   top: calc(50% - 16.5px);
   right: 0;
@@ -213,7 +213,7 @@
   padding: 0 var(--padding-mini);
   box-sizing: border-box;
 }
-.cougarcourier1-4-icon23 {
+.cougarcourier1-4-icon14 {
   position: relative;
   border-radius: var(--br-3xs);
   width: 87px;
@@ -221,7 +221,7 @@
   object-fit: cover;
   mix-blend-mode: multiply;
 }
-.cougar-courier23 {
+.cougar-courier14 {
   position: relative;
   font-size: var(--largetext-size);
   display: flex;
@@ -234,7 +234,7 @@
   height: 55px;
   flex-shrink: 0;
 }
-.cougarcourier1-4-parent20 {
+.frame-button {
   cursor: pointer;
   border: 0;
   padding: 0 var(--padding-mini);
@@ -250,7 +250,7 @@
   box-sizing: border-box;
   gap: var(--gap-base);
 }
-.navigation-bar-light23 {
+.navigation-bar-light14 {
   position: absolute;
   width: calc(100% - 5px);
   top: 13px;
@@ -259,9 +259,9 @@
   border-radius: var(--br-3xs);
   background-color: var(--lightsecond);
   height: 70px;
-  font-size: var(--font-size-xl);
+  font-size: var(--minitext-size);
 }
-.login-page1 {
+.login-page {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -270,7 +270,7 @@
   bottom: 0;
   left: 0;
 }
-.login-page-container {
+.login-page-wrapper {
   position: absolute;
   height: calc(100% - 24px);
   width: calc(100% - 40px);
