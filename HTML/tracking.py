@@ -5,11 +5,11 @@ import json
 # Assuming dbConnector contains the database connection details
 from dbConnector import db_connection, cursor
 
-@app.route('/track', method='GET')
+@app.route('/tracking-page.py', method='GET')
 def track_package():
     tracking_number = request.query.tracking_number
     if tracking_number:
-        query = "SELECT package_id FROM PACKAGE"
+        query = "SELECT tracking_number FROM PACKAGE"
         cursor.execute(query, (tracking_number,))
         status = cursor.fetchone()
 
@@ -24,4 +24,4 @@ def track_package():
     return json.dumps({'status': 'invalid'})
 
 # Replace HOST and PORT with your server's configuration
-run(app, host='34.68.154.206', port=8080)
+# run(app, host='34.68.154.206', port=8080)
