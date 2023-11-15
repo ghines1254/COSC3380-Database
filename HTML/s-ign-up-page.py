@@ -1,3 +1,4 @@
+'''
 import mysql.connector as mysql
 from dbConnector import *
 from uuid import uuid4
@@ -40,3 +41,4 @@ def get_unique_id():
         while new_id in existing_ids:
             new_id = str(uuid4().int)[:10]
     return new_id
+'''
