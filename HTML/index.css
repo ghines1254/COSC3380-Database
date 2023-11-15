@@ -80,18 +80,20 @@
   height: 32px;
 }
 .login {
-  position: absolute;
+  position: relative;
   width: 65.12%;
   top: calc(50% - 12px);
   left: 17.19%;
-  display: inline-block;
+  display: block;
   height: calc(50%);
 }
 .rectangle-parent {
+  text-align: center;
   position: relative;
-  width: 98.9px;
+  width: auto;
   height: 32px;
   cursor: pointer;
+  display: inline-block;
   color: var(--lightsecond);
 }
 .vector-parent {
