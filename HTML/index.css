@@ -73,7 +73,7 @@
 }
 .group-child {
   position: absolute;
-  top: calc(50% - 16px);
+  top: calc(50%);
   left: 0;
   background-color: var(--fullblack);
   width: 98.9px;
