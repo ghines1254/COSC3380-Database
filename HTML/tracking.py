@@ -35,4 +35,4 @@ def track_package():
 
 
 # Replace HOST and PORT with your server's configuration
-# run(app, host='34.68.154.206', port=8080)
+run(app, host='34.68.154.206', port=8080)
