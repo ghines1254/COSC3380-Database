@@ -9,7 +9,7 @@ from dbConnector import db_connection, cursor
 def track_package():
     tracking_number = request.query.tracking_number
     if tracking_number:
-        query = "SELECT status FROM tracking WHERE tracking_number = %s"
+        query = "SELECT package_id FROM PACKAGE"
         cursor.execute(query, (tracking_number,))
         status = cursor.fetchone()
 
