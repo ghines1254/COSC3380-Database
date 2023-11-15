@@ -72,8 +72,8 @@
   height: 37.9px;
 }
 .group-child {
-  position: absolute;
-  top: calc(50% - 16px);
+  position: relative;
+  top: calc(50% - 12px);
   left: 0;
   background-color: var(--fullblack);
   width: 98.9px;
@@ -85,7 +85,7 @@
   top: calc(50% - 12px);
   left: 17.19%;
   display: inline-block;
-  height: 24.6px;
+  height: calc(50%);
 }
 .rectangle-parent {
   position: relative;
