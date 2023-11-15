@@ -194,9 +194,9 @@
         });
       }
 // tracking stuff 
-  document.getElementById('trackButton').addEventListener('click', function() {
+document.getElementById('trackButton').addEventListener('click', function() {
     var trackingNumber = document.getElementById('trackingInput').value;
-    fetch('/track?tracking_number=' + trackingNumber)
+    fetch('https://coogmail.com/track?tracking_number=' + trackingNumber)
         .then(response => response.json())
         .then(data => {
             if (data.status === 'At Post Office') {
@@ -211,7 +211,7 @@
         })
         .catch(error => console.error('Error:', error));
 });
-      
+ 
       </script>
   </body>
 </html>
