@@ -3,8 +3,8 @@ from dbConnector import *
 from uuid import uuid4
 
 from bottle import route, run, template, request, static_file
-@route('/s-ign-up-page', method = 'post')
 
+@route('/s-ign-up-page', method = 'POST')
 def signupPage():
     customerID = get_unique_id()
     firstName = request.forms.get('firstname')
