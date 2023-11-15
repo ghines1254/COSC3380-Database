@@ -398,11 +398,19 @@
       var button4 = document.getElementById("button4");
       if (button4) {
         button4.addEventListener("click", function (e) {
-                alert("help :(");
+
+            fetch('admin-employees-page.py')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('result').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('result').innerHTML = 'An error occurred.';
 
                                                         });
 
-      }
+      });
       </script>
   </body>
 </html>
