@@ -223,7 +223,9 @@
             <div class="rectangle-group" id="groupContainer">
               <div class="group-item"></div>
               <div class="sign-up">
-              <button type = submit class="welcome-lets-get">Sign Up</button>
+                <button type = submit value = "Submit" class="welcome-lets-get">Sign Up</button>
+              </div>
+            </div>
           </div>
           <div class="navigation-bar-light1">
             <div class="navigation-bar1"></div>
@@ -255,9 +257,6 @@
             // Display the submitted values on the screen
           var submittedValuesDiv = document.getElementById('submittedValues');
           submittedValuesDiv.innerHTML = `<p>Submitted values: First Name - ${firstname},  - ${lastname}</p>`
-
-          
-          window.location.href = "./cutomer-portal-nofications-page.html";
         }
         var logIn = document.getElementById("logIn");
         if (logIn) {
