@@ -18,12 +18,20 @@ def signupPage():
     zipcode = request.forms.get('zip')
     email = request.forms.get('email')
     phoneNum = request.forms.get('phone1')
+    password = request.forms.get('password')
 
     print(firstName + " " + lastName)
 
     query = "INSERT INTO CUSTOMER VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, now() )"
     insertionData = (phoneNum, customerID, zipcode, state, address1 + " " + address2, city, firstName, lastName, email)
     
+    cursor.execute(query, insertionData)
+
+    db_connection.commit()
+
+    query = "INSERT INTO WEBUSERS(UserID, Password, Email, CUSTOMERID, ROLEID, created_on) VALUES (%s, %s, %s, %s, 1, now())"
+    insertionData = (customerID, password, email, customerID)
+
     cursor.execute(query, insertionData)
     
     db_connection.commit()
