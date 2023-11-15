@@ -15,7 +15,7 @@ print("Connected to:", db_connection.get_server_info())
 # Creating a cursor object using the cursor() method
 cursor = db_connection.cursor(buffered=True)
 
-@app.route('/tracking-page.py', method='GET')
+@app.route('/tracking.py', method='GET')
 def track_package():
     tracking_number = request.query.tracking_number
     if tracking_number:
