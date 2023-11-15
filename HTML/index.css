@@ -81,11 +81,7 @@
 }
 .login {
   position: relative;
-  width: 65.12%;
-  top: calc(50% - 12px);
-  left: 17.19%;
-  display: inline-block;
-  height: calc(50%);
+  display: block;
 }
 .rectangle-parent {
   text-align: center;
