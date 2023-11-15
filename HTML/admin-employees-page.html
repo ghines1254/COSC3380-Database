@@ -403,11 +403,11 @@
             .then(response => response.text())
             .then(data => {
               
-                document.getElementById('result').innerHTML = data;
+                document.getElementById('response').innerHTML = data;
             })
             .catch(error => {
                 console.error('Error:', error);
-                document.getElementById('result').innerHTML = 'An error occurred.';
+                document.getElementById('response').innerHTML = 'An error occurred.';
             }); </script>
 
 
