@@ -80,7 +80,7 @@
   height: 32px;
 }
 .login {
-  position: absolute;
+  position: relative;
   width: 65.12%;
   top: calc(50% - 12px);
   left: 17.19%;
