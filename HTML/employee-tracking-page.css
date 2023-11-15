@@ -107,7 +107,7 @@
   border-radius: var(--br-3xs);
   background-color: var(--lightsecond);
   height: 70px;
-  font-size: var(--minitext-size);
+  font-size: var(--font-size-5xl);
   color: var(--lightsecond);
 }
 .frame-child {
