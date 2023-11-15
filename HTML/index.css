@@ -82,10 +82,10 @@
 .login {
   position: relative;
   width: 65.12%;
-  top: calc(50% - 12px);
+  top: calc(50%);
   left: 17.19%;
   display: inline-block;
-  height: 24.6px;
+  height: calc(50%);
 }
 .rectangle-parent {
   position: relative;
