@@ -5,7 +5,7 @@ from main import *
 
 from bottle import route, run, template, request, static_file
 
-@route('/HTML/s-ign-up-page.py', method = 'POST')
+@app.route('/signup', method = 'POST')
 def signupPage():
 
     customerID = get_unique_id()
