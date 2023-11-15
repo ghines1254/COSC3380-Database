@@ -16,3 +16,6 @@ def adminEmployeePage():
     json_output = json.dumps(employees)
 
     return json_output
+
+if __name__ == "__main__":
+    print(adminEmployeePage())
