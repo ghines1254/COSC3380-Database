@@ -9,6 +9,7 @@ def signupPage():
     customerID = get_unique_id()
     firstName = request.forms.get('firstname')
     lastName = request.forms.get('lastname')
+    middleInitial = request.forms.get('middleinitial')
     address1 = request.forms.get('address-line-1')
     address2 = request.forms.get('address-line-2')
     city = request.forms.get('city1')
@@ -18,7 +19,7 @@ def signupPage():
     phoneNum = request.forms.get('phone1')
 
     query = "INSERT INTO CUSTOMER VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, now() )"
-    insertionData = (phoneNum, customerID, zipcode, state, address1, city, firstName, lastName, email)
+    insertionData = (phoneNum, customerID, zipcode, state, address1 + " " + address2, city, firstName, lastName, email)
     
     cursor.execute(query, insertionData)
     
