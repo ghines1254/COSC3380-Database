@@ -199,11 +199,11 @@
         .then(response => response.json())
         .then(data => {
             if (data.status === 'At Post Office') {
-                window.location.href = './tracking-page-2';
+                window.location.href = "./tracking-page-2.html";
             } else if (data.status === 'En Route') {
-                window.location.href = './tracking-page-3';
+                window.location.href = "./tracking-page-3.html";
             } else if (data.status === 'Delivered') {
-                window.location.href = './tracking-page-4';
+                window.location.href = "./tracking-page-4.html";
             } else {
                 alert('Invalid tracking number');
             }
