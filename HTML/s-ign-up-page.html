@@ -20,7 +20,7 @@
     />
   </head>
   <body>
-    <form action="/signup" method="post" onsubmit="submitForm()">
+    <form action="/signup.py" method="post" onsubmit="submitForm()">
       <div class="sign-up-page">
         <div class="sign-up-page-child"></div>
         <div class="minibackground1">
@@ -257,6 +257,9 @@
             // Display the submitted values on the screen
           var submittedValuesDiv = document.getElementById('submittedValues');
           submittedValuesDiv.innerHTML = `<p>Submitted values: First Name - ${firstname},  - ${lastname}</p>`
+
+          
+          window.location.href = "./cutomer-portal-nofications-page.html";
         }
         var logIn = document.getElementById("logIn");
         if (logIn) {
