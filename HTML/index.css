@@ -72,17 +72,17 @@
   height: 37.9px;
 }
 .group-child {
-  position: absolute;
-  top: calc(50%);
+  position: relative;
+  top: calc(50% - 12px);
   left: 0;
   background-color: var(--fullblack);
   width: 98.9px;
   height: 32px;
 }
 .login {
-  position: relative;
+  position: absolute;
   width: 65.12%;
-  top: calc(50%);
+  top: calc(50% - 12px);
   left: 17.19%;
   display: inline-block;
   height: calc(50%);
