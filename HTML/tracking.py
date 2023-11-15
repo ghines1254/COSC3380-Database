@@ -9,7 +9,7 @@ from dbConnector import db_connection, cursor
 def track_package():
     tracking_number = request.query.tracking_number
     if tracking_number:
-        query = "SELECT status FROM tracking WHERE tracking_number = %s"
+        query = "SELECT package_id FROM PACKAGE"
         cursor.execute(query, (tracking_number,))
         status = cursor.fetchone()
 
@@ -24,4 +24,4 @@ def track_package():
     return json.dumps({'status': 'invalid'})
 
 # Replace HOST and PORT with your server's configuration
-run(app, host='localhost', port=8080)
+run(app, host='34.68.154.206', port=8080)
