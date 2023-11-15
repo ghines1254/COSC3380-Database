@@ -5,7 +5,7 @@ import json
 # Assuming dbConnector contains the database connection details
 from dbConnector import db_connection, cursor
 
-@app.route('/track', method='GET')
+@app.route('/tracking-page.py', method='GET')
 def track_package():
     tracking_number = request.query.tracking_number
     if tracking_number:
