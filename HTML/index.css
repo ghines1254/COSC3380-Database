@@ -81,6 +81,7 @@
 }
 .login {
   position: relative;
+  bottom: 30px;
   display: block;
 }
 .rectangle-parent {
