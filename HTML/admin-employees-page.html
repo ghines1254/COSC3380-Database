@@ -399,9 +399,9 @@
       if (button4) {
         button4.addEventListener("click", function (e) {
 
-            fetch('admin-employees-page.py');
-                .then(response => {if (!response.ok) {throw new Error('Not ok');}
-                                   return response.text; } );
+            fetch('admin-employees-page.py')
+                .then(response => {if (!response.ok) {alert("Not ok");}
+                                   return response.json; } );
                                 )}
 
       
