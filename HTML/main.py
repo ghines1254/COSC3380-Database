@@ -6,11 +6,10 @@ import mysql.connector as mysql
 from dbConnector import *
 
 
-app = Bottle()
-@app.route('/')
+route('/')
 def homePage():
     return static_file('index.html', root='.')
 
 
 if __name__ == '__main__':
-    run(app, host='0.0.0.0', port=443, debug=True)
+    run(host='0.0.0.0', port=443, debug=True)

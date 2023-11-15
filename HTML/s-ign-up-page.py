@@ -5,8 +5,9 @@ from main import *
 
 from bottle import route, run, template, request, static_file
 
-@app.route('/signup.py', method = 'POST')
+@route('/signup', method = 'POST')
 def signupPage():
+
     customerID = get_unique_id()
     firstName = request.forms.get('firstname')
     lastName = request.forms.get('lastname')
@@ -37,15 +38,17 @@ def signupPage():
     db_connection.commit()
     
 
-def get_unique_id():
-    
-    query = "SELECT customer_id FROM CUSTOMER;"
-    cursor.execute(query)
-    existing_ids = cursor.fetchall()
-    new_id = str(uuid4().int)[:10]
-    
-    for row in existing_ids:
-        while new_id in existing_ids:
-            new_id = str(uuid4().int)[:10]
-    return new_id
+    def get_unique_id():
+        
+        query = "SELECT customer_id FROM CUSTOMER;"
+        cursor.execute(query)
+        existing_ids = cursor.fetchall()
+        new_id = str(uuid4().int)[:10]
+        
+        for row in existing_ids:
+            while new_id in existing_ids:
+                new_id = str(uuid4().int)[:10]
+        return new_id
+
+
 
