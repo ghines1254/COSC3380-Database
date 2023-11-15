@@ -18,6 +18,8 @@ def signupPage():
     email = request.forms.get('email')
     phoneNum = request.forms.get('phone1')
 
+    print(firstName + " " + lastName)
+
     query = "INSERT INTO CUSTOMER VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, now() )"
     insertionData = (phoneNum, customerID, zipcode, state, address1 + " " + address2, city, firstName, lastName, email)
     

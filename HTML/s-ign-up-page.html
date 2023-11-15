@@ -20,7 +20,7 @@
     />
   </head>
   <body>
-    <form action="/process" method="post"></form>
+    <form action="/process" method="post" onsubmit="submitForm()">
       <div class="sign-up-page">
         <div class="sign-up-page-child"></div>
         <div class="minibackground1">
@@ -249,8 +249,17 @@
           </div>
         </div>
       </div>
-
+    </form>
+    <div id="submittedValues"></div>
       <script>
+        function submitForm(){
+          var username = document.getElementById('firstname').value;
+          var password = document.getElementById('lastname').value;
+
+            // Display the submitted values on the screen
+          var submittedValuesDiv = document.getElementById('submittedValues');
+          submittedValuesDiv.innerHTML = `<p>Submitted values: Username - ${firstname}, Password - ${lastname}</p>`;
+        }
         var logIn = document.getElementById("logIn");
         if (logIn) {
           logIn.addEventListener("click", function (e) {
