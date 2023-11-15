@@ -107,14 +107,12 @@
               </div>
               <div class="cool-text-field4">
                 <input
-                  class="text-field2"
-                  placeholder="Tracking #"
-                  type="text"
+                  <input class="text-field2" placeholder="Tracking #" type="text" id="trackingInput" />
                 />
               </div>
               <div class="rectangle-parent168">
                 <div class="group-child107"></div>
-                <div class="track2">
+                <div class="track2" id="trackButton">
                   <p class="begin-tracking-here1">Track</p>
                 </div>
               </div>
@@ -194,6 +192,25 @@
           window.location.href = "./cutomer-portal-nofications-page.html";
         });
       }
+// tracking stuff 
+  document.getElementById('trackButton').addEventListener('click', function() {
+    var trackingNumber = document.getElementById('trackingInput').value;
+    fetch('/track?tracking_number=' + trackingNumber)
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'At Post Office') {
+                window.location.href = './tracking-page-2';
+            } else if (data.status === 'En Route') {
+                window.location.href = './tracking-page-3';
+            } else if (data.status === 'Delivered') {
+                window.location.href = './tracking-page-4';
+            } else {
+                alert('Invalid tracking number');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+});
+      
       </script>
   </body>
 </html>
