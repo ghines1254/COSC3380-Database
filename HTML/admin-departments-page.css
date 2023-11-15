@@ -59,7 +59,7 @@
   width: 98.9px;
   height: 32px;
 }
-.navigation-bar-light-inner18 {
+.navigation-bar-light-inner19 {
   position: absolute;
   top: calc(50% - 16.5px);
   right: 0;
@@ -234,12 +234,12 @@
   width: 900px;
   height: 700px;
 }
-.frame-parent39,
-.frame-parent40 {
+.frame-parent38,
+.frame-parent39 {
   display: flex;
   justify-content: flex-start;
 }
-.frame-parent40 {
+.frame-parent39 {
   height: 700px;
   flex-direction: row;
   align-items: center;
@@ -247,7 +247,7 @@
   font-size: var(--largetext-size);
   color: var(--lightmain);
 }
-.frame-parent39 {
+.frame-parent38 {
   position: absolute;
   width: calc(100% - 140px);
   top: 20px;
