@@ -1,10 +1,10 @@
 #This is where the server logic is set up
-from bottle import run, route, static_file
+from bottle import Bottle, run, route, static_file
 from dbConnector import *
 from triggertest import *
 
-
-@route('/')
+app = Bottle()
+@app.route('/')
 def homePage():
     return static_file('index.html', root='.')
 
