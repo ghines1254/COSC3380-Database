@@ -391,7 +391,7 @@
   height: 39.5px;
   cursor: pointer;
   text-align: center;
-  font-family: var(--largetext);
+  font-size: var(--font-size-5xl);
 }
 .employee-tracking-page,
 .tracking-outline {
