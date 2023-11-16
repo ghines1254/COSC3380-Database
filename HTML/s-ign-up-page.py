@@ -23,14 +23,14 @@ def signupPage():
 
     print(firstName + " " + lastName)
 
-    query = "INSERT INTO CUSTOMER VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, now() )"
-    insertionData = (phoneNum, customerID, zipcode, state, address1 + " " + address2, city, firstName, lastName, email)
+    query = "INSERT INTO CUSTOMER (customer_phone, customer_id, zip, state, street_address, city, first_name, last_name, email, PASSWORD) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+    insertionData = (phoneNum, customerID, zipcode, state, address1, city, firstName, lastName, email, password)
     
     cursor.execute(query, insertionData)
 
     db_connection.commit()
 
-    query = "INSERT INTO WEBUSERS(UserID, Password, Email, CUSTOMERID, ROLEID, created_on) VALUES (%s, %s, %s, %s, 1, now())"
+    query = "INSERT INTO WEBUSERS(UserID, Password, Email, CUSTOMERID, ROLEID) VALUES (%s, %s, %s, %s, 1)"
     insertionData = (customerID, password, email, customerID)
 
     cursor.execute(query, insertionData)
@@ -40,15 +40,10 @@ def signupPage():
 
     def get_unique_id():
         
-        query = "SELECT customer_id FROM CUSTOMER;"
-        cursor.execute(query)
-        existing_ids = cursor.fetchall()
         new_id = str(uuid4().int)[:10]
-        
-        for row in existing_ids:
-            while new_id in existing_ids:
-                new_id = str(uuid4().int)[:10]
         return new_id
+
+signupPage()
 
 
 
