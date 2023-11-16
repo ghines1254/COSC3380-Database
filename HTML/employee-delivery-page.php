@@ -100,7 +100,7 @@
             <input class="id-child" placeholder="Package ID" type="text" />
           </div>
         </div>
-        <div class="delivery9">
+<!--         <div class="delivery9">
           <button class="group-button">
             <div class="group-child17"></div>
             <div class="confirm-pickup">Confirm pickup</div>
@@ -284,7 +284,7 @@
             <input class="id-child" placeholder="Package ID" type="text" />
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="we-would-like">
         We would like to remind you of the importance of confirming each
         delivery in our tracking system once completed. This step is crucial as
