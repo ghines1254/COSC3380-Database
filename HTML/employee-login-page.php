@@ -37,7 +37,7 @@
               <div class="sign-up2">Sign Up</div>
             </div>
              <form action="employee-login-page-script.php" method="post" >
-              <div class="login-wrapper"><button type="submit" class="login-button">Login</button></div>
+              <div class="login-wrapper"><button type="submit" class="sign-up2">Login</button></div>
               <div class="usernamepasswordgroup">
                 <input class="usernamebar" placeholder="USER ID" type="text" name="email" />
                 <input class="usernamebar" placeholder="PASSWORD" type="password" name="password" />
