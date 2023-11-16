@@ -339,10 +339,16 @@
         id="vector"
       />
 
-      <button class="button429" id="button4">
-        <div class="button4-child27"></div>
-        <b class="generate-report">Generate Report</b>
-      </button>
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) 
+{
+    echo "Button clicked!";
+}
+?>
+
+<form action="" method="post">
+    <button type="submit" name="submit">Click Me</button>
+</form>
 
         <?php
             // Your PHP logic can go here if needed
