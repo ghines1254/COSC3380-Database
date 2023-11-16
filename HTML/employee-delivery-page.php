@@ -87,14 +87,14 @@
       </div>
       <div class="delivery-wrapper">
         <div class="delivery1">
-          <button class="group-button">
+          <button class="group-button" id="confirmPickupButton">
             <div class="group-inner"></div>
             <div class="confirm-pickup">Confirm pickup</div>
-          </button>
-          <button class="rectangle-parent1">
+        </button>
+           <button class="rectangle-parent1" id="confirmDeliveredButton">
             <div class="group-inner"></div>
             <div class="confirm-delivered">Confirm delivered</div>
-          </button>
+        </button>
           <div class="frame-div">
             <div class="frame-item"></div>
             <div class="group-div">
@@ -106,10 +106,10 @@
             </div>
           </div>
           <div class="id">
-            <input class="id-child" placeholder="Package ID" type="text" />
-          </div>
+            <input class="id-child" placeholder="Package ID" type="text" id="packageIdInput" />
         </div>
-      </div>
+    </div>
+</div>
       <div class="we-would-like">
         We would like to remind you of the importance of confirming each
         delivery in our tracking system once completed. This step is crucial as
@@ -125,44 +125,9 @@
       </div>
     </div>
 
-  <script>
-// test
+
+
     <script>
-document.getElementById('confirmPickupButton').addEventListener('click', function() {
-    updatePackageStatus('En Route');
-});
-
-document.getElementById('confirmDeliveredButton').addEventListener('click', function() {
-    updatePackageStatus('Delivered');
-});
-
-function updatePackageStatus(status) {
-    var packageId = document.getElementById('packageIdInput').value;
-    fetch('employee-delivery-script.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: 'packageId=' + encodeURIComponent(packageId) + '&status=' + encodeURIComponent(status)
-    })
-    .then(response => response.text())
-    .then(data => {
-        console.log(data); // Process server response
-    })
-    .catch(error => console.error('Error:', error));
-}
-
-
-
-
-
-
-
-
-
-    
-
-
 
       var frameContainer1 = document.getElementById("frameContainer1");
       if (frameContainer1) {
@@ -219,6 +184,42 @@ function updatePackageStatus(status) {
           window.location.href = "./employee-portal-nofications-page.html";
         });
       }
+
+//test
+
+    document.getElementById('confirmPickupButton').addEventListener('click', function() {
+    updatePackageStatus('En Route');
+});
+
+document.getElementById('confirmDeliveredButton').addEventListener('click', function() {
+    updatePackageStatus('Delivered');
+});
+
+function updatePackageStatus(newStatus) {
+    var packageId = document.getElementById('packageIdInput').value;
+    if (packageId) {
+        // Assuming you have a PHP script at this location to handle the update
+        fetch('employee-delivery-script.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'packageId=' + encodeURIComponent(packageId) + '&newStatus=' + encodeURIComponent(newStatus)
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert(data); // Show a simple alert with the response from the server
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred');
+        });
+    } else {
+        alert('Please enter a package ID.');
+    }
+}
+
+      
       </script>
   </body>
 </html>
