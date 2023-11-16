@@ -34,18 +34,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $phoneNum = $_POST['phone1'];
     $password = $_POST['password'];
 
-    try
-    {
-        require_once "connection.php";
-
-        $query = "INSERT INTO CUSTOMER (customer_phone, customer_id, zip, state, street_address, city, first_name, last_name, email, PASSWORD) VALUES (phoneNum, customerID, zipcode, state, address1, city, firstName, lastName, email, password);";
+    $stmt = $conn->prepare("INSERT INTO CUSTOMER (customer_phone, customer_id, zip, state, street_address, city, first_name, last_name, email, created_on, PASSWORD) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");  
+    $stmt->bind_param("sssssssss",$phoneNum, $customerID, $zipcode, $state, $address1, $city, $firstName, $lastName, $email, date("Y-M-D"), $password );
+    $stmt->execute();
    
-        $stmt = $conn->prepare("INSERT INTO CUSTOMER (customer_phone, customer_id, zip, state, street_address, city, first_name, last_name, email, PASSWORD) VALUES (phoneNum, customerID, zipcode, state, address1, city, firstName, lastName, email, password);");  
-        $stmt->execute();
-   
-    }catch (Exception $e){
-        echo "Error: " . $e->getMessage();
+    if ($stmt->affected_rows > 0) {
+        echo "Signup Page";
+    } else {
+        echo "Error updating package status or no changes made.";
     }
+ 
 }
 else{
         header("Location: ../sign-up-page.php");
