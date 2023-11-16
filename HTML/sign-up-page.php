@@ -216,7 +216,7 @@ require_once 'init.php';
               </div>
             </div>
             <div>
-              <button type="submit" formaction="signupGrab.php">Sign Up</button>
+              <button type="submit">Sign Up</button>
             </div>
             
           </div>
