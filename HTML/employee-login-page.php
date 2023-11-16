@@ -36,13 +36,13 @@
             <div class="sign-up-wrapper" id="frameContainer1">
               <div class="sign-up2">Sign Up</div>
             </div>
-             <form action="employee-login-page-script.php" method="post">
-              <div class="sign-up-wrapper"><button type="submit" class="login-button">Login</button></div>
+             <form action="employee-login-page-script.php" method="post" class="login-wrapper" id="loginForm">
+              <div class="sign-up2">Login</div>
               <div class="usernamepasswordgroup">
                 <input class="usernamebar" placeholder="USER ID" type="text" name="email" />
                 <input class="usernamebar" placeholder="PASSWORD" type="password" name="password" />
               </div>
-              
+              <button type="submit" class="login-button">Login</button>
               </form>
             <div class="frame-parent29">
               <div class="customer-wrapper" id="frameContainer3">
