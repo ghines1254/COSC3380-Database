@@ -25,7 +25,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $customerID = get_unique_id();
     $firstName = $_POST['firstname'];
     $lastName = $_POST['lastname'];
-    $middleInitial = $_POST['middleinitial'];
     $address1 = $_POST['address-line-1'];
     $address2 = $_POST['address-line-2'];
     $city = $_POST['city1'];
