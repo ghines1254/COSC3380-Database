@@ -1,5 +1,5 @@
 <?php
-require_once 'connection.php';
+require_once 'init.php';
 
 $query = "SELECT first_name, last_name, idnum, dept FROM EMPLOYEE";
 $result = $conn->query($query);
