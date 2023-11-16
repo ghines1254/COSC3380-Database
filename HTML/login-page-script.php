@@ -15,7 +15,10 @@ if ($conn->connect_error) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
-    $password = $_POST['PASSWORD'];
+    $password = $_POST['password'];
+
+    // Validate and sanitize inputs
+    // ...
 
     // Prepare and execute the query
     $stmt = $conn->prepare("SELECT PASSWORD FROM CUSTOMER WHERE email = ?");
@@ -25,10 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        if ($password === $row['PASSWORD']) {
-            echo "Login successful.";
-            // Start a session and set session variables if needed
-            // Redirect to a different page or perform other login success actions
+        if (password_verify($password, $row['PASSWORD'])) {
+            // Redirect to customer portal notifications page
+            header("Location: customer-portal-notifications.html");
+            exit;
         } else {
             echo "Invalid password.";
         }
