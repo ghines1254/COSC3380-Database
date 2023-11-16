@@ -1,3 +1,8 @@
+<?php
+require_once '/init.php'; // Adjust the path to where your init.php file is located
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -343,10 +348,7 @@
         <div class="button4-child27"></div>
         <b class="generate-report">Generate Report</b>
       </button>
-        
-        <?php
-            // Your PHP logic can go here if needed
-        ?>
+
 
         <script>
             var frameContainer1 = document.getElementById("frameContainer1");
@@ -395,8 +397,26 @@
 
             if (button4) {
                 button4.addEventListener("click", function (e) {
-                 <?php echo("Clicked"); ?>
-               
+                    // Using fetch to make an asynchronous request
+                    fetch('admin-employees-page.py')
+                        .then(response => {
+                            // Check if the response is successful (status code in the range 200-299)
+                            if (!response.ok) {
+                                alert("Not ok");
+                                throw new Error('Network response was not ok');
+                            }
+                            // Parse the response as JSON
+                            return response.json();
+                        })
+                        .then(data => {
+                            // Handle the JSON data (update your HTML or perform other actions)
+                            console.log(data);
+                        })
+                        .catch(error => {
+                            // Handle errors
+                            console.error('Fetch error:', error);
+                        });
+                });
             }
         </script>
     </div>
