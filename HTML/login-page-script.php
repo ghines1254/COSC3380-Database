@@ -13,9 +13,12 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST['email'];
-    $password = $_POST['PASSWORD'];
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    $email = $_GET['email'];
+    $password = $_GET['password'];
+
+    // Validate and sanitize inputs
+    // ...
 
     // Prepare and execute the query
     $stmt = $conn->prepare("SELECT PASSWORD FROM CUSTOMER WHERE email = ?");
@@ -25,10 +28,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        if ($password === $row['PASSWORD']) {
+        if (password_verify($password, $row['PASSWORD'])) {
             echo "Login successful.";
-            // Start a session and set session variables if needed
-            // Redirect to a different page or perform other login success actions
+            // Additional login logic here
         } else {
             echo "Invalid password.";
         }
