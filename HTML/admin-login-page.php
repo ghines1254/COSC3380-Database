@@ -104,7 +104,7 @@
       var frameContainer4 = document.getElementById("frameContainer4");
       if (frameContainer4) {
         frameContainer4.addEventListener("click", function (e) {
-          window.location.href = "./employee-login-page.html";
+          window.location.href = "./employee-login-page.php";
         });
       }
       
