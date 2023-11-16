@@ -1,4 +1,8 @@
 <?php
+require_once 'init.php';
+?>
+
+<?php
 include("connection.php");
 
 function checklogin($con)
