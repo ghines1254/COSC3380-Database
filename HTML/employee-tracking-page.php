@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./employee-tracking-page.css" />
+    <link rel="stylesheet" href="global.css" />
+    <link rel="stylesheet" href="employee-tracking-page.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Lexend Deca:wght@400;500;600;700;800;900&display=swap"
@@ -95,7 +95,7 @@
       <div class="tracking-outline">
         <div class="begin-tracking-here-container">
           <span class="begin-tracking-here-container1">
-            <p class="begin-tracking-here">Begin Tracking Here</p>
+            <p class="begin-tracking-here">Begin Tracking</p>
             <p class="easily-monitor-all">
             Monitor customer shipments in one place.
             </p>
