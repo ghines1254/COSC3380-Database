@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-    <link rel="stylesheet" href="global.css" />
-    <link rel="stylesheet" href="employee-tracking-page.css" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./employee-tracking-page.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Lexend Deca:wght@400;500;600;700;800;900&display=swap"
@@ -28,6 +28,10 @@
         <div class="navigation-bar1"></div>
         <div class="navigation-bar-light-child">
           <div class="rectangle-group">
+            <div class="group-item"></div>
+            <b class="login1">Login</b>
+          </div>
+        </div>
         <div class="cougarcourier1-4-group" id="frameContainer1">
           <img
             class="cougarcourier1-4-icon1"
