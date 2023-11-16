@@ -39,11 +39,20 @@
             <div class="login-container" id="frameContainer2">
               <div class="sign-up3">Login</div>
             </div>
+            
+            
+            
+            
+            <form action="admin-login-page-script.php" method="post" class="login-container" id="adminLoginForm">
             <div class="usernamepasswordgroup1">
-              <input class="usernamebar1" placeholder="USER ID" type="text" />
-
-              <input class="usernamebar1" placeholder="PASSWORD" type="text" />
+                <input class="usernamebar1" placeholder="USER ID" type="text" name="adminEmail" />
+                <input class="usernamebar1" placeholder="PASSWORD" type="password" name="adminPassword" />
             </div>
+            <button type="submit" class="login-button">Admin Login</button>
+        </form>
+
+
+            
             <div class="frame-parent44">
               <div class="customer-container" id="frameContainer3">
                 <b class="customer1">Customer</b>
