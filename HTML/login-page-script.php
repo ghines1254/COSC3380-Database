@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        if (password_verify($password, $row['PASSWORD'])) {
+        if ($password === $row['PASSWORD']) {
             // Redirect to customer portal notifications page
             header("Location: customer-portal-notifications.html");
             exit;
