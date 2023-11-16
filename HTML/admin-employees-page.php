@@ -1,8 +1,6 @@
 <?php
 require_once '/init.php'; // Adjust the path to where your init.php file is located
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
