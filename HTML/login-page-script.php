@@ -1,6 +1,8 @@
 <?php
-require_once 'init.php'; // Assuming this initializes your environment
+require_once 'init.php';
+?>
 
+<?php
 // Database connection details
 $host = "34.68.154.206";
 $database = "Post_Office_Schema";
@@ -16,29 +18,29 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $adminEmail = $_POST['adminEmail']; // Assuming the form field for admin email is named 'adminEmail'
-    $adminPassword = $_POST['adminPassword']; // Assuming the form field for admin password is named 'adminPassword'
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
     // Validate and sanitize inputs
     // ...
 
-    // Prepare and execute the query for admin login
-    $stmt = $conn->prepare("SELECT emp_password FROM EMPLOYEE WHERE email = ?"); // Replace 'EMPLOYEE' and 'emp_password' with your admin table and column names
-    $stmt->bind_param("s", $adminEmail);
+    // Prepare and execute the query
+    $stmt = $conn->prepare("SELECT PASSWORD FROM CUSTOMER WHERE email = ?");
+    $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        if ($adminPassword === $row['emp_password']) { // Replace 'emp_password' with the actual admin password column name
-            // Admin authentication successful
-            header("Location: admin-portal-nofications-page.html"); // Redirect to the admin portal page
+        if ($password === $row['PASSWORD']) {
+            // Redirect to customer portal notifications page
+            header("Location: customer-portal-nofications-page.html");
             exit;
         } else {
             echo "Invalid password.";
         }
     } else {
-        echo "Admin email not found.";
+        echo "Email not found.";
     }
 
     $stmt->close();
