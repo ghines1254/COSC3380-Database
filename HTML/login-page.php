@@ -138,14 +138,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			var frameContainer4 = document.getElementById("frameContainer4");
 			if (frameContainer4) {
 				frameContainer4.addEventListener("click", function (e) {
-					window.location.href = "./employee-login-page.html";
+					window.location.href = "./employee-login-page.php";
 				});
 			}
 
 			var frameContainer5 = document.getElementById("frameContainer5");
 			if (frameContainer5) {
 				frameContainer5.addEventListener("click", function (e) {
-					window.location.href = "./admin-login-page.html";
+					window.location.href = "./admin-login-page.php";
 				});
 			}
 
