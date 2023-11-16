@@ -34,14 +34,14 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
     $phoneNum = $_POST['phone1'];
     $password = $_POST['password'];
 
-    $stmt = $conn->prepare("INSERT INTO CUSTOMER (customer_phone, customer_id, zip, state, street_address, city, first_name, last_name, email, created_on, PASSWORD) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");  
-    $stmt->bind_param("sssssssssss",$phoneNum, $customerID, $zipcode, $state, $address1, $city, $firstName, $lastName, $email, date("Y-M-D"), $password );
+    $stmt = $conn->prepare("INSERT INTO CUSTOMER (customer_phone, customer_id, zip, state, street_address, city, first_name, last_name, email, created_on, PASSWORD) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");  
+    $stmt->bind_param("sssssssssss", $phoneNum, $customerID, $zipcode, $state, $address1, $city, $firstName, $lastName, $email, date("Y-M-D"), $password );
     $stmt->execute();
    
     if ($stmt->affected_rows > 0) {
         echo "Signup Page";
     } else {
-        echo "Error updating package status or no changes made.";
+        echo "Error inserting customer status or no changes made.";
     }
     $stmt->close();
     $conn->close();
