@@ -111,7 +111,7 @@ require_once 'init.php';
               </div>
               <div class="cool-text-field4">
                 <input
-                  <input class="text-field2" placeholder="Tracking #" type="text" id="trackingInput" />
+                   class="text-field2" placeholder="Tracking #" type="text" id="trackingInput" />
                 
               </div>
             
