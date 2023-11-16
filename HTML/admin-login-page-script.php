@@ -1,8 +1,4 @@
 <?php
-require_once 'init.php';
-?>
-
-<?php
 // Database connection details
 $host = "34.68.154.206";
 $database = "Post_Office_Schema";
@@ -18,29 +14,29 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $adminEmail = $_POST['adminEmail'];
+    $adminPassword = $_POST['adminPassword'];
 
     // Validate and sanitize inputs
     // ...
 
-    // Prepare and execute the query
-    $stmt = $conn->prepare("SELECT emp_password FROM EMPLOYEE WHERE email = ?");
-    $stmt->bind_param("s", $email);
+    // Prepare and execute the query for admin login
+    $stmt = $conn->prepare("SELECT emp_password FROM EMPLOYEE WHERE email = ?"); 
+    $stmt->bind_param("s", $adminEmail);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        if ($password === $row['emp_password']) {
-            // Redirect to employee portal notifications page (adjust the URL as needed)
-            header("Location: admin-portal-nofications-page.html");
+        if ($adminPassword === $row['admin_password']) {
+            // Redirect to admin portal notifications page
+            header("Location: ./admin-portal-notifications-page.html");
             exit;
         } else {
             echo "Invalid password.";
         }
     } else {
-        echo "Email not found.";
+        echo "Admin email not found.";
     }
 
     $stmt->close();
