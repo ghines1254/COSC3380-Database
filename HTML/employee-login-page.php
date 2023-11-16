@@ -78,7 +78,7 @@
       var frameContainer1 = document.getElementById("frameContainer1");
       if (frameContainer1) {
         frameContainer1.addEventListener("click", function (e) {
-          window.location.href = "./s-ign-up-page.html";
+          window.location.href = "./sign-up-page.php";
         });
       }
       
