@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $password = $_POST['PASSWORD'];
 
     // Prepare and execute the query
     $stmt = $conn->prepare("SELECT PASSWORD FROM CUSTOMER WHERE email = ?");
