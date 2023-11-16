@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1, width=device-width" />
+
+		<link rel="stylesheet" href="./global.css" />
+		<link rel="stylesheet" href="./s-ign-up-page.css" />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Lexend Deca:wght@300;400;500;600;700;800;900&display=swap" />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&display=swap" />
+	</head>
+	<body>
+		<form action="s-ign-up-page.py" method="post">
+			<div class="sign-up-page">
+				<div class="sign-up-page-child"></div>
+				<div class="minibackground185">
+					<img class="image-1-icon185" alt="" src="./public/image-1@2x.png" />
+				</div>
+				<div class="frame4">
+					<div class="new-user-signup-info">
+						<div class="frame-parent26">
+							<div class="welcome-lets-get-started-en-parent">
+								<b class="welcome-lets-get-container">
+									<span class="welcome-lets-get-container1">
+										<p class="welcome-lets-get">Welcome! Let’s get started.</p>
+										<p class="welcome-lets-get">
+											Enter your details below to create your account. Already have an
+											account?
+										</p>
+									</span>
+								</b>
+								<b class="log-in" id="logInText">Log in.</b>
+							</div>
+							<div class="frame-parent27">
+								<div class="firstname-parent1">
+									<div class="firstname3">
+										<input
+											class="firstname-child1"
+											id="first-name"
+											placeholder="First name"
+											type="text"
+											oninvalid="this.setCustomValidity('Required')"
+											oninput="setCustomValidity('')"
+											required />
+									</div>
+									<div class="middleinitial3">
+										<input
+											class="middleinitial-child1"
+											id="middle-initial"
+											placeholder="Middle initial"
+											type="text" />
+									</div>
+									<div class="middleinitial3">
+										<input
+											class="middleinitial-child1"
+											id="last-name"
+											placeholder="Last name"
+											type="text"
+											oninvalid="this.setCustomValidity('Required')"
+											oninput="setCustomValidity('')"
+											required />
+									</div>
+								</div>
+								<div class="firstname-parent1">
+									<div class="addressline13">
+										<input
+											class="address-line-13"
+											id="address-line-1"
+											placeholder="Address Line 1"
+											type="text"
+											oninvalid="this.setCustomValidity('Required')"
+											oninput="setCustomValidity('')"
+											required />
+									</div>
+									<div class="addressline13">
+										<input
+											class="address-line-13"
+											id="address-line-2"
+											placeholder="Address Line 2"
+											type="text" />
+									</div>
+								</div>
+								<div class="firstname-parent1">
+									<div class="city6">
+										<input
+											class="city-child1"
+											id="city"
+											placeholder="City"
+											type="text"
+											oninvalid="this.setCustomValidity('Required')"
+											oninput="setCustomValidity('')"
+											required />
+									</div>
+									<div class="state6">
+										<input
+											class="state-child1"
+											id="state"
+											placeholder="State"
+											type="text"
+											oninvalid="this.setCustomValidity('Required')"
+											oninput="setCustomValidity('')"
+											required />
+									</div>
+									<div class="city6">
+										<input
+											class="city-child1"
+											id="zip"
+											placeholder="Zip"
+											type="text"
+											oninvalid="this.setCustomValidity('Required')"
+											oninput="setCustomValidity('')"
+											required />
+									</div>
+								</div>
+								<div class="firstname-parent1">
+									<div class="addressline13">
+										<input
+											class="address-line-23"
+											id="email"
+											placeholder="Email"
+											type="text"
+											oninvalid="this.setCustomValidity('Required')"
+											oninput="setCustomValidity('')"
+											required />
+									</div>
+									<div class="addressline13">
+										<input
+											class="address-line-23"
+											id="phone-numb"
+											placeholder="Phone number"
+											type="text"
+											oninvalid="this.setCustomValidity('Required')"
+											oninput="setCustomValidity('')"
+											required />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="rectangle-parent40">
+							<div class="group-child18"></div>
+							<div class="sign-up">
+								<p class="welcome-lets-get">Sign Up</p>
+							</div>
+						</div>
+					</div>
+					<div class="navigation-bar-light9">
+						<div class="navigation-bar9"></div>
+						<div class="vector-parent11">
+							<img class="frame-child70" alt="" src="./public/navbar-line.svg" />
+
+							<b class="shipping9">Shipping</b>
+							<img class="frame-child71" alt="" src="./public/navbar-line.svg" />
+
+							<b class="tracking17">Tracking</b>
+							<img class="frame-child72" alt="" src="./public/navbar-line.svg" />
+
+							<b class="tracking17">Products</b>
+							<img class="frame-child70" alt="" src="./public/navbar-line.svg" />
+							<div class="group-wrapper9">
+								<div class="rectangle-parent41" id="groupContainer1">
+									<div class="group-child19"></div>
+									<b class="login9">Login</b>
+								</div>
+							</div>
+						</div>
+						<div class="cougarcourier1-4-parent7">
+							<img
+								class="cougarcourier1-4-icon9"
+								alt=""
+								src="./public/cougarcourier.png" />
+
+							<b class="cougar-courier9">Cougar Courier</b>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<script>
+				var logInText = document.getElementById("logInText");
+				if (logInText) {
+					logInText.addEventListener("click", function (e) {
+						window.location.href = "./login-page.html";
+					});
+				}
+
+				var groupContainer1 = document.getElementById("groupContainer1");
+				if (groupContainer1) {
+					groupContainer1.addEventListener("click", function (e) {
+						window.location.href = "./login-page.html";
+					});
+				}
+			</script>
+		</form>
+	</body>
+</html>

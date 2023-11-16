@@ -1,0 +1,171 @@
+.home-page-child {
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  background-color: var(--lightmain);
+  z-index: 0;
+}
+.image-1-icon,
+.minibackground {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.image-1-icon {
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.minibackground {
+  opacity: 0.05;
+}
+.blank-line {
+  margin: 0;
+  font-weight: 500;
+}
+.welcome-to-cougar {
+  margin: 0;
+  font-weight: 900;
+}
+.mission-statement {
+  margin: 0;
+  font-weight: 800;
+}
+.welcome-to-cougar-container {
+  position: absolute;
+  height: 100%;
+  width: 90.28%;
+  top: 0;
+  left: 4.86%;
+  display: inline-block;
+}
+.homepage-scroll {
+  position: absolute;
+  height: calc(100% - 8px);
+  width: calc(100% - 18.5px);
+  top: 8px;
+  right: 9.5px;
+  bottom: 0;
+  left: 9px;
+  background-color: transparent;
+  overflow: auto;
+}
+.group-child,
+.navigation-bar {
+  position: absolute;
+  left: 0;
+  border-radius: var(--br-3xs);
+}
+.navigation-bar {
+  width: calc(100% + 0.3px);
+  top: 0;
+  right: -0.3px;
+  background-color: var(--lightsecond);
+  height: 70px;
+}
+.group-child {
+  top: calc(50% - 16px);
+  background-color: var(--fullblack);
+  width: 98.9px;
+  height: 32px;
+}
+.login {
+  position: absolute;
+  width: 65.12%;
+  top: calc(50% - 12px);
+  left: 17.19%;
+  display: inline-block;
+  height: 24.6px;
+}
+.rectangle-parent {
+  position: relative;
+  width: 98.9px;
+  height: 32px;
+  cursor: pointer;
+}
+.navigation-bar-light-inner {
+  position: absolute;
+  top: calc(50% - 16.5px);
+  right: -0.3px;
+  width: 644px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-mini);
+  box-sizing: border-box;
+}
+.cougarcourier1-4-icon {
+  position: relative;
+  border-radius: var(--br-3xs);
+  width: 87px;
+  height: 58px;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+}
+.cougar-courier {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 267px;
+  height: 55px;
+  flex-shrink: 0;
+}
+.cougarcourier1-4-parent {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 var(--padding-mini);
+  box-sizing: border-box;
+  gap: var(--gap-base);
+  font-size: var(--largetext-size);
+  color: var(--fullblack);
+}
+.navigation-bar-light {
+  position: absolute;
+  width: calc(100% - 5.3px);
+  top: 0;
+  right: 5.2px;
+  left: 0.1px;
+  border-radius: var(--br-3xs);
+  background-color: var(--lightsecond);
+  height: 70px;
+  font-size: var(--minitext-size);
+  color: var(--lightsecond);
+}
+.minibackground-parent {
+  position: absolute;
+  margin: 0 !important;
+  height: calc(100% - 24px);
+  width: calc(100% - 40px);
+  top: 22px;
+  right: 20px;
+  bottom: 2px;
+  left: 20px;
+  z-index: 1;
+}
+.home-page {
+  position: relative;
+  width: 100%;
+  height: 1024px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-3xs);
+  text-align: center;
+  font-size: 26px;
+  color: var(--lightaccent);
+  font-family: var(--largetext);
+}
