@@ -92,7 +92,7 @@
       var frameContainer3 = document.getElementById("frameContainer3");
       if (frameContainer3) {
         frameContainer3.addEventListener("click", function (e) {
-          window.location.href = "./login-page.html";
+          window.location.href = "./login-page.php";
         });
       }
       
