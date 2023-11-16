@@ -339,17 +339,11 @@
         id="vector"
       />
 
-<?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) 
-{
-    echo "Button clicked!";
-}
-?>
-
-<form action="" method="post">
-    <button type="submit" name="submit">Click Me</button>
-</form>
-
+      <button class="button429" id="button4">
+        <div class="button4-child27"></div>
+        <b class="generate-report">Generate Report</b>
+      </button>
+        
         <?php
             // Your PHP logic can go here if needed
         ?>
@@ -401,26 +395,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
 
             if (button4) {
                 button4.addEventListener("click", function (e) {
-                    // Using fetch to make an asynchronous request
-                    fetch('admin-employees-page.py')
-                        .then(response => {
-                            // Check if the response is successful (status code in the range 200-299)
-                            if (!response.ok) {
-                                alert("Not ok");
-                                throw new Error('Network response was not ok');
-                            }
-                            // Parse the response as JSON
-                            return response.json();
-                        })
-                        .then(data => {
-                            // Handle the JSON data (update your HTML or perform other actions)
-                            console.log(data);
-                        })
-                        .catch(error => {
-                            // Handle errors
-                            console.error('Fetch error:', error);
-                        });
-                });
+                 <?php echo("Clicked"); ?>
+               
             }
         </script>
     </div>
