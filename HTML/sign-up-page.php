@@ -248,14 +248,6 @@
     </form>
     <div id="submittedValues"></div>
       <script>
-        function submitForm(){
-          var firstname = document.getElementById('firstname').value;
-          var lastname = document.getElementById('lastname').value;
-
-            // Display the submitted values on the screen
-          var submittedValuesDiv = document.getElementById('submittedValues');
-          submittedValuesDiv.innerHTML = `<p>Submitted values: First Name - ${firstname},  - ${lastname}</p>`
-        }
         var logIn = document.getElementById("logIn");
         if (logIn) {
           logIn.addEventListener("click", function (e) {
