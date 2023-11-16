@@ -109,7 +109,7 @@
             <input class="label" placeholder="Tracking #" type="text" id="trackingInput" />
           </div>
         </div>
-       <div class="group-div" id="groupContainer1">
+       <div class="group-div">
 <!--           <div class="group-inner"></div> -->
         <button class="track2 group-child107" id="trackButton">
         Track
@@ -176,12 +176,12 @@
         });
       }
       
-      var groupContainer1 = document.getElementById("groupContainer1");
-      if (groupContainer1) {
-        groupContainer1.addEventListener("click", function (e) {
-          window.location.href = "./employee-tracking-page-2.html";
-        });
-      }
+      // var groupContainer1 = document.getElementById("groupContainer1");
+      // if (groupContainer1) {
+      //   groupContainer1.addEventListener("click", function (e) {
+      //     window.location.href = "./employee-tracking-page-2.html";
+      //   });
+      // }
 // tracking stuff 
 document.getElementById('trackButton').addEventListener('click', function() {
     var trackingNumber = document.getElementById('trackingInput').value;
