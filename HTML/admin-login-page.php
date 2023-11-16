@@ -36,20 +36,16 @@
             <div class="sign-up-container" id="frameContainer1">
               <div class="sign-up3">Sign Up</div>
             </div>
-            <div class="login-container" id="frameContainer2">
-              <div class="sign-up3">Login</div>
-            </div>
+      
             
-            
-            
-            
-            <form action="admin-login-page-script.php" method="post" class="login-container" id="adminLoginForm">
+            <form action="admin-login-page-script.php" method="post">
+            <div class="login-container"><button type="submit" class="login-button">Admin Login</button></div>
             <div class="usernamepasswordgroup1">
                 <input class="usernamebar1" placeholder="USER ID" type="text" name="adminEmail" />
                 <input class="usernamebar1" placeholder="PASSWORD" type="password" name="adminPassword" />
             </div>
-            <button type="submit" class="login-button">Admin Login</button>
         </form>
+
 
 
             

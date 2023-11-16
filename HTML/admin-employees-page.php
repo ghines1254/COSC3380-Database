@@ -399,7 +399,7 @@ require_once 'init.php';
 
             if (button4) {
                 button4.addEventListener("click", function (e) {
-                    fetch('get-employees.php')
+                    fetch('get-employee-list.php')
                     .then(response => {
                 if (!response.ok) {
                     alert("Not ok");
@@ -413,7 +413,7 @@ require_once 'init.php';
                 console.log(data);
         
                 data.forEach(employee => {
-                    console.log(`First Name: ${EMPLOYEE.first_name}, Last Name: ${EMPLOYEE.last_name}, Email: ${EMPLOYEE.employee_email}, ID: ${EMPLOYEE.idnum}, Dept: ${EMPLOYEE.dept}`);
+                    console.log(`First Name: ${EMPLOYEE.first_name}, Last Name: ${employee.last_name}, Email: ${employee.employee_email}, ID: ${employee.idnum}, Dept: ${employee.dept}`);
                 });
             })
             .catch(error => {
