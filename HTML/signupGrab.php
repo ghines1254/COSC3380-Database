@@ -55,8 +55,12 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
     $stmt->execute();
     if ($stmt->affected_rows > 0) {
         echo "Signup Page";
+        header("Location: customer-portal-notifications-page.html");
+        exit();
     } else {
         echo "Error inserting customer status or no changes made.";
+        header("Location: customer-portal-notifications-page.html");
+        exit();
     }
 
     $stmt->close();
