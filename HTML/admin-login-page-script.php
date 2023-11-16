@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        if ($adminPassword === $row['admin_password']) {
+        if ($password === $row['PASSWORD']) {
             // Redirect to admin portal notifications page
             header("Location: ./admin-portal-notifications-page.html");
             exit;
