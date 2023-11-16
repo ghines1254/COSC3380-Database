@@ -212,7 +212,7 @@
               </div>
             </div>
             <div>
-              <button type="submit">Sign Up</button>
+              <button type="submit" formaction="signupGrab.php">Sign Up</button>
             </div>
             
           </div>
