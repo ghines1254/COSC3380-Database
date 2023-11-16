@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $status = $_POST['status'];
 
     $stmt = $conn->prepare("UPDATE PACKAGE SET status = ? WHERE tracking_number = ?");
-    $stmt->bind_param("ss", $status, $packageId);
+    $stmt->bind_param("ss", $status, $package_id);
     $stmt->execute();
 
     if ($stmt->affected_rows > 0) {
