@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $status = $_POST['status'];
 
     // Database update query
-    $stmt = $conn->prepare("UPDATE packages SET status = ? WHERE package_id = ?");
+    $stmt = $conn->prepare("UPDATE PACKAGE SET status = ? WHERE package_id = ?");
     $stmt->bind_param("si", $status, $packageId);
     $stmt->execute();
 
