@@ -203,21 +203,22 @@
 // tracking stuff 
 document.getElementById('trackButton').addEventListener('click', function() {
     var trackingNumber = document.getElementById('trackingInput').value;
-    fetch('https://coogmail.com/tracking.php?tracking_number=' + trackingNumber)
+    fetch('https://coogmail.com/tracking.php?tracking_number=' + encodeURIComponent(trackingNumber))
     .then(response => response.json())
     .then(data => {
             if (data.status === 'At Post Office') {
-                window.location.href = "./tracking-page-2.html";
+                window.location.href = "./tracking-page-2.html?tracking_number=" + encodeURIComponent(trackingNumber);
             } else if (data.status === 'En Route') {
-                window.location.href = "./tracking-page-3.html";
+                window.location.href = "./tracking-page-3.html?tracking_number=" + encodeURIComponent(trackingNumber);
             } else if (data.status === 'Delivered') {
-                window.location.href = "./tracking-page-4.html";
+                window.location.href = "./tracking-page-4.html?tracking_number=" + encodeURIComponent(trackingNumber);
             } else {
                 alert('Invalid tracking number');
             }
         })
         .catch(error => console.error('Error:', error));
 });
+
  
       </script>
   </body>

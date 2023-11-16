@@ -106,13 +106,14 @@
           <div class="text-field">
             <img class="tangouser-icon" alt="" src="./public/tangouser.svg" />
 
-            <input class="label" placeholder="Tracking #" type="text" />
+            <input class="label" placeholder="Tracking #" type="text" id="trackingInput" />
           </div>
         </div>
-        <div class="group-div" id="groupContainer1">
-          <div class="group-inner"></div>
-          <div class="track">
-            <p class="begin-tracking-here">Track</p>
+       <div class="group-div">
+<!--           <div class="group-inner"></div> -->
+        <button class="track2 group-child107" id="trackButton">
+        Track
+    </button>
           </div>
         </div>
       </div>
@@ -175,12 +176,32 @@
         });
       }
       
-      var groupContainer1 = document.getElementById("groupContainer1");
-      if (groupContainer1) {
-        groupContainer1.addEventListener("click", function (e) {
-          window.location.href = "./employee-tracking-page-2.html";
-        });
-      }
+      // var groupContainer1 = document.getElementById("groupContainer1");
+      // if (groupContainer1) {
+      //   groupContainer1.addEventListener("click", function (e) {
+      //     window.location.href = "./employee-tracking-page-2.html";
+      //   });
+      // }
+// tracking stuff 
+document.getElementById('trackButton').addEventListener('click', function() {
+    var trackingNumber = document.getElementById('trackingInput').value;
+    fetch('https://coogmail.com/tracking.php?tracking_number=' + encodeURIComponent(trackingNumber))
+    .then(response => response.json())
+    .then(data => {
+            if (data.status === 'At Post Office') {
+                window.location.href = "./employee-tracking-page-2.html?tracking_number=" + encodeURIComponent(trackingNumber);
+            } else if (data.status === 'En Route') {
+                window.location.href = "./employee-tracking-page-3.html?tracking_number=" + encodeURIComponent(trackingNumber);
+            } else if (data.status === 'Delivered') {
+                window.location.href = "./employee-tracking-page-4.html?tracking_number=" + encodeURIComponent(trackingNumber);
+            } else {
+                alert('Invalid tracking number');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+});
+
+      
       </script>
   </body>
 </html>

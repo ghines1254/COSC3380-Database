@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // check if credentials are valid
     if ($result->num_rows > 0) {
         // valid, do something 
-        header("Location: ./cutomer-portal-nofications-page.html");
+        header("Location: ./tracking-page.php");
         exit();
     } else {
         // invalid
@@ -61,14 +61,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 					<div class="sign-up-frame" id="frameContainer1">
 						<div class="sign-up2">Sign Up</div>
 					</div>
-					<div class="login-frame" id="frameContainer2">
+
+<!-- test -->
+					
+<form action="login-page-script.php" method="post" class="login-frame" id="frameContainer2">
+    <div class="sign-up2">Login</div>
+
+    <div class="usernamepasswordgroup2">
+        <input class="usernamebar2" placeholder="USER ID" type="text" name="email" />
+
+        <input class="usernamebar2" placeholder="PASSWORD" type="password" name="password"/>
+    </div>
+
+    <button type="submit" class="login-button">Login</button>
+</form>
+
+
+
+
+					
+<!-- 					<div class="login-frame" id="frameContainer2">
 						<div class="sign-up2">Login</div>
 					</div>
 					<div class="usernamepasswordgroup2">
-						<input class="usernamebar2" placeholder="USER ID" type="text" />
+						<input class="usernamebar2" placeholder="USER ID" type="text" name="userid"/>
 
-						<input class="usernamebar2" placeholder="PASSWORD" type="text" />
-					</div>
+						<input class="usernamebar2" placeholder="PASSWORD" type="text" name="password"/>
+					</div> -->
 					<div class="frame-parent9">
 						<div class="customer-frame">
 							<b class="customer2">Customer Login</b>
@@ -101,14 +120,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			var frameContainer1 = document.getElementById("frameContainer1");
 			if (frameContainer1) {
 				frameContainer1.addEventListener("click", function (e) {
-					window.location.href = "./s-ign-up-page.html";
+					window.location.href = "./sign-up-page.php";
 				});
 			}
 
 			var frameContainer2 = document.getElementById("frameContainer2");
 			if (frameContainer2) {
 				frameContainer2.addEventListener("click", function (e) {
-					window.location.href = "./login-page.php";
+					window.location.href = "./customer-portal-nofications-page.html";
 				});
 			}
 

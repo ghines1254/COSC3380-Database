@@ -54,16 +54,7 @@
                       required
                     />
                   </div>
-                  <div class="middleinitial">
-                    <div class="middleinitial-child"></div>
-                    <input
-                      class="middle-initial"
-                      placeholder="Middle Initial"
-                      type="text"
-                      id = "middleinitial"
-                      name = "middleinitial"
-                    />
-                  </div>
+                
                   <div class="firstname">
                     <img
                       class="lastname-child"

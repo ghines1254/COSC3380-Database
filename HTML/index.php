@@ -75,7 +75,7 @@
 			var groupContainer = document.getElementById("groupContainer");
 			if (groupContainer) {
 				groupContainer.addEventListener("click", function (e) {
-					window.location.href = "./login-page.html";
+					window.location.href = "./login-page.php";
 				});
 			}
 		</script>

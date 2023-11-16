@@ -1,22 +1,14 @@
 <?php
-$servername = "34.68.154.206";
-$username = "root";
-$password = "umapuma";
+$host = "34.68.154.206";
 $database = "Post_Office_Schema";
+$user = "root";
+$password = "umapuma";
 
-try {
-    // Create connection
-    $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
+// Create connection
+$conn = new mysqli($host, $user, $password, $database);
 
-    // Set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    // Perform database operations here...
-
-    // Close connection (optional for PDO, as it will be automatically closed when script ends)
-    $conn = null;
-} catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
-
 ?>
