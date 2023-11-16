@@ -28,3 +28,4 @@
         header("Location: ../sign-up-page.php");
     }
 
+?>
