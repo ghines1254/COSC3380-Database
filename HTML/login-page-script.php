@@ -13,9 +13,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    $email = $_GET['email'];
-    $password = $_GET['password'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
     // Validate and sanitize inputs
     // ...
@@ -29,8 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if (password_verify($password, $row['PASSWORD'])) {
-            echo "Login successful.";
-            // Additional login logic here
+            // Redirect to customer portal notifications page
+            header("Location: customer-portal-notifications.html");
+            exit;
         } else {
             echo "Invalid password.";
         }
