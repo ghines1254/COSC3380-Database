@@ -106,13 +106,14 @@
           <div class="text-field">
             <img class="tangouser-icon" alt="" src="./public/tangouser.svg" />
 
-            <input class="label" placeholder="Tracking #" type="text" />
+            <input class="label" placeholder="Tracking #" type="text" id="trackingInput" />
           </div>
         </div>
         <div class="group-div" id="groupContainer1">
           <div class="group-inner"></div>
-          <div class="track">
-            <p class="begin-tracking-here">Track</p>
+        <button class="track2 group-child107" id="trackButton">
+        Track
+    </button>
           </div>
         </div>
       </div>
