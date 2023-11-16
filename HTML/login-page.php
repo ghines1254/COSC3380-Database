@@ -68,8 +68,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!-- test -->
 					
-<form action="login-page-script.php" method="post" class="login-frame" id="frameContainer2">
-    <div ><button type="submit" class="sign-up2">Login</button></div>
+<form action="login-page-script.php" method="post" >
+    <div class = "login-frame" ><button type="submit" class="sign-up2">Login</button></div>
 
     <div class="usernamepasswordgroup2">
         <input class="usernamebar2" placeholder="USER ID" type="text" name="email" />
