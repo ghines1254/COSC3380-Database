@@ -42,6 +42,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
    
         $stmt = $conn->prepare("INSERT INTO CUSTOMER (customer_phone, customer_id, zip, state, street_address, city, first_name, last_name, email, PASSWORD) VALUES (phoneNum, customerID, zipcode, state, address1, city, firstName, lastName, email, password);");  
         $stmt->execute();
+
+        $query2 = "INSERT INTO WEBUSERS(UserID, Password, Email, ROLEID) values(email, password, email, '1')";
+        $stmt2 = $conn->prepare($query2)
+        $stmt2->execute();
    
     }catch (Exception $e){
         echo "Error: " . $e->getMessage();
