@@ -58,7 +58,6 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
         echo "Error inserting customer status or no changes made.";
     }
 
-    echo $firstName . " " . $lastName;
     $stmt->close();
     $conn->close();
  
