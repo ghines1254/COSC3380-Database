@@ -36,7 +36,7 @@
             <div class="sign-up-wrapper" id="frameContainer1">
               <div class="sign-up2">Sign Up</div>
             </div>
-             <form action="employee-login-page-script.php" method="post" class="login-wrapper" id="loginForm">
+             <form action="employee-login-page-script.php" method="post" >
               <div class="login-wrapper">Login</div>
               <div class="usernamepasswordgroup">
                 <input class="usernamebar" placeholder="USER ID" type="text" name="email" />
