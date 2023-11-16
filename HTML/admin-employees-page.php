@@ -399,7 +399,7 @@ require_once 'init.php';
 
             if (button4) {
                 button4.addEventListener("click", function (e) {
-                    fetch('get-employees.php')
+                    fetch('get-employee-list.php')
                     .then(response => {
                 if (!response.ok) {
                     alert("Not ok");
