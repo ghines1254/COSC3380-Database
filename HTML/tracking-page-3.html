@@ -121,6 +121,18 @@
     </div>
 
     <script>
+//test
+    document.addEventListener('DOMContentLoaded', function() {
+        const params = new URLSearchParams(window.location.search);
+        const trackingNumber = params.get('tracking_number');
+        if (trackingNumber) {
+            document.querySelector('.tracking17').textContent += ' ' + trackingNumber;
+        }
+    });
+
+
+
+      
       var frameContainer1 = document.getElementById("frameContainer1");
       if (frameContainer1) {
         frameContainer1.addEventListener("click", function (e) {
