@@ -261,7 +261,7 @@ require_once 'init.php';
         var frameContainer8 = document.getElementById("frameContainer8");
         if (frameContainer8) {
           frameContainer8.addEventListener("click", function (e) {
-            window.location.href = "./index-page.html";
+            window.location.href = "./index.html";
           });
         }
         </script>
