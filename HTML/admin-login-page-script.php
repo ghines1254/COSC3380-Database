@@ -1,17 +1,5 @@
 <?php
-// Database connection details
-$host = "34.68.154.206";
-$database = "Post_Office_Schema";
-$user = "root";
-$password = "umapuma";
-
-// Create connection
-$conn = new mysqli($host, $user, $password, $database);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+// Database connection logic here
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $adminEmail = $_POST['adminEmail'];
@@ -21,17 +9,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // ...
 
     // Prepare and execute the query for admin login
-    $stmt = $conn->prepare("SELECT emp_password FROM EMPLOYEE WHERE email = ?"); 
+    $stmt = $conn->prepare("SELECT emp_password FROM EMPLOYEE WHERE email = ?");
     $stmt->bind_param("s", $adminEmail);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        if ($password === $row['PASSWORD']) {
-            // Redirect to admin portal notifications page
-            header("Location: ./admin-portal-notifications-page.html");
-            exit;
+        if ($adminPassword === $row['admin_password']) {
+            // Admin authentication successful
+            // Redirect or start session, etc.
         } else {
             echo "Invalid password.";
         }
@@ -43,3 +30,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 }
 ?>
+
