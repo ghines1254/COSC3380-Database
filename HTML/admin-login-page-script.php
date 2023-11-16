@@ -1,11 +1,49 @@
-import mysql.connector as mysql
-from dbConnector import *
+<?php
+require_once 'init.php';
+?>
 
-from bottle import route, run, template, request, static_file
+<?php
+// Database connection details
+$host = "34.68.154.206";
+$database = "Post_Office_Schema";
+$user = "root";
+$password = "umapuma";
 
-@route('/admin-login-page', method = 'post')
+// Create connection
+$conn = new mysqli($host, $user, $password, $database);
 
-def adminLogin():
-    userID = request.forms.get('username')
-    password = request.forms.get('password')  
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Validate and sanitize inputs
+    // ...
+
+    // Prepare and execute the query
+    $stmt = $conn->prepare("SELECT emp_password FROM EMPLOYEE WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        if ($password === $row['emp_password']) {
+            // Redirect to employee portal notifications page (adjust the URL as needed)
+            header("Location: admin-portal-nofications-page.html");
+            exit;
+        } else {
+            echo "Invalid password.";
+        }
+    } else {
+        echo "Email not found.";
+    }
+
+    $stmt->close();
+    $conn->close();
+}
+?>
