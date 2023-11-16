@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!-- test -->
 					
 <form action="login-page-script.php" method="post" >
-    <div  ><button type="submit" class = "login-frame">Login</button></div>
+    <div class = "login-frame" ><button type="submit" class="sign-up2">Login</button></div>
 
     <div class="usernamepasswordgroup2">
         <input class="usernamebar2" placeholder="USER ID" type="text" name="email" />
