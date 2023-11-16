@@ -21,12 +21,13 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
 {
     function get_unique_id() 
     {
-        $uniqueRandomNumber = random_int(1000000000, 9999999999) . time();
-        return $uniqueRandomNumber;
+        $uniqueRandomNumber = random_int(1000000000, 9999999999);
+        $formattedNumber = str_pad($uniqueRandomNumber, 10, '0', STR_PAD_LEFT);
+        return $formattedNumber;
     }
 
 
-    $customerID = "1000000000";
+    $customerID = get_unique_id();
     $firstName = $_POST['firstname'];
     $lastName = $_POST['lastname'];
     $address1 = $_POST['address-line-1'];
