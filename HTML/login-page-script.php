@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
         if ($password === $row['PASSWORD']) {
             // Redirect to customer portal notifications page
-            header("Location: customer-portal-notifications.html");
+            header("Location: customer-portal-nofications-page.html");
             exit;
         } else {
             echo "Invalid password.";
