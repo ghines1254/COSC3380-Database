@@ -108,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			var frameContainer2 = document.getElementById("frameContainer2");
 			if (frameContainer2) {
 				frameContainer2.addEventListener("click", function (e) {
-					window.location.href = "./customer-portal-notifications-page.html";
+					window.location.href = "./customer-portal-nofications-page.html";
 				});
 			}
 
