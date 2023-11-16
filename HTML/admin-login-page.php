@@ -38,13 +38,13 @@
             </div>
       
             
-            <form action="admin-login-page-script.php" method="post" class="login-container" id="adminLoginForm">
-    <div class="usernamepasswordgroup1">
-        <input class="usernamebar1" placeholder="Admin Email" type="text" name="adminEmail" />
-        <input class="usernamebar1" placeholder="Admin Password" type="password" name="adminPassword" />
-    </div>
-    <button type="submit" class="login-button">Admin Login</button>
-</form>
+            <form action="admin-login-page-script.php" method="post">
+            <div class="login-container"><button type="submit" class="login-button">Admin Login</button></div>
+            <div class="usernamepasswordgroup1">
+                <input class="usernamebar1" placeholder="USER ID" type="text" name="adminEmail" />
+                <input class="usernamebar1" placeholder="PASSWORD" type="password" name="adminPassword" />
+            </div>
+        </form>
 
 
 
