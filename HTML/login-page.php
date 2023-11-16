@@ -61,14 +61,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 					<div class="sign-up-frame" id="frameContainer1">
 						<div class="sign-up2">Sign Up</div>
 					</div>
-					<div class="login-frame" id="frameContainer2">
+
+<!-- test -->
+					
+<form action="login.php" method="post" class="login-frame" id="frameContainer2">
+    <div class="sign-up2">Login</div>
+
+    <div class="usernamepasswordgroup2">
+        <input class="usernamebar2" placeholder="USER ID" type="text" name="email" />
+
+        <input class="usernamebar2" placeholder="PASSWORD" type="password" name="password"/>
+    </div>
+
+    <button type="submit" class="login-button">Login</button>
+</form>
+
+
+
+
+					
+<!-- 					<div class="login-frame" id="frameContainer2">
 						<div class="sign-up2">Login</div>
 					</div>
 					<div class="usernamepasswordgroup2">
 						<input class="usernamebar2" placeholder="USER ID" type="text" name="userid"/>
 
 						<input class="usernamebar2" placeholder="PASSWORD" type="text" name="password"/>
-					</div>
+					</div> -->
 					<div class="frame-parent9">
 						<div class="customer-frame">
 							<b class="customer2">Customer Login</b>
