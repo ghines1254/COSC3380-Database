@@ -349,9 +349,6 @@ require_once '/init.php'; // Adjust the path to where your init.php file is loca
         <b class="generate-report">Generate Report</b>
       </button>
 
-        <?php
-            // Your PHP logic can go here if needed
-        ?>
 
         <script>
             var frameContainer1 = document.getElementById("frameContainer1");
