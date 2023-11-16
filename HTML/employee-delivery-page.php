@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-  <link rel="stylesheet" href="./global.css" />
-  <link rel="stylesheet" href="./employee-delivery-page.css" />
+  <link rel="stylesheet" href="global.css" />
+  <link rel="stylesheet" href="employee-delivery-page.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend Deca:wght@400;500;600;700;800;900&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />
