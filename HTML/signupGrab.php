@@ -35,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $password = $_POST['password'];
 
     $stmt = $conn->prepare("INSERT INTO CUSTOMER (customer_phone, customer_id, zip, state, street_address, city, first_name, last_name, email, created_on, PASSWORD) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");  
-    $stmt->bind_param("sssssssss",$phoneNum, $customerID, $zipcode, $state, $address1, $city, $firstName, $lastName, $email, date("Y-M-D"), $password );
+    $stmt->bind_param("ssssssssss",$phoneNum, $customerID, $zipcode, $state, $address1, $city, $firstName, $lastName, $email, date("Y-M-D"), $password );
     $stmt->execute();
    
     if ($stmt->affected_rows > 0) {
