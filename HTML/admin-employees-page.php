@@ -399,25 +399,28 @@ require_once 'init.php';
 
             if (button4) {
                 button4.addEventListener("click", function (e) {
-                    // Using fetch to make an asynchronous request
-                    fetch('admin-employees-page.py')
-                        .then(response => {
-                            // Check if the response is successful (status code in the range 200-299)
-                            if (!response.ok) {
-                                alert("Not ok");
-                                throw new Error('Network response was not ok');
-                            }
-                            // Parse the response as JSON
-                            return response.json();
-                        })
-                        .then(data => {
-                            // Handle the JSON data (update your HTML or perform other actions)
-                            console.log(data);
-                        })
-                        .catch(error => {
-                            // Handle errors
-                            console.error('Fetch error:', error);
-                        });
+                    fetch('get-employees.php')
+                    .then(response => {
+                if (!response.ok) {
+                    alert("Not ok");
+                    throw new Error('Network response was not ok');
+                }
+                
+                return response.json();
+            })
+            .then(data => {
+                
+                console.log(data);
+        
+                data.forEach(employee => {
+                    console.log(`First Name: ${EMPLOYEE.first_name}, Last Name: ${EMPLOYEE.last_name}, Email: ${EMPLOYEE.employee_email}, ID: ${EMPLOYEE.idnum}, Dept: ${EMPLOYEE.dept}`);
+                });
+            })
+            .catch(error => {
+                // Handle errors
+                console.error('Fetch error:', error);
+            });
+    });
                 });
             }
         </script>
