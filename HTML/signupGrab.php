@@ -1,4 +1,5 @@
 <?php
+
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
     function get_unique_id() 
@@ -23,9 +24,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
     try
     {
-        require_once "connection.php";
+        require_once "tracking.php";
 
         $query = "INSERT INTO CUSTOMER (customer_phone, customer_id, zip, state, street_address, city, first_name, last_name, email, PASSWORD) VALUES (phoneNum, customerID, zipcode, state, address1, city, firstName, lastName, email, password);";
+   
+        $stmt = $conn->prepare("INSERT INTO CUSTOMER (customer_phone, customer_id, zip, state, street_address, city, first_name, last_name, email, PASSWORD) VALUES (phoneNum, customerID, zipcode, state, address1, city, firstName, lastName, email, password);");  
+        $stmt->execute();
+   
     }catch (Exception $e){
         echo "Error: " . $e->getMessage();
     }

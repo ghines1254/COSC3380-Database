@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // check if credentials are valid
     if ($result->num_rows > 0) {
         // valid, do something 
-        header("Location: ./cutomer-portal-nofications-page.html");
+        header("Location: ./tracking-page.php");
         exit();
     } else {
         // invalid
@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			var frameContainer1 = document.getElementById("frameContainer1");
 			if (frameContainer1) {
 				frameContainer1.addEventListener("click", function (e) {
-					window.location.href = "./s-ign-up-page.html";
+					window.location.href = "./sign-up-page.php";
 				});
 			}
 
