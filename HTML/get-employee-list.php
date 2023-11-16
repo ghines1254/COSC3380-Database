@@ -1,6 +1,9 @@
 <?php
 require_once 'init.php';
 
+header('Access-Control-Allow-Origin: *');
+header('Content-Type: application/json');
+
 $query = "SELECT first_name, last_name, idnum, dept FROM EMPLOYEE";
 $result = $conn->query($query);
 
