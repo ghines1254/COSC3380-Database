@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 
 // Handle POST request for status update
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $packageId = $_POST['packageId'];
+    $packageId = $_POST['package_id'];
     $status = $_POST['status'];
 
     $stmt = $conn->prepare("UPDATE PACKAGE SET status = ? WHERE tracking_number = ?");
