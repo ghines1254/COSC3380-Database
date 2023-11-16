@@ -21,7 +21,7 @@ if ($conn->connect_error) {
 $trackingNumber = $_GET['tracking_number'];
 
 // Prepare and execute the query
-$stmt = $conn->prepare("SELECT status FROM PACKAGE WHERE tracking_number = ?");
+$stmt = $conn->prepare("SELECT status message FROM PACKAGE WHERE tracking_number = ?");
 $stmt->bind_param("s", $trackingNumber);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -31,6 +31,7 @@ if ($result->num_rows > 0) {
     // Fetch result
     $row = $result->fetch_assoc();
     echo json_encode(array('status' => $row['status']));
+    echo $row['message'];
 } else {
     echo json_encode(array('status' => 'not_found'));
 }
