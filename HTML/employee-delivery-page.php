@@ -78,14 +78,14 @@
       </div>
       <div class="delivery-parent">
         <div class="delivery8">
-          <button class="group-button">
-            <div class="group-child17"></div>
-            <div class="confirm-pickup">Confirm pickup</div>
-          </button>
-          <button class="rectangle-parent25">
-            <div class="group-child17"></div>
-            <div class="confirm-delivered">Confirm delivered</div>
-          </button>
+          <button class="group-button" id="confirmPickupButton">
+        <div class="group-child17"></div>
+        <div class="confirm-pickup">Confirm pickup</div>
+    </button>
+    <button class="rectangle-parent25" id="confirmDeliveredButton">
+        <div class="group-child17"></div>
+        <div class="confirm-delivered">Confirm delivered</div>
+    </button>
           <div class="rectangle-parent26">
             <div class="frame-child6"></div>
             <div class="rectangle-parent27">
@@ -96,10 +96,10 @@
               <div class="package-id">Package ID:</div>
             </div>
           </div>
-          <div class="id">
-            <input class="id-child" placeholder="Package ID" type="text" />
-          </div>
-        </div>
+         <div class="id">
+        <input class="id-child" placeholder="Package ID" type="text" id="packageIdInput" />
+    </div>
+</div>
 
       <div class="we-would-like">
         We would like to remind you of the importance of confirming each
@@ -117,6 +117,41 @@
   </div>
 
   <script>
+// test
+    <script>
+document.getElementById('confirmPickupButton').addEventListener('click', function() {
+    updatePackageStatus('En Route');
+});
+
+document.getElementById('confirmDeliveredButton').addEventListener('click', function() {
+    updatePackageStatus('Delivered');
+});
+
+function updatePackageStatus(status) {
+    var packageId = document.getElementById('packageIdInput').value;
+    fetch('employee-delivery-script.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: 'packageId=' + encodeURIComponent(packageId) + '&status=' + encodeURIComponent(status)
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log(data); // Process server response
+    })
+    .catch(error => console.error('Error:', error));
+}
+</script>
+
+
+
+
+
+
+
+
+    
     <?php echo "var frameContainer1 = document.getElementById('frameContainer1');"; ?>
     <?php echo "if (frameContainer1) {
       frameContainer1.addEventListener('click', function (e) {
