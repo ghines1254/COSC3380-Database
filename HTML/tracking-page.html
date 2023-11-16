@@ -111,10 +111,10 @@
                 
               </div>
               <div class="rectangle-parent168">
-                <div class="group-child107"></div>
-                <button class="track2" id="trackButton">
+                <button class="group-child107"></div>
+                <div class="track2" id="trackButton">
                   <p class="begin-tracking-here1">Track</p>
-                   </button>
+                </button>
                 </div>
               </div>
             </div>
@@ -196,9 +196,9 @@
 // tracking stuff 
 document.getElementById('trackButton').addEventListener('click', function() {
     var trackingNumber = document.getElementById('trackingInput').value;
-    fetch('https://coogmail.com/track?tracking_number=' + trackingNumber)
-        .then(response => response.json())
-        .then(data => {
+    fetch('https://coogmail.com/tracking.php?tracking_number=' + trackingNumber)
+    .then(response => response.json())
+    .then(data => {
             if (data.status === 'At Post Office') {
                 window.location.href = "./tracking-page-2.html";
             } else if (data.status === 'En Route') {
