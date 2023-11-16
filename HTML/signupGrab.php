@@ -26,7 +26,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
     }
 
 
-    $customerID = get_unique_id();
+    $customerID = "1000000000";
     $firstName = $_POST['firstname'];
     $lastName = $_POST['lastname'];
     $address1 = $_POST['address-line-1'];
