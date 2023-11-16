@@ -471,8 +471,8 @@
   font-size: var(--font-size-mid);
 }
 .we-would-like {
-  top: 312px;
-  left: calc(50% - 130px);
+  top: -100px;
+  left: calc(50% - 300px);
   font-weight: 600;
   color: var(--lightaccent);
   display: inline-block;
@@ -486,8 +486,8 @@
 }
 .frame7 {
   position: absolute;
-  top: 142px;
-  left: calc(50% + 567px);
+  top: -269px;
+  left: calc(50% + 400px);
   width: 70px;
   overflow: hidden;
   display: flex;
