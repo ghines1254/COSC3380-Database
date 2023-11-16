@@ -196,9 +196,9 @@
 // tracking stuff 
 document.getElementById('trackButton').addEventListener('click', function() {
     var trackingNumber = document.getElementById('trackingInput').value;
-    fetch('https://coogmail.com/track?tracking_number=' + trackingNumber)
-        .then(response => response.json())
-        .then(data => {
+    fetch('https://coogmail.com/tracking.php?tracking_number=' + trackingNumber)
+    .then(response => response.json())
+    .then(data => {
             if (data.status === 'At Post Office') {
                 window.location.href = "./tracking-page-2.html";
             } else if (data.status === 'En Route') {
