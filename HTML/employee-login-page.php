@@ -92,14 +92,14 @@
       var frameContainer3 = document.getElementById("frameContainer3");
       if (frameContainer3) {
         frameContainer3.addEventListener("click", function (e) {
-          window.location.href = "./login-page.html";
+          window.location.href = "./login-page.php";
         });
       }
       
       var frameContainer5 = document.getElementById("frameContainer5");
       if (frameContainer5) {
         frameContainer5.addEventListener("click", function (e) {
-          window.location.href = "./admin-login-page.html";
+          window.location.href = "./admin-login-page.php";
         });
       }
       
