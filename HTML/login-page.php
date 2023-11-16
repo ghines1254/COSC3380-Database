@@ -65,9 +65,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 						<div class="sign-up2">Login</div>
 					</div>
 					<div class="usernamepasswordgroup2">
-						<input class="usernamebar2" placeholder="USER ID" type="text" />
+						<input class="usernamebar2" placeholder="USER ID" type="text" name="userid"/>
 
-						<input class="usernamebar2" placeholder="PASSWORD" type="text" />
+						<input class="usernamebar2" placeholder="PASSWORD" type="text" name="password"/>
 					</div>
 					<div class="frame-parent9">
 						<div class="customer-frame">
