@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+  <link rel="stylesheet" href="./global.css" />
+  <link rel="stylesheet" href="./employee-delivery-page.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend Deca:wght@400;500;600;700;800;900&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />
+</head>
+<body>
+  <div class="employee-delivery-page">
+    <div class="minibackground8">
+        <img class="image-1-icon8" alt="" src="./public/image-1@2x.png" />
+      </div>
+      <div class="navigation-bar-light8">
+        <div class="navigation-bar8"></div>
+        <div class="navigation-bar-light-inner6">
+          <div class="rectangle-parent23">
+            <div class="group-child16"></div>
+            <b class="login8">Login</b>
+          </div>
+        </div>
+        <div class="cougarcourier1-4-parent6" id="frameContainer1">
+          <img
+            class="cougarcourier1-4-icon8"
+            alt=""
+            src="./public/cougarcourier1-4@2x.png"
+          />
+
+          <b class="cougar-courier8">Cougar Courier</b>
+        </div>
+      </div>
+      <div class="portal-centering-frame7">
+        <div class="employee-portal-outline7">
+          <div class="frame-parent14">
+            <div class="rectangle-parent24">
+              <div class="frame-child5"></div>
+              <div class="welcome-to-your-portal-page-wrapper5">
+                <b class="welcome-to-your7">Welcome to your portal page!</b>
+              </div>
+            </div>
+            <div class="frame-parent15">
+              <div class="frame-wrapper7">
+                <div class="button2-parent5">
+                  <div class="button214" id="button2Container">
+                    <div class="button2-child12"></div>
+                    <b class="button-214">Shipping</b>
+                  </div>
+                  <div class="button215" id="button2Container1">
+                    <div class="button2-child12"></div>
+                    <b class="button-214">Tracking</b>
+                  </div>
+                  <div class="button37" id="button3Container">
+                    <div class="button3-child5"></div>
+                    <b class="button-214">Check Out</b>
+                  </div>
+                  <div class="button414" id="button4Container">
+                    <div class="button2-child12"></div>
+                    <b class="button-214">Delivery</b>
+                  </div>
+                  <div class="button415" id="button4Container1">
+                    <div class="button2-child12"></div>
+                    <b class="button-214">Dependent</b>
+                  </div>
+                  <div class="button77" id="button7Container">
+                    <div class="button2-child12"></div>
+                    <b class="button-214">Account</b>
+                  </div>
+                </div>
+              </div>
+              <div class="portal-page7"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="delivery-parent">
+        <div class="delivery8">
+          <button class="group-button">
+            <div class="group-child17"></div>
+            <div class="confirm-pickup">Confirm pickup</div>
+          </button>
+          <button class="rectangle-parent25">
+            <div class="group-child17"></div>
+            <div class="confirm-delivered">Confirm delivered</div>
+          </button>
+          <div class="rectangle-parent26">
+            <div class="frame-child6"></div>
+            <div class="rectangle-parent27">
+              <div class="group-child19"></div>
+              <img class="vector-icon" alt="" src="./public/vector.svg" />
+            </div>
+            <div class="package-id-wrapper">
+              <div class="package-id">Package ID:</div>
+            </div>
+          </div>
+          <div class="id">
+            <input class="id-child" placeholder="Package ID" type="text" />
+          </div>
+        </div>
+        <div class="delivery9">
+          <button class="group-button">
+            <div class="group-child17"></div>
+            <div class="confirm-pickup">Confirm pickup</div>
+          </button>
+          <button class="rectangle-parent25">
+            <div class="group-child17"></div>
+            <div class="confirm-delivered">Confirm delivered</div>
+          </button>
+          <div class="rectangle-parent26">
+            <div class="frame-child6"></div>
+            <div class="rectangle-parent27">
+              <div class="group-child19"></div>
+              <img class="vector-icon" alt="" src="./public/vector.svg" />
+            </div>
+            <div class="package-id-wrapper">
+              <div class="package-id">Package ID:</div>
+            </div>
+          </div>
+          <div class="id">
+            <input class="id-child" placeholder="Package ID" type="text" />
+          </div>
+        </div>
+        <div class="delivery10">
+          <button class="group-button">
+            <div class="group-child17"></div>
+            <div class="confirm-pickup">Confirm pickup</div>
+          </button>
+          <button class="rectangle-parent25">
+            <div class="group-child17"></div>
+            <div class="confirm-delivered">Confirm delivered</div>
+          </button>
+          <div class="rectangle-parent26">
+            <div class="frame-child6"></div>
+            <div class="rectangle-parent27">
+              <div class="group-child19"></div>
+              <img class="vector-icon" alt="" src="./public/vector.svg" />
+            </div>
+            <div class="package-id-wrapper">
+              <div class="package-id">Package ID:</div>
+            </div>
+          </div>
+          <div class="id">
+            <input class="id-child" placeholder="Package ID" type="text" />
+          </div>
+        </div>
+        <div class="delivery11">
+          <button class="group-button">
+            <div class="group-child17"></div>
+            <div class="confirm-pickup">Confirm pickup</div>
+          </button>
+          <button class="rectangle-parent25">
+            <div class="group-child17"></div>
+            <div class="confirm-delivered">Confirm delivered</div>
+          </button>
+          <div class="rectangle-parent26">
+            <div class="frame-child6"></div>
+            <div class="rectangle-parent27">
+              <div class="group-child19"></div>
+              <img class="vector-icon" alt="" src="./public/vector.svg" />
+            </div>
+            <div class="package-id-wrapper">
+              <div class="package-id">Package ID:</div>
+            </div>
+          </div>
+          <div class="id">
+            <input class="id-child" placeholder="Package ID" type="text" />
+          </div>
+        </div>
+        <div class="delivery12">
+          <button class="group-button">
+            <div class="group-child17"></div>
+            <div class="confirm-pickup">Confirm pickup</div>
+          </button>
+          <button class="rectangle-parent25">
+            <div class="group-child17"></div>
+            <div class="confirm-delivered">Confirm delivered</div>
+          </button>
+          <div class="rectangle-parent26">
+            <div class="frame-child6"></div>
+            <div class="rectangle-parent27">
+              <div class="group-child19"></div>
+              <img class="vector-icon" alt="" src="./public/vector.svg" />
+            </div>
+            <div class="package-id-wrapper">
+              <div class="package-id">Package ID:</div>
+            </div>
+          </div>
+          <div class="id">
+            <input class="id-child" placeholder="Package ID" type="text" />
+          </div>
+        </div>
+        <div class="delivery13">
+          <button class="group-button">
+            <div class="group-child17"></div>
+            <div class="confirm-pickup">Confirm pickup</div>
+          </button>
+          <button class="rectangle-parent25">
+            <div class="group-child17"></div>
+            <div class="confirm-delivered">Confirm delivered</div>
+          </button>
+          <div class="rectangle-parent26">
+            <div class="frame-child6"></div>
+            <div class="rectangle-parent27">
+              <div class="group-child19"></div>
+              <img class="vector-icon" alt="" src="./public/vector.svg" />
+            </div>
+            <div class="package-id-wrapper">
+              <div class="package-id">Package ID:</div>
+            </div>
+          </div>
+          <div class="id">
+            <input class="id-child" placeholder="Package ID" type="text" />
+          </div>
+        </div>
+        <div class="delivery14">
+          <button class="group-button">
+            <div class="group-child17"></div>
+            <div class="confirm-pickup">Confirm pickup</div>
+          </button>
+          <button class="rectangle-parent25">
+            <div class="group-child17"></div>
+            <div class="confirm-delivered">Confirm delivered</div>
+          </button>
+          <div class="rectangle-parent26">
+            <div class="frame-child6"></div>
+            <div class="rectangle-parent27">
+              <div class="group-child19"></div>
+              <img class="vector-icon" alt="" src="./public/vector.svg" />
+            </div>
+            <div class="package-id-wrapper">
+              <div class="package-id">Package ID:</div>
+            </div>
+          </div>
+          <div class="id">
+            <input class="id-child" placeholder="Package ID" type="text" />
+          </div>
+        </div>
+        <div class="delivery15">
+          <button class="group-button">
+            <div class="group-child17"></div>
+            <div class="confirm-pickup">Confirm pickup</div>
+          </button>
+          <button class="rectangle-parent25">
+            <div class="group-child17"></div>
+            <div class="confirm-delivered">Confirm delivered</div>
+          </button>
+          <div class="rectangle-parent26">
+            <div class="frame-child6"></div>
+            <div class="rectangle-parent27">
+              <div class="group-child19"></div>
+              <img class="vector-icon" alt="" src="./public/vector.svg" />
+            </div>
+            <div class="package-id-wrapper">
+              <div class="package-id">Package ID:</div>
+            </div>
+          </div>
+          <div class="id">
+            <input class="id-child" placeholder="Package ID" type="text" />
+          </div>
+        </div>
+        <div class="delivery16">
+          <button class="group-button">
+            <div class="group-child17"></div>
+            <div class="confirm-pickup">Confirm pickup</div>
+          </button>
+          <button class="rectangle-parent25">
+            <div class="group-child17"></div>
+            <div class="confirm-delivered">Confirm delivered</div>
+          </button>
+          <div class="rectangle-parent26">
+            <div class="frame-child6"></div>
+            <div class="rectangle-parent27">
+              <div class="group-child19"></div>
+              <img class="vector-icon" alt="" src="./public/vector.svg" />
+            </div>
+            <div class="package-id-wrapper">
+              <div class="package-id">Package ID:</div>
+            </div>
+          </div>
+          <div class="id">
+            <input class="id-child" placeholder="Package ID" type="text" />
+          </div>
+        </div>
+      </div>
+      <div class="we-would-like">
+        We would like to remind you of the importance of confirming each
+        delivery in our tracking system once completed. This step is crucial as
+        it ensures accurate record-keeping, customer satisfaction, and timely
+        updates for our team and clients.
+      </div>
+      <div class="frame7" id="frameContainer27">
+        <img
+          class="portal-home-button7"
+          alt=""
+          src="./public/portal-home-button.svg"
+        />
+      </div>
+  </div>
+
+  <script>
+    <?php echo "var frameContainer1 = document.getElementById('frameContainer1');"; ?>
+    <?php echo "if (frameContainer1) {
+      frameContainer1.addEventListener('click', function (e) {
+        window.location.href = './home-page.html';
+      });
+    }"; ?>
+
+    <?php echo "var button2Container = document.getElementById('button2Container');"; ?>
+    <?php echo "if (button2Container) {
+      button2Container.addEventListener('click', function (e) {
+        window.location.href = './employee-shipping-page.html';
+      });
+    }"; ?>
+
+    <?php echo "var button2Container1 = document.getElementById('button2Container1');"; ?>
+    <?php echo "if (button2Container1) {
+      button2Container1.addEventListener('click', function (e) {
+        window.location.href = './employee-tracking-page.html';
+      });
+    }"; ?>
+
+    <?php echo "var button3Container = document.getElementById('button3Container');"; ?>
+    <?php echo "if (button3Container) {
+      button3Container.addEventListener('click', function (e) {
+        window.location.href = './employee-checkout-page.html';
+      });
+    }"; ?>
+
+    <?php echo "var button4Container = document.getElementById('button4Container');"; ?>
+    <?php echo "if (button4Container) {
+      button4Container.addEventListener('click', function (e) {
+        window.location.href = './employee-delivery-page.html';
+      });
+    }"; ?>
+
+    <?php echo "var button4Container1 = document.getElementById('button4Container1');"; ?>
+    <?php echo "if (button4Container1) {
+      button4Container1.addEventListener('click', function (e) {
+        window.location.href = './employee-dependent-page.html';
+      });
+    }"; ?>
+
+    <?php echo "var button7Container = document.getElementById('button7Container');"; ?>
+    <?php echo "if (button7Container) {
+      button7Container.addEventListener('click', function (e) {
+        window.location.href = './employee-account-page.html';
+      });
+    }"; ?>
+
+    <?php echo "var frameContainer27 = document.getElementById('frameContainer27');"; ?>
+    <?php echo "if (frameContainer27) {
+      frameContainer27.addEventListener('click', function (e) {
+        window.location.href = './employee-portal-notifications-page.html';
+      });
+    }"; ?>
+  </script>
+</body>
+</html>
