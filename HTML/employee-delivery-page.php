@@ -150,7 +150,7 @@ require_once 'init.php';
       var button2Container1 = document.getElementById("button2Container1");
       if (button2Container1) {
         button2Container1.addEventListener("click", function (e) {
-          window.location.href = "./employee-tracking-page.html";
+          window.location.href = "./employee-tracking-page.php";
         });
       }
       

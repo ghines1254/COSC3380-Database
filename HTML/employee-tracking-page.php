@@ -141,7 +141,7 @@ require_once 'init.php';
       var button2Container1 = document.getElementById("button2Container1");
       if (button2Container1) {
         button2Container1.addEventListener("click", function (e) {
-          window.location.href = "employee-tracking-page.html";
+          window.location.href = "employee-tracking-page.php";
         });
       }
       
@@ -155,7 +155,7 @@ require_once 'init.php';
       var button4Container = document.getElementById("button4Container");
       if (button4Container) {
         button4Container.addEventListener("click", function (e) {
-          window.location.href = "./employee-delivery-page.html";
+          window.location.href = "./employee-delivery-page.php";
         });
       }
       
@@ -193,11 +193,11 @@ document.getElementById('trackButton').addEventListener('click', function() {
     .then(response => response.json())
     .then(data => {
             if (data.status === 'At Post Office') {
-                window.location.href = "./employee-tracking-page-2.html?tracking_number=" + encodeURIComponent(trackingNumber);
+                window.location.href = "./employee-tracking-page-2.php?tracking_number=" + encodeURIComponent(trackingNumber);
             } else if (data.status === 'En Route') {
-                window.location.href = "./employee-tracking-page-3.html?tracking_number=" + encodeURIComponent(trackingNumber);
+                window.location.href = "./employee-tracking-page-3.php?tracking_number=" + encodeURIComponent(trackingNumber);
             } else if (data.status === 'Delivered') {
-                window.location.href = "./employee-tracking-page-4.html?tracking_number=" + encodeURIComponent(trackingNumber);
+                window.location.href = "./employee-tracking-page-4.php?tracking_number=" + encodeURIComponent(trackingNumber);
             } else {
                 alert('Invalid tracking number');
             }
