@@ -338,7 +338,7 @@
       var groupContainer1 = document.getElementById("groupContainer1");
       if (groupContainer1) {
         groupContainer1.addEventListener("click", function (e) {
-          window.location.href = "./employee-shipping-page-confimration.html";
+          window.location.href = "./employee-shipping-page-confimration.php";
         });
       }
       </script>
