@@ -58,7 +58,7 @@ require_once 'init.php';
                       required
                     />
                   </div>
-                
+
                   <div class="firstname">
                     <img
                       class="lastname-child"
@@ -116,7 +116,7 @@ require_once 'init.php';
                   </div>
                   <div class="firstname">
                     <div class="state-child"></div>
-                    <select class="state1" placeholder="State" type="text" id ="state" name="state" 
+                    <select class="state1" placeholder="State" type="text" id ="state" name="state"
                     >
                       <option value="" disabled selected>Select State</option>
                       <option value="AL">AL</option>
@@ -218,7 +218,7 @@ require_once 'init.php';
             <div>
               <button type="submit">Sign Up</button>
             </div>
-            
+
           </div>
           <div class="navigation-bar-light1">
             <div class="navigation-bar1"></div>
@@ -249,22 +249,21 @@ require_once 'init.php';
             window.location.href = "./customer-login-page.html";
           });
         }
-        
- 
+
+
        var groupContainer = document.getElementById("groupContainer");
         if (groupContainer) {
           groupContainer.addEventListener("click", function (e) {
             window.location.href = "./cutomer-portal-nofications-page.html";
           });
         }
-        
+
         var frameContainer8 = document.getElementById("frameContainer8");
         if (frameContainer8) {
           frameContainer8.addEventListener("click", function (e) {
-            window.location.href = "./index.html";
+            window.location.href = "./index.php";
           });
         }
         </script>
   </body>
 </html>
-

@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // check if credentials are valid
     if ($result->num_rows > 0) {
-        // valid, do something 
+        // valid, do something
         header("Location: ./tracking-page.php");
         exit();
     } else {
@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 					</div>
 
 <!-- test -->
-					
+
 <form action="login-page-script.php" method="post" >
     <div class = "login-frame" ><button type="submit" class="sign-up2">Login</button></div>
 
@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
-					
+
 <!-- 					<div class="login-frame" id="frameContainer2">
 						<div class="sign-up2">Login</div>
 					</div>
@@ -152,7 +152,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			var frameButton = document.getElementById("frameButton");
 			if (frameButton) {
 				frameButton.addEventListener("click", function (e) {
-					window.location.href = "./index.html";
+					window.location.href = "./index.php";
 				});
 			}
 		</script>

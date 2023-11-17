@@ -356,7 +356,7 @@ require_once 'init.php';
             var frameContainer1 = document.getElementById("frameContainer1");
             if (frameContainer1) {
                 frameContainer1.addEventListener("click", function (e) {
-                window.location.href = "./index.html";
+                window.location.href = "./index.php";
                 });
             }
 
@@ -405,13 +405,13 @@ require_once 'init.php';
                     alert("Not ok");
                     throw new Error('Network response was not ok');
                 }
-                
+
                 return response.json();
             })
             .then(data => {
-                
+
                 console.log(data);
-        
+
                 data.forEach(employee => {
                     console.log(`First Name: ${EMPLOYEE.first_name}, Last Name: ${employee.last_name}, Email: ${employee.employee_email}, ID: ${employee.idnum}, Dept: ${employee.dept}`);
                 });

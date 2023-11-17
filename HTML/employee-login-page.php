@@ -42,7 +42,7 @@
                 <input class="usernamebar" placeholder="USER ID" type="text" name="email" />
                 <input class="usernamebar" placeholder="PASSWORD" type="password" name="password" />
               </div>
-              
+
               </form>
             <div class="frame-parent29">
               <div class="customer-wrapper" id="frameContainer3">
@@ -81,32 +81,32 @@
           window.location.href = "./sign-up-page.php";
         });
       }
-      
+
       var frameContainer2 = document.getElementById("frameContainer2");
       if (frameContainer2) {
         frameContainer2.addEventListener("click", function (e) {
           window.location.href = "./employee-portal-nofications-page.html";
         });
       }
-      
+
       var frameContainer3 = document.getElementById("frameContainer3");
       if (frameContainer3) {
         frameContainer3.addEventListener("click", function (e) {
           window.location.href = "./login-page.php";
         });
       }
-      
+
       var frameContainer5 = document.getElementById("frameContainer5");
       if (frameContainer5) {
         frameContainer5.addEventListener("click", function (e) {
           window.location.href = "./admin-login-page.php";
         });
       }
-      
+
       var frameButton = document.getElementById("frameButton");
       if (frameButton) {
         frameButton.addEventListener("click", function (e) {
-          window.location.href = "./index.html";
+          window.location.href = "./index.php";
         });
       }
       </script>

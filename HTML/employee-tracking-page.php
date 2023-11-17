@@ -127,66 +127,66 @@ require_once 'init.php';
       var frameContainer1 = document.getElementById("frameContainer1");
       if (frameContainer1) {
         frameContainer1.addEventListener("click", function (e) {
-          window.location.href = "./index.html";
+          window.location.href = "./index.php";
         });
       }
-      
+
       var button2Container = document.getElementById("button2Container");
       if (button2Container) {
         button2Container.addEventListener("click", function (e) {
           window.location.href = "./employee-shipping-page.html";
         });
       }
-      
+
       var button2Container1 = document.getElementById("button2Container1");
       if (button2Container1) {
         button2Container1.addEventListener("click", function (e) {
           window.location.href = "employee-tracking-page.php";
         });
       }
-      
+
       var button3Container = document.getElementById("button3Container");
       if (button3Container) {
         button3Container.addEventListener("click", function (e) {
           window.location.href = "./employee-checkout-page.html";
         });
       }
-      
+
       var button4Container = document.getElementById("button4Container");
       if (button4Container) {
         button4Container.addEventListener("click", function (e) {
           window.location.href = "./employee-delivery-page.php";
         });
       }
-      
+
       var button4Container1 = document.getElementById("button4Container1");
       if (button4Container1) {
         button4Container1.addEventListener("click", function (e) {
           window.location.href = "./employee-dependent-page.html";
         });
       }
-      
+
       var button7Container = document.getElementById("button7Container");
       if (button7Container) {
         button7Container.addEventListener("click", function (e) {
           window.location.href = "./employee-account-page.html";
         });
       }
-      
+
       var frameContainer8 = document.getElementById("frameContainer8");
       if (frameContainer8) {
         frameContainer8.addEventListener("click", function (e) {
           window.location.href = "./employee-portal-nofications-page.html";
         });
       }
-      
+
       // var groupContainer1 = document.getElementById("groupContainer1");
       // if (groupContainer1) {
       //   groupContainer1.addEventListener("click", function (e) {
       //     window.location.href = "./employee-tracking-page-2.html";
       //   });
       // }
-// tracking stuff 
+// tracking stuff
 document.getElementById('trackButton').addEventListener('click', function() {
     var trackingNumber = document.getElementById('trackingInput').value;
     fetch('https://coogmail.com/tracking.php?tracking_number=' + encodeURIComponent(trackingNumber))
@@ -205,7 +205,7 @@ document.getElementById('trackButton').addEventListener('click', function() {
         .catch(error => console.error('Error:', error));
 });
 
-      
+
       </script>
   </body>
 </html>

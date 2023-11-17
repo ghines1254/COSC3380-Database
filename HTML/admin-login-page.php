@@ -36,8 +36,8 @@
             <div class="sign-up-container" id="frameContainer1">
               <div class="sign-up3">Sign Up</div>
             </div>
-      
-            
+
+
             <form action="admin-login-page-script.php" method="post">
             <div class="login-container"><button type="submit" class="login-button">Admin Login</button></div>
             <div class="usernamepasswordgroup1">
@@ -48,7 +48,7 @@
 
 
 
-            
+
             <div class="frame-parent44">
               <div class="customer-container" id="frameContainer3">
                 <b class="customer1">Customer</b>
@@ -86,32 +86,32 @@
           window.location.href = "./s-ign-up-page.html";
         });
       }
-      
+
       var frameContainer2 = document.getElementById("frameContainer2");
       if (frameContainer2) {
         frameContainer2.addEventListener("click", function (e) {
           window.location.href = "./admin-portal-nofications-page.html";
         });
       }
-      
+
       var frameContainer3 = document.getElementById("frameContainer3");
       if (frameContainer3) {
         frameContainer3.addEventListener("click", function (e) {
           window.location.href = "./login-page.php";
         });
       }
-      
+
       var frameContainer4 = document.getElementById("frameContainer4");
       if (frameContainer4) {
         frameContainer4.addEventListener("click", function (e) {
           window.location.href = "./employee-login-page.php";
         });
       }
-      
+
       var frameButton = document.getElementById("frameButton");
       if (frameButton) {
         frameButton.addEventListener("click", function (e) {
-          window.location.href = "./index.html";
+          window.location.href = "./index.php";
         });
       }
       </script>

@@ -112,9 +112,9 @@ require_once 'init.php';
               <div class="cool-text-field4">
                 <input
                    class="text-field2" placeholder="Tracking #" type="text" id="trackingInput" />
-                
+
               </div>
-            
+
 
 
 <div class="rectangle-parent168">
@@ -125,7 +125,7 @@ require_once 'init.php';
 
 
 
-                  
+
                 </div>
               </div>
             </div>
@@ -145,66 +145,66 @@ require_once 'init.php';
       var frameContainer1 = document.getElementById("frameContainer1");
       if (frameContainer1) {
         frameContainer1.addEventListener("click", function (e) {
-          window.location.href = "./index.html";
+          window.location.href = "./index.php";
         });
       }
-      
+
       var button2Container = document.getElementById("button2Container");
       if (button2Container) {
         button2Container.addEventListener("click", function (e) {
           window.location.href = "./shipping-page.html";
         });
       }
-      
+
       var button3Text = document.getElementById("button3Text");
       if (button3Text) {
         button3Text.addEventListener("click", function (e) {
           window.location.href = "./products-page.html";
         });
       }
-      
+
       var productsContainer = document.getElementById("productsContainer");
       if (productsContainer) {
         productsContainer.addEventListener("click", function (e) {
           window.location.href = "./products-page.html";
         });
       }
-      
+
       var quoteContainer = document.getElementById("quoteContainer");
       if (quoteContainer) {
         quoteContainer.addEventListener("click", function (e) {
           window.location.href = "./quote-page.html";
         });
       }
-      
+
       var supportContainer = document.getElementById("supportContainer");
       if (supportContainer) {
         supportContainer.addEventListener("click", function (e) {
           window.location.href = "./support-page.html";
         });
       }
-      
+
       var historyContainer = document.getElementById("historyContainer");
       if (historyContainer) {
         historyContainer.addEventListener("click", function (e) {
           window.location.href = "./history-page.html";
         });
       }
-      
+
       var accountContainer = document.getElementById("accountContainer");
       if (accountContainer) {
         accountContainer.addEventListener("click", function (e) {
           window.location.href = "./account-page.html";
         });
       }
-      
+
       var frameContainer11 = document.getElementById("frameContainer11");
       if (frameContainer11) {
         frameContainer11.addEventListener("click", function (e) {
           window.location.href = "./cutomer-portal-nofications-page.html";
         });
       }
-// tracking stuff 
+// tracking stuff
 document.getElementById('trackButton').addEventListener('click', function() {
     var trackingNumber = document.getElementById('trackingInput').value;
     fetch('https://coogmail.com/tracking.php?tracking_number=' + encodeURIComponent(trackingNumber))
@@ -223,7 +223,7 @@ document.getElementById('trackButton').addEventListener('click', function() {
         .catch(error => console.error('Error:', error));
 });
 
- 
+
       </script>
   </body>
 </html>
