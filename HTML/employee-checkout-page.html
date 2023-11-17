@@ -1,27 +1,208 @@
-<?php
-require once 'init.php';
-require once 'connection.php';
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-$query = "SELECT product_id, product_name, product_price, stock_remaining FROM IN_STORE_PRODUCTS";
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./employee-checkout-page.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lexend Deca:wght@400;500;600;700;800;900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="employee-checkout-page">
+      <div class="minibackground9">
+        <img class="image-1-icon9" alt="" src="./public/image-1@2x.png" />
+      </div>
+      <div class="navigation-bar-light9">
+        <div class="navigation-bar9"></div>
+        <div class="navigation-bar-light-inner7">
+          <div class="rectangle-parent60">
+            <div class="group-child44"></div>
+            <b class="login9">Login</b>
+          </div>
+        </div>
+        <div class="cougarcourier1-4-parent7" id="frameContainer1">
+          <img
+            class="cougarcourier1-4-icon9"
+            alt=""
+            src="./public/cougarcourier1-4@2x.png"
+          />
 
-$result = $conn->query($query);
+          <b class="cougar-courier9">Cougar Courier</b>
+        </div>
+      </div>
+      <div class="portal-centering-frame8">
+        <div class="employee-portal-outline8">
+          <div class="frame-parent16">
+            <div class="rectangle-parent61">
+              <div class="frame-child15"></div>
+              <div class="welcome-to-your-portal-page-wrapper6">
+                <b class="welcome-to-your8">Welcome to your portal page!</b>
+              </div>
+            </div>
+            <div class="frame-parent17">
+              <div class="frame-wrapper8">
+                <div class="button2-parent6">
+                  <div class="button216" id="button2Container">
+                    <div class="button2-child14"></div>
+                    <b class="button-216">Shipping</b>
+                  </div>
+                  <div class="button217" id="button2Container1">
+                    <div class="button2-child14"></div>
+                    <b class="button-216">Tracking</b>
+                  </div>
+                  <div class="button38" id="button3Container">
+                    <div class="button3-child6"></div>
+                    <b class="button-216">Check Out</b>
+                  </div>
+                  <div class="button416" id="button4Container">
+                    <div class="button2-child14"></div>
+                    <b class="button-216">Delivery</b>
+                  </div>
+                  <div class="button417" id="button4Container1">
+                    <div class="button2-child14"></div>
+                    <b class="button-216">Dependent</b>
+                  </div>
+                  <div class="button78" id="button7Container">
+                    <div class="button2-child14"></div>
+                    <b class="button-216">Account</b>
+                  </div>
+                </div>
+              </div>
+              <div class="portal-page8"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="products-outline">
+        <div class="check-out-the">Choose items to place in shopping cart</div>
+        <div class="vector-parent">
+          <img class="vector-icon9" alt="" src="./public/vector3.svg" />
 
-if (!$result) 
-{
-    die("Error retrieving product information: " . $conn->error);
-}
+          <button class="large-box-499-container">
+            <p class="large-box">Large Box</p>
+            <p class="large-box">$4.99</p>
+          </button>
+          <img class="vector-icon10" alt="" src="./public/vector4.svg" />
 
-while ($row = $result->fetch_assoc()) 
-{
-    echo "<div>";
-    echo "<span>{$row['product_name']}</span>";
-    echo "<span>Stock: {$row['stock_remaining']}</span>";
-    echo "<button onclick=\"updateStock({$row['product_id']}, 'increment')\">+</button>";
-    echo "<button onclick=\"updateStock({$row['product_id']}, 'decrement')\">-</button>";
-    echo "</div>";
-}
+          <img class="vector-icon11" alt="" src="./public/vector3.svg" />
 
-$conn->close();
-?>
+          <button class="small-box-299-container">
+            <p class="large-box">Small Box</p>
+            <p class="large-box">$2.99</p>
+          </button>
+          <button class="envelope-199">
+            <p class="large-box">Envelope</p>
+            <p class="large-box">$1.99</p>
+          </button>
+          <button class="medium-box-399-container">
+            <p class="large-box">Medium Box</p>
+            <p class="large-box">$3.99</p>
+          </button>
+          <img class="vector-icon12" alt="" src="./public/vector6.svg" />
+        </div>
+        <div class="vector-group">
+          <img class="vector-icon13" alt="" src="./public/vector8.svg" />
 
+          <button class="tape-499">
+            <p class="large-box">Tape</p>
+            <p class="large-box">$4.99</p>
+          </button>
+          <button class="stapler-499">
+            <p class="large-box">Stapler</p>
+            <p class="large-box">$4.99</p>
+          </button>
+          <button class="pen-10pk-299-container">
+            <p class="large-box">Pen 10pk</p>
+            <p class="large-box">$2.99</p>
+          </button>
+          <button class="stamp-booklet-999-container">
+            <p class="large-box">Stamp Booklet</p>
+            <p class="large-box">$9.99</p>
+          </button>
+          <img class="vector-icon14" alt="" src="./public/vector9.svg" />
 
+          <img class="vector-icon15" alt="" src="./public/vector10.svg" />
+
+          <img class="vector-icon16" alt="" src="./public/vector11.svg" />
+        </div>
+      </div>
+      <div class="frame8" id="frameContainer10">
+        <img
+          class="portal-home-button8"
+          alt=""
+          src="./public/portal-home-button.svg"
+        />
+      </div>
+    </div>
+
+    <script>
+      var frameContainer1 = document.getElementById("frameContainer1");
+      if (frameContainer1) {
+        frameContainer1.addEventListener("click", function (e) {
+          window.location.href = "./index.html";
+        });
+      }
+      
+      var button2Container = document.getElementById("button2Container");
+      if (button2Container) {
+        button2Container.addEventListener("click", function (e) {
+          window.location.href = "./employee-shipping-page.html";
+        });
+      }
+      
+      var button2Container1 = document.getElementById("button2Container1");
+      if (button2Container1) {
+        button2Container1.addEventListener("click", function (e) {
+          window.location.href = "./employee-tracking-page.php";
+        });
+      }
+      
+      var button3Container = document.getElementById("button3Container");
+      if (button3Container) {
+        button3Container.addEventListener("click", function (e) {
+          window.location.href = "./employee-checkout-page.html";
+        });
+      }
+      
+      var button4Container = document.getElementById("button4Container");
+      if (button4Container) {
+        button4Container.addEventListener("click", function (e) {
+          window.location.href = "./employee-delivery-page.html";
+        });
+      }
+      
+      var button4Container1 = document.getElementById("button4Container1");
+      if (button4Container1) {
+        button4Container1.addEventListener("click", function (e) {
+          window.location.href = "./employee-dependent-page.html";
+        });
+      }
+      
+      var button7Container = document.getElementById("button7Container");
+      if (button7Container) {
+        button7Container.addEventListener("click", function (e) {
+          window.location.href = "./employee-account-page.html";
+        });
+      }
+      
+      var frameContainer10 = document.getElementById("frameContainer10");
+      if (frameContainer10) {
+        frameContainer10.addEventListener("click", function (e) {
+          window.location.href = "./employee-portal-nofications-page.html";
+        });
+      }
+      </script>
+  </body>
+</html>
