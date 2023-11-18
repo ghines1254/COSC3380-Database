@@ -76,7 +76,7 @@
 .login-button {
 	position: absolute;
 	width: calc(100% - 749px);
-	top: 288px;
+	top: 200px;
 	right: 363px;
 	left: 386px;
 	background-color: var(--fullblack);
