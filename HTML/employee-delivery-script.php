@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $trackingNumber = $_POST['trackingNumber'];
     $newStatus = $_POST['newStatus'];
 
-    // Update the query to use tracking_number instead of package_id
+    
     $stmt = $conn->prepare("UPDATE PACKAGE SET status = ? WHERE tracking_number = ?");
     $stmt->bind_param("ss", $newStatus, $trackingNumber);
     $stmt->execute();
