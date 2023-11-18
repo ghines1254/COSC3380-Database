@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./account-page.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lexend Deca:wght@400;500;600;700;800;900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="account-page">
+      <div class="minibackground29">
+        <img class="image-1-icon29" alt="" src="./public/image-1@2x.png" />
+      </div>
+      <div class="navigation-bar-light29">
+        <div class="navigation-bar29"></div>
+        <div class="navigation-bar-light-inner28">
+          <div class="rectangle-parent140">
+            <div class="group-child92"></div>
+            <b class="login32">Login</b>
+          </div>
+        </div>
+        <div class="cougarcourier1-4-parent26" id="frameContainer1">
+          <img
+            class="cougarcourier1-4-icon29"
+            alt=""
+            src="./public/cougarcourier1-4@2x.png"
+          />
+
+          <b class="cougar-courier29">Cougar Courier</b>
+        </div>
+      </div>
+      <div class="portal-centering-frame17">
+        <div class="customer-portal-outline4">
+          <div class="frame-parent55">
+            <div class="rectangle-parent141">
+              <div class="frame-child65"></div>
+              <div class="welcome-to-your-portal-page-wrapper22">
+                <b class="welcome-to-your24">Account Information</b>
+              </div>
+            </div>
+            <div class="frame-parent56">
+              <div class="frame-wrapper25">
+                <div class="tracking-parent2">
+                  <div class="tracking18" id="trackingContainer">
+                    <div class="tracking-child10"></div>
+                    <b class="button-240">Tracking</b>
+                  </div>
+                  <div class="button236" id="button2Container">
+                    <div class="tracking-child10"></div>
+                    <b class="button-240">Shipping</b>
+                  </div>
+                  <div class="products4" id="productsContainer">
+                    <div class="products-child2"></div>
+                    <b class="button-240">Products</b>
+                  </div>
+                  <div class="quote8" id="quoteContainer">
+                    <div class="tracking-child10"></div>
+                    <b class="button-240">Quote</b>
+                  </div>
+                  <div class="support4" id="supportContainer">
+                    <div class="tracking-child10"></div>
+                    <b class="button-240">Support</b>
+                  </div>
+                  <div class="history4" id="historyContainer">
+                    <div class="tracking-child10"></div>
+                    <b class="button-240">History</b>
+                  </div>
+                  <div class="account5">
+                    <div class="tracking-child10"></div>
+                    <b class="button-240">Account</b>
+                  </div>
+                </div>
+              </div>
+              <div class="portal-page24"></div>
+            </div>
+          </div>
+        </div>
+        <img
+          class="portal-home-button15"
+          alt=""
+          src="./public/portal-home-button.svg"
+          id="portalHomeButton"
+        />
+      </div>
+      <div class="account-outline2">
+        <div class="account-outline-child2"></div>
+        <div class="frame-parent57">
+          <div class="firstname-parent6">
+            <div class="firstname8">
+              <div class="firstname-child6"></div>
+              <input class="first-name9" placeholder="First Name" type="text" />
+            </div>
+            <div class="middleinitial8">
+              <div class="middleinitial-child6"></div>
+              <input
+                class="middle-initial8"
+                placeholder="Middle Initial"
+                type="text"
+              />
+            </div>
+            <div class="middleinitial8">
+              <img
+                class="lastname-child5"
+                alt=""
+                src="./public/rectangle-26.svg"
+              />
+
+              <input class="last-name9" placeholder="Last Name" type="text" />
+            </div>
+          </div>
+          <div class="firstname-parent6">
+            <div class="addressline17">
+              <img
+                class="addressline1-child5"
+                alt=""
+                src="./public/rectangle-22.svg"
+              />
+
+              <input
+                class="address-line-17"
+                placeholder="Address Line 1"
+                type="text"
+              />
+            </div>
+            <div class="addressline17">
+              <img
+                class="addressline1-child5"
+                alt=""
+                src="./public/rectangle-22.svg"
+              />
+
+              <input
+                class="address-line-27"
+                placeholder="Address Line 2"
+                type="text"
+              />
+            </div>
+          </div>
+          <div class="firstname-parent6">
+            <div class="city14">
+              <div class="city-child5"></div>
+              <input class="city15" placeholder="City" type="text" />
+            </div>
+            <div class="state14">
+              <div class="state-child5"></div>
+              <input class="state15" placeholder="State" type="text" />
+            </div>
+            <div class="zip14">
+              <div class="zip-child5"></div>
+              <input class="zip15" placeholder="Zip Code" type="text" />
+            </div>
+          </div>
+          <div class="firstname-parent6">
+            <div class="email14">
+              <img
+                class="email-child5"
+                alt=""
+                src="./public/rectangle-271.svg"
+              />
+
+              <input class="email15" placeholder="Email" type="email" />
+            </div>
+            <div class="email14">
+              <img
+                class="email-child5"
+                alt=""
+                src="./public/rectangle-271.svg"
+              />
+
+              <input class="phone15" placeholder="Phone #" type="tel" />
+            </div>
+          </div>
+        </div>
+        <div class="to-update-your2">
+          To update your account info, just click 'Save'
+        </div>
+        <div class="rectangle-parent142">
+          <div class="group-child93"></div>
+          <div class="save6">
+            <p class="save7">Save</p>
+          </div>
+        </div>
+        <?php
+            if (isset($_COOKIE["user_auth"])) {
+                $user_auth = $_COOKIE["user_auth"];
+                // Perform operations with the $user_auth value
+
+                // Now, you can echo or print the variable in the HTML part of the file
+                echo "<p>User Authentication: $user_auth</p>";
+            } else {
+                // The cookie does not exist. Handle the situation accordingly.
+                echo "<p>User not authenticated</p>";
+            }
+        ?>
+        <b class="customer-id3">Customer ID:</b>
+        <div class="account-outline-child3"></div>
+      </div>
+    </div>
+
+    <script>
+      var frameContainer1 = document.getElementById("frameContainer1");
+      if (frameContainer1) {
+        frameContainer1.addEventListener("click", function (e) {
+          window.location.href = "./index.php";
+        });
+      }
+
+      var trackingContainer = document.getElementById("trackingContainer");
+      if (trackingContainer) {
+        trackingContainer.addEventListener("click", function (e) {
+          window.location.href = "./tracking-page.php";
+        });
+      }
+
+      var button2Container = document.getElementById("button2Container");
+      if (button2Container) {
+        button2Container.addEventListener("click", function (e) {
+          window.location.href = "./shipping-page.html";
+        });
+      }
+
+      var productsContainer = document.getElementById("productsContainer");
+      if (productsContainer) {
+        productsContainer.addEventListener("click", function (e) {
+          window.location.href = "./products-page.html";
+        });
+      }
+
+      var quoteContainer = document.getElementById("quoteContainer");
+      if (quoteContainer) {
+        quoteContainer.addEventListener("click", function (e) {
+          window.location.href = "./quote-page.html";
+        });
+      }
+
+      var supportContainer = document.getElementById("supportContainer");
+      if (supportContainer) {
+        supportContainer.addEventListener("click", function (e) {
+          window.location.href = "./support-page.html";
+        });
+      }
+
+      var historyContainer = document.getElementById("historyContainer");
+      if (historyContainer) {
+        historyContainer.addEventListener("click", function (e) {
+          window.location.href = "./history-page.html";
+        });
+      }
+
+      var portalHomeButton = document.getElementById("portalHomeButton");
+      if (portalHomeButton) {
+        portalHomeButton.addEventListener("click", function (e) {
+          window.location.href = "./cutomer-portal-nofications-page.html";
+        });
+      }
+      </script>
+  </body>
+</html>
