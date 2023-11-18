@@ -246,7 +246,6 @@
             <p class="select-one1">Submit</p> -->
           </div>
         </div>
-      </div>
     </div>
 
     <script>
