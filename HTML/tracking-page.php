@@ -194,7 +194,7 @@ require_once 'init.php';
       var accountContainer = document.getElementById("accountContainer");
       if (accountContainer) {
         accountContainer.addEventListener("click", function (e) {
-          window.location.href = "./account-page.html";
+          window.location.href = "./account-page.php";
         });
       }
 
