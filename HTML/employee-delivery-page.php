@@ -111,7 +111,7 @@ require_once 'init.php';
             </div>
           </div>
           <div class="id">
-            <input class="id-child" placeholder="Tracking #" type="text" id="trackingNumber" />
+            <input class="id-child" placeholder="Tracking #" type="text" id="trackingNumberInput" />
 
         </div>
     </div>
@@ -202,7 +202,7 @@ document.getElementById('confirmDeliveredButton').addEventListener('click', func
 });
 
 function updatePackageStatus(newStatus) {
-    var trackingNumber = document.getElementById('trackingNumber').value;
+    var trackingNumber = document.getElementById('trackingNumberInput').value;
     if (trackingNumber) {
         
         fetch('employee-delivery-script.php', {
