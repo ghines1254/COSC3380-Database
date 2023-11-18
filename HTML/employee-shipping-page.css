@@ -922,3 +922,25 @@
   color: var(--fullblack);
   font-family: var(--largetext);
 }
+
+
+
+
+.submit-button-container {
+    text-align: center; /* Center the button */
+    margin-top: 20px; /* Spacing from the last form element */
+}
+
+.submit-button {
+    padding: 10px 20px; /* Button padding */
+    background-color: #4CAF50; /* Button color */
+    color: white; /* Text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #45a049; /* Hover effect */
+}
+
