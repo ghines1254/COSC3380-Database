@@ -20,7 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $adminPassword = $_POST['adminPassword']; // Assuming the form field for admin password is named 'adminPassword'
 
     // Validate and sanitize inputs
-    // ...
 
     // Prepare and execute the query for admin login
     $stmt = $conn->prepare("SELECT emp_password FROM EMPLOYEE WHERE email = ?"); // Replace 'EMPLOYEE' and 'emp_password' with your admin table and column names
@@ -35,10 +34,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: admin-portal-nofications-page.html"); // Redirect to the admin portal page
             exit;
         } else {
-            echo "<script>alert('Invalid password.');</script>";
+            echo "Invalid password.";
         }
     } else {
-        echo "<script>alert('Admin email not found.');</script>";
+        echo "Admin email not found.";
     }
 
     $stmt->close();
