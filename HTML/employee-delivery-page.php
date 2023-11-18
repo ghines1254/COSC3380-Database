@@ -110,7 +110,8 @@ require_once 'init.php';
             </div>
           </div>
           <div class="id">
-            <input class="id-child" placeholder="Package ID" type="text" id="packageIdInput" />
+            <input class="id-child" placeholder="Tracking #" type="text" id="trackingNumberInput" />
+
         </div>
     </div>
 </div>
