@@ -35,11 +35,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit;
         } else {
             echo '<script>alert("Invalid password.")</script>';
-            header("Location: admin-login-page.php");
+            // header("Location: admin-login-page.php");
         }
     } else {
         echo '<script>alert("Admin email not found.")</script>';
-        header("Location: admin-login-page.php");
+        // header("Location: admin-login-page.php");
     }
 
     $stmt->close();
