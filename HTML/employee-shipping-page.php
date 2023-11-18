@@ -240,10 +240,10 @@
         <div class="select-one">
           <p class="select-one1">Select one</p>
         </div>
-        <div class="rectangle-parent67" id="groupContainer1">
+<!--         <div class="rectangle-parent67" id="groupContainer1">
           <div class="group-child48"></div>
           <div class="submit">
-            <p class="select-one1">Submit</p>
+            <p class="select-one1">Submit</p> -->
           </div>
         </div>
       </div>
