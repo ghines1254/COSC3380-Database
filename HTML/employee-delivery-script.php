@@ -18,12 +18,12 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $packageId = $_POST['packageId'];
+    $trackingNumber = $_POST['trackingNumber'];
     $newStatus = $_POST['newStatus'];
 
-    // Prepare and execute the update query
+    // Update the query to use tracking_number instead of package_id
     $stmt = $conn->prepare("UPDATE PACKAGE SET status = ? WHERE tracking_number = ?");
-    $stmt->bind_param("ss", $newStatus, $packageId);
+    $stmt->bind_param("ss", $newStatus, $trackingNumber);
     $stmt->execute();
 
     if ($stmt->affected_rows > 0) {
@@ -36,4 +36,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $conn->close();
 }
 ?>
-
