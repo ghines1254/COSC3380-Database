@@ -1,5 +1,6 @@
 <?php
 require_once 'init.php';
+require_once "makeCustomerSession.php";
 ?>
 
 <?php
@@ -33,8 +34,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if ($password === $row['PASSWORD']) {
+            session_start();
+
+            // Start Customer Session & Save Information
+            $user_info = getCustomerInfo($email);
+            $_SESSION['user_info'] = $user_info;
+
+            // FOR TESTING PURPOSES REDIRECTING TO ACOUNT PAGE
             // Redirect to customer portal notifications page
-            header("Location: customer-portal-nofications-page.html");
+            header("Location: account-page.php");
             exit;
         } else {
             echo "Invalid password.";

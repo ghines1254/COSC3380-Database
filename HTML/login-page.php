@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // check if credentials are valid
     if ($result->num_rows > 0) {
         // valid, do something
-        header("Location: ./tracking-page.php");
+        header("Location: ./tracking-page.php");	
         exit();
     } else {
         // invalid
