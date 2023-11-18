@@ -1,11 +1,16 @@
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
 
 
 
 <?php
 session_start(); // Start the session at the beginning of the script
+
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
 
 // Database connection details
 $host = "34.68.154.206";
