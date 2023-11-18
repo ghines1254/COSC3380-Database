@@ -1,9 +1,7 @@
 <?php
 require_once 'init.php';
 require_once "makeCustomerSession.php";
-?>
 
-<?php
 // Database connection details
 $host = "34.68.154.206";
 $database = "Post_Office_Schema";
@@ -36,13 +34,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if ($password === $row['PASSWORD']) {
-
-
             // Start Customer Session & Save Information
             $user_info = getCustomerInfo($email);
             $_SESSION['user_info'] = $user_info;
 
-            // FOR TESTING PURPOSES REDIRECTING TO ACOUNT PAGE
+            // FOR TESTING PURPOSES REDIRECTING TO ACCOUNT PAGE
             // Redirect to customer portal notifications page
             header("Location: account-page.php");
             exit();
