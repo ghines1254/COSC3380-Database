@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
 
     // Redirect or confirm successful submission
-    header("Location: employee-shipping-confirmation-page.php"); // Redirect to a confirmation page
+    header("Location: employee-shipping-page-confirmation.php"); // Redirect to a confirmation page
     exit;
 }
 
