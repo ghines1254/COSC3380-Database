@@ -40,7 +40,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // FOR TESTING PURPOSES REDIRECTING TO ACOUNT PAGE
             // Redirect to customer portal notifications page
             header("Location: account-page.php");
-            exit();
         } else {
             echo "Invalid password.";
         }
@@ -50,5 +49,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $stmt->close();
     $conn->close();
+    exit();
 }
 ?>

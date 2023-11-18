@@ -55,20 +55,18 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
     $stmt->execute();
     if ($stmt->affected_rows > 0) {
         echo "Signup Page";
-        header("Location: cutomer-portal-nofications-page.html");
-        exit();
+        header("Location: account-page.php");
     } else {
         echo "Error inserting customer status or no changes made.";
-        header("Location: cutomer-portal-nofications-page.html");
-        exit();
     }
 
     $stmt->close();
     $conn->close();
- 
+    exit();
 }
 else{
         header("Location: ../sign-up-page.php");
+        exit();
 }
 
 ?>
