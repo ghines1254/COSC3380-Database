@@ -42,21 +42,23 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
     $stmt = $conn->prepare("INSERT INTO CUSTOMER (customer_phone, customer_id, zip, state, street_address, city, first_name, last_name, email, PASSWORD) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");  
     $stmt->bind_param("ssssssssss", $phoneNum, $customerID, $zipcode, $state, $address1, $city, $firstName, $lastName, $email, $password );
     #$stmt->bind_param("ssssssssss", "8324208821", "0000000000", "77091", "TX", "6618 Apollo ST", "houston", "gwyneth", "hines", "ghines1254@gmail.com", "whatever" );
-    echo "\n";
+
    
     if (!$stmt->execute()) {
         die("Error in executing the statement: " . $stmt->error);
     }
-    echo "\n";
+
     var_dump($phoneNum, $customerID, $zipcode, $state, $address1, $city, $firstName, $lastName, $email, $password);
-    echo "\n";
+
 
     echo "SQL Statement: " . $stmt->sqlstate;
     $stmt->execute();
     if ($stmt->affected_rows > 0) {
-        header("Location: cutomer-portal-nofications-page.html");
+        echo "affected some rows";
+       // header("Location: cutomer-portal-nofications-page.html");
     } else {
-        header("Location: cutomer-portal-nofications-page.html");
+        echo "did not affect any rows";
+        //header("Location: cutomer-portal-nofications-page.html");
     }
 
     $stmt->close();
