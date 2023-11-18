@@ -34,7 +34,7 @@
               <div class="frame-child59"></div>
             </div>
             <div class="sign-up-container" id="frameContainer1">
-              <div class="sign-up3">Sign Up</div>
+              <div class="sign-up3">SignUp</div>
             </div>
 
 
