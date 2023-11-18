@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         echo '<script>alert("Admin email not found.")</script>';
-        header("Location: admin-login-page.php.html");
+        header("Location: admin-login-page.php");
     }
 
     $stmt->close();
