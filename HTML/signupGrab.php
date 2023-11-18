@@ -56,9 +56,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
     if ($stmt->affected_rows > 0) {
         header("Location: cutomer-portal-nofications-page.html");
     } else {
-        echo "Error inserting customer status or no changes made.";
         header("Location: cutomer-portal-nofications-page.html");
-        exit();
     }
 
     $stmt->close();
