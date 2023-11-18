@@ -80,6 +80,7 @@
 	height: auto;
 	position: relative;
 	font-weight: 600;
+	font-size: var(--font-size-5xl);
 }
 .login-container,
 .sign-up-container,
@@ -100,7 +101,7 @@
 	justify-content: center;
 	padding: var(--padding-11xs) var(--padding-6xs);
 	cursor: pointer;
-	font-size: var(--font-size-xl);
+	font-size: var(--font-size-5xl);
 }
 .login-container {
 	position: absolute;
