@@ -1,8 +1,6 @@
 <?php
-require_once 'init.php';
-?>
+//require_once 'init.php';
 
-<?php
 // Database connection details
 $host = "34.68.154.206";
 $database = "Post_Office_Schema";
