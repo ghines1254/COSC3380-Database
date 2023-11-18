@@ -34,10 +34,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: admin-portal-nofications-page.html"); // Redirect to the admin portal page
             exit;
         } else {
-            echo "Invalid password.";
+            header("Location: admin-portal-nofications-page.html");
+            echo '<script>alert("Invalid password.")</script>';
         }
     } else {
-        echo "Admin email not found.";
+        header("Location: admin-portal-nofications-page.html");
+        echo '<script>alert("Admin email not found.")</script>';
     }
 
     $stmt->close();
