@@ -94,10 +94,10 @@
 }
 .sign-up-container {
 	position: absolute;
-	width: calc(100% - 802px);
+	width: calc(100% - 749px);
 	top: 388px;
-	right: 390px;
-	left: 412px;
+	right: 363px;
+	left: 386px;
 	background-color: var(--fullblack);
 	display: flex;
 	flex-direction: row;

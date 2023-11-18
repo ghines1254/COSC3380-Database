@@ -82,14 +82,7 @@
           window.location.href = "./s-ign-up-page.html";
         });
       }
-
-      var frameContainer2 = document.getElementById("frameContainer2");
-      if (frameContainer2) {
-        frameContainer2.addEventListener("click", function (e) {
-          window.location.href = "./admin-portal-nofications-page.html";
-        });
-      }
-
+      
       var frameContainer3 = document.getElementById("frameContainer3");
       if (frameContainer3) {
         frameContainer3.addEventListener("click", function (e) {
