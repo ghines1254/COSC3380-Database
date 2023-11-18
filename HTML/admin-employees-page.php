@@ -421,8 +421,8 @@ require_once 'init.php';
                 console.error('Fetch error:', error);
             });
     });
-                });
-            }
+                };
+            
         </script>
     </div>
 </body>
