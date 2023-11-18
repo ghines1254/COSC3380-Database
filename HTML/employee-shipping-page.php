@@ -94,6 +94,7 @@
       </div>
       <div class="frame-parent22">
 <!-- Sender Information -->
+        <form action="employee-shipping-page-script.php" method="POST">
 <div class="sender-info-parent">
     <div class="sender-info">Sender Info</div>
     <div class="firstname-container">
@@ -218,6 +219,7 @@
         </div>
     </div>
 </div>
+          </form>
 
         <div class="vector-container">
           <img class="vector-icon17" alt="" src="./public/vector9.svg" />
