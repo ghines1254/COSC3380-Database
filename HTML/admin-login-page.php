@@ -39,11 +39,10 @@
 
 
             <form action="admin-login-page-script.php" method="post">
-              <button id="loginButton" class="login-button" type="button">Login</button>
+              <button type="submit" class="login-button">Login</button>
               <div class="usernamepasswordgroup1">
-                <input class="usernamebar1" placeholder="USER ID" type="text" name="adminEmail" />
-                <input class="usernamebar1" placeholder="PASSWORD" type="password" name="adminPassword" />
-              </div>
+                  <input class="usernamebar1" placeholder="USER ID" type="text" name="adminEmail" />
+                  <input class="usernamebar1" placeholder="PASSWORD" type="password" name="adminPassword"              </div>
             </form>
             <div class="frame-parent44">
               <div class="customer-container" id="frameContainer3">
@@ -103,33 +102,6 @@
           window.location.href = "./index.php";
         });
       }
-
-      <script>
-    document.getElementById('loginButton').addEventListener('click', function() {
-          var adminEmail = document.getElementsByName('adminEmail')[0].value;
-          var adminPassword = document.getElementsByName('adminPassword')[0].value;
-
-          // Assuming 'admin-login-page-script.php' is the server-side script handling the login
-          fetch('admin-login-page-script.php', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: 'adminEmail=' + encodeURIComponent(adminEmail) + '&adminPassword=' + encodeURIComponent(adminPassword),
-          })
-          .then(response => response.json())
-          .then(data => {
-            if (data.success) {
-              window.location.href = "./admin-portal-notification-page.html";
-              // Additional logic or UI updates can be added here
-            } else {
-              alert('Login failed. ' + data.message);
-            }
-          })
-          .catch(error => console.error('Error:', error));
-        });
-</script>
-
       </script>
   </body>
 </html>
