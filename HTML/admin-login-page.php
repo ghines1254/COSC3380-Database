@@ -39,7 +39,7 @@
 
 
             <form action="admin-login-page-script.php" method="post">
-               <button type="button" onclick="login()">Login</button>
+               <button class = "login-button" type="button" onclick="login()">Login</button>
               <div class="usernamepasswordgroup1">
                   <input class="usernamebar1" placeholder="USER ID" type="text" name="adminEmail" />
                   <input class="usernamebar1" placeholder="PASSWORD" type="password" name="adminPassword" />
