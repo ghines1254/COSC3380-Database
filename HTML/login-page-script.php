@@ -1,6 +1,7 @@
 <?php
 require_once 'init.php';
 ?>
+
 <?php
 // Database connection details
 $host = "34.68.154.206";
@@ -32,10 +33,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if ($password === $row['PASSWORD']) {
-
-            // FOR TESTING PURPOSES REDIRECTING TO ACOUNT PAGE
             // Redirect to customer portal notifications page
             header("Location: customer-portal-nofications-page.html");
+            exit;
         } else {
             echo "Invalid password.";
         }
@@ -45,6 +45,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $stmt->close();
     $conn->close();
-    exit();
 }
 ?>

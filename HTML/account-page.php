@@ -1,16 +1,4 @@
-<?php
-    session_start();
 
-    // Check if the user is logged in
-    if (!isset($_SESSION['user_info'])) {
-        // Redirect to the login page if the user is not logged in
-        header('Location: login-page.php');
-        exit();
-    }
-
-    // Access user information from the session
-    $user_info = $_SESSION['user_info'];
-?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -206,7 +194,19 @@
             <p class="save7">Save</p>
           </div>
         </div>
-        <b class="customer-id3">Customer ID: <?php echo $user_info['customer_id']; ?></b>
+        <?php
+            if (isset($_COOKIE["user_auth"])) {
+                $user_auth = $_COOKIE["user_auth"];
+                // Perform operations with the $user_auth value
+
+                // Now, you can echo or print the variable in the HTML part of the file
+                echo "<p>User Authentication: $user_auth</p>";
+            } else {
+                // The cookie does not exist. Handle the situation accordingly.
+                echo "<p>User not authenticated</p>";
+            }
+        ?>
+        <b class="customer-id3">Customer ID:</b>
         <div class="account-outline-child3"></div>
       </div>
     </div>
