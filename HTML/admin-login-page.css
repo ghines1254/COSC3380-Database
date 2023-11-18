@@ -94,8 +94,6 @@
 	right: 390px;
 	left: 412px;
 	background-color: var(--fullblack);
-	display: flex;
-	flex-direction: row;
 	align-items: center;
 	justify-content: center;
 	padding: var(--padding-11xs) var(--padding-6xs);
