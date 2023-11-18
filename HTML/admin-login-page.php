@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-
     <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="./admin-login-page.css" />
     <link
@@ -36,13 +35,12 @@
             <div class="sign-up-container" id="frameContainer1">
               <div class="sign-up3">Sign Up</div>
             </div>
-
-
             <form action="admin-login-page-script.php" method="post">
               <button type="submit" class="login-button">Login</button>
               <div class="usernamepasswordgroup1">
                   <input class="usernamebar1" placeholder="USER ID" type="text" name="adminEmail" />
-                  <input class="usernamebar1" placeholder="PASSWORD" type="password" name="adminPassword"              </div>
+                  <input class="usernamebar1" placeholder="PASSWORD" type="password" name="adminPassword" />
+              </div>
             </form>
             <div class="frame-parent44">
               <div class="customer-container" id="frameContainer3">
@@ -66,14 +64,12 @@
                 alt=""
                 src="./public/cougarcourier1-4@2x.png"
               />
-
               <b class="cougar-courier23">Cougar Courier</b>
             </button>
           </div>
         </div>
       </div>
     </div>
-
     <script>
       var frameContainer1 = document.getElementById("frameContainer1");
       if (frameContainer1) {
@@ -88,14 +84,12 @@
           window.location.href = "./login-page.php";
         });
       }
-
       var frameContainer4 = document.getElementById("frameContainer4");
       if (frameContainer4) {
         frameContainer4.addEventListener("click", function (e) {
           window.location.href = "./employee-login-page.php";
         });
       }
-
       var frameButton = document.getElementById("frameButton");
       if (frameButton) {
         frameButton.addEventListener("click", function (e) {
