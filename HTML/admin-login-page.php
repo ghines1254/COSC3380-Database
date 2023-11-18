@@ -104,28 +104,32 @@
         });
       }
 
-      function login() {
-                var form = document.getElementById('loginForm');
-                var formData = new FormData(form);
+      <script>
+    document.getElementById('loginButton').addEventListener('click', function() {
+        var adminEmail = document.getElementById('adminEmailInput').value;
+        var adminPassword = document.getElementById('adminPasswordInput').value;
 
-                var xhr = new XMLHttpRequest();
-                xhr.open('POST', 'admin-login-page-script.php', true);
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState === 4 && xhr.status === 200) {
-                        // Handle the response from the server
-                        var response = JSON.parse(xhr.responseText);
-
-                        if (response.success) {
-                            // Authentication successful, update the UI or perform any desired actions
-                            alert('Login successful!'); // You can replace this with your desired action
-                        } else {
-                            // Authentication failed, display an error message
-                            alert('Login failed. ' + response.message); // You can replace this with your desired action
-                        }
-                    }
-                };
-                xhr.send(formData);
+        // Assuming 'admin-login-page-script.php' is the server-side script handling the login
+        fetch('admin-login-page-script.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'adminEmail=' + encodeURIComponent(adminEmail) + '&adminPassword=' + encodeURIComponent(adminPassword),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                window.location.href = "./admin-portal-notification-page.html";
+                // Additional logic or UI updates can be added here
+            } else {
+                alert('Login failed. ' + data.message); // You can replace this with your desired action
             }
+        })
+        .catch(error => console.error('Error:', error));
+    });
+</script>
+
       </script>
   </body>
 </html>
