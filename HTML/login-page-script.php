@@ -1,6 +1,5 @@
 <?php
 require_once 'init.php';
-require_once "makeCustomerSession.php";
 ?>
 
 <?php
@@ -36,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if ($password === $row['PASSWORD']) {
-
+            require_once "makeCustomerSession";
 
             // Start Customer Session & Save Information
             $user_info = getCustomerInfo($email);

@@ -5,18 +5,18 @@ function connectToDatabase() {
     $user = "root";
     $password = "umapuma";
 
-    $conn = new mysqli($host, $user, $password, $database);
+    $connection = new mysqli($host, $user, $password, $database);
 
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+    if ($connection->connect_error) {
+        die("Connection failed: " . $connection->connect_error);
     }
-        return $conn;
+        return $connection;
 }
 
 function getCustomerInfo($email) {
-    $conn = connectToDatabase();
+    $connection = connectToDatabase();
 
-    $stmt = $conn->prepare("SELECT customer_id, first_name, email FROM CUSTOMERS WHERE email = ?");
+    $stmt = $connection->prepare("SELECT customer_id, first_name, email FROM CUSTOMERS WHERE email = ?");
     $stmt->bind_param("s", $email);
 
     $stmt->execute();
@@ -26,7 +26,7 @@ function getCustomerInfo($email) {
     $stmt->fetch();
 
     $stmt->close();
-    $conn->close();
+    $connection->close();
 
     return ['customer_id' => $customer_id, 'first_name' => $first_name, 'email' => $email];
 }
