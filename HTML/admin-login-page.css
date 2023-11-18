@@ -76,7 +76,7 @@
 .login-button {
 	position: absolute;
 	width: calc(100% - 749px);
-	top: 320px;
+	top: 310px;
 	right: 363px;
 	left: 386px;
 	background-color: var(--fullblack);
@@ -95,7 +95,7 @@
 .sign-up-container {
 	position: absolute;
 	width: calc(100% - 749px);
-	top: 450px;
+	top: 400px;
 	right: 363px;
 	left: 386px;
 	background-color: var(--fullblack);
