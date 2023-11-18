@@ -81,9 +81,15 @@
 	position: relative;
 	font-weight: 600;
 }
+.login-container,
+.sign-up-container,
+.usernamebar1 {
+	border-radius: var(--br-3xs);
+	box-sizing: border-box;
+}
 .sign-up-container {
 	position: absolute;
-	width: calc(100% - 802px);
+	width: calc(100% - 749px);
 	top: 388px;
 	right: 390px;
 	left: 412px;
@@ -95,12 +101,6 @@
 	padding: var(--padding-11xs) var(--padding-6xs);
 	cursor: pointer;
 	font-size: var(--font-size-xl);
-}
-.login-container,
-.sign-up-container,
-.usernamebar1 {
-	border-radius: var(--br-3xs);
-	box-sizing: border-box;
 }
 .login-container {
 	position: absolute;
