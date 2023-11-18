@@ -193,18 +193,17 @@ require_once 'init.php';
 
 //test
 
-    document.getElementById('confirmPickupButton').addEventListener('click', function() {
+document.getElementById('confirmPickupButton').addEventListener('click', function(event) {
     updatePackageStatus('En Route');
 });
 
-document.getElementById('confirmDeliveredButton').addEventListener('click', function() {
+document.getElementById('confirmDeliveredButton').addEventListener('click', function(event) {
     updatePackageStatus('Delivered');
 });
 
 function updatePackageStatus(newStatus) {
     var trackingNumber = document.getElementById('trackingNumberInput').value;
     if (trackingNumber) {
-        
         fetch('employee-delivery-script.php', {
             method: 'POST',
             headers: {
@@ -214,7 +213,7 @@ function updatePackageStatus(newStatus) {
         })
         .then(response => response.text())
         .then(data => {
-            alert(data); // Show a simple alert with the response from the server
+            alert(data);
         })
         .catch(error => {
             console.error('Error:', error);
@@ -224,6 +223,7 @@ function updatePackageStatus(newStatus) {
         alert('Please enter a tracking number.');
     }
 }
+
       
       </script>
   </body>
