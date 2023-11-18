@@ -20,7 +20,7 @@
     />
   </head>
   <body>
-<?php
+
     <?php
     session_start(); // Start the session
 
