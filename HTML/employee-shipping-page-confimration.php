@@ -96,9 +96,9 @@
           </div>
         </div>
       </div>
-      <div class="tracking6">
+<!--       <div class="tracking6">
         <div class="tracking-child1"></div>
-      </div>
+      </div> -->
       <div class="new-tracking">New Tracking #: <?php echo htmlspecialchars($trackingNumber); ?></div>
       <div class="this-is-to-container">
         <p class="this-is-to">
