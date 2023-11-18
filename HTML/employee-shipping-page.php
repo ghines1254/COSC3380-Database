@@ -219,6 +219,9 @@
         </div>
     </div>
 </div>
+          <div class="submit-container">
+    <button type="submit" class="submit-button">Submit</button>
+</div>
           </form>
 
         <div class="vector-container">
@@ -303,12 +306,12 @@
         });
       }
 
-      var groupContainer1 = document.getElementById("groupContainer1");
-      if (groupContainer1) {
-        groupContainer1.addEventListener("click", function (e) {
-          window.location.href = "./employee-shipping-page-confirmation.php";
-        });
-      }
+      // var groupContainer1 = document.getElementById("groupContainer1");
+      // if (groupContainer1) {
+      //   groupContainer1.addEventListener("click", function (e) {
+      //     window.location.href = "./employee-shipping-page-confirmation.php";
+      //   });
+      // }
       </script>
   </body>
 </html>
