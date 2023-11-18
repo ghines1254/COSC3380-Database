@@ -78,6 +78,7 @@
 	cursor: pointer;
 	width: auto;
 	height: auto;
+	position: relative;
 	font-weight: 600;
 }
 .sign-up-container {
