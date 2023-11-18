@@ -193,11 +193,11 @@ require_once 'init.php';
 
 //test
 
-document.getElementById('confirmPickupButton').addEventListener('click', function(event) {
+document.getElementById('confirmPickupButton').addEventListener('click', function() {
     updatePackageStatus('En Route');
 });
 
-document.getElementById('confirmDeliveredButton').addEventListener('click', function(event) {
+document.getElementById('confirmDeliveredButton').addEventListener('click', function() {
     updatePackageStatus('Delivered');
 });
 
@@ -209,11 +209,11 @@ function updatePackageStatus(newStatus) {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            body: 'trackingNumber=' + encodeURIComponent(trackingNumber) + '&newStatus=' + encodeURIComponent(newStatus)
+            body: 'trackingNumber=' + encodeURIComponent(trackingNumber) + '&status=' + encodeURIComponent(newStatus)
         })
         .then(response => response.text())
         .then(data => {
-            alert(data);
+            alert(data); // Show a simple alert with the response from the server
         })
         .catch(error => {
             console.error('Error:', error);
