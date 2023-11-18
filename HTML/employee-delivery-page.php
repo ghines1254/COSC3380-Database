@@ -1,6 +1,6 @@
 <?php
 require_once 'init.php';
-?>
+
 
 <!DOCTYPE html>
 <html>
@@ -227,3 +227,5 @@ function updatePackageStatus(newStatus) {
       </script>
   </body>
 </html>
+
+?>
