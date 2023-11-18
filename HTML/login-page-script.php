@@ -17,7 +17,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-session_start();
+//session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
@@ -35,12 +35,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if ($password === $row['PASSWORD']) {
-            require_once "makeCustomerSession";
+            //require_once "makeCustomerSession";
 
             // Start Customer Session & Save Information
-            $user_info = getCustomerInfo($email);
-            $_SESSION['user_info'] = $user_info;
-            echo "first name entered: " . $user_info['$first_name'];
+            //$user_info = getCustomerInfo($email);
+            //$_SESSION['user_info'] = $user_info;
+            //echo "first name entered: " . $user_info['$first_name'];
             // FOR TESTING PURPOSES REDIRECTING TO ACOUNT PAGE
             // Redirect to customer portal notifications page
             header("Location: account-page.php");
