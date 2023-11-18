@@ -200,15 +200,15 @@ document.getElementById('confirmDeliveredButton').addEventListener('click', func
 });
 
 function updatePackageStatus(newStatus) {
-    var packageId = document.getElementById('packageIdInput').value;
-    if (packageId) {
-        // Assuming you have a PHP script at this location to handle the update
+    var trackingNumber = document.getElementById('packageIdInput').value;
+    if (trackingNumber) {
+        
         fetch('employee-delivery-script.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            body: 'packageId=' + encodeURIComponent(packageId) + '&newStatus=' + encodeURIComponent(newStatus)
+            body: 'trackingNumber=' + encodeURIComponent(trackingNumber) + '&newStatus=' + encodeURIComponent(newStatus)
         })
         .then(response => response.text())
         .then(data => {
@@ -219,10 +219,9 @@ function updatePackageStatus(newStatus) {
             alert('An error occurred');
         });
     } else {
-        alert('Please enter a package ID.');
+        alert('Please enter a tracking number.');
     }
 }
-
       
       </script>
   </body>
