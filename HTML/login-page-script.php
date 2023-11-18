@@ -1,6 +1,6 @@
 <?php
-//require_once 'init.php';
-
+//require_once 'init.php'
+require_once "makeCustomerSession";
 // Database connection details
 $host = "34.68.154.206";
 $database = "Post_Office_Schema";
@@ -33,12 +33,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if ($password === $row['PASSWORD']) {
-            //require_once "makeCustomerSession";
 
             // Start Customer Session & Save Information
-            //$user_info = getCustomerInfo($email);
-            //$_SESSION['user_info'] = $user_info;
-            //echo "first name entered: " . $user_info['$first_name'];
+            $user_info = getCustomerInfo($email);
+            $_SESSION['user_info'] = $user_info;
             // FOR TESTING PURPOSES REDIRECTING TO ACOUNT PAGE
             // Redirect to customer portal notifications page
             header("Location: account-page.php");
