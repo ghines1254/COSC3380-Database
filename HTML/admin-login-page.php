@@ -39,10 +39,10 @@
 
 
             <form action="admin-login-page-script.php" method="post">
-               <button class = "login-button" type="button" onclick="login()">Login</button>
+              <button id="loginButton" class="login-button" type="button">Login</button>
               <div class="usernamepasswordgroup1">
-                  <input class="usernamebar1" placeholder="USER ID" type="text" name="adminEmail" />
-                  <input class="usernamebar1" placeholder="PASSWORD" type="password" name="adminPassword" />
+                <input class="usernamebar1" placeholder="USER ID" type="text" name="adminEmail" />
+                <input class="usernamebar1" placeholder="PASSWORD" type="password" name="adminPassword" />
               </div>
             </form>
             <div class="frame-parent44">
@@ -106,28 +106,28 @@
 
       <script>
     document.getElementById('loginButton').addEventListener('click', function() {
-        var adminEmail = document.getElementById('adminEmailInput').value;
-        var adminPassword = document.getElementById('adminPasswordInput').value;
+          var adminEmail = document.getElementsByName('adminEmail')[0].value;
+          var adminPassword = document.getElementsByName('adminPassword')[0].value;
 
-        // Assuming 'admin-login-page-script.php' is the server-side script handling the login
-        fetch('admin-login-page-script.php', {
+          // Assuming 'admin-login-page-script.php' is the server-side script handling the login
+          fetch('admin-login-page-script.php', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
+              'Content-Type': 'application/x-www-form-urlencoded',
             },
             body: 'adminEmail=' + encodeURIComponent(adminEmail) + '&adminPassword=' + encodeURIComponent(adminPassword),
-        })
-        .then(response => response.json())
-        .then(data => {
+          })
+          .then(response => response.json())
+          .then(data => {
             if (data.success) {
-                window.location.href = "./admin-portal-notification-page.html";
-                // Additional logic or UI updates can be added here
+              window.location.href = "./admin-portal-notification-page.html";
+              // Additional logic or UI updates can be added here
             } else {
-                alert('Login failed. ' + data.message); // You can replace this with your desired action
+              alert('Login failed. ' + data.message);
             }
-        })
-        .catch(error => console.error('Error:', error));
-    });
+          })
+          .catch(error => console.error('Error:', error));
+        });
 </script>
 
       </script>

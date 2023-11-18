@@ -18,14 +18,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validate and sanitize inputs
 
-    $stmt = $conn->prepare("SELECT emp_password FROM EMPLOYEE WHERE email = ?");
-    $stmt->bind_param("s", $adminEmail);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
+   if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        if ($adminPassword === $row['emp_password']) {
+        if (password_verify($adminPassword, $row['emp_password'])) {
             // Admin authentication successful
             $response = array('success' => true, 'message' => 'Login successful');
         } else {
