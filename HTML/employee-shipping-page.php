@@ -95,163 +95,54 @@
       <div class="frame-parent22">
         <div class="sender-info-parent">
           <div class="sender-info">Sender Info</div>
-          <div class="firstname-container">
-            <div class="firstname2">
-              <div class="firstname-inner"></div>
-              <input class="first-name2" placeholder="First Name" type="text" />
-            </div>
-            <div class="middleinitial2">
-              <div class="middleinitial-inner"></div>
-              <input
-                class="middle-initial2"
-                placeholder="Middle Initial"
-                type="text"
-              />
-            </div>
-            <div class="middleinitial2">
-              <img
-                class="lastname-inner"
-                alt=""
-                src="./public/rectangle-26.svg"
-              />
-
-              <input class="last-name2" placeholder="Last Name" type="text" />
-            </div>
-          </div>
-          <div class="firstname-container">
-            <div class="addressline11">
-              <img
-                class="addressline1-item"
-                alt=""
-                src="./public/rectangle-22.svg"
-              />
-
-              <input
-                class="address-line-11"
-                placeholder="Address Line 1"
-                type="text"
-              />
-            </div>
-            <div class="addressline11">
-              <img
-                class="addressline1-item"
-                alt=""
-                src="./public/rectangle-22.svg"
-              />
-
-              <input
-                class="address-line-21"
-                placeholder="Address Line 2"
-                type="text"
-              />
-            </div>
-          </div>
-          <div class="firstname-container">
-            <div class="city2">
-              <div class="city-item"></div>
-              <input class="city3" placeholder="City" type="text" />
-            </div>
-            <div class="state2">
-              <div class="state-item"></div>
-              <input class="state3" placeholder="State" type="text" />
-            </div>
-            <div class="zip2">
-              <div class="zip-item"></div>
-              <input class="zip3" placeholder="Zip Code" type="text" />
-            </div>
-          </div>
-          <div class="firstname-container">
-            <div class="email2">
-              <img class="email-item" alt="" src="./public/rectangle-27.svg" />
-
-              <input class="email3" placeholder="Email" type="email" />
-            </div>
-            <div class="email2">
-              <img class="email-item" alt="" src="./public/rectangle-27.svg" />
-
-              <input class="phone3" placeholder="Phone #" type="tel" />
-            </div>
+          <form action="employee-shipping-page-script.php" method="post">
+    <!-- Sender Info -->
+           <div class="firstname-container">
+            <input class="first-name2" name="first_name" placeholder="First Name" type="text" />
+            <input class="middle-initial2" name="middle_initial" placeholder="Middle Initial" type="text" />
+            <input class="last-name2" name="last_name" placeholder="Last Name" type="text" />
+        </div>
+        <div class="firstname-container">
+            <input class="address-line-11" name="street_address_1" placeholder="Address Line 1" type="text" />
+            <input class="address-line-21" name="street_address_2" placeholder="Address Line 2" type="text" />
+        </div>
+        <div class="firstname-container">
+            <input class="city3" name="city" placeholder="City" type="text" />
+            <input class="state3" name="state" placeholder="State" type="text" />
+            <input class="zip3" name="zip" placeholder="Zip Code" type="text" />
+        </div>
+        <div class="firstname-container">
+            <input class="email3" name="email" placeholder="Email" type="email" />
+            <input class="phone3" name="customer_phone" placeholder="Phone #" type="tel" />
+        </div>
           </div>
         </div>
         <div class="receiver-info-parent">
           <div class="receiver-info">Receiver Info</div>
-          <div class="firstname-container">
-            <div class="firstname2">
-              <div class="firstname-inner"></div>
-              <input class="first-name3" placeholder="First Name" type="text" />
-            </div>
-            <div class="middleinitial2">
-              <div class="middleinitial-inner"></div>
-              <input
-                class="middle-initial3"
-                placeholder="Middle Initial"
-                type="text"
-              />
-            </div>
-            <div class="middleinitial2">
-              <img
-                class="lastname-inner"
-                alt=""
-                src="./public/rectangle-26.svg"
-              />
+          <!-- Receiver Info -->
+        <div class="firstname-container">
+            <input class="first-name3" name="fname" placeholder="First Name" type="text" />
+            <input class="middle-initial3" name="receiver_middle_initial" placeholder="Middle Initial" type="text" />
+            <input class="last-name3" name="lname" placeholder="Last Name" type="text" />
+        </div>
+        <div class="firstname-container">
+            <input class="address-line-12" name="address_line_1" placeholder="Address Line 1" type="text" />
+            <input class="address-line-22" name="address_line_2" placeholder="Address Line 2" type="text" />
+        </div>
+        <div class="firstname-container">
+            <input class="city5" name="receiver_city" placeholder="City" type="text" />
+            <input class="state5" name="receiver_state" placeholder="State" type="text" />
+            <input class="zip5" name="zip_code" placeholder="Zip Code" type="text" />
+        </div>
+        <div class="firstname-container">
+            <input class="email5" name="receiver_email" placeholder="Email" type="email" />
+            <input class="phone5" name="receiver_phone" placeholder="Phone #" type="tel" />
+        </div>
+    </div>
 
-              <input class="last-name3" placeholder="Last Name" type="text" />
-            </div>
-          </div>
-          <div class="firstname-container">
-            <div class="addressline11">
-              <img
-                class="addressline1-item"
-                alt=""
-                src="./public/rectangle-22.svg"
-              />
-
-              <input
-                class="address-line-12"
-                placeholder="Address Line 1"
-                type="text"
-              />
-            </div>
-            <div class="addressline11">
-              <img
-                class="addressline1-item"
-                alt=""
-                src="./public/rectangle-22.svg"
-              />
-
-              <input
-                class="address-line-22"
-                placeholder="Address Line 2"
-                type="text"
-              />
-            </div>
-          </div>
-          <div class="firstname-container">
-            <div class="city2">
-              <div class="city-item"></div>
-              <input class="city5" placeholder="City" type="text" />
-            </div>
-            <div class="state2">
-              <div class="state-item"></div>
-              <input class="state5" placeholder="State" type="text" />
-            </div>
-            <div class="city2">
-              <div class="city-item"></div>
-              <input class="zip5" placeholder="Zip Code" type="text" />
-            </div>
-          </div>
-          <div class="firstname-container">
-            <div class="email2">
-              <img class="email-item" alt="" src="./public/rectangle-27.svg" />
-
-              <input class="email5" placeholder="Email" type="email" />
-            </div>
-            <div class="email2">
-              <img class="email-item" alt="" src="./public/rectangle-27.svg" />
-
-              <input class="phone5" placeholder="Phone #" type="tel" />
-            </div>
-          </div>
+    <!-- Submit Button -->
+    <button type="submit">Submit</button>
+</form>
         </div>
         <div class="vector-container">
           <img class="vector-icon17" alt="" src="./public/vector9.svg" />
