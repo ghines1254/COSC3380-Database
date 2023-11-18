@@ -73,7 +73,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     // Generate unique tracking number
-    $trackingNumber = uniqid();
+    $trackingNumber = substr(uniqid(), 0, 6); // Adjust the second parameter as needed
+
 
    // Insert combined data and tracking number into PACKAGE table
     $stmt = $conn->prepare("INSERT INTO PACKAGE (tracking_number, sender_full_address, sender_full_name, receiver_full_address, receiver_full_name) VALUES (?, ?, ?, ?, ?)");
