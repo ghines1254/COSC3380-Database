@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
 
     // Redirect or confirm successful submission
-    header("Location: employee-shipping-page-confirmation.php"); // Redirect to a confirmation page
+    header("Location: employee-shipping-page-confimration.php"); // Redirect to a confirmation page
     exit;
 }
 
