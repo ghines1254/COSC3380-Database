@@ -18,6 +18,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+session_start();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -34,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if ($password === $row['PASSWORD']) {
-            session_start();
+
 
             // Start Customer Session & Save Information
             $user_info = getCustomerInfo($email);
