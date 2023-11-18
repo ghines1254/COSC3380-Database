@@ -201,7 +201,7 @@ document.getElementById('confirmDeliveredButton').addEventListener('click', func
 });
 
 function updatePackageStatus(newStatus) {
-    var trackingNumber = document.getElementById('packageIdInput').value;
+    var trackingNumber = document.getElementById('trackingNumber').value;
     if (trackingNumber) {
         
         fetch('employee-delivery-script.php', {
