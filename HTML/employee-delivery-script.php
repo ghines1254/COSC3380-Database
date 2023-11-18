@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $newStatus = $_POST['newStatus'];
 
     // Prepare and execute the update query
-    $stmt = $conn->prepare("UPDATE PACKAGE SET status = ? WHERE package_id = ?");
+    $stmt = $conn->prepare("UPDATE PACKAGE SET status = ? WHERE tracking_number = ?");
     $stmt->bind_param("ss", $newStatus, $packageId);
     $stmt->execute();
 
