@@ -39,7 +39,7 @@
 
 
             <form action="admin-login-page-script.php" method="post">
-              <button type="submit" class="login-button">Login</button>
+               <button type="button" onclick="login()">Login</button>
               <div class="usernamepasswordgroup1">
                   <input class="usernamebar1" placeholder="USER ID" type="text" name="adminEmail" />
                   <input class="usernamebar1" placeholder="PASSWORD" type="password" name="adminPassword" />
@@ -82,7 +82,7 @@
           window.location.href = "./s-ign-up-page.html";
         });
       }
-      
+
       var frameContainer3 = document.getElementById("frameContainer3");
       if (frameContainer3) {
         frameContainer3.addEventListener("click", function (e) {
@@ -103,6 +103,29 @@
           window.location.href = "./index.php";
         });
       }
+
+      function login() {
+                var form = document.getElementById('loginForm');
+                var formData = new FormData(form);
+
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', 'admin-login-page-script.php', true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        // Handle the response from the server
+                        var response = JSON.parse(xhr.responseText);
+
+                        if (response.success) {
+                            // Authentication successful, update the UI or perform any desired actions
+                            alert('Login successful!'); // You can replace this with your desired action
+                        } else {
+                            // Authentication failed, display an error message
+                            alert('Login failed. ' + response.message); // You can replace this with your desired action
+                        }
+                    }
+                };
+                xhr.send(formData);
+            }
       </script>
   </body>
 </html>

@@ -7,42 +7,42 @@ $database = "Post_Office_Schema";
 $user = "root";
 $password = "umapuma";
 
-// Create connection
-$conn = new mysqli($host, $user, $password, $database);
-
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $adminEmail = $_POST['adminEmail']; // Assuming the form field for admin email is named 'adminEmail'
-    $adminPassword = $_POST['adminPassword']; // Assuming the form field for admin password is named 'adminPassword'
+    $adminEmail = $_POST['adminEmail'];
+    $adminPassword = $_POST['adminPassword'];
 
     // Validate and sanitize inputs
 
-    // Prepare and execute the query for admin login
-    $stmt = $conn->prepare("SELECT emp_password FROM EMPLOYEE WHERE email = ?"); // Replace 'EMPLOYEE' and 'emp_password' with your admin table and column names
+    $stmt = $conn->prepare("SELECT emp_password FROM EMPLOYEE WHERE email = ?");
     $stmt->bind_param("s", $adminEmail);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        if ($adminPassword === $row['emp_password']) { // Replace 'emp_password' with the actual admin password column name
+        if ($adminPassword === $row['emp_password']) {
             // Admin authentication successful
-            header("Location: admin-portal-nofications-page.html"); // Redirect to the admin portal page
-            exit;
+            $response = array('success' => true, 'message' => 'Login successful');
         } else {
-            echo '<script>alert("Invalid password.")</script>';
-            // header("Location: admin-login-page.php");
+            // Incorrect password
+            $response = array('success' => false, 'message' => 'Invalid password');
         }
     } else {
-        echo '<script>alert("Admin email not found.")</script>';
-        // header("Location: admin-login-page.php");
+        // Admin email not found
+        $response = array('success' => false, 'message' => 'Admin email not found');
     }
 
+    // Close database connections
     $stmt->close();
     $conn->close();
+
+    // Send JSON response back to the client
+    header('Content-Type: application/json');
+    echo json_encode($response);
 }
 ?>
