@@ -81,7 +81,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sssss", $trackingNumber, $sender_full_address, $sender_full_name, $receiver_full_address, $receiver_full_name);
     $stmt->execute();
     // ... bind additional parameters for PACKAGE table ...
-    
+    // After successfully executing the INSERT query for PACKAGE table
+$_SESSION['trackingNumber'] = $trackingNumber;
+
 
     // Redirect or confirm successful submission
     header("Location: employee-shipping-page-confimration.php"); // Redirect to a confirmation page
