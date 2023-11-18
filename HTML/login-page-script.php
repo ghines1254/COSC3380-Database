@@ -34,7 +34,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if ($password === $row['PASSWORD']) {
-            echo 'successful redirect';
             session_start();
 
             // Start Customer Session & Save Information
@@ -44,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // FOR TESTING PURPOSES REDIRECTING TO ACOUNT PAGE
             // Redirect to customer portal notifications page
             header("Location: account-page.php");
-            exit;
+            exit();
         } else {
             echo "Invalid password.";
         }
