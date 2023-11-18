@@ -115,7 +115,7 @@
             <input class="email3" name="email" placeholder="Email" type="email" />
             <input class="phone3" name="customer_phone" placeholder="Phone #" type="tel" />
         </div>
-          </div>
+
         </div>
         <div class="receiver-info-parent">
           <div class="receiver-info">Receiver Info</div>
