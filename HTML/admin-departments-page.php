@@ -26,15 +26,15 @@
         <img class="image-1-icon1" alt="" src="./public/image-12@2x.png" />
 
 
-  <!-- Centered Generate Report Form -->
-        <div style="text-align: center; padding: 20px;">
+ !-- Centered Generate Report Form -->
+        <div class="generate-report-form" style="text-align: center; padding: 20px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2;">
             <form method="post" action="">
                 <input type="submit" name="generate_report" value="Generate Report">
             </form>
         </div>
 
         <!-- Employee Data Display -->
-        <div class="employee-data-report">
+        <div class="employee-data-report" style="margin-top: 20px;">
             <?php
             include 'admin-departments-page-script.php';
 
@@ -43,18 +43,32 @@
                 
                 if (!empty($employeeData)): ?>
                     <table>
-                        <!-- Table Headers -->
                         <tr>
                             <th>ID</th>
                             <th>First Name</th>
-                            <!-- Other headers -->
+                            <th>Last Name</th>
+                            <th>Sex</th>
+                            <th>Birthdate</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Zipcode</th>
+                            <th>Department</th>
+                            <th>Created On</th>
+                            <th>Packages Delivered</th>
                         </tr>
-                        <!-- Table Rows -->
                         <?php foreach ($employeeData as $data): ?>
                             <tr>
                                 <td><?= htmlspecialchars($data['idnum']) ?></td>
                                 <td><?= htmlspecialchars($data['first_name']) ?></td>
-                                <!-- Other data cells -->
+                                <td><?= htmlspecialchars($data['last_name']) ?></td>
+                                <td><?= htmlspecialchars($data['sex']) ?></td>
+                                <td><?= htmlspecialchars($data['birthdate']) ?></td>
+                                <td><?= htmlspecialchars($data['city']) ?></td>
+                                <td><?= htmlspecialchars($data['state']) ?></td>
+                                <td><?= htmlspecialchars($data['zipcode']) ?></td>
+                                <td><?= htmlspecialchars($data['dept']) ?></td>
+                                <td><?= htmlspecialchars($data['created_on']) ?></td>
+                                <td><?= htmlspecialchars($data['packages_delivered']) ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </table>
