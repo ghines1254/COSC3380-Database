@@ -1584,7 +1584,12 @@
           </div>
           <div class="notification-center-container">
             <b class="notification-center2">Notification Center: </b>
-            <div class="notification-component16">
+            <?php
+            $repetitions = 5;
+
+            for ($i = 0; $i < $repetitions; $i++):
+            ?>
+              <div class="notification-component16">
               <div class="rectangle-parent174">
                 <div class="frame-child86"></div>
                 <img class="vector-icon85" alt="" src="./public/vector13.svg" />
@@ -1596,18 +1601,9 @@
                 <div class="frame-child88"></div>
               </div>
             </div>
-            <div class="notification-component16">
-              <div class="rectangle-parent174">
-                <div class="frame-child86"></div>
-                <img class="vector-icon85" alt="" src="./public/vector13.svg" />
-
-                <b class="notification-summary16">Notification Summary</b>
-              </div>
-              <div class="parent14">
-                <b class="b23">12:00</b>
-                <div class="frame-child88"></div>
-              </div>
-            </div>
+            <?php
+            endfor;
+            ?>
             <div class="notification-component16">
               <div class="rectangle-parent174">
                 <div class="frame-child86"></div>
