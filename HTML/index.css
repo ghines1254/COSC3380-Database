@@ -88,7 +88,7 @@
 	top: 5%;
 	text-align: center;
 	position: relative;
-	width: calc(100% - 749px);
+	width: auto;
 	height: 32px;
 	cursor: pointer;
 	display: inline-block;
