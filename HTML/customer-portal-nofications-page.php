@@ -1567,7 +1567,7 @@
             </div>
           </div>
           <div class="notification-center-container">
-            <b class="notification-center2">Notification Center:  <?php echo $user_info['first_name'];?></b>
+            <b class="notification-center2">Notification Center: <?php echo $user_info['first_name'];?></b>
             <div class="notification-component16">
               <div class="rectangle-parent174">
                 <div class="frame-child86"></div>
