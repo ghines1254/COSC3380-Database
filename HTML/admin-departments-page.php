@@ -21,9 +21,7 @@
   </head>
   <body>
     <div class="admin-departments-page">
-      <div class="admin-departments-page-child"></div>
-      <div class="minibackground1">
-        <img class="image-1-icon1" alt="" src="./public/image-12@2x.png" />
+      <div class="admin-departments-page-child">
 
 
  !-- Centered Generate Report Form -->
@@ -79,6 +77,13 @@
             ?>
         </div>
     </div>
+
+        
+      </div>
+      <div class="minibackground1">
+        <img class="image-1-icon1" alt="" src="./public/image-12@2x.png" />
+
+
 
         
       </div>
