@@ -110,6 +110,7 @@
                     <b class="button-242">Account</b>
                   </div>
                 </div>
+                <div class = "portal-page25"></div>
               </div>
             </div>
           </div>
@@ -147,7 +148,7 @@
             if (!$stmt->execute()) {
               echo "Execution failed: " . $stmt->error;
               exit();
-            } 
+            }
             $stmt->bind_result($trackingNumber, $lastUpdated, $packageStatus, $employee_first_name, $packageETA);
             while($stmt->fetch()):
               echo "<tr>";
