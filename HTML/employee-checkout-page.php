@@ -142,6 +142,12 @@ function updateStock(productId, action) {
             if (!isNaN(updatedStock)) {
                 // Update the displayed stock
                 document.getElementById(`stock_${productId}`).innerText = `Stock: ${updatedStock}`;
+                var lowStockThreshold = 10;
+                if (updatedStock === 0) {
+                  alert("Item is out of stock. Please restock as soon as possible.");
+                } else if (updatedStock <= lowStockThreshold) {
+                    alert("Stock is running low.");
+                }
             } else {
                 console.error("Invalid stock value received from the server");
             }
