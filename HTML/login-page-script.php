@@ -61,6 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Redirect to customer portal notifications page
             echo $email;
             $user_info = getCustomerInfo($email);
+            echo $user_info[0] . " " . $user_info[1] . " " . $user_info[2];
             $_SESSION['user_info'] = $user_info;
 
             echo "\n redirecting now";
