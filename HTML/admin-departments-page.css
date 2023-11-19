@@ -368,7 +368,7 @@
   margin: 0;
   padding-left: var(--padding-lgi);
 }
-.frame81,
+/* .frame81,
 .frame82 {
   position: absolute;
   background-color: var(--lightmain);
@@ -392,8 +392,8 @@
   box-sizing: border-box;
   width: 402px;
   height: 32px;
-}
-.frame83 {
+} */
+/* .frame83 {
   position: absolute;
   top: 59px;
   left: 399px;
@@ -416,8 +416,8 @@
   box-sizing: border-box;
   width: 402px;
   height: 32px;
-}
-.frame77 {
+} */
+/* .frame77 {
   top: 563px;
   left: calc(50% - 213px);
   width: 800px;
@@ -425,7 +425,7 @@
   text-align: left;
   font-size: var(--font-inherit);
   color: var(--lightaccent);
-  font-family: var(--font-inherit);
+  font-family: var(--font-inherit); */
 }
 .vector-icon43 {
   position: absolute;
