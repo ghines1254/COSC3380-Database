@@ -70,14 +70,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 //Employee drives car, update tracking info with status
                 $onVehicle = 1;
                 $stmt = $conn->prepare("UPDATE TRACKING_INFO SET on_truck = ? WHERE package_id = ?");
-                $stmt->bind_param("s", $onVehicle, $trackingNumber);
+                $stmt->bind_param("ss", $onVehicle, $trackingNumber);
                 $stmt->execute();
             }
             else{
                 //Employee does NOT drive vehicle, make sure on_truck is set to "false"
                 $onVehicle = 0;
                 $stmt = $conn->prepare("UPDATE TRACKING_INFO SET on_truck = ? WHERE package_id = ?");
-                $stmt->bind_param("s", $onVehicle, $trackingNumber);
+                $stmt->bind_param("ss", $onVehicle, $trackingNumber);
                 $stmt->execute();
             }
         }
@@ -85,8 +85,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     else{
         //package has been marked as delivered, adjust tracking info
         $onVehicle = 0;
-        $stmt = $conn->prepare("UPDATE TRACKING_INFO SET delivered_by = ?, on_truck = ?,  WHERE package_id = ?");
-        $stmt->bind_param("s",$emp_info['idnum'], $onVehicle, $trackingNumber);
+        $stmt = $conn->prepare("UPDATE TRACKING_INFO SET on_truck = ?, delivered_by = ?,   WHERE package_id = ?");
+        $stmt->bind_param("sss", $onVehicle, $emp_info['idnum'], $trackingNumber);
         $stmt->execute();
     }
     $conn->close();
