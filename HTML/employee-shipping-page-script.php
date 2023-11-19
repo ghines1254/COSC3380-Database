@@ -108,8 +108,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION['trackingNumber'] = $trackingNumber;
     $startingPostOffice = "PO1";
     $receivedTrue = 1;
-    $stmt = $conn->prepare("INSERT INTO TRACKING_INFO (package_id, received, starting_location_id) VALUES(?,?,?)");
-    $stmt->bind_param("sss",$trackingNumber, $receivedTrue, $startingPostOffice);
+    $stmt = $conn->prepare("INSERT INTO TRACKING_INFO (package_id, starting_location_id, received) VALUES(?,?,?)");
+    $stmt->bind_param("sss",$trackingNumber, $startingPostOffice, $receivedTrue);
     $stmt->execute();
     //Automatically update TRACKING_INFO with default values
 
