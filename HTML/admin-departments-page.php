@@ -26,6 +26,49 @@
       <div class="minibackground20">
         <img class="image-1-icon20" alt="" src="./public/image-12@2x.png" />
       </div>
+
+<!-- Date Filter Form -->
+      <div class="date-filter-form">
+        <form method="post" action="admin-departments-page.php">
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" name="startDate" required>
+
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate" name="endDate" required>
+
+            <input type="submit" value="Filter">
+        </form>
+      </div>
+
+      <!-- Package History Display -->
+      <div class="package-history-report">
+        <?php if (!empty($packageHistory)): ?>
+            <table>
+                <tr>
+                    <th>Tracking Number</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                    <!-- Add other columns as needed -->
+                </tr>
+                <?php foreach ($packageHistory as $history): ?>
+                    <tr>
+                        <td><?= htmlspecialchars($history['tracking_number']) ?></td>
+                        <td><?= htmlspecialchars($history['status']) ?></td>
+                        <td><?= htmlspecialchars($history['date']) ?></td>
+                        <!-- Add other columns as needed -->
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+        <?php else: ?>
+            <p>No package history found for the selected date range.</p>
+        <?php endif; ?>
+      </div>
+
+
+
+
+
+      
       <div class="navigation-bar-light20">
         <div class="navigation-bar20"></div>
         <div class="navigation-bar-light-inner19">
