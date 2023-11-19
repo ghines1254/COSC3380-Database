@@ -113,11 +113,21 @@ require_once 'connection.php';
 
          
  <div class="products-outline">
-        <div class="check-out-the">Update product stock as needed here.</div>       
+        <div class="check-out-the">Update product stock as needed here.</div>    
 
+<table class="products-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
     
- 
-
+ <tbody>
 <?php
 $query = "SELECT product_id, product_name, product_price, stock_remaining, product_description FROM IN_STORE_PRODUCTS";
 
@@ -130,21 +140,23 @@ if (!$result)
 
 while ($row = $result->fetch_assoc()) 
 {
-    echo "<div class='product-item'>";
-    echo "<span>{$row['product_id']} </span>";
-    echo "<span>{$row['product_name']} </span>";
-    echo "<span>Description: {$row['product_description']} </span>";
-    echo "<span> Price: {$row['product_price']} </span>";
-    echo "<span id='stock_{$row['product_id']}'>Stock: {$row['stock_remaining']}</span>";
+    echo "<tr>";
+    echo "<td>{$row['product_id']}</td>";
+    echo "<td>{$row['product_name']}</td>";
+    echo "<td>{$row['product_description']}</td>";
+    echo "<td>{$row['product_price']}</td>";
+    echo "<td id='stock_{$row['product_id']}'>{$row['stock_remaining']}</td>";
+    echo "<td>";
     echo "<button onclick=\"updateStock('{$row['product_id']}', 'increment')\">+</button>";
     echo "<button onclick=\"updateStock('{$row['product_id']}', 'decrement')\">-</button>";
-    echo "</div>";
+    echo "</td>";
+    echo "</tr>";
     
     
 }
 
-?>
- </div>
+?> </tbody></table>
+  </div>
 <script>
 function updateStock(productId, action) {
   
