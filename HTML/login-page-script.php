@@ -1,11 +1,30 @@
 <?php
-require_once 'init.php';
-require_once "makeCustomerSession.php";
-
 session_start();
+require_once 'init.php';
 ?>
 
 <?php
+
+function getCustomerInfo($email) {
+    $connection = connectToDatabase();
+
+    $stmt = $connection->prepare("SELECT customer_id, first_name, email FROM CUSTOMERS WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    if (!$stmt->execute()) {
+        die("Error in executing the statement: " . $stmt->error);
+    }
+    $stmt->execute();
+
+    $stmt->bind_result($customer_id, $first_name, $email);
+
+    $stmt->fetch();
+
+    $stmt->close();
+    $connection->close();
+
+    return ['customer_id' => $customer_id, 'first_name' => $first_name, 'email' => $email];
+}
+
 // Database connection details
 $host = "34.68.154.206";
 $database = "Post_Office_Schema";
@@ -34,14 +53,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
     $result = $stmt->get_result();
 
-   // $user_info = getCustomerInfo($row[$email]);
-    //$_SESSION['user_info'] = $user_info;
+
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if ($password === $row['PASSWORD']) {
             // Redirect to customer portal notifications page
+            echo "inside if loop";
+            $user_info = getCustomerInfo($row[$email]);
+            $_SESSION['user_info'] = $user_info;
 
+            echo "\n redirecting now";
             header("Location: customer-portal-nofications-page.php");
             exit;
         } else {

@@ -13,22 +13,3 @@ function connectToDatabase() {
         return $connection;
 }
 
-function getCustomerInfo($email) {
-    $connection = connectToDatabase();
-
-    $stmt = $connection->prepare("SELECT customer_id, first_name, email FROM CUSTOMERS WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    if (!$stmt->execute()) {
-        die("Error in executing the statement: " . $stmt->error);
-    }
-    $stmt->execute();
-
-    $stmt->bind_result($customer_id, $first_name, $email);
-
-    $stmt->fetch();
-
-    $stmt->close();
-    $connection->close();
-
-    return ['customer_id' => $customer_id, 'first_name' => $first_name, 'email' => $email];
-}
