@@ -95,149 +95,23 @@
           id="portalHomeButton"
         />
       </div>
-      <table class="history-component-parent">
-
-        <div class="history-component">
-          <div class="rectangle-parent145">
-            <div class="frame-child67"></div>
-            <div class="rectangle-parent146">
-              <div class="group-child95"></div>
-              <img class="vector-icon60" alt="" src="./public/vector.svg" />
-            </div>
-            <div class="package-id-parent">
-              <div class="package-id9">Package ID:</div>
-              <b class="delivery-status"> Delivery status</b>
-            </div>
-          </div>
-          <div class="frame-parent60">
-            <div class="date-of-delivery-parent">
-              <div class="date-of-delivery">Date of delivery</div>
-              <b class="b16">11-02-2023</b>
-            </div>
-            <div class="frame-child67"></div>
-          </div>
-        </div>
-        <div class="history-component1">
-          <div class="rectangle-parent145">
-            <div class="frame-child67"></div>
-            <div class="rectangle-parent146">
-              <div class="group-child95"></div>
-              <img class="vector-icon60" alt="" src="./public/vector.svg" />
-            </div>
-            <div class="package-id-parent">
-              <div class="package-id9">Package ID:</div>
-              <b class="delivery-status"> Delivery status</b>
-            </div>
-          </div>
-          <div class="frame-parent60">
-            <div class="date-of-delivery-parent">
-              <div class="date-of-delivery">Date of delivery</div>
-              <b class="b16">11-02-2023</b>
-            </div>
-            <div class="frame-child67"></div>
-          </div>
-        </div>
-        <div class="history-component2">
-          <div class="rectangle-parent145">
-            <div class="frame-child67"></div>
-            <div class="rectangle-parent146">
-              <div class="group-child95"></div>
-              <img class="vector-icon60" alt="" src="./public/vector.svg" />
-            </div>
-            <div class="package-id-parent">
-              <div class="package-id9">Package ID:</div>
-              <b class="delivery-status"> Delivery status</b>
-            </div>
-          </div>
-          <div class="frame-parent60">
-            <div class="date-of-delivery-parent">
-              <div class="date-of-delivery">Date of delivery</div>
-              <b class="b16">11-02-2023</b>
-            </div>
-            <div class="frame-child67"></div>
-          </div>
-        </div>
-        <div class="history-component3">
-          <div class="rectangle-parent145">
-            <div class="frame-child67"></div>
-            <div class="rectangle-parent146">
-              <div class="group-child95"></div>
-              <img class="vector-icon60" alt="" src="./public/vector.svg" />
-            </div>
-            <div class="package-id-parent">
-              <div class="package-id9">Package ID:</div>
-              <b class="delivery-status"> Delivery status</b>
-            </div>
-          </div>
-          <div class="frame-parent60">
-            <div class="date-of-delivery-parent">
-              <div class="date-of-delivery">Date of delivery</div>
-              <b class="b16">11-02-2023</b>
-            </div>
-            <div class="frame-child67"></div>
-          </div>
-        </div>
-        <div class="history-component4">
-          <div class="rectangle-parent145">
-            <div class="frame-child67"></div>
-            <div class="rectangle-parent146">
-              <div class="group-child95"></div>
-              <img class="vector-icon60" alt="" src="./public/vector.svg" />
-            </div>
-            <div class="package-id-parent">
-              <div class="package-id9">Package ID:</div>
-              <b class="delivery-status"> Delivery status</b>
-            </div>
-          </div>
-          <div class="frame-parent60">
-            <div class="date-of-delivery-parent">
-              <div class="date-of-delivery">Date of delivery</div>
-              <b class="b16">11-02-2023</b>
-            </div>
-            <div class="frame-child67"></div>
-          </div>
-        </div>
-        <div class="history-component5">
-          <div class="rectangle-parent145">
-            <div class="frame-child67"></div>
-            <div class="rectangle-parent146">
-              <div class="group-child95"></div>
-              <img class="vector-icon60" alt="" src="./public/vector.svg" />
-            </div>
-            <div class="package-id-parent">
-              <div class="package-id9">Package ID:</div>
-              <b class="delivery-status"> Delivery status</b>
-            </div>
-          </div>
-          <div class="frame-parent60">
-            <div class="date-of-delivery-parent">
-              <div class="date-of-delivery">Date of delivery</div>
-              <b class="b16">11-02-2023</b>
-            </div>
-            <div class="frame-child67"></div>
-          </div>
-        </div>
-        <div class="history-component6">
-          <div class="rectangle-parent145">
-            <div class="frame-child67"></div>
-            <div class="rectangle-parent146">
-              <div class="group-child95"></div>
-              <img class="vector-icon60" alt="" src="./public/vector.svg" />
-            </div>
-            <div class="package-id-parent">
-              <div class="package-id9">Package ID:</div>
-              <b class="delivery-status"> Delivery status</b>
-            </div>
-          </div>
-          <div class="frame-parent60">
-            <div class="date-of-delivery-parent">
-              <div class="date-of-delivery">Date of delivery</div>
-              <b class="b16">11-02-2023</b>
-            </div>
-            <div class="frame-child67"></div>
-          </div>
-        </div>
-      </table>
+      <table class = "history-component-parent">
+        <thead>
+            <tr>
+                <th>Package ID</th>
+                <th>Delivery Status</th>
+                <th>Date of Delivery</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Delivered</td>
+                <td>11-02-2023</td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
     </div>
 
     <script>
