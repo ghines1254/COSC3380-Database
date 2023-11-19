@@ -152,7 +152,7 @@ require_once 'init.php';
       var button2Container = document.getElementById("button2Container");
       if (button2Container) {
         button2Container.addEventListener("click", function (e) {
-          window.location.href = "././customer-portal-notifications-page.php";
+          window.location.href = "./customer-portal-nofications-page.php";
         });
       }
 
