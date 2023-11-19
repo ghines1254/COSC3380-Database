@@ -42,7 +42,7 @@ if (isset($_POST['generate_report'])) {
         <!-- Existing content -->
 
         <!-- Generate Report Form -->
-        <form method="post" action="admin-departments-page.php">
+        <form method="post" action="admin-departments-page-script.php">
             <input type="submit" name="generate_report" value="Generate Report">
         </form>
 
