@@ -117,7 +117,7 @@ if (!$result)
 while ($row = $result->fetch_assoc()) 
 {
     echo "<div>";
-    echo "<span>{$row['product_id']}</span>";
+    echo "<span id='stock_{$row['product_id']}'>Stock: {$row['stock_remaining']}</span>";
     echo "<span>{$row['product_name']}</span>";
     echo "<span>Stock: {$row['stock_remaining']}</span>";
     echo "<button onclick=\"updateStock('{$row['product_id']}', 'increment')\">+</button>";
