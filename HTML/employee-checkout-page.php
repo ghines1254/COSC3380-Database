@@ -126,7 +126,25 @@ while ($row = $result->fetch_assoc())
 
 $conn->close();
 ?>
-
+<script>
+function updateStock(productId, action) {
+  
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "updateStock.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            console.log(xhr.responseText);
+        } else {
+            console.error("Request failed with status: " + xhr.status);
+        }
+    };
+    
+    var data = "productId=" + productId + "&action=" + action;
+    xhr.send(data);
+}
+</script>
 
 
       
