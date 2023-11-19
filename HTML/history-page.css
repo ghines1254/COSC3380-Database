@@ -453,7 +453,7 @@
 	left: calc(50% - 150px);
 	width: 880px;
 	height: 680px;
-	text-align: left;
+	text-align: center;
 	background-color: var(--lightsecond);
 	font-size: var(--font-size-mid);
 	font-family: var(--font-lexend);
