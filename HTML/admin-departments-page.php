@@ -1,30 +1,15 @@
 <?php
 session_start();
-require_once 'init.php'; 
-
-function fetchAllPackages() {
-    global $conn; // Use the database connection from init.php
-
-    $query = "SELECT tracking_number, sender_full_name, sender_full_address, receiver_full_name, receiver_full_address, status, updated_at FROM PACKAGE";
-    $result = $conn->query($query);
-
-    $packages = [];
-    while ($row = $result->fetch_assoc()) {
-        $packages[] = $row;
-    }
-
-    return $packages;
-}
+include 'admin-departments-page-script.php';
 
 $packageData = fetchAllPackages();
 ?>
 
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-
     <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="./admin-departments-page.css" />
     <link
@@ -47,7 +32,10 @@ $packageData = fetchAllPackages();
         <img class="image-1-icon20" alt="" src="./public/image-12@2x.png" />
       </div>
 
- <!-- Package Data Display -->
+  <div class="admin-departments-page">
+        <!-- Other page content -->
+
+        <!-- Package Data Display -->
         <div class="package-data-report">
             <?php if (!empty($packageData)): ?>
                 <table>
@@ -72,6 +60,7 @@ $packageData = fetchAllPackages();
                 <p>No package data found.</p>
             <?php endif; ?>
         </div>
+
 
 
 
