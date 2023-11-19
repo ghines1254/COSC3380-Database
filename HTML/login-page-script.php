@@ -4,7 +4,19 @@ require_once 'init.php';
 ?>
 
 <?php
+function connectToDatabase() {
+    $host = "34.68.154.206";
+    $database = "Post_Office_Schema";
+    $user = "root";
+    $password = "umapuma";
 
+    $connection = new mysqli($host, $user, $password, $database);
+
+    if ($connection->connect_error) {
+        die("Connection failed: " . $connection->connect_error);
+    }
+        return $connection;
+}
 function getCustomerInfo($email) {
     $connection = connectToDatabase();
 
@@ -60,7 +72,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($password === $row['PASSWORD']) {
             // Redirect to customer portal notifications page
             $user_info = getCustomerInfo($email);
-            echo $user_info[0] . " " . $user_info[1] . " " . $user_info[2];
             $_SESSION['user_info'] = $user_info;
 
             echo "\n redirecting now";
