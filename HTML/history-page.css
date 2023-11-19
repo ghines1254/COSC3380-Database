@@ -330,7 +330,7 @@ tbody tr:hover {
 .generate-report {
 	position: absolute;
 	top: calc(75% + 150px);
-	left: calc(25% + 200px);
+	left: calc(25% + 0px);
 	height: fit-content;
 	width: fit-content;
 	background-color: var(--lightaccent);
@@ -339,7 +339,7 @@ tbody tr:hover {
 	font-size: var(--font-size-xl);
 	color: var(--lightmain);
 	font-family: var(--largetext);
-	padding: 5%;
+	padding: 10px;
 }
 .history-page {
 	position: relative;
