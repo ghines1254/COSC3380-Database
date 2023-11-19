@@ -129,7 +129,7 @@ require_once 'connection.php';
     
     </div>
 
-<div class="portal-page8">
+<div class="portal-centering-frame8">
 <?php
 $query = "SELECT product_id, product_name, product_price, stock_remaining FROM IN_STORE_PRODUCTS";
 
