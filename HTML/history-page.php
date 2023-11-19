@@ -96,11 +96,6 @@
                   </div>
                 </div>
               </div>
-              <div class="portal-page25">
-                <div class = "generate-report">
-                  Generate
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -138,26 +133,34 @@
               exit();
             } 
             $stmt->bind_result($trackingNumber, $lastUpdated, $packageStatus, $employee_first_name, $packageETA);
-            while($stmt->fetch()):
-              if ($stmt->error) {
-                echo "Error during result fetching: " . $stmt->error;
-                exit();
-              }
-            ?>
+            while($stmt->fetch()): ?>
               <tr>
-                  <td><?=$trackingNumber?></td>
-                  <td><?=$lastUpdated ?></td>
-                  <td><?=$packageStatus ?></td>
-                  <td><?=$employee_first_name ?></td>
-                  <td><?=$packageETA ?></td>
+                  <td><?= $trackingNumber ?></td>
+                  <td><?= $lastUpdated ?></td>
+                  <td><?= $packageStatus ?></td>
+                  <td><?= $employee_first_name ?></td>
+                  <td><?= $packageETA ?></td>
               </tr>
-            <?php
-            endwhile;
-            $stmt->close();
-            ?>
+
+          <?php endwhile; ?>
           </tbody>
         </table>
     </div>
+    <?php /*
+        $query = "SELECT tracking_number FROM PACKAGE";
+        $result = $conn->query($query);
+        // Check for errors
+        if (!$result) {
+            die("Error retrieving data: " . $conn->error);
+        }
+        while ($row = $result->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>{$row['tracking_number']}</td>";
+            echo "<td>{$row['delivery_status']}</td>";
+            echo "<td>{$row['date_of_delivery']}</td>";
+            echo "</tr>";
+        }*/
+    ?>
 
     <script>
       var frameContainer1 = document.getElementById("frameContainer1");
@@ -177,7 +180,7 @@
       var button2Container = document.getElementById("button2Container");
       if (button2Container) {
         button2Container.addEventListener("click", function (e) {
-          window.location.href = "./shipping-page.php";
+          window.location.href = "./shipping-page.html";
         });
       }
 
