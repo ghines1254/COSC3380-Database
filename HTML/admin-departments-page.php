@@ -1,27 +1,6 @@
 <?php
 session_start();
-
-// Include your database connection script
-require_once 'init.php'; // Adjust this path as needed
-
-$packageHistory = [];
-
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['startDate']) && isset($_POST['endDate'])) {
-    $startDate = $_POST['startDate'];
-    $endDate = $_POST['endDate'];
-
-    // SQL query to fetch package history within the date range
-    $stmt = $conn->prepare("SELECT * FROM PACKAGE_HISTORY WHERE date BETWEEN ? AND ?");
-    $stmt->bind_param("ss", $startDate, $endDate);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    while ($row = $result->fetch_assoc()) {
-        $packageHistory[] = $row;
-    }
-
-    $stmt->close();
-}
+include 'admin-departments-page-script.php';
 ?>
 
   <!DOCTYPE html>
@@ -65,29 +44,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['startDate']) && isset(
         </form>
       </div>
 
-      <!-- Package History Display -->
-      <div class="package-history-report">
-        <?php if (!empty($packageHistory)): ?>
-            <table>
-                <tr>
-                    <th>Tracking Number</th>
-                    <th>Status</th>
-                    <th>Date</th>
-                    <!-- Add other columns as needed -->
-                </tr>
-                <?php foreach ($packageHistory as $history): ?>
-                    <tr>
-                        <td><?= htmlspecialchars($history['tracking_number']) ?></td>
-                        <td><?= htmlspecialchars($history['status']) ?></td>
-                        <td><?= htmlspecialchars($history['date']) ?></td>
-                        <!-- Add other columns as needed -->
-                    </tr>
-                <?php endforeach; ?>
-            </table>
-        <?php else: ?>
-            <p>No package history found for the selected date range.</p>
-        <?php endif; ?>
-      </div>
+     
+    <!-- Package History Display -->
+    <div class="package-history-report">
+        <?php
+        if (isset($_SESSION['packageHistory']) && count($_SESSION['packageHistory']) > 0) {
+            echo "<table>";
+            // Table headers
+            echo "<tr><th>Tracking Number</th><th>Sender</th><th>Receiver</th><th>Status</th><th>Date</th></tr>";
+            // Table rows
+            foreach ($_SESSION['packageHistory'] as $history) {
+                echo "<tr>";
+                echo "<td>" . htmlspecialchars($history['tracking_number']) . "</td>";
+                echo "<td>" . htmlspecialchars($history['sender_full_name']) . " (" . htmlspecialchars($history['sender_full_address']) . ")</td>";
+                echo "<td>" . htmlspecialchars($history['receiver_full_name']) . " (" . htmlspecialchars($history['receiver_full_address']) . ")</td>";
+                echo "<td>" . htmlspecialchars($history['status']) . "</td>";
+                echo "<td>" . htmlspecialchars($history['updated_at']) . "</td>";
+                echo "</tr>";
+            }
+            echo "</table>";
+        } else {
+            echo "<p>No package history found for the selected date range.</p>";
+        }
+        ?>
+    </div>
 
 
 
