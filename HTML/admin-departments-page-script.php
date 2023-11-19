@@ -19,38 +19,17 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-function fetchPackageHistory($conn, $startDate, $endDate) {
-    // Prepare the SQL query
-    $stmt = $conn->prepare("
-        SELECT tracking_number, sender_full_name, sender_full_address, 
-               receiver_full_name, receiver_full_address, status, updated_at
-        FROM PACKAGE
-        WHERE updated_at BETWEEN ? AND ?
-    ");
-    $stmt->bind_param("ss", $startDate, $endDate);
-    $stmt->execute();
-    $result = $stmt->get_result();
+function fetchAllPackages() {
+    global $conn; // Use the database connection from init.php
 
-    $packageHistory = [];
+    $query = "SELECT tracking_number, sender_full_name, sender_full_address, receiver_full_name, receiver_full_address, status, updated_at FROM PACKAGE";
+    $result = $conn->query($query);
+
+    $packages = [];
     while ($row = $result->fetch_assoc()) {
-        $packageHistory[] = $row;
+        $packages[] = $row;
     }
 
-    $stmt->close();
-    return $packageHistory;
+    return $packages;
 }
-
-// Check if the form has been submitted
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['startDate'], $_POST['endDate'])) {
-    $startDate = $_POST['startDate'];
-    $endDate = $_POST['endDate'];
-
-    // Fetch package history
-    $packageHistory = fetchPackageHistory($conn, $startDate, $endDate);
-    // Store the results in the session to display on the admin page
-    $_SESSION['packageHistory'] = $packageHistory;
-}
-
-// Close the database connection
-$conn->close();
 ?>
