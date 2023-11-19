@@ -95,7 +95,7 @@
           id="portalHomeButton"
         />
       </div>
-      <table class = "history-component-parent">
+      <table class = "history-table">
         <thead>
             <tr>
 
