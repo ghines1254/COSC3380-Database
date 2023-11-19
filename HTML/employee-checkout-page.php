@@ -129,7 +129,7 @@ require_once 'connection.php';
     
     </div>
 
-<div class="employee-checkout-page">
+<div class="rectangle-parent60">
 <?php
 $query = "SELECT product_id, product_name, product_price, stock_remaining FROM IN_STORE_PRODUCTS";
 
