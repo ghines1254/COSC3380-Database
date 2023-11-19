@@ -1585,37 +1585,41 @@
           <div class="notification-center-container">
             <b class="notification-center2">Notification Center: </b>
             <?php
-            $repetitions = 5;
-
-            for ($i = 0; $i < $repetitions; $i++):
+            ///////////////////////////////////////////////////////////////////////////////
+            //Code to display notifications for users current packaged
+            $notificationsLimit = 10;
+            $count = 0;
+            $stmt=$conn->prepare("SELECT PACKAGE.tracking_number, TRACKING_INFO.last_updated, PACKAGE.tracking_message
+                      FROM CUSTOMER
+                      JOIN CUSTOMER_TO_PACKAGE ON CUSTOMER.customer_id = CUSTOMER_TO_PACKAGE.customer_id
+                      JOIN PACKAGE ON CUSTOMER_TO_PACKAGE.package_id = PACKAGE.package_id
+                      JOIN TRACKING_INFO ON PACKAGE.package_id = TRACKING_INFO.package_id
+                      WHERE CUSTOMER.customer_email = ?
+                      ORDER BY TRACKING_INFO.last_updated DESC");
+            $stmt->bind_param("s", $user_info['email']);
+            if (!$stmt->execute()) {
+              echo "Execution failed: " . $stmt->error;
+              exit();
+            } 
+            $stmt->bind_result($trackingNumber, $lastUpdated, $trackingMessage);
+            while($stmt->fetch() && $count < 10){ 
             ?>
               <div class="notification-component16">
               <div class="rectangle-parent174">
                 <div class="frame-child86"></div>
                 <img class="vector-icon85" alt="" src="./public/vector13.svg" />
 
-                <b class="notification-summary16">Notification Summary</b>
+                <b class="notification-summary16">Package: <?php echo $trackingNumber . "      " . $trackingMessage;?></b>
               </div>
               <div class="parent14">
-                <b class="b23">12:00</b>
+                <b class="b23"><?php echo $lastUpdated; ?></b>
                 <div class="frame-child88"></div>
               </div>
             </div>
             <?php
-            endfor;
+            }
+            $stmt->close();
             ?>
-            <div class="notification-component16">
-              <div class="rectangle-parent174">
-                <div class="frame-child86"></div>
-                <img class="vector-icon85" alt="" src="./public/vector13.svg" />
-
-                <b class="notification-summary16">Notification Summary</b>
-              </div>
-              <div class="parent14">
-                <b class="b23">12:00</b>
-                <div class="frame-child88"></div>
-              </div>
-            </div>
               </div>
             </div>
           </div>
