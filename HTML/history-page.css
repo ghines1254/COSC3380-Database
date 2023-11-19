@@ -469,7 +469,7 @@ td {
 
 th {
 	width: calc(880px / 3);
-	position: fixed;
+	position: sticky;
 	background-color: #f5f5f5;
 	font-weight: bold;
 	text-transform: uppercase;
