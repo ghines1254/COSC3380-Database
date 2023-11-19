@@ -337,7 +337,7 @@ tbody tr:hover {
 	border-radius: var(--br-3xs);
 	text-align: center;
 	font-size: var(--font-size-xl);
-	color: var(--fullblack);
+	color: var(--lightmain);
 	font-family: var(--largetext);
 }
 .history-page {
