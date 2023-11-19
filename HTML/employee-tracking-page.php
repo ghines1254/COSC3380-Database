@@ -148,7 +148,7 @@ require_once 'init.php';
       var button3Container = document.getElementById("button3Container");
       if (button3Container) {
         button3Container.addEventListener("click", function (e) {
-          window.location.href = "./employee-checkout-page.html";
+          window.location.href = "./employee-checkout-page.php";
         });
       }
 

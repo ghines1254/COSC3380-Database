@@ -30,7 +30,7 @@
 
 
 
-    
+
     <div class="employee-shipping-page-confimr">
       <div class="minibackground6">
         <img class="image-1-icon6" alt="" src="./public/image-1@2x.png" />
@@ -138,7 +138,7 @@
       var button2Container = document.getElementById("button2Container");
       if (button2Container) {
         button2Container.addEventListener("click", function (e) {
-          window.location.href = "./employee-shipping-page.html";
+          window.location.href = "./employee-shipping-page.php";
         });
       }
 
@@ -152,14 +152,14 @@
       var button3Container = document.getElementById("button3Container");
       if (button3Container) {
         button3Container.addEventListener("click", function (e) {
-          window.location.href = "./employee-checkout-page.html";
+          window.location.href = "./employee-checkout-page.php";
         });
       }
 
       var button4Container = document.getElementById("button4Container");
       if (button4Container) {
         button4Container.addEventListener("click", function (e) {
-          window.location.href = "./employee-delivery-page.html";
+          window.location.href = "./employee-delivery-page.php";
         });
       }
 

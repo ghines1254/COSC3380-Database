@@ -295,6 +295,6 @@
           window.location.href = "./cutomer-portal-nofications-page.html";
         });
       }
-      </script>
+    </script>
   </body>
 </html>

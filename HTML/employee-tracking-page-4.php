@@ -149,14 +149,14 @@
       var button3Container = document.getElementById("button3Container");
       if (button3Container) {
         button3Container.addEventListener("click", function (e) {
-          window.location.href = "./employee-checkout-page.html";
+          window.location.href = "./employee-checkout-page.php";
         });
       }
 
       var button4Container = document.getElementById("button4Container");
       if (button4Container) {
         button4Container.addEventListener("click", function (e) {
-          window.location.href = "./employee-delivery-page.html";
+          window.location.href = "./employee-delivery-page.php";
         });
       }
 

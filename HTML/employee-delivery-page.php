@@ -141,49 +141,49 @@ require_once 'init.php';
           window.location.href = "./home-page.html";
         });
       }
-      
+
       var button2Container = document.getElementById("button2Container");
       if (button2Container) {
         button2Container.addEventListener("click", function (e) {
-          window.location.href = "./employee-shipping-page.html";
+          window.location.href = "./employee-shipping-page.php";
         });
       }
-      
+
       var button2Container1 = document.getElementById("button2Container1");
       if (button2Container1) {
         button2Container1.addEventListener("click", function (e) {
           window.location.href = "./employee-tracking-page.php";
         });
       }
-      
+
       var button3Container = document.getElementById("button3Container");
       if (button3Container) {
         button3Container.addEventListener("click", function (e) {
-          window.location.href = "./employee-checkout-page.html";
+          window.location.href = "./employee-checkout-page.php";
         });
       }
-      
+
       var button4Container = document.getElementById("button4Container");
       if (button4Container) {
         button4Container.addEventListener("click", function (e) {
-          window.location.href = "employee-delivery-page.html";
+          window.location.href = "employee-delivery-page.php";
         });
       }
-      
+
       var button4Container1 = document.getElementById("button4Container1");
       if (button4Container1) {
         button4Container1.addEventListener("click", function (e) {
           window.location.href = "./employee-dependent-page.html";
         });
       }
-      
+
       var button7Container = document.getElementById("button7Container");
       if (button7Container) {
         button7Container.addEventListener("click", function (e) {
           window.location.href = "./employee-account-page.html";
         });
       }
-      
+
       var frameContainer11 = document.getElementById("frameContainer11");
       if (frameContainer11) {
         frameContainer11.addEventListener("click", function (e) {
@@ -224,7 +224,7 @@ function updatePackageStatus(newStatus) {
     }
 }
 
-      
+
       </script>
   </body>
 </html>

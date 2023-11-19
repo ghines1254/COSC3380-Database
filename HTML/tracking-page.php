@@ -187,7 +187,7 @@ require_once 'init.php';
       var historyContainer = document.getElementById("historyContainer");
       if (historyContainer) {
         historyContainer.addEventListener("click", function (e) {
-          window.location.href = "./history-page.html";
+          window.location.href = "./history-page.php";
         });
       }
 
