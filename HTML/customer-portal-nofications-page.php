@@ -49,7 +49,7 @@ $result = $stmt->get_result();
             ?>
         </div>
 
-  
+
 
 <!DOCTYPE html>
 <html>
@@ -1762,7 +1762,7 @@ $result = $stmt->get_result();
       var historyContainer = document.getElementById("historyContainer");
       if (historyContainer) {
         historyContainer.addEventListener("click", function (e) {
-          window.location.href = "./history-page.php";
+          window.location.href = "./history.php";
         });
       }
 
