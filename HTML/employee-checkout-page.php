@@ -171,7 +171,7 @@ function updateStock(productId, action) {
 
             if (!isNaN(updatedStock)) {
                 // Update the displayed stock
-                document.getElementById(`stock_${productId}`).innerText = `Stock: ${updatedStock}`;
+                document.getElementById(`stock_${productId}`).innerText = `${updatedStock}`;
                 var lowStockThreshold = 10;
                 if (updatedStock === 0) {
                   alert("Item is out of stock. Please restock as soon as possible.");
