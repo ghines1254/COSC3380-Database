@@ -18,7 +18,9 @@ function getCustomerInfo($email) {
 
     $stmt = $connection->prepare("SELECT customer_id, first_name, email FROM CUSTOMERS WHERE email = ?");
     $stmt->bind_param("s", $email);
-
+    if (!$stmt->execute()) {
+        die("Error in executing the statement: " . $stmt->error);
+    }
     $stmt->execute();
 
     $stmt->bind_result($customer_id, $first_name, $email);

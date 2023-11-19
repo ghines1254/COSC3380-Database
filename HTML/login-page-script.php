@@ -2,6 +2,7 @@
 require_once 'init.php';
 require_once "makeCustomerSession.php";
 
+session_start();
 ?>
 
 <?php
@@ -23,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    session_start();
+ 
     // Validate and sanitize inputs
     // ...
 
