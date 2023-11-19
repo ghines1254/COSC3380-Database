@@ -1,15 +1,6 @@
 <?php
 require once "init.php";
 require once "connection.php";
-
-$query = "SELECT tracking_number FROM PACKAGE";
-$result = $conn->query($query);
-
-// Check for errors
-if (!$result) {
-    die("Error retrieving data: " . $conn->error);
-}
-
   
 ?>
 
@@ -124,7 +115,17 @@ if (!$result) {
             </tr>
         </thead>
         <tbody>
+            
       <?php
+
+    $query = "SELECT tracking_number FROM PACKAGE";
+$result = $conn->query($query);
+
+// Check for errors
+if (!$result) {
+    die("Error retrieving data: " . $conn->error);
+}
+
     while ($row = $result->fetch_assoc()) {
         echo "<tr>";
         echo "<td>{$row['tracking_number']}</td>";
