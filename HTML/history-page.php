@@ -75,7 +75,7 @@
             <div class="rectangle-parent144">
               <div class="frame-child66"></div>
               <div class="welcome-to-your-portal-page-wrapper23">
-                <b class="welcome-to-your25">Customer: <?php echo $user_info['$first_name'];?></b>
+                <b class="welcome-to-your25">Recent Packages</b>
               </div>
             </div>
             <div class="frame-parent59">
