@@ -137,6 +137,13 @@ function updateStock(productId, action) {
     xhr.onload = function () {
         if (xhr.status == 200) {
             console.log(xhr.responseText);
+            var stockElement = document.getElementById("stock_" + productId);
+            if (stockElement) {
+                var currentStock = parseInt(stockElement.innerText);
+                stockElement.innerText = action === 'increment' ? currentStock + 1 : currentStock - 1;
+            }
+
+          
         } else {
             console.error("Request failed with status: " + xhr.status);
         }
