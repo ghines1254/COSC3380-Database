@@ -1,5 +1,30 @@
+<?php
+session_start();
 
-<!DOCTYPE html>
+// Include your database connection script
+require_once 'init.php'; // Adjust this path as needed
+
+$packageHistory = [];
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['startDate']) && isset($_POST['endDate'])) {
+    $startDate = $_POST['startDate'];
+    $endDate = $_POST['endDate'];
+
+    // SQL query to fetch package history within the date range
+    $stmt = $conn->prepare("SELECT * FROM PACKAGE_HISTORY WHERE date BETWEEN ? AND ?");
+    $stmt->bind_param("ss", $startDate, $endDate);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    while ($row = $result->fetch_assoc()) {
+        $packageHistory[] = $row;
+    }
+
+    $stmt->close();
+}
+?>
+
+  <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
