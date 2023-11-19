@@ -34,7 +34,11 @@ $packageData = fetchAllPackages();
 
   <div class="admin-departments-page">
         
-
+<!-- Generate Report Form -->
+        <form method="post" action="admin-departments-page.php">
+            <input type="submit" name="generate_report" value="Generate Report">
+        </form>
+      
         <!-- Package Data Display -->
         <div class="package-data-report">
             <?php if (!empty($packageData)): ?>
