@@ -26,8 +26,8 @@
 
     
       <?php
-require once 'init.php';
-require once 'connection.php';
+require_once 'init.php';
+require_once 'connection.php';
         ?>
       
   </head>
@@ -97,66 +97,10 @@ require once 'connection.php';
           </div>
         </div>
       </div>
-      <div class="products-outline">
-        <div class="check-out-the">Choose items to place in shopping cart</div>
-        <div class="vector-parent">
-          <img class="vector-icon9" alt="" src="./public/vector3.svg" />
-
-          <button class="large-box-499-container">
-            <p class="large-box">Large Box</p>
-            <p class="large-box">$4.99</p>
-          </button>
-          <img class="vector-icon10" alt="" src="./public/vector4.svg" />
-
-          <img class="vector-icon11" alt="" src="./public/vector3.svg" />
-
-          <button class="small-box-299-container">
-            <p class="large-box">Small Box</p>
-            <p class="large-box">$2.99</p>
-          </button>
-          <button class="envelope-199">
-            <p class="large-box">Envelope</p>
-            <p class="large-box">$1.99</p>
-          </button>
-          <button class="medium-box-399-container">
-            <p class="large-box">Medium Box</p>
-            <p class="large-box">$3.99</p>
-          </button>
-          <img class="vector-icon12" alt="" src="./public/vector6.svg" />
-        </div>
-        <div class="vector-group">
-          <img class="vector-icon13" alt="" src="./public/vector8.svg" />
-
-          <button class="tape-499">
-            <p class="large-box">Tape</p>
-            <p class="large-box">$4.99</p>
-          </button>
-          <button class="stapler-499">
-            <p class="large-box">Stapler</p>
-            <p class="large-box">$4.99</p>
-          </button>
-          <button class="pen-10pk-299-container">
-            <p class="large-box">Pen 10pk</p>
-            <p class="large-box">$2.99</p>
-          </button>
-          <button class="stamp-booklet-999-container">
-            <p class="large-box">Stamp Booklet</p>
-            <p class="large-box">$9.99</p>
-          </button>
-          <img class="vector-icon14" alt="" src="./public/vector9.svg" />
-
-          <img class="vector-icon15" alt="" src="./public/vector10.svg" />
-
-          <img class="vector-icon16" alt="" src="./public/vector11.svg" />
-        </div>
+     
+       
       </div>
-      <div class="frame8" id="frameContainer10">
-        <img
-          class="portal-home-button8"
-          alt=""
-          src="./public/portal-home-button.svg"
-        />
-      </div>
+    
     </div>
 
 
@@ -173,16 +117,43 @@ if (!$result)
 while ($row = $result->fetch_assoc()) 
 {
     echo "<div>";
+    echo "<span>{$row['product_id']}</span>";
     echo "<span>{$row['product_name']}</span>";
-    echo "<span>Stock: {$row['stock_remaining']}</span>";
-    echo "<button onclick=\"updateStock({$row['product_id']}, 'increment')\">+</button>";
-    echo "<button onclick=\"updateStock({$row['product_id']}, 'decrement')\">-</button>";
+    echo "<span id='stock_{$row['product_id']}'>Stock: {$row['stock_remaining']}</span>";
+    echo "<button onclick=\"updateStock('{$row['product_id']}', 'increment')\">+</button>";
+    echo "<button onclick=\"updateStock('{$row['product_id']}', 'decrement')\">-</button>";
     echo "</div>";
 }
 
-$conn->close();
 ?>
 
+<script>
+function updateStock(productId, action) {
+  
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "updateStock.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            var response = xhr.responseText.trim();
+            var updatedStock = parseInt(response);
+
+            if (!isNaN(updatedStock)) {
+                // Update the displayed stock
+                document.getElementById(`stock_${productId}`).innerText = `Stock: ${updatedStock}`;
+            } else {
+                console.error("Invalid stock value received from the server");
+            }
+        } else {
+            console.error("Request failed with status: " + xhr.status);
+        }
+    };
+
+    var data = "productId=" + productId + "&action=" + action;
+    xhr.send(data);
+}
+</script>
 
 
       
