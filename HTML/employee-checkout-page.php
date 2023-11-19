@@ -108,9 +108,32 @@ require_once 'connection.php';
           </div>
         </div>
       </div>
+
+
+
+      <style>
+    .products-outline {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 800px; /* Adjust the maximum width as needed */
+        margin: 0 auto; /* Center the container */
+    }
+
+    .product-item {
+        width: 30%; /* Adjust the width of each product item */
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ddd; /* Add a border for separation */
+    }
+
+    .product-item button {
+        margin-top: 10px;
+    }
+</style>
      
  <div class="products-outline">
-        <div class="check-out-the">Choose items to place in shopping cart</div>       
+        <div class="check-out-the">Update product stock as needed here.</div>       
 
     
  
