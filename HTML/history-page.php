@@ -87,7 +87,7 @@
                   </div>
                   <div class="button237" id="button2Container">
                     <div class="tracking-child11"></div>
-                    <b class="button-242">Shipping</b>
+                    <b class="button-242">Notifications</b>
                   </div>
                   <div class="products5" id="productsContainer">
                     <div class="tracking-child11"></div>

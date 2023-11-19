@@ -65,7 +65,7 @@ require_once 'init.php';
                   </div>
                   <div class="button241" id="button2Container">
                     <div class="tracking-child15"></div>
-                    <b class="button-250">Shipping</b>
+                    <b class="button-250">Notifications</b>
                   </div>
                   <div class="products9" id="productsContainer">
                     <div class="products-child7"></div>
@@ -152,7 +152,7 @@ require_once 'init.php';
       var button2Container = document.getElementById("button2Container");
       if (button2Container) {
         button2Container.addEventListener("click", function (e) {
-          window.location.href = "./shipping-page.html";
+          window.location.href = "././customer-portal-notifications-page.php";
         });
       }
 

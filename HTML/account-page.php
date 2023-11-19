@@ -61,7 +61,7 @@
                   </div>
                   <div class="button236" id="button2Container">
                     <div class="tracking-child10"></div>
-                    <b class="button-240">Shipping</b>
+                    <b class="button-240">Notifications</b>
                   </div>
                   <div class="products4" id="productsContainer">
                     <div class="products-child2"></div>
@@ -217,7 +217,7 @@
       var button2Container = document.getElementById("button2Container");
       if (button2Container) {
         button2Container.addEventListener("click", function (e) {
-          window.location.href = "./shipping-page.html";
+          window.location.href = "././customer-portal-notifications-page.php";
         });
       }
 
