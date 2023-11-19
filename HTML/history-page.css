@@ -453,7 +453,7 @@
 	left: calc(50% - 253px);
 	width: 880px;
 	max-height: 680px; /* Adjust this value according to your needs */
-	overflow-y: auto;
+	overflow-y: scroll;
 	text-align: center;
 	background-color: var(--lightsecond);
 	font-size: var(--font-size-mid);

@@ -99,7 +99,7 @@
         <thead>
             <tr>
 
-                <th>Package ID</th>
+                <th>Tracking Number</th>
                 <th>Delivery Status</th>
                 <th>Date of Delivery</th>
             </tr>
