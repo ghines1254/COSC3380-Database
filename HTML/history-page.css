@@ -329,7 +329,7 @@ tbody tr:hover {
 
 .generate-report {
 	position: relative;
-	top: calc(75%);
+	top: calc(90%);
 	left: calc(50%);
 	height: fit-content;
 	width: fit-content;
