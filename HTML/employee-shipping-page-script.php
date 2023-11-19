@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       echo "Customer not in system, create account";
       exit();
     }
-
+    $stmt->close();
 
     
 
