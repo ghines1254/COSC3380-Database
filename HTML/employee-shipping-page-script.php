@@ -67,8 +67,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     //Grab results
-    $result = $stmt->get_result();
-    $row = $result->fetch_assoc();
+    $stmt->bind_result($customer_id);
+    $stmt->fetch();
 
 
     
@@ -98,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //Returning Customer, add to package list
     $stmt = $conn->prepare("INSERT INTO Customer_To_Package (customer_id, package_id) VALUES (?, ?)");
-    $stmt->bind_param("ss", $row["customer_id"], $trackingNumber);
+    $stmt->bind_param("ss", $customer_id, $trackingNumber);
     $stmt->execute();
 
     $_SESSION['trackingNumber'] = $trackingNumber;
