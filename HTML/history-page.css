@@ -317,7 +317,7 @@ td {
 th {
 	top: 0%;
 	width: calc(880px / 5);
-	position: sticky;
+	position: fixed;
 	background-color: #f5f5f5;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -330,7 +330,7 @@ tbody tr:hover {
 .generate-report {
 	position: relative;
 	top: calc(90% + 4px);
-    left: calc((780px/2));
+	left: calc((780px / 2));
 	height: fit-content;
 	width: fit-content;
 	background-color: var(--lightaccent);
