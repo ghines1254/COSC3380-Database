@@ -29,34 +29,9 @@
 require_once 'init.php';
 require_once 'connection.php';
         ?>
-
-
-
-        <style>
-        .stock-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-        }
-        .stock-item {
-            margin-bottom: 10px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 300px; /* Adjust the width as needed */
-            text-align: center;
-        }
-        .stock-actions {
-            margin-top: 10px;
-        }
-    </style>
-
-    
+   
   </head>
 
-
-  
   <body>
     <div class="employee-checkout-page">
       <div class="minibackground9">
@@ -129,7 +104,6 @@ require_once 'connection.php';
     
     </div>
 
-<div class="portal-centering-frame8">
 <?php
 $query = "SELECT product_id, product_name, product_price, stock_remaining FROM IN_STORE_PRODUCTS";
 
@@ -153,7 +127,6 @@ while ($row = $result->fetch_assoc())
 }
 
 ?>
-</div>
 
 <script>
 function updateStock(productId, action) {
