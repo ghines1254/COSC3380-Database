@@ -26,8 +26,8 @@
 
     
       <?php
-require once 'init.php';
-require once 'connection.php';
+require_once 'init.php';
+require_once 'connection.php';
         ?>
       
   </head>
