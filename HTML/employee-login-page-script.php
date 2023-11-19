@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->close();
             $conn->close();
             $emp_info = ['idnum' => $idnum, 'first_name' => $first_name, 'last_name'=> $last_name, 'email' => $email];
-            $_SESSION['user_info'] = $user_info;
+            $_SESSION['emp_info'] = $emp_info;
             // Redirect to employee portal notifications page (adjust the URL as needed)
             header("Location: employee-portal-nofications-page.html");
             exit;

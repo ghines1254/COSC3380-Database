@@ -83,6 +83,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // ... bind additional parameters for PACKAGE table ...
     // After successfully executing the INSERT query for PACKAGE table
     $_SESSION['trackingNumber'] = $trackingNumber;
+    $startingPostOffice = "P01";
+    $receivedTrue = 1;
+    $stmt = $conn->prepare("INSERT INTO TRACKING_INFO (package_id, received, starting_location_id) VALUES(?,?,?)");
+    $stmt->bind_param("sss",$trackingNumber, $receivedTrue, $startingPostOffice);
+    $stmt->execute();
+    //Automatically update TRACKING_INFO with default values
 
 
     // Redirect or confirm successful submission

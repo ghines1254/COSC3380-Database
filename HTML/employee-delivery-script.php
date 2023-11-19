@@ -1,4 +1,18 @@
 <?php
+  session_start();
+
+  // Check if the user is logged in
+  if (!isset($_SESSION['emp_info'])) {
+      // Redirect to the login page if the user is not logged in
+      header('Location: employee-login-page.php');
+      exit();
+  }
+
+  $emp_info = $_SESSION['emp_info'];
+?>
+
+
+<?php
 // Database connection details
 $host = "34.68.154.206";
 $database = "Post_Office_Schema";
@@ -33,8 +47,48 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo "Error or no change in status";
         }
     }
-
     $stmt->close();
+    //Updating TRACKING_INFO based on the status change//
+
+    //Determine on_truck based on table VEHICLE since it is NOT being delivered
+    if ($status != "Delivered"){
+        $stmt = $conn->prepare("SELECT vin FROM VEHICLE WHERE emp_id = ?");
+        if (!$stmt) {
+            echo "Prepare statement failed: " . $conn->error;
+            exit;
+        }
+        $stmt->bind_param("s", $user_info['idnum']);
+        if (!$stmt->execute()) {
+            echo "Execution failed: " . $stmt->error;
+        } else {
+            $stmt->store_result();
+            $stmt->close();
+            //execution successful, check if employee operates vehicle
+            $numRows = $stmt->num_rows;
+
+            if ($numRows > 0){
+                //Employee drives car, update tracking info with status
+                $onVehicle = 1;
+                $stmt = $conn->prepare("UPDATE TRACKING_INFO SET on_truck = ? WHERE package_id = ?");
+                $stmt->bind_param("s", $onVehicle, $trackingNumber);
+                $stmt->execute();
+            }
+            else{
+                //Employee does NOT drive vehicle, make sure on_truck is set to "false"
+                $onVehicle = 0;
+                $stmt = $conn->prepare("UPDATE TRACKING_INFO SET on_truck = ? WHERE package_id = ?");
+                $stmt->bind_param("s", $onVehicle, $trackingNumber);
+                $stmt->execute();
+            }
+        }
+    }
+    else{
+        //package has been marked as delivered, adjust tracking info
+        $onVehicle = 0;
+        $stmt = $conn->prepare("UPDATE TRACKING_INFO SET delivered_by = ?, on_truck = ?,  WHERE package_id = ?");
+        $stmt->bind_param("s",$emp_info['idnum'], $onVehicle, $trackingNumber);
+        $stmt->execute();
+    }
     $conn->close();
 }
 
