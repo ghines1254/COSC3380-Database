@@ -194,18 +194,6 @@
             <p class="save7">Save</p>
           </div>
         </div>
-        <?php
-            if (isset($_COOKIE["user_auth"])) {
-                $user_auth = $_COOKIE["user_auth"];
-                // Perform operations with the $user_auth value
-
-                // Now, you can echo or print the variable in the HTML part of the file
-                echo "<p>User Authentication: $user_auth</p>";
-            } else {
-                // The cookie does not exist. Handle the situation accordingly.
-                echo "<p>User not authenticated</p>";
-            }
-        ?>
         <b class="customer-id3">Customer ID:</b>
         <div class="account-outline-child3"></div>
       </div>

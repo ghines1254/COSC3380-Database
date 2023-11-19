@@ -1,3 +1,16 @@
+<?php
+  session_start();
+
+  // Check if the user is logged in
+  if (!isset($_SESSION['user_info'])) {
+      // Redirect to the login page if the user is not logged in
+      header('Location: login-page.php');
+      exit();
+  }
+
+  $user_info = $_SESSION['user_info'];
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -48,7 +61,7 @@
             <div class="rectangle-parent173">
               <div class="frame-child86"></div>
               <div class="welcome-to-your-portal-page-wrapper29">
-                <b class="welcome-to-your31">Welcome to your portal page</b>
+                <b class="welcome-to-your31">Welcome <?php echo $user_info['first_name'];?> !</b>
               </div>
             </div>
             <div class="frame-parent82">

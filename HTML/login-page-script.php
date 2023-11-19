@@ -1,5 +1,7 @@
 <?php
 require_once 'init.php';
+require_once "makeCustomerSession";
+
 ?>
 
 <?php
@@ -21,6 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
+    session_start();
     // Validate and sanitize inputs
     // ...
 
@@ -34,6 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
         if ($password === $row['PASSWORD']) {
             // Redirect to customer portal notifications page
+            $user_info = getCustomerInfo($row[$email]);
+            $_SESSION['user_info'] = $user_info;
             header("Location: customer-portal-nofications-page.php");
             exit;
         } else {
