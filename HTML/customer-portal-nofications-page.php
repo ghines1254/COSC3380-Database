@@ -1,3 +1,56 @@
+<?php
+session_start();
+require_once 'init.php'; // Replace with your actual initialization file
+
+// Assuming $_SESSION['user_email'] stores the logged-in user's email
+$user_email = $_SESSION['user_email'] ?? '';
+
+// Database connection from 'init.php'
+global $conn;
+
+// Query to fetch delivered packages
+$stmt = $conn->prepare("SELECT tracking_number FROM PACKAGE WHERE sender_email = ? AND status = 'Delivered' AND notification_sent = FALSE");
+$stmt->bind_param("s", $user_email);
+$stmt->execute();
+$result = $stmt->get_result();
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="./global.css" />
+    <!-- Other CSS and JavaScript Files -->
+    <title>Customer Portal Notifications</title>
+</head>
+<body>
+    <div class="customer-portal-notifications">
+        <!-- Other elements of your customer portal -->
+
+        <div class="delivery-notifications">
+            <h2>Delivery Notifications</h2>
+            <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<p>Package with Tracking Number " . htmlspecialchars($row['tracking_number']) . " has been delivered.</p>";
+                    // Optionally, update PACKAGE table to mark notification as sent
+                    $updateStmt = $conn->prepare("UPDATE PACKAGE SET notification_sent = TRUE WHERE tracking_number = ?");
+                    $updateStmt->bind_param("s", $row['tracking_number']);
+                    $updateStmt->execute();
+                }
+            } else {
+                echo "<p>No new delivery notifications.</p>";
+            }
+
+            // Close statements
+            $stmt->close();
+            $updateStmt->close();
+            ?>
+        </div>
+
+  
+
 <!DOCTYPE html>
 <html>
   <head>
