@@ -145,8 +145,10 @@ while ($row = $result->fetch_assoc())
     echo "<td>Description: {$row['product_description']} </td>";
     echo "<td> Price: {$row['product_price']} </td>";
     echo "<td id='stock_{$row['product_id']}'>Stock: {$row['stock_remaining']}</td>";
+    echo "<td>";
     echo "<button onclick=\"updateStock('{$row['product_id']}', 'increment')\">+</button>";
     echo "<button onclick=\"updateStock('{$row['product_id']}', 'decrement')\">-</button>";
+    echo "</td>";
     echo "</tr>";
     
     
