@@ -34,9 +34,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
     $result = $stmt->get_result();
 
-    $user_info = getCustomerInfo($row[$email]);
-    $_SESSION['user_info'] = $user_info;
-    
+   // $user_info = getCustomerInfo($row[$email]);
+    //$_SESSION['user_info'] = $user_info;
+
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if ($password === $row['PASSWORD']) {
