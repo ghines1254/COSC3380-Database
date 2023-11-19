@@ -133,16 +133,16 @@
               exit();
             } 
             $stmt->bind_result($trackingNumber, $lastUpdated, $packageStatus, $employee_first_name, $packageETA);
-            while($stmt->fetch()): ?>
-              <tr>
-                  <td><?= $trackingNumber ?></td>
-                  <td><?= $lastUpdated ?></td>
-                  <td><?= $packageStatus ?></td>
-                  <td><?= $employee_first_name ?></td>
-                  <td><?= $packageETA ?></td>
-              </tr>
+            while($stmt->fetch()):
+              echo "<tr>";
+              echo "<td>" . $trackingNumber . "</td>";
+              echo "<td>" . $lastUpdated . "</td>";
+              echo "<td>" . $packageStatus . "</td>";
+              echo "<td>" . $employee_first_name . "</td>";
+              echo "<td>" . $packageETA . "</td>";
+              echo "</tr>";
 
-          <?php endwhile; ?>
+          endwhile; ?>
           </tbody>
         </table>
     </div>
