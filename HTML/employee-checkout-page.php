@@ -124,8 +124,8 @@ while ($row = $result->fetch_assoc())
     echo "</div>";
 }
 
-$conn->close();
 ?>
+
 <script>
 function updateStock(productId, action) {
   
