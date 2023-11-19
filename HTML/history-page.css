@@ -173,8 +173,7 @@
 	top: 20px;
 	left: 2px;
 }
-.products-child3,
-.products5 {
+.products-child3 {
 	position: absolute;
 	left: calc(50% - 116.5px);
 }
@@ -186,6 +185,7 @@
 	height: 44px;
 }
 .products5 {
+	position: absolute;
 	top: 192px;
 	width: 237px;
 	height: 46px;
