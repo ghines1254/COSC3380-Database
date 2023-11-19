@@ -28,9 +28,9 @@ $packageData = fetchAllPackages();
   <body>
     <div class="admin-departments-page">
       <div class="admin-departments-page-child"></div>
-      <div class="minibackground20">
-        <img class="image-1-icon20" alt="" src="./public/image-12@2x.png" />
-      </div>
+<!--        <div class="minibackground20">
+         <img class="image-1-icon20" alt="" src="./public/image-12@2x.png" />
+     </div> -->
 
   <div class="admin-departments-page">
         <!-- Other page content -->
