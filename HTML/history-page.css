@@ -326,6 +326,16 @@ th {
 tbody tr:hover {
 	background-color: #f0f0f0;
 }
+
+.generate-report {
+	position: absolute;
+	top: calc(75% + 100px);
+	left: calc(25% + 100px);
+	height: 35px;
+	width: fit-content;
+	background-color: var(--lightaccent);
+	border-radius: var(--br-3xs);
+}
 .history-page {
 	position: relative;
 	background-color: var(--lightmain);

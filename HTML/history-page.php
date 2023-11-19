@@ -95,6 +95,7 @@
           id="portalHomeButton"
         />
       </div>
+      <div class = "table-div" >
       <table class = "history-table">
         <thead>
             <tr>
@@ -255,7 +256,10 @@
                 <td>11-02-2023</td>
             </tr>
         </tbody>
-    </table>
+      </table>
+      <div class = "generate-report">
+        Generate Report
+      </div>
     </div>
 
     <?php
