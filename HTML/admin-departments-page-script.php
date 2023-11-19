@@ -22,7 +22,7 @@ if ($conn->connect_error) {
 function fetchAllPackages() {
     global $conn; // Use the database connection from init.php
 
-    $query = "SELECT tracking_number, sender_full_name, sender_full_address, receiver_full_name, receiver_full_address, status, updated_at FROM PACKAGE";
+    $query = "SELECT tracking_number, sender_full_name, sender_full_address, receiver_full_name, receiver_full_address, status FROM PACKAGE";
     $result = $conn->query($query);
 
     if ($result === false) {
