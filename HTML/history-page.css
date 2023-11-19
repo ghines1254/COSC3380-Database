@@ -339,7 +339,7 @@ tbody tr:hover {
 	font-size: var(--font-size-xl);
 	color: var(--lightmain);
 	font-family: var(--largetext);
-	padding: 1px;
+	padding: 10px;
 }
 .history-page {
 	position: relative;
