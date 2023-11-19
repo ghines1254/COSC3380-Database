@@ -2,12 +2,12 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        max-width: 800px; /* Adjust the maximum width as needed */
+        max-width: 1500px; /* Adjust the maximum width as needed */
         margin: 0 auto; /* Center the container */
     }
 
     .product-item {
-        width: 30%; /* Adjust the width of each product item */
+        width: 40%; /* Adjust the width of each product item */
         margin-bottom: 20px;
         padding: 10px;
         border: 1px solid #ddd; /* Add a border for separation */
