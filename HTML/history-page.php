@@ -1,3 +1,22 @@
+<?php
+require once "init.php";
+require once "connection.php";
+
+$query = "SELECT tracking_number FROM PACKAGE";
+$result = $conn->query($query);
+
+// Check for errors
+if (!$result) {
+    die("Error retrieving data: " . $conn->error);
+}
+
+  
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -105,126 +124,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
+      <?php
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>{$row['tracking_number']}</td>";
+        echo "<td>{$row['delivery_status']}</td>";
+        echo "<td>{$row['date_of_delivery']}</td>";
+        echo "</tr>";
+    }
+    ?>
+    
 
         </tbody>
     </table>
