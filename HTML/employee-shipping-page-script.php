@@ -102,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
 
     $_SESSION['trackingNumber'] = $trackingNumber;
-    $startingPostOffice = "P01";
+    $startingPostOffice = "PO1";
     $receivedTrue = 1;
     $stmt = $conn->prepare("INSERT INTO TRACKING_INFO (package_id, received, starting_location_id) VALUES(?,?,?)");
     $stmt->bind_param("sss",$trackingNumber, $receivedTrue, $startingPostOffice);
