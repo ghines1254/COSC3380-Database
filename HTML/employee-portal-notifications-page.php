@@ -61,7 +61,7 @@
             <div class="rectangle-parent79">
               <div class="frame-child35"></div>
               <div class="welcome-to-your-portal-page-wrapper10">
-                <b class="welcome-to-your12">Welcome to your portal page <?php echo $emp_info['first_name'];?>!</b>
+                <b class="welcome-to-your12">Welcome <?php echo $emp_info['first_name'];?>!</b>
               </div>
             </div>
             <div class="frame-parent26">

@@ -187,7 +187,7 @@ require_once 'init.php';
       var frameContainer11 = document.getElementById("frameContainer11");
       if (frameContainer11) {
         frameContainer11.addEventListener("click", function (e) {
-          window.location.href = "./employee-portal-nofications-page.html";
+          window.location.href = "./employee-portal-notifications-page.php";
         });
       }
 

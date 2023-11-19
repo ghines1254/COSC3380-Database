@@ -217,7 +217,7 @@ function updateStock(productId, action) {
       var frameContainer10 = document.getElementById("frameContainer10");
       if (frameContainer10) {
         frameContainer10.addEventListener("click", function (e) {
-          window.location.href = "./employee-portal-nofications-page.html";
+          window.location.href = "./employee-portal-notifications-page.php";
         });
       }
       </script>

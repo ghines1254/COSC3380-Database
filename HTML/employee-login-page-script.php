@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $emp_info = ['idnum' => $idnum, 'first_name' => $first_name, 'last_name'=> $last_name, 'email' => $email];
             $_SESSION['emp_info'] = $emp_info;
             // Redirect to employee portal notifications page (adjust the URL as needed)
-            header("Location: employee-portal-nofications-page.html");
+            header("Location: employee-portal-notifications-page.php");
             exit;
         } else {
             echo "Invalid password.";
