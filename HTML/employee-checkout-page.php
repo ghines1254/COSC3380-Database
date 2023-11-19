@@ -1,4 +1,14 @@
+<?php
+  session_start();
 
+  if (!isset($_SESSION['emp_info'])) {
+      // Redirect to login page if user is not logged in
+      header('Location: employee-login-page.php');
+      exit();
+  }
+
+  $emp_info = $_SESSION['emp_info'];
+?>
 
 
 <!DOCTYPE html>
@@ -98,11 +108,35 @@ require_once 'connection.php';
           </div>
         </div>
       </div>
+
+
+
+      <style>
+    .products-outline {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 800px; /* Adjust the maximum width as needed */
+        margin: 0 auto; /* Center the container */
+    }
+
+    .product-item {
+        width: 30%; /* Adjust the width of each product item */
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ddd; /* Add a border for separation */
+    }
+
+    .product-item button {
+        margin-top: 10px;
+    }
+</style>
      
-       
-      </div>
+ <div class="products-outline">
+        <div class="check-out-the">Update product stock as needed here.</div>       
+
     
-    </div>
+ 
 
 <?php
 $query = "SELECT product_id, product_name, product_price, stock_remaining FROM IN_STORE_PRODUCTS";
@@ -127,7 +161,7 @@ while ($row = $result->fetch_assoc())
 }
 
 ?>
-
+ </div>
 <script>
 function updateStock(productId, action) {
   
