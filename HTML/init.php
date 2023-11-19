@@ -1,16 +1,14 @@
 <?php
-// Start the session
-session_start();
+$host = "34.68.154.206";
+$database = "Post_Office_Schema";
+$user = "root";
+$password = "umapuma";
 
-// Make session cookie secure
-$session_name = session_name();
-$secure = true; // Set to true if using HTTPS
-$httponly = true; // This stops JavaScript being able to access the session id
+// Create a new mysqli object for database connection
+$conn = new mysqli($host, $user, $password, $database);
 
-ini_set('session.use_only_cookies', 1); // Forces sessions to only use cookies
-$cookieParams = session_get_cookie_params(); // Gets current cookies params
-session_set_cookie_params($cookieParams["lifetime"], $cookieParams["path"], $cookieParams["domain"], $secure, $httponly);
-
-// Regenerate session ID to prevent session fixation attacks
-session_regenerate_id(true); 
+// Check for a connection error
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 ?>
