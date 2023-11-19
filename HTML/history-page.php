@@ -10,19 +10,21 @@
 
   $user_info = $_SESSION['user_info'];
 
-    // Database connection details
-    $host = "34.68.154.206";
-    $database = "Post_Office_Schema";
-    $user = "root";
-    $password = "umapuma";
-  
-    // Create connection
-    $conn = new mysqli($host, $user, $password, $database);
-  
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+
+  // Database connection details
+  $host = "34.68.154.206";
+  $database = "Post_Office_Schema";
+  $user = "root";
+  $password = "umapuma";
+
+  // Create connection
+  $conn = new mysqli($host, $user, $password, $database);
+
+  // Check connection
+  if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+  }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -74,7 +76,7 @@
             <div class="rectangle-parent144">
               <div class="frame-child66"></div>
               <div class="welcome-to-your-portal-page-wrapper23">
-                <b class="welcome-to-your25">Recent Package History</b>
+                <b class="welcome-to-your25">Customer: <?php echo $user_info['$first_name'];?></b>
               </div>
             </div>
             <div class="frame-parent59">
@@ -142,7 +144,7 @@
                                     LEFT JOIN EMPLOYEE ON TRACKING_INFO.delivered_by = EMPLOYEE.idnum
                                     WHERE CUSTOMER.email = ?
                                     ORDER BY TRACKING_INFO.created_on ASC");
-            $stmt->bind_param("s", $fakeEmail);
+            $stmt->bind_param("s", $user_info['email']);
             if (!$stmt->execute()) {
               echo "Execution failed: " . $stmt->error;
               exit();
