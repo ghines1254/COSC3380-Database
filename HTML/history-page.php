@@ -105,132 +105,30 @@
             </tr>
         </thead>
         <tbody>
-            
-        <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
             <tr>
                 <td>1</td>
                 <td>Delivered</td>
                 <td>11-02-2023</td>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>11-02-2023</td>
-            </tr>
-    
-
         </tbody>
     </table>
     </div>
+
+    <?php
+        $query = "SELECT tracking_number FROM PACKAGE";
+        $result = $conn->query($query);
+        // Check for errors
+        if (!$result) {
+            die("Error retrieving data: " . $conn->error);
+        }
+        while ($row = $result->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>{$row['tracking_number']}</td>";
+            echo "<td>{$row['delivery_status']}</td>";
+            echo "<td>{$row['date_of_delivery']}</td>";
+            echo "</tr>";
+        }
+    ?>
 
     <script>
       var frameContainer1 = document.getElementById("frameContainer1");
