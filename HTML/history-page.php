@@ -114,6 +114,22 @@
     </table>
     </div>
 
+    <?php
+        $query = "SELECT tracking_number FROM PACKAGE";
+        $result = $conn->query($query);
+        // Check for errors
+        if (!$result) {
+            die("Error retrieving data: " . $conn->error);
+        }
+        while ($row = $result->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>{$row['tracking_number']}</td>";
+            echo "<td>{$row['delivery_status']}</td>";
+            echo "<td>{$row['date_of_delivery']}</td>";
+            echo "</tr>";
+        }
+    ?>
+
     <script>
       var frameContainer1 = document.getElementById("frameContainer1");
       if (frameContainer1) {
@@ -170,26 +186,6 @@
           window.location.href = "./cutomer-portal-nofications-page.html";
         });
       }
-
-
-      document.getElementById('trackButton').addEventListener('click', function() {
-      var trackingNumber = document.getElementById('trackingInput').value;
-      fetch('https://coogmail.com/tracking.php?tracking_number=' + encodeURIComponent(trackingNumber))
-      .then(response => response.json())
-      .then(data => {
-              if (data.status === 'At Post Office') {
-                  window.location.href = "./tracking-page-2.html?tracking_number=" + encodeURIComponent(trackingNumber);
-              } else if (data.status === 'En Route') {
-                  window.location.href = "./tracking-page-3.html?tracking_number=" + encodeURIComponent(trackingNumber);
-              } else if (data.status === 'Delivered') {
-                  window.location.href = "./tracking-page-4.html?tracking_number=" + encodeURIComponent(trackingNumber);
-              } else {
-                  alert('Invalid tracking number');
-              }
-          })
-          .catch(error => console.error('Error:', error));
-      });
-
     </script>
   </body>
 </html>
