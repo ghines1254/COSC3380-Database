@@ -1,20 +1,23 @@
-    .products-outline {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        max-width: 1500px; /* Adjust the maximum width as needed */
-        margin: 0 auto; /* Center the container */
+
+.products-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
     }
 
-    .product-item {
-        width: 50%; /* Adjust the width of each product item */
-        margin-bottom: 20px;
-        padding: 10px;
-        border: 1px solid #ddd; /* Add a border for separation */
+    .products-table th,
+    .products-table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
     }
 
-    .product-item button {
-        margin-top: 10px;
+    .products-table th {
+        background-color: #f2f2f2;
+    }
+
+    .products-table button {
+        margin: 0;
     }
 
 
