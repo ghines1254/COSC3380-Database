@@ -310,7 +310,7 @@
   width: 401px;
   height: 31px;
 }
-.frame79,
+/* .frame79,
 .rectangle65,
 .rectangle66 {
   position: absolute;
@@ -326,7 +326,7 @@
   font-size: var(--font-size-sm);
   color: var(--fullblack);
   font-family: var(--font-inter);
-}
+} */
 .rectangle66 {
   top: -0.5px;
   left: -0.5px;
