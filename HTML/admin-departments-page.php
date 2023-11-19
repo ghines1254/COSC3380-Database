@@ -34,37 +34,48 @@ $packageData = fetchAllPackages();
 
   <div class="admin-departments-page">
         
-<!-- Generate Report Form -->
+ <!-- Generate Report Form -->
         <form method="post" action="admin-departments-page.php">
             <input type="submit" name="generate_report" value="Generate Report">
         </form>
-      
-        <!-- Package Data Display -->
-        <div class="package-data-report">
-            <?php if (!empty($packageData)): ?>
+
+        <!-- Employee Data Display -->
+        <div class="employee-data-report">
+            <?php if (!empty($employeeData)): ?>
                 <table>
                     <tr>
-                        <th>Tracking Number</th>
-                        <th>Sender</th>
-                        <th>Receiver</th>
-                        <th>Status</th>
-                        <th>Date Updated</th>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Sex</th>
+                        <th>Birthdate</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Zipcode</th>
+                        <th>Department</th>
+                        <th>Created On</th>
+                        <th>Packages Delivered</th>
                     </tr>
-                    <?php foreach ($packageData as $data): ?>
+                    <?php foreach ($employeeData as $data): ?>
                         <tr>
-                            <td><?= htmlspecialchars($data['tracking_number']) ?></td>
-                            <td><?= htmlspecialchars($data['sender_full_name']) ?> (<?= htmlspecialchars($data['sender_full_address']) ?>)</td>
-                            <td><?= htmlspecialchars($data['receiver_full_name']) ?> (<?= htmlspecialchars($data['receiver_full_address']) ?>)</td>
-                            <td><?= htmlspecialchars($data['status']) ?></td>
-                            <td><?= htmlspecialchars($data['updated_at']) ?></td>
+                            <td><?= htmlspecialchars($data['idnum']) ?></td>
+                            <td><?= htmlspecialchars($data['first_name']) ?></td>
+                            <td><?= htmlspecialchars($data['last_name']) ?></td>
+                            <td><?= htmlspecialchars($data['sex']) ?></td>
+                            <td><?= htmlspecialchars($data['birthdate']) ?></td>
+                            <td><?= htmlspecialchars($data['city']) ?></td>
+                            <td><?= htmlspecialchars($data['state']) ?></td>
+                            <td><?= htmlspecialchars($data['zipcode']) ?></td>
+                            <td><?= htmlspecialchars($data['dept']) ?></td>
+                            <td><?= htmlspecialchars($data['created_on']) ?></td>
+                            <td><?= htmlspecialchars($data['packages_delivered']) ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </table>
             <?php else: ?>
-                <p>No package data found.</p>
+                <p>No employee data found.</p>
             <?php endif; ?>
         </div>
-
 
 
 
