@@ -138,18 +138,21 @@
               exit();
             } 
             $stmt->bind_result($trackingNumber, $lastUpdated, $packageStatus, $employee_first_name, $packageETA);
-            while($stmt->fetch()){
-              var_dump($trackingNumber, $lastUpdated, $packageStatus, $employee_first_name, $packageETA);
+            while($stmt->fetch()):
+              if ($stmt->error) {
+                echo "Error during result fetching: " . $stmt->error;
+                exit();
+              }
             ?>
               <tr>
-                  <td><?php echo $trackingNumber?></td>
-                  <td><?php echo $lastUpdated ?></td>
-                  <td><?php echo $packageStatus ?></td>
-                  <td><?php echo $employee_first_name ?></td>
-                  <td><?php echo $packageETA ?></td>
+                  <td><?=$trackingNumber?></td>
+                  <td><?=$lastUpdated ?></td>
+                  <td><?=$packageStatus ?></td>
+                  <td><?=$employee_first_name ?></td>
+                  <td><?=$packageETA ?></td>
               </tr>
             <?php
-            }
+            endwhile;
             $stmt->close();
             ?>
           </tbody>
