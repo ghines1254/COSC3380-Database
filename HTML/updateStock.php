@@ -23,7 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->execute();
    
     if ($stmt->affected_rows > 0) {
-        echo "Stock updated successfully";
+        $updatedStock = getUpdatedStock($conn, $productId);
+        echo $updatedStock;
     } else {
         echo "Error updating stock: " . $conn->error;
     }
