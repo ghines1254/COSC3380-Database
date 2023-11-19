@@ -101,7 +101,7 @@
 
                 <th>Tracking Number</th>
                 <th>Delivery Status</th>
-                <th>Date of Delivery</th>
+                <th>Delivered After</th>
             </tr>
         </thead>
         <tbody>
@@ -225,7 +225,7 @@
                 <td>Delivered</td>
                 <td>11-02-2023</td>
             </tr>
-            
+
         </tbody>
     </table>
     </div>
