@@ -54,10 +54,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $receiver_phone = $_POST['receiver_phone'];
 
   
+    // Generate unique tracking number
+    $trackingNumber = substr(uniqid(), 0, 6); // Adjust the second parameter as needed
+
     // Insert sender info into CUSTOMER table
-    $stmt = $conn->prepare("INSERT INTO CUSTOMER (first_name, last_name, middle_initial, street_address_1, street_address_2, city, state, zip, email, customer_phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssssssss", $first_name, $last_name, $middle_initial, $street_address_1, $street_address_2, $city, $state, $zip, $email, $customer_phone);
+    $stmt = $conn->prepare("SELECT customer_id FROM CUSTOMER WHERE email = ?");
+    $stmt->bind_param("s", $email);
+
+    if(!$stmt->execute()){
+      echo "Customer not in system";
+      exit();
+    }
+
+    //Grab results
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+
+    //Returning Customer, add to package list
+    $stmt = $conn->prepare("INSERT INTO Customer_To_Package (customer_id, package_id) VALUES (?, ?)");
+    $stmt->bind_param("ss", $row["customer_id"], $trackingNumber);
     $stmt->execute();
+    
 
     // Insert receiver info into RECEIVER table
     $stmt = $conn->prepare("INSERT INTO RECEIVER (fname, lname, middle_initial, address_line_1, address_line_2, city, state, zip_code, email, phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -72,8 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $receiver_full_name = $receiver_fname . ' ' . $receiver_middle_initial . ' ' . $receiver_lname;
 
 
-    // Generate unique tracking number
-    $trackingNumber = substr(uniqid(), 0, 6); // Adjust the second parameter as needed
+
 
 
   // Insert combined data, tracking number, and sender's email into PACKAGE table
