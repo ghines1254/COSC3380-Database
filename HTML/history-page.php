@@ -7,7 +7,6 @@
       header('Location: login-page.php');
       exit();
   }
-
   $user_info = $_SESSION['user_info'];
 
 
@@ -197,7 +196,7 @@
       var button2Container = document.getElementById("button2Container");
       if (button2Container) {
         button2Container.addEventListener("click", function (e) {
-          window.location.href = "./shipping-page.html";
+          window.location.href = "./shipping-page.php";
         });
       }
 
