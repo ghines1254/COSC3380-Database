@@ -1,3 +1,15 @@
+<?php
+  session_start();
+
+  // Check if the user is logged in
+  if (!isset($_SESSION['user_info'])) {
+      // Redirect to the login page if the user is not logged in
+      header('Location: login-page.php');
+      exit();
+  }
+
+  $user_info = $_SESSION['user_info'];
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -107,161 +119,41 @@
                   <th>Last Updated</th>
                   <th>Delivery Status</th>
                   <th>Delivered By</th>
-                  <th>Delivered After</th>
+                  <th>Estimated Delivery</th>
               </tr>
           </thead>
           <tbody>
+            <?php
+             $stmt=$conn->prepare("SELECT PACKAGE.tracking_number, TRACKING_INFO.last_updated, PACKAGE.status, EMPLOYEE.first_name AS employee_first_name, TRACKING_INFO.eta
+                                    FROM CUSTOMER
+                                    JOIN Customer_To_Package ON CUSTOMER.customer_id = Customer_To_Package.customer_id
+                                    JOIN PACKAGE ON Customer_To_Package.package_id = PACKAGE.tracking_number
+                                    JOIN TRACKING_INFO ON PACKAGE.tracking_number = TRACKING_INFO.package_id
+                                    LEFT JOIN EMPLOYEE ON TRACKING_INFO.delivered_by = EMPLOYEE.idnum
+                                    WHERE CUSTOMER.email = ?
+                                    ORDER BY TRACKING_INFO.created_on ASC");
+            $stmt->bind_param("s", $user_info['email']);
+            if (!$stmt->execute()) {
+              echo "Execution failed: " . $stmt->error;
+              exit();
+            } 
+            $stmt->bind_result($trackingNumber, $lastUpdated, $packageStatus, $employee_first_name, $packageETA);
+            while( $stmt->fetch()){
+            ?>
               <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>Delivered</td>
-                  <td>1</td>
-                  <td>11-02-2023</td>
+                  <td><?php echo $trackingNumber?></td>
+                  <td><?php echo $lastUpdated ?></td>
+                  <td><?php echo $packageStatus ?></td>
+                  <td><?php echo $employee_first_name ?></td>
+                  <td><?php echo $packageETA ?></td>
               </tr>
-              <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>Delivered</td>
-                  <td>1</td>
-                  <td>11-02-2023</td>
-              </tr>
-              <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>Delivered</td>
-                  <td>1</td>
-                  <td>11-02-2023</td>
-              </tr>
-              <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>Delivered</td>
-                  <td>1</td>
-                  <td>11-02-2023</td>
-              </tr>
-              <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>Delivered</td>
-                  <td>1</td>
-                  <td>11-02-2023</td>
-              </tr>
-              <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>Delivered</td>
-                  <td>1</td>
-                  <td>11-02-2023</td>
-              </tr>
-              <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>Delivered</td>
-                  <td>1</td>
-                  <td>11-02-2023</td>
-              </tr>
-              <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>Delivered</td>
-                  <td>1</td>
-                  <td>11-02-2023</td>
-              </tr>
-              <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>Delivered</td>
-                  <td>1</td>
-                  <td>11-02-2023</td>
-              </tr>
-              <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>Delivered</td>
-                  <td>1</td>
-                  <td>11-02-2023</td>
-              </tr>
-              <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>Delivered</td>
-                  <td>1</td>
-                  <td>11-02-2023</td>
-              </tr>
-              <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>Delivered</td>
-                  <td>1</td>
-                  <td>11-02-2023</td>
-              </tr>
-              <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>Delivered</td>
-                  <td>1</td>
-                  <td>11-02-2023</td>
-              </tr>
-              <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>Delivered</td>
-                  <td>1</td>
-                  <td>11-02-2023</td>
-              </tr>
-              <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>Delivered</td>
-                  <td>1</td>
-                  <td>11-02-2023</td>
-              </tr>
-              <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>Delivered</td>
-                  <td>1</td>
-                  <td>11-02-2023</td>
-              </tr>
-              <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>Delivered</td>
-                  <td>1</td>
-                  <td>11-02-2023</td>
-              </tr>
-              <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>Delivered</td>
-                  <td>1</td>
-                  <td>11-02-2023</td>
-              </tr>
-              <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>Delivered</td>
-                  <td>1</td>
-                  <td>11-02-2023</td>
-              </tr>
-              <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>Delivered</td>
-                  <td>1</td>
-                  <td>11-02-2023</td>
-              </tr>
-              <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>Delivered</td>
-                  <td>1</td>
-                  <td>11-02-2023</td>
-              </tr>
+            <?php
+            }
+            $stmt->close();
+            ?>
           </tbody>
         </table>
     </div>
-
     <?php
         $query = "SELECT tracking_number FROM PACKAGE";
         $result = $conn->query($query);
