@@ -14,7 +14,7 @@ function getCustomerInfo($email) {
         die("Error in executing the statement: " . $stmt->error);
     }
     $stmt->execute();
-
+    echo "SQL Statement: " . $stmt->sqlstate;
     $stmt->bind_result($customer_id, $first_name, $email);
 
     $stmt->fetch();
