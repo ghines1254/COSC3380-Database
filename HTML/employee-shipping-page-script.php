@@ -69,6 +69,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //Grab results
     $stmt->bind_result($customer_id);
     $stmt->fetch();
+    if($customer_id == NULL){
+      echo "Customer not in system, create account";
+      exit();
+    }
 
 
     
