@@ -57,6 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
+        var_dump($row);
         if ($password === $row['PASSWORD']) {
             // Redirect to customer portal notifications page
             echo "inside if loop";
