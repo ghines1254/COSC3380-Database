@@ -12,10 +12,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
     if ($action === 'increment'){
-    $query = "UPDATE IN_STORE_PRODUCTS SET stock_remaining = stock_remaining+1 WHERE product_id = $product_id";
+    $query = "UPDATE IN_STORE_PRODUCTS SET stock_remaining = stock_remaining+1 WHERE product_id = $productID";
     }
     if ($action === 'decrement'){
-    $query = "UPDATE IN_STORE_PRODUCTS SET stock_remaining = stock_remaining-1 WHERE product_id = $product_id";
+    $query = "UPDATE IN_STORE_PRODUCTS SET stock_remaining = stock_remaining-1 WHERE product_id = $productID";
     }
 
     $result = $conn->query($query);
