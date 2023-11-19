@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo "Prepare statement failed: " . $conn->error;
             exit;
         }
-        $stmt->bind_param("s", $user_info['idnum']);
+        $stmt->bind_param("s", $emp_info['idnum']);
         if (!$stmt->execute()) {
             echo "Execution failed: " . $stmt->error;
         } else {
