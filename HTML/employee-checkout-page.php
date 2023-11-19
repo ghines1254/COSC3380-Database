@@ -1,4 +1,14 @@
+<?php
+  session_start();
 
+  if (!isset($_SESSION['emp_info'])) {
+      // Redirect to login page if user is not logged in
+      header('Location: employee-login-page.php');
+      exit();
+  }
+
+  $emp_info = $_SESSION['emp_info'];
+?>
 
 
 <!DOCTYPE html>
@@ -99,10 +109,12 @@ require_once 'connection.php';
         </div>
       </div>
      
-       
-      </div>
+ <div class="products-outline">
+        <div class="check-out-the">Choose items to place in shopping cart</div>       
+   div class="vector-parent">
+          <img class="vector-icon9" alt="" src="./public/vector3.svg" />
     
-    </div>
+ 
 
 <?php
 $query = "SELECT product_id, product_name, product_price, stock_remaining FROM IN_STORE_PRODUCTS";
@@ -127,7 +139,7 @@ while ($row = $result->fetch_assoc())
 }
 
 ?>
-
+ </div></div>
 <script>
 function updateStock(productId, action) {
   
