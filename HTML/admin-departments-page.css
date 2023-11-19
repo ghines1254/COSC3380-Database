@@ -235,6 +235,7 @@
   position: relative;
   width: 900px;
   height: 700px;
+  display: none;
 }
 .frame-group,
 .frame-parent {
