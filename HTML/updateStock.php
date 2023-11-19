@@ -12,15 +12,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
     if ($action === 'increment'){
-    $query = "UPDATE IN_STORE_PRODUCTS SET stock_remaining = stock_remaining+1 WHERE product_id = $productId";
+    $query = "UPDATE IN_STORE_PRODUCTS SET stock_remaining = stock_remaining+1 WHERE product_id = ?";
     }
     if ($action === 'decrement'){
-    $query = "UPDATE IN_STORE_PRODUCTS SET stock_remaining = stock_remaining-1 WHERE product_id = $productId";
+    $query = "UPDATE IN_STORE_PRODUCTS SET stock_remaining = stock_remaining-1 WHERE product_id = ?";
     }
 
-    $result = $conn->query($query);
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('s', $productId);  
+    $stmt->execute();
    
-    if ($result) {
+    if ($stmt->affected_rows > 0) {
         echo "Stock updated successfully";
     } else {
         echo "Error updating stock: " . $conn->error;
