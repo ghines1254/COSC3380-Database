@@ -84,7 +84,11 @@
                   </div>
                 </div>
               </div>
-              <div class="portal-page25"></div>
+              <div class="portal-page25">
+                <div class = "generate-report">
+                  Generate
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -256,9 +260,6 @@
               </tr>
           </tbody>
         </table>
-        <div class = "generate-report">
-          Generate
-        </div>
     </div>
 
     <?php
