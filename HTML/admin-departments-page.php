@@ -70,7 +70,7 @@ $packageData = fetchAllPackages();
 
 
 
-      
+<!--       
       <div class="navigation-bar-light20">
         <div class="navigation-bar20"></div>
         <div class="navigation-bar-light-inner19">
@@ -191,7 +191,7 @@ $packageData = fetchAllPackages();
         id="vector"
       />
     </div>
-
+ -->
     <script>
       var frameContainer1 = document.getElementById("frameContainer1");
       if (frameContainer1) {
