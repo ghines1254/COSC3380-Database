@@ -130,7 +130,7 @@ if (!$result)
 
 while ($row = $result->fetch_assoc()) 
 {
-    echo "<div>";
+    echo "<div class='product-item'>";
     echo "<span>{$row['product_id']} </span>";
     echo "<span>{$row['product_name']} </span>";
     echo "<span> Price: {$row['product_price']} </span>";
