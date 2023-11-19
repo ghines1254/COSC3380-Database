@@ -19,28 +19,44 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-function fetchAllPackages() {
+function fetchEmployeeReport() {
     global $conn;
 
-    $query = "SELECT tracking_number, sender_full_name, sender_full_address, receiver_full_name, receiver_full_address, status FROM PACKAGE";
+    $query = "
+        SELECT 
+            e.idnum, 
+            e.first_name, 
+            e.last_name, 
+            e.sex, 
+            e.birthdate, 
+            e.city, 
+            e.state, 
+            e.zipcode, 
+            e.dept, 
+            e.created_on,
+            COUNT(ti.delivered_by) AS packages_delivered
+        FROM EMPLOYEE e
+        LEFT JOIN TRACKING_INFO ti ON e.idnum = ti.delivered_by
+        GROUP BY e.idnum
+    ";
     $result = $conn->query($query);
 
     if ($result === false) {
         die("Error: " . $conn->error);
     }
 
-    $packages = [];
+    $employees = [];
     while ($row = $result->fetch_assoc()) {
-        $packages[] = $row;
+        $employees[] = $row;
     }
 
-    return $packages;
+    return $employees;
 }
 
-$packageData = []; // Initialize as empty array
+$employeeData = []; // Initialize as empty array
 
 // Check if the generate report button has been clicked
 if (isset($_POST['generate_report'])) {
-    $packageData = fetchAllPackages();
+    $employeeData = fetchEmployeeReport();
 }
 ?>
