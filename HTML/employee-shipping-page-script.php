@@ -70,10 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $stmt->get_result();
     $row = $result->fetch_assoc();
 
-    //Returning Customer, add to package list
-    $stmt = $conn->prepare("INSERT INTO Customer_To_Package (customer_id, package_id) VALUES (?, ?)");
-    $stmt->bind_param("ss", $row["customer_id"], $trackingNumber);
-    $stmt->execute();
+
     
 
     // Insert receiver info into RECEIVER table
@@ -98,6 +95,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
     // ... bind additional parameters for PACKAGE table ...
     // After successfully executing the INSERT query for PACKAGE table
+
+    //Returning Customer, add to package list
+    $stmt = $conn->prepare("INSERT INTO Customer_To_Package (customer_id, package_id) VALUES (?, ?)");
+    $stmt->bind_param("ss", $row["customer_id"], $trackingNumber);
+    $stmt->execute();
+
     $_SESSION['trackingNumber'] = $trackingNumber;
     $startingPostOffice = "P01";
     $receivedTrue = 1;
