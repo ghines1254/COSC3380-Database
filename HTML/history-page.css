@@ -300,7 +300,7 @@
 	left: calc(50% - 253px);
 	display: block;
 	width: 880px;
-	height: 655px;
+	height: 600px;
 	overflow-y: scroll;
 	text-align: center;
 	background-color: var(--lightsecond);
