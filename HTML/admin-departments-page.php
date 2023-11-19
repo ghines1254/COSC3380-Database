@@ -32,43 +32,39 @@ include 'admin-departments-page-script.php';
       </div>
 
 <!-- Date Filter Form -->
-      <div class="date-filter-form">
-        <form method="post" action="admin-departments-page.php">
-            <label for="startDate">Start Date:</label>
-            <input type="date" id="startDate" name="startDate" required>
+        <div class="date-filter-form">
+            <form method="post" action="admin-departments-page.php">
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate" required>
 
-            <label for="endDate">End Date:</label>
-            <input type="date" id="endDate" name="endDate" required>
+                <label for="endDate">End Date:</label>
+                <input type="date" id="endDate" name="endDate" required>
 
-            <input type="submit" value="Filter">
-        </form>
-      </div>
+                <input type="submit" value="Filter">
+            </form>
+        </div>
 
-     
-    <!-- Package History Display -->
-    <div class="package-history-report">
-        <?php
-        if (isset($_SESSION['packageHistory']) && count($_SESSION['packageHistory']) > 0) {
-            echo "<table>";
-            // Table headers
-            echo "<tr><th>Tracking Number</th><th>Sender</th><th>Receiver</th><th>Status</th><th>Date</th></tr>";
-            // Table rows
-            foreach ($_SESSION['packageHistory'] as $history) {
-                echo "<tr>";
-                echo "<td>" . htmlspecialchars($history['tracking_number']) . "</td>";
-                echo "<td>" . htmlspecialchars($history['sender_full_name']) . " (" . htmlspecialchars($history['sender_full_address']) . ")</td>";
-                echo "<td>" . htmlspecialchars($history['receiver_full_name']) . " (" . htmlspecialchars($history['receiver_full_address']) . ")</td>";
-                echo "<td>" . htmlspecialchars($history['status']) . "</td>";
-                echo "<td>" . htmlspecialchars($history['updated_at']) . "</td>";
-                echo "</tr>";
+        <!-- Package History Display -->
+        <div class="package-history-report">
+            <?php
+            if (isset($_SESSION['packageHistory']) && count($_SESSION['packageHistory']) > 0) {
+                echo "<table>";
+                echo "<tr><th>Tracking Number</th><th>Sender</th><th>Receiver</th><th>Status</th><th>Date</th></tr>";
+                foreach ($_SESSION['packageHistory'] as $history) {
+                    echo "<tr>";
+                    echo "<td>" . htmlspecialchars($history['tracking_number']) . "</td>";
+                    echo "<td>" . htmlspecialchars($history['sender_full_name']) . " (" . htmlspecialchars($history['sender_full_address']) . ")</td>";
+                    echo "<td>" . htmlspecialchars($history['receiver_full_name']) . " (" . htmlspecialchars($history['receiver_full_address']) . ")</td>";
+                    echo "<td>" . htmlspecialchars($history['status']) . "</td>";
+                    echo "<td>" . htmlspecialchars($history['updated_at']) . "</td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
+            } else {
+                echo "<p>No package history found for the selected date range.</p>";
             }
-            echo "</table>";
-        } else {
-            echo "<p>No package history found for the selected date range.</p>";
-        }
-        ?>
-    </div>
-
+            ?>
+        </div>
 
 
 
