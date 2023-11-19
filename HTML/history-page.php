@@ -138,7 +138,8 @@
               exit();
             } 
             $stmt->bind_result($trackingNumber, $lastUpdated, $packageStatus, $employee_first_name, $packageETA);
-            while( $stmt->fetch()){
+            while($stmt->fetch()){
+              var_dump($trackingNumber, $lastUpdated, $packageStatus, $employee_first_name, $packageETA);
             ?>
               <tr>
                   <td><?php echo $trackingNumber?></td>
@@ -154,7 +155,7 @@
           </tbody>
         </table>
     </div>
-    <?php
+    <?php /*
         $query = "SELECT tracking_number FROM PACKAGE";
         $result = $conn->query($query);
         // Check for errors
@@ -167,7 +168,7 @@
             echo "<td>{$row['delivery_status']}</td>";
             echo "<td>{$row['date_of_delivery']}</td>";
             echo "</tr>";
-        }
+        }*/
     ?>
 
     <script>
