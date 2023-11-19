@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'init.php';
 ?>
 
@@ -30,9 +31,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
     $result = $stmt->get_result();
 
+    $stmt->close();
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if ($password === $row['emp_password']) {
+            $stmt = $conn->prepare("SELECT idnum, first_name, last_name FROM EMPLOYEE WHERE email = ?");
+            $stmt->bind_param("s", $email);
+        
+            if (!$stmt->execute()) {
+                die("Error in executing the statement: " . $stmt->error);
+            }
+        
+            $stmt->bind_result($idnum, $first_name, $email);
+            $stmt->fetch();
+        
+            $stmt->close();
+            $conn->close();
+            $emp_info = ['idnum' => $idnum, 'first_name' => $first_name, 'last_name'=> $last_name, 'email' => $email];
+            $_SESSION['user_info'] = $user_info;
             // Redirect to employee portal notifications page (adjust the URL as needed)
             header("Location: employee-portal-nofications-page.html");
             exit;
@@ -43,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Email not found.";
     }
 
-    $stmt->close();
+
     $conn->close();
 }
 ?>

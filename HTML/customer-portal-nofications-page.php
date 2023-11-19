@@ -61,7 +61,7 @@
             <div class="rectangle-parent173">
               <div class="frame-child86"></div>
               <div class="welcome-to-your-portal-page-wrapper29">
-                <b class="welcome-to-your31">Welcome</b>
+                <b class="welcome-to-your31">Welcome <?php echo $user_info['first_name'];?></b>
               </div>
             </div>
             <div class="frame-parent82">
@@ -1567,7 +1567,7 @@
             </div>
           </div>
           <div class="notification-center-container">
-            <b class="notification-center2">Notification Center: <?php echo $user_info['first_name'];?></b>
+            <b class="notification-center2">Notification Center: </b>
             <div class="notification-component16">
               <div class="rectangle-parent174">
                 <div class="frame-child86"></div>
