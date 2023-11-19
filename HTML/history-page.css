@@ -450,7 +450,7 @@
 .history-component-parent {
 	position: absolute;
 	top: 320px;
-	left: calc(50% - 255px);
+	left: calc(50% - 253px);
 	width: 880px;
 	max-height: 680px; /* Adjust this value according to your needs */
 	overflow-y: auto;
