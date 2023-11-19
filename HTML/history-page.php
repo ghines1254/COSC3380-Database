@@ -98,6 +98,7 @@
       <table class = "history-component-parent">
         <thead>
             <tr>
+
                 <th>Package ID</th>
                 <th>Delivery Status</th>
                 <th>Date of Delivery</th>
