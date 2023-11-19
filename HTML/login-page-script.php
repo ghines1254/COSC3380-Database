@@ -57,10 +57,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        var_dump($row);
         if ($password === $row['PASSWORD']) {
             // Redirect to customer portal notifications page
-            $user_info = getCustomerInfo($row[$email]);
+            echo $email;
+            $user_info = getCustomerInfo($email);
             $_SESSION['user_info'] = $user_info;
 
             echo "\n redirecting now";
