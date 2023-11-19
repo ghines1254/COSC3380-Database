@@ -2,8 +2,12 @@
 session_start();
 include 'admin-departments-page-script.php';
 
-// $packageData = fetchAllPackages();
+$employeeData = [];
+if (isset($_POST['generate_report'])) {
+    $employeeData = fetchEmployeeReport();
+}
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -34,7 +38,10 @@ include 'admin-departments-page-script.php';
 
   <div class="admin-departments-page">
         
- <!-- Generate Report Form -->
+ <div class="admin-departments-page">
+        <!-- Existing content -->
+
+        <!-- Generate Report Form -->
         <form method="post" action="admin-departments-page.php">
             <input type="submit" name="generate_report" value="Generate Report">
         </form>
@@ -43,33 +50,10 @@ include 'admin-departments-page-script.php';
         <div class="employee-data-report">
             <?php if (!empty($employeeData)): ?>
                 <table>
-                    <tr>
-                        <th>ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Sex</th>
-                        <th>Birthdate</th>
-                        <th>City</th>
-                        <th>State</th>
-                        <th>Zipcode</th>
-                        <th>Department</th>
-                        <th>Created On</th>
-                        <th>Packages Delivered</th>
-                    </tr>
+                    <!-- Table Headers -->
+                    <!-- Table Rows -->
                     <?php foreach ($employeeData as $data): ?>
-                        <tr>
-                            <td><?= htmlspecialchars($data['idnum']) ?></td>
-                            <td><?= htmlspecialchars($data['first_name']) ?></td>
-                            <td><?= htmlspecialchars($data['last_name']) ?></td>
-                            <td><?= htmlspecialchars($data['sex']) ?></td>
-                            <td><?= htmlspecialchars($data['birthdate']) ?></td>
-                            <td><?= htmlspecialchars($data['city']) ?></td>
-                            <td><?= htmlspecialchars($data['state']) ?></td>
-                            <td><?= htmlspecialchars($data['zipcode']) ?></td>
-                            <td><?= htmlspecialchars($data['dept']) ?></td>
-                            <td><?= htmlspecialchars($data['created_on']) ?></td>
-                            <td><?= htmlspecialchars($data['packages_delivered']) ?></td>
-                        </tr>
+                        <!-- Display each row -->
                     <?php endforeach; ?>
                 </table>
             <?php else: ?>
