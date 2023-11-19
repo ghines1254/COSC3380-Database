@@ -294,13 +294,13 @@
 	gap: var(--gap-3xs);
 	font-size: var(--font-size-29xl);
 }
-.history-component-parent {
+.history-table {
 	position: absolute;
 	top: 287px;
 	left: calc(50% - 253px);
-	width: 880px;
 	display: block;
-	height: 680px;
+	width: 880px;
+	height: 600px;
 	overflow-y: scroll;
 	text-align: center;
 	background-color: var(--lightsecond);

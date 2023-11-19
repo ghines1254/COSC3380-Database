@@ -95,7 +95,7 @@
           id="portalHomeButton"
         />
       </div>
-      <table class = "history-component-parent">
+      <table class = "history-table">
         <thead>
             <tr>
 
@@ -107,6 +107,111 @@
             </tr>
         </thead>
         <tbody>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>Delivered</td>
+                <td>1</td>
+                <td>11-02-2023</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>Delivered</td>
+                <td>1</td>
+                <td>11-02-2023</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>Delivered</td>
+                <td>1</td>
+                <td>11-02-2023</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>Delivered</td>
+                <td>1</td>
+                <td>11-02-2023</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>Delivered</td>
+                <td>1</td>
+                <td>11-02-2023</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>Delivered</td>
+                <td>1</td>
+                <td>11-02-2023</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>Delivered</td>
+                <td>1</td>
+                <td>11-02-2023</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>Delivered</td>
+                <td>1</td>
+                <td>11-02-2023</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>Delivered</td>
+                <td>1</td>
+                <td>11-02-2023</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>Delivered</td>
+                <td>1</td>
+                <td>11-02-2023</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>Delivered</td>
+                <td>1</td>
+                <td>11-02-2023</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>Delivered</td>
+                <td>1</td>
+                <td>11-02-2023</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>Delivered</td>
+                <td>1</td>
+                <td>11-02-2023</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>Delivered</td>
+                <td>1</td>
+                <td>11-02-2023</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>Delivered</td>
+                <td>1</td>
+                <td>11-02-2023</td>
+            </tr>
             <tr>
                 <td>1</td>
                 <td>1</td>
