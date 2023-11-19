@@ -96,6 +96,7 @@
         />
       </div>
       <table class="history-component-parent">
+
         <div class="history-component">
           <div class="rectangle-parent145">
             <div class="frame-child67"></div>
