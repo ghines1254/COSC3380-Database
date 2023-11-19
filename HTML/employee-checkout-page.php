@@ -120,6 +120,7 @@ require_once 'connection.php';
         <tr>
             <th>ID</th>
             <th>Name</th>
+            <th>Description</th>
             <th>Price</th>
             <th>Stock</th>
             <th>Actions</th>
@@ -140,11 +141,11 @@ if (!$result)
 while ($row = $result->fetch_assoc()) 
 {
     echo "<tr>";
-    echo "<td>{$row['product_id']} </td>";
-    echo "<td>{$row['product_name']} </td>";
-    echo "<td>Description: {$row['product_description']} </td>";
-    echo "<td> Price: {$row['product_price']} </td>";
-    echo "<td id='stock_{$row['product_id']}'>Stock: {$row['stock_remaining']}</td>";
+    echo "<td>{$row['product_id']}</td>";
+    echo "<td>{$row['product_name']}</td>";
+    echo "<td>{$row['product_description']}</td>";
+    echo "<td>{$row['product_price']}</td>";
+    echo "<td id='stock_{$row['product_id']}'>{$row['stock_remaining']}</td>";
     echo "<td>";
     echo "<button onclick=\"updateStock('{$row['product_id']}', 'increment')\">+</button>";
     echo "<button onclick=\"updateStock('{$row['product_id']}', 'decrement')\">-</button>";
