@@ -88,11 +88,12 @@
 	top: 10%;
 	text-align: center;
 	position: relative;
-	width: auto;
+  width: calc(100% - 749px);
 	height: 32px;
 	cursor: pointer;
 	display: inline-block;
 	color: var(--lightsecond);
+  font-weight: bold;
 }
 .vector-parent {
 	position: absolute;
