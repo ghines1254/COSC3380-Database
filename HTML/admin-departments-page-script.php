@@ -20,13 +20,12 @@ if ($conn->connect_error) {
 }
 
 function fetchAllPackages() {
-    global $conn; // Use the database connection from init.php
+    global $conn;
 
     $query = "SELECT tracking_number, sender_full_name, sender_full_address, receiver_full_name, receiver_full_address, status FROM PACKAGE";
     $result = $conn->query($query);
 
     if ($result === false) {
-        // Query failed: handle error here
         die("Error: " . $conn->error);
     }
 
@@ -36,5 +35,12 @@ function fetchAllPackages() {
     }
 
     return $packages;
+}
+
+$packageData = []; // Initialize as empty array
+
+// Check if the generate report button has been clicked
+if (isset($_POST['generate_report'])) {
+    $packageData = fetchAllPackages();
 }
 ?>
