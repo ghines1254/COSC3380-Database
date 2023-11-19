@@ -133,6 +133,7 @@
           </thead>
           <tbody>
             <?php
+            $fakeEmail = "fake@gmail.com";
              $stmt=$conn->prepare("SELECT PACKAGE.tracking_number, TRACKING_INFO.last_updated, PACKAGE.status, EMPLOYEE.first_name AS employee_first_name, TRACKING_INFO.eta
                                     FROM CUSTOMER
                                     JOIN Customer_To_Package ON CUSTOMER.customer_id = Customer_To_Package.customer_id
@@ -141,7 +142,7 @@
                                     LEFT JOIN EMPLOYEE ON TRACKING_INFO.delivered_by = EMPLOYEE.idnum
                                     WHERE CUSTOMER.email = ?
                                     ORDER BY TRACKING_INFO.created_on ASC");
-            $stmt->bind_param("s", $user_info['email']);
+            $stmt->bind_param("s", $fakeEmail);
             if (!$stmt->execute()) {
               echo "Execution failed: " . $stmt->error;
               exit();
