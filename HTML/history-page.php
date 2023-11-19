@@ -196,7 +196,7 @@
       var button2Container = document.getElementById("button2Container");
       if (button2Container) {
         button2Container.addEventListener("click", function (e) {
-          window.location.href = "./shipping-page.php";
+          window.location.href = "./customer-portal-notifications-page.php";
         });
       }
 
@@ -231,7 +231,7 @@
       var portalHomeButton = document.getElementById("portalHomeButton");
       if (portalHomeButton) {
         portalHomeButton.addEventListener("click", function (e) {
-          window.location.href = "./cutomer-portal-nofications-page.php";
+          window.location.href = "./customer-portal-notifications-page.php";
         });
       }
     </script>
