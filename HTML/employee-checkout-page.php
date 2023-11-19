@@ -139,15 +139,15 @@ if (!$result)
 
 while ($row = $result->fetch_assoc()) 
 {
-    echo "<div class='product-item'>";
-    echo "<span>{$row['product_id']} </span>";
-    echo "<span>{$row['product_name']} </span>";
-    echo "<span>Description: {$row['product_description']} </span>";
-    echo "<span> Price: {$row['product_price']} </span>";
-    echo "<span id='stock_{$row['product_id']}'>Stock: {$row['stock_remaining']}</span>";
+    echo "<tr>";
+    echo "<td>{$row['product_id']} </td>";
+    echo "<td>{$row['product_name']} </td>";
+    echo "<td>Description: {$row['product_description']} </td>";
+    echo "<td> Price: {$row['product_price']} </td>";
+    echo "<td id='stock_{$row['product_id']}'>Stock: {$row['stock_remaining']}</td>";
     echo "<button onclick=\"updateStock('{$row['product_id']}', 'increment')\">+</button>";
     echo "<button onclick=\"updateStock('{$row['product_id']}', 'decrement')\">-</button>";
-    echo "</div>";
+    echo "</tr>";
     
     
 }
