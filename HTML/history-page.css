@@ -452,7 +452,8 @@
 	top: 320px;
 	left: calc(50% - 255px);
 	width: 880px;
-	height: 680px;
+	max-height: 680px; /* Adjust this value according to your needs */
+	overflow-y: auto;
 	text-align: center;
 	background-color: var(--lightsecond);
 	font-size: var(--font-size-mid);
