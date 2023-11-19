@@ -111,8 +111,7 @@ require_once 'connection.php';
      
  <div class="products-outline">
         <div class="check-out-the">Choose items to place in shopping cart</div>       
-   div class="vector-parent">
-          <img class="vector-icon9" alt="" src="./public/vector3.svg" />
+
     
  
 
@@ -139,7 +138,7 @@ while ($row = $result->fetch_assoc())
 }
 
 ?>
- </div></div>
+ </div>
 <script>
 function updateStock(productId, action) {
   
