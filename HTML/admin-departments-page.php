@@ -87,7 +87,7 @@
       var frameContainer1 = document.getElementById("frameContainer1");
       if (frameContainer1) {
         frameContainer1.addEventListener("click", function (e) {
-          window.location.href = "./index.php";
+          window.location.href = "./home-page.html";
         });
       }
       
@@ -128,3 +128,5 @@
       </script>
   </body>
 </html>
+
+
