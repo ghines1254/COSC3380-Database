@@ -158,21 +158,6 @@
           </tbody>
         </table>
     </div>
-    <?php /*
-        $query = "SELECT tracking_number FROM PACKAGE";
-        $result = $conn->query($query);
-        // Check for errors
-        if (!$result) {
-            die("Error retrieving data: " . $conn->error);
-        }
-        while ($row = $result->fetch_assoc()) {
-            echo "<tr>";
-            echo "<td>{$row['tracking_number']}</td>";
-            echo "<td>{$row['delivery_status']}</td>";
-            echo "<td>{$row['date_of_delivery']}</td>";
-            echo "</tr>";
-        }*/
-    ?>
 
     <script>
       var frameContainer1 = document.getElementById("frameContainer1");
@@ -192,7 +177,7 @@
       var button2Container = document.getElementById("button2Container");
       if (button2Container) {
         button2Container.addEventListener("click", function (e) {
-          window.location.href = "./shipping-page.html";
+          window.location.href = "./shipping-page.php";
         });
       }
 
@@ -227,7 +212,7 @@
       var portalHomeButton = document.getElementById("portalHomeButton");
       if (portalHomeButton) {
         portalHomeButton.addEventListener("click", function (e) {
-          window.location.href = "./cutomer-portal-nofications-page.html";
+          window.location.href = "./cutomer-portal-nofications-page.php";
         });
       }
     </script>
