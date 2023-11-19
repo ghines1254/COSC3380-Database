@@ -66,12 +66,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $stmt->get_result();
 
 
+    $stmt->close();
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if ($password === $row['PASSWORD']) {
             // Redirect to customer portal notifications page
-            $user_info = getCustomerInfo($email);
+            $stmt = $conn->prepare("SELECT customer_id, first_name, email FROM CUSTOMER WHERE email = ?");
+            $stmt->bind_param("s", $email);
+        
+            if (!$stmt->execute()) {
+                die("Error in executing the statement: " . $stmt->error);
+            }
+        
+            $stmt->bind_result($customer_id, $first_name, $email);
+            $stmt->fetch();
+        
+            $stmt->close();
+            $conn->close();
+            $user_info = ['customer_id' => $customer_id, 'first_name' => $first_name, 'email' => $email];
             $_SESSION['user_info'] = $user_info;
 
             echo "\n redirecting now";
@@ -84,7 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Email not found.";
     }
 
-    $stmt->close();
+
     $conn->close();
 }
 ?>
