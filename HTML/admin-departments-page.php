@@ -41,11 +41,12 @@ if (isset($_POST['generate_report'])) {
  <div class="admin-departments-page">
         <!-- Existing content -->
 
-        <!-- Generate Report Form -->
-        <form method="post" action="admin-departments-page-script.php">
-            <input type="submit" name="generate_report" value="Generate Report">
-        </form>
-
+       <!-- Centered Generate Report Form -->
+        <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+            <form method="post" action="admin-departments-page.php" style="text-align: center;">
+                <input type="submit" name="generate_report" value="Generate Report">
+            </form>
+        </div>
         <!-- Employee Data Display -->
         <div class="employee-data-report">
             <?php if (!empty($employeeData)): ?>
