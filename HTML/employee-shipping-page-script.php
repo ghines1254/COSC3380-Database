@@ -76,13 +76,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $trackingNumber = substr(uniqid(), 0, 6); // Adjust the second parameter as needed
 
 
-   // Insert combined data and tracking number into PACKAGE table
-    $stmt = $conn->prepare("INSERT INTO PACKAGE (tracking_number, sender_full_address, sender_full_name, receiver_full_address, receiver_full_name) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssss", $trackingNumber, $sender_full_address, $sender_full_name, $receiver_full_address, $receiver_full_name);
+  // Insert combined data, tracking number, and sender's email into PACKAGE table
+    $stmt = $conn->prepare("INSERT INTO PACKAGE (tracking_number, sender_full_address, sender_full_name, receiver_full_address, receiver_full_name, sender_email) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssss", $trackingNumber, $sender_full_address, $sender_full_name, $receiver_full_address, $receiver_full_name, $email);
     $stmt->execute();
     // ... bind additional parameters for PACKAGE table ...
     // After successfully executing the INSERT query for PACKAGE table
-$_SESSION['trackingNumber'] = $trackingNumber;
+    $_SESSION['trackingNumber'] = $trackingNumber;
 
 
     // Redirect or confirm successful submission
