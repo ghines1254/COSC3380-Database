@@ -114,7 +114,7 @@ require_once 'connection.php';
          
  <div class="products-outline">
         <div class="check-out-the">Update product stock as needed here.</div>    
-   
+ </div>
 <table class="products-table">
     <thead>
         <tr>
@@ -153,7 +153,7 @@ while ($row = $result->fetch_assoc())
 }
 
 ?> </tbody></table>
- </div>
+ 
 <script>
 function updateStock(productId, action) {
   
