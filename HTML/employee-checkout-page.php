@@ -111,27 +111,7 @@ require_once 'connection.php';
 
 
 
-      <style>
-    .products-outline {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        max-width: 800px; /* Adjust the maximum width as needed */
-        margin: 0 auto; /* Center the container */
-    }
-
-    .product-item {
-        width: 30%; /* Adjust the width of each product item */
-        margin-bottom: 20px;
-        padding: 10px;
-        border: 1px solid #ddd; /* Add a border for separation */
-    }
-
-    .product-item button {
-        margin-top: 10px;
-    }
-</style>
-     
+         
  <div class="products-outline">
         <div class="check-out-the">Update product stock as needed here.</div>       
 
@@ -139,7 +119,7 @@ require_once 'connection.php';
  
 
 <?php
-$query = "SELECT product_id, product_name, product_price, stock_remaining FROM IN_STORE_PRODUCTS";
+$query = "SELECT product_id, product_name, product_price, stock_remaining, product_description FROM IN_STORE_PRODUCTS";
 
 $result = $conn->query($query);
 
@@ -157,6 +137,9 @@ while ($row = $result->fetch_assoc())
     echo "<span id='stock_{$row['product_id']}'>Stock: {$row['stock_remaining']}</span>";
     echo "<button onclick=\"updateStock('{$row['product_id']}', 'increment')\">+</button>";
     echo "<button onclick=\"updateStock('{$row['product_id']}', 'decrement')\">-</button>";
+    echo "</div>";
+    echo "<div>";
+    echo "<span>Description: {$row['product_description']} </span>";
     echo "</div>";
 }
 
