@@ -60,7 +60,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         var_dump($row);
         if ($password === $row['PASSWORD']) {
             // Redirect to customer portal notifications page
-            echo "inside if loop";
             $user_info = getCustomerInfo($row[$email]);
             $_SESSION['user_info'] = $user_info;
 
