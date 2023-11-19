@@ -97,66 +97,10 @@ require_once 'connection.php';
           </div>
         </div>
       </div>
-      <div class="products-outline">
-        <div class="check-out-the">Choose items to place in shopping cart</div>
-        <div class="vector-parent">
-          <img class="vector-icon9" alt="" src="./public/vector3.svg" />
-
-          <button class="large-box-499-container">
-            <p class="large-box">Large Box</p>
-            <p class="large-box">$4.99</p>
-          </button>
-          <img class="vector-icon10" alt="" src="./public/vector4.svg" />
-
-          <img class="vector-icon11" alt="" src="./public/vector3.svg" />
-
-          <button class="small-box-299-container">
-            <p class="large-box">Small Box</p>
-            <p class="large-box">$2.99</p>
-          </button>
-          <button class="envelope-199">
-            <p class="large-box">Envelope</p>
-            <p class="large-box">$1.99</p>
-          </button>
-          <button class="medium-box-399-container">
-            <p class="large-box">Medium Box</p>
-            <p class="large-box">$3.99</p>
-          </button>
-          <img class="vector-icon12" alt="" src="./public/vector6.svg" />
-        </div>
-        <div class="vector-group">
-          <img class="vector-icon13" alt="" src="./public/vector8.svg" />
-
-          <button class="tape-499">
-            <p class="large-box">Tape</p>
-            <p class="large-box">$4.99</p>
-          </button>
-          <button class="stapler-499">
-            <p class="large-box">Stapler</p>
-            <p class="large-box">$4.99</p>
-          </button>
-          <button class="pen-10pk-299-container">
-            <p class="large-box">Pen 10pk</p>
-            <p class="large-box">$2.99</p>
-          </button>
-          <button class="stamp-booklet-999-container">
-            <p class="large-box">Stamp Booklet</p>
-            <p class="large-box">$9.99</p>
-          </button>
-          <img class="vector-icon14" alt="" src="./public/vector9.svg" />
-
-          <img class="vector-icon15" alt="" src="./public/vector10.svg" />
-
-          <img class="vector-icon16" alt="" src="./public/vector11.svg" />
-        </div>
+     
+       
       </div>
-      <div class="frame8" id="frameContainer10">
-        <img
-          class="portal-home-button8"
-          alt=""
-          src="./public/portal-home-button.svg"
-        />
-      </div>
+    
     </div>
 
 
