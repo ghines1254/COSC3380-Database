@@ -35,4 +35,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     echo "Invalid request method";
 }
 
+function getUpdatedStock($conn, $productId) {
+    $selectQuery = "SELECT stock_remaining FROM IN_STORE_PRODUCTS WHERE product_id = ?";
+    $stmt = $conn->prepare($selectQuery);
+    $stmt->bind_param('s', $productId);
+    $stmt->execute();
+    $stmt->bind_result($updatedStock);
+    $stmt->fetch();
+    $stmt->close();
+    return $updatedStock;
+}
+
 ?>
