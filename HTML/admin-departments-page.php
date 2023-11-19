@@ -113,7 +113,7 @@ include 'admin-departments-page-script.php';
                 </div>
                 <div class="button430">
                   <div class="button2-child27"></div>
-                  <b class="button-229">Departments</b>
+                  <b class="button-229">Tracking Report</b>
                 </div>
                 <div class="button55" id="button5Container">
                   <div class="button2-child27"></div>
