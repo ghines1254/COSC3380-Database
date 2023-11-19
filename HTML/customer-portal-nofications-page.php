@@ -9,6 +9,22 @@
   }
 
   $user_info = $_SESSION['user_info'];
+
+
+  // Database connection details
+  $host = "34.68.154.206";
+  $database = "Post_Office_Schema";
+  $user = "root";
+  $password = "umapuma";
+
+  // Create connection
+  $conn = new mysqli($host, $user, $password, $database);
+
+  // Check connection
+  if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+  }
+
 ?>
 
 <!DOCTYPE html>
@@ -1604,64 +1620,6 @@
                 <div class="frame-child88"></div>
               </div>
             </div>
-            <div class="notification-component16">
-              <div class="rectangle-parent174">
-                <div class="frame-child86"></div>
-                <img class="vector-icon85" alt="" src="./public/vector13.svg" />
-
-                <b class="notification-summary16">Notification Summary</b>
-              </div>
-              <div class="parent14">
-                <b class="b23">12:00</b>
-                <div class="frame-child88"></div>
-              </div>
-            </div>
-            <div class="notification-component16">
-              <div class="rectangle-parent174">
-                <div class="frame-child86"></div>
-                <img class="vector-icon85" alt="" src="./public/vector13.svg" />
-
-                <b class="notification-summary16">Notification Summary</b>
-              </div>
-              <div class="parent14">
-                <b class="b23">12:00</b>
-                <div class="frame-child88"></div>
-              </div>
-            </div>
-            <div class="notification-component16">
-              <div class="rectangle-parent174">
-                <div class="frame-child86"></div>
-                <img class="vector-icon85" alt="" src="./public/vector13.svg" />
-
-                <b class="notification-summary16">Notification Summary</b>
-              </div>
-              <div class="parent14">
-                <b class="b23">12:00</b>
-                <div class="frame-child88"></div>
-              </div>
-            </div>
-            <div class="notification-component16">
-              <div class="rectangle-parent174">
-                <div class="frame-child86"></div>
-                <img class="vector-icon85" alt="" src="./public/vector13.svg" />
-
-                <b class="notification-summary16">Notification Summary</b>
-              </div>
-              <div class="parent14">
-                <b class="b23">12:00</b>
-                <div class="frame-child88"></div>
-              </div>
-            </div>
-            <div class="notification-component16">
-              <div class="rectangle-parent174">
-                <div class="frame-child86"></div>
-                <img class="vector-icon85" alt="" src="./public/vector13.svg" />
-
-                <b class="notification-summary16">Notification Summary</b>
-              </div>
-              <div class="parent14">
-                <b class="b23">12:00</b>
-                <div class="frame-child88"></div>
               </div>
             </div>
           </div>
