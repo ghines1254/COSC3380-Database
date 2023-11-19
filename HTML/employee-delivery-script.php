@@ -52,6 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     //Determine on_truck based on table VEHICLE since it is NOT being delivered
     if ($status != "Delivered"){
+        echo "entering not delivered";
         $stmt = $conn->prepare("SELECT vin FROM VEHICLE WHERE emp_id = ?");
         if (!$stmt) {
             echo "Prepare statement failed: " . $conn->error;
@@ -83,9 +84,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
     else{
+        echo "entering delivered";
         //package has been marked as delivered, adjust tracking info
         $onVehicle = 0;
-        $stmt = $conn->prepare("UPDATE TRACKING_INFO SET on_truck = ?, delivered_by = ?,   WHERE package_id = ?");
+        $stmt = $conn->prepare("UPDATE TRACKING_INFO SET on_truck = ?, delivered_by = ? WHERE package_id = ?");
         $stmt->bind_param("sss", $onVehicle, $emp_info['idnum'], $trackingNumber);
         $stmt->execute();
     }
