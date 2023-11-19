@@ -24,6 +24,22 @@
       <div class="admin-departments-page-child"></div>
       <div class="minibackground1">
         <img class="image-1-icon1" alt="" src="./public/image-12@2x.png" />
+
+
+<!-- Centered Generate Report Form -->
+        <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+            <form method="post" action="admin-departments-page.php" style="text-align: center;">
+                <input type="submit" name="generate_report" value="Generate Report">
+            </form>
+        </div>
+
+        <!-- Placeholder for Employee Data Display -->
+        <div class="employee-data-report">
+            <!-- Employee data will be displayed here after clicking Generate Report -->
+        </div>
+
+
+        
       </div>
       <div class="navigation-bar-light1">
         <div class="navigation-bar1"></div>
