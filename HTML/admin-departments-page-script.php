@@ -25,6 +25,11 @@ function fetchAllPackages() {
     $query = "SELECT tracking_number, sender_full_name, sender_full_address, receiver_full_name, receiver_full_address, status, updated_at FROM PACKAGE";
     $result = $conn->query($query);
 
+    if ($result === false) {
+        // Query failed: handle error here
+        die("Error: " . $conn->error);
+    }
+
     $packages = [];
     while ($row = $result->fetch_assoc()) {
         $packages[] = $row;
