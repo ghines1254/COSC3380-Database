@@ -8,7 +8,7 @@ require_once 'init.php';
 function getCustomerInfo($email) {
     $connection = connectToDatabase();
 
-    $stmt = $connection->prepare("SELECT customer_id, first_name, email FROM CUSTOMERS WHERE email = ?");
+    $stmt = $connection->prepare("SELECT customer_id, first_name, email FROM CUSTOMER WHERE email = ?");
     $stmt->bind_param("s", $email);
     if (!$stmt->execute()) {
         die("Error in executing the statement: " . $stmt->error);
@@ -59,7 +59,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
         if ($password === $row['PASSWORD']) {
             // Redirect to customer portal notifications page
-            echo $email;
             $user_info = getCustomerInfo($email);
             echo $user_info[0] . " " . $user_info[1] . " " . $user_info[2];
             $_SESSION['user_info'] = $user_info;
