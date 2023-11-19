@@ -330,7 +330,7 @@ tbody tr:hover {
 .generate-report {
 	position: relative;
 	top: calc(75%);
-	right: calc(50%);
+	left: calc(50%);
 	height: fit-content;
 	width: fit-content;
 	background-color: var(--lightaccent);
