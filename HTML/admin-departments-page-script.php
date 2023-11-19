@@ -1,10 +1,5 @@
 <?php
 
-session_start();
-
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
 // Database connection details
 $host = "34.68.154.206";
 $database = "Post_Office_Schema";
@@ -50,13 +45,6 @@ function fetchEmployeeReport() {
         $employees[] = $row;
     }
 
+    $conn->close();
     return $employees;
 }
-
-$employeeData = []; // Initialize as empty array
-
-// Check if the generate report button has been clicked
-if (isset($_POST['generate_report'])) {
-    $employeeData = fetchEmployeeReport();
-}
-?>
