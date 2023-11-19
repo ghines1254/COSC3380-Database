@@ -1,14 +1,25 @@
 <?php
 
+session_start();
+
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-// Include your database connection script
-require_once 'init.php';
+// Database connection details
+$host = "34.68.154.206";
+$database = "Post_Office_Schema";
+$user = "root";
+$password = "umapuma";
 
-function fetchPackageHistory($startDate, $endDate) {
-    global $conn; // Ensure $conn is accessible if defined in 'init.php'
+// Create connection
+$conn = new mysqli($host, $user, $password, $database);
 
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+function fetchPackageHistory($conn, $startDate, $endDate) {
     // Prepare the SQL query
     $stmt = $conn->prepare("
         SELECT tracking_number, sender_full_name, sender_full_address, 
@@ -35,8 +46,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['startDate'], $_POST['
     $endDate = $_POST['endDate'];
 
     // Fetch package history
-    $packageHistory = fetchPackageHistory($startDate, $endDate);
+    $packageHistory = fetchPackageHistory($conn, $startDate, $endDate);
     // Store the results in the session to display on the admin page
     $_SESSION['packageHistory'] = $packageHistory;
 }
+
+// Close the database connection
+$conn->close();
 ?>
