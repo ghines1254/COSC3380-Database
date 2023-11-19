@@ -1,6 +1,22 @@
 <?php
 session_start();
-include 'admin-departments-page-script.php';
+require_once 'init.php'; 
+
+function fetchAllPackages() {
+    global $conn; // Use the database connection from init.php
+
+    $query = "SELECT tracking_number, sender_full_name, sender_full_address, receiver_full_name, receiver_full_address, status, updated_at FROM PACKAGE";
+    $result = $conn->query($query);
+
+    $packages = [];
+    while ($row = $result->fetch_assoc()) {
+        $packages[] = $row;
+    }
+
+    return $packages;
+}
+
+$packageData = fetchAllPackages();
 ?>
 
   <!DOCTYPE html>
@@ -31,40 +47,32 @@ include 'admin-departments-page-script.php';
         <img class="image-1-icon20" alt="" src="./public/image-12@2x.png" />
       </div>
 
-<!-- Date Filter Form -->
-        <div class="date-filter-form">
-            <form method="post" action="admin-departments-page.php">
-                <label for="startDate">Start Date:</label>
-                <input type="date" id="startDate" name="startDate" required>
-
-                <label for="endDate">End Date:</label>
-                <input type="date" id="endDate" name="endDate" required>
-
-                <input type="submit" value="Filter">
-            </form>
+ <!-- Package Data Display -->
+        <div class="package-data-report">
+            <?php if (!empty($packageData)): ?>
+                <table>
+                    <tr>
+                        <th>Tracking Number</th>
+                        <th>Sender</th>
+                        <th>Receiver</th>
+                        <th>Status</th>
+                        <th>Date Updated</th>
+                    </tr>
+                    <?php foreach ($packageData as $data): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($data['tracking_number']) ?></td>
+                            <td><?= htmlspecialchars($data['sender_full_name']) ?> (<?= htmlspecialchars($data['sender_full_address']) ?>)</td>
+                            <td><?= htmlspecialchars($data['receiver_full_name']) ?> (<?= htmlspecialchars($data['receiver_full_address']) ?>)</td>
+                            <td><?= htmlspecialchars($data['status']) ?></td>
+                            <td><?= htmlspecialchars($data['updated_at']) ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </table>
+            <?php else: ?>
+                <p>No package data found.</p>
+            <?php endif; ?>
         </div>
 
-        <!-- Package History Display -->
-        <div class="package-history-report">
-            <?php
-            if (isset($_SESSION['packageHistory']) && count($_SESSION['packageHistory']) > 0) {
-                echo "<table>";
-                echo "<tr><th>Tracking Number</th><th>Sender</th><th>Receiver</th><th>Status</th><th>Date</th></tr>";
-                foreach ($_SESSION['packageHistory'] as $history) {
-                    echo "<tr>";
-                    echo "<td>" . htmlspecialchars($history['tracking_number']) . "</td>";
-                    echo "<td>" . htmlspecialchars($history['sender_full_name']) . " (" . htmlspecialchars($history['sender_full_address']) . ")</td>";
-                    echo "<td>" . htmlspecialchars($history['receiver_full_name']) . " (" . htmlspecialchars($history['receiver_full_address']) . ")</td>";
-                    echo "<td>" . htmlspecialchars($history['status']) . "</td>";
-                    echo "<td>" . htmlspecialchars($history['updated_at']) . "</td>";
-                    echo "</tr>";
-                }
-                echo "</table>";
-            } else {
-                echo "<p>No package history found for the selected date range.</p>";
-            }
-            ?>
-        </div>
 
 
 
