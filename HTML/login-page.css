@@ -147,6 +147,7 @@
 	position: absolute;
 	top: 12px;
 	left: calc(50% - 436.5px);
+	width: auto;
 	display: flex;
 	flex-direction: row;
 	align-items: flex-start;
