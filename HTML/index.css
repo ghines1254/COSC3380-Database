@@ -85,15 +85,15 @@
 	display: block;
 }
 .rectangle-parent {
-	top: 10%;
+	top: 5%;
 	text-align: center;
 	position: relative;
-  width: calc(100% - 749px);
+	width: calc(100% - 749px);
 	height: 32px;
 	cursor: pointer;
 	display: inline-block;
 	color: var(--lightsecond);
-  font-weight: bold;
+	font-weight: bold;
 }
 .vector-parent {
 	position: absolute;
