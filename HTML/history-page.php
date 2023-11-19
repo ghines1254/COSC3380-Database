@@ -258,7 +258,7 @@
           </tbody>
         </table>
         <div class = "generate-report">
-          Generate Report
+          Generate
         </div>
       </div>
     </div>

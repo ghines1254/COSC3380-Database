@@ -329,12 +329,16 @@ tbody tr:hover {
 
 .generate-report {
 	position: absolute;
-	top: calc(75% + 100px);
-	left: calc(25% + 100px);
+	top: calc(75% + 200px);
+	left: calc(25% + 50px);
 	height: 35px;
 	width: fit-content;
 	background-color: var(--lightaccent);
 	border-radius: var(--br-3xs);
+	text-align: center;
+	font-size: var(--font-size-xl);
+	color: var(--fullblack);
+	font-family: var(--largetext);
 }
 .history-page {
 	position: relative;
