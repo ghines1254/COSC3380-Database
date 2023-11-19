@@ -113,11 +113,20 @@ require_once 'connection.php';
 
          
  <div class="products-outline">
-        <div class="check-out-the">Update product stock as needed here.</div>       
-
+        <div class="check-out-the">Update product stock as needed here.</div>    
+   
+<table class="products-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
     
- 
-
+ <tbody>
 <?php
 $query = "SELECT product_id, product_name, product_price, stock_remaining, product_description FROM IN_STORE_PRODUCTS";
 
@@ -143,7 +152,7 @@ while ($row = $result->fetch_assoc())
     
 }
 
-?>
+?> </tbody></table>
  </div>
 <script>
 function updateStock(productId, action) {
