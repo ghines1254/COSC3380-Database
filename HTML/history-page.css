@@ -450,7 +450,7 @@
 .history-component-parent {
 	position: absolute;
 	top: 320px;
-	left: calc(50% - 260px);
+	left: calc(50% - 255px);
 	width: 880px;
 	height: 680px;
 	text-align: center;
