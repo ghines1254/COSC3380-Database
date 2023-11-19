@@ -1,4 +1,6 @@
 <?php
+require_once "connection.php";
+
   session_start();
 
   // Check if the user is logged in
@@ -10,6 +12,7 @@
 
   $emp_info = $_SESSION['emp_info'];
 ?>
+
 
 <!DOCTYPE html>
 <html>
