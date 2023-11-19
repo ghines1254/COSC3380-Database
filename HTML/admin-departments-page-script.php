@@ -19,38 +19,28 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-function fetchPackageHistory($conn, $startDate, $endDate) {
-    // Prepare the SQL query
-    $stmt = $conn->prepare("
-        SELECT tracking_number, sender_full_name, sender_full_address, 
-               receiver_full_name, receiver_full_address, status, updated_at
-        FROM PACKAGE
-        WHERE updated_at BETWEEN ? AND ?
-    ");
-    $stmt->bind_param("ss", $startDate, $endDate);
-    $stmt->execute();
-    $result = $stmt->get_result();
+function fetchAllPackages() {
+    global $conn;
 
-    $packageHistory = [];
-    while ($row = $result->fetch_assoc()) {
-        $packageHistory[] = $row;
+    $query = "SELECT tracking_number, sender_full_name, sender_full_address, receiver_full_name, receiver_full_address, status FROM PACKAGE";
+    $result = $conn->query($query);
+
+    if ($result === false) {
+        die("Error: " . $conn->error);
     }
 
-    $stmt->close();
-    return $packageHistory;
+    $packages = [];
+    while ($row = $result->fetch_assoc()) {
+        $packages[] = $row;
+    }
+
+    return $packages;
 }
 
-// Check if the form has been submitted
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['startDate'], $_POST['endDate'])) {
-    $startDate = $_POST['startDate'];
-    $endDate = $_POST['endDate'];
+$packageData = []; // Initialize as empty array
 
-    // Fetch package history
-    $packageHistory = fetchPackageHistory($conn, $startDate, $endDate);
-    // Store the results in the session to display on the admin page
-    $_SESSION['packageHistory'] = $packageHistory;
+// Check if the generate report button has been clicked
+if (isset($_POST['generate_report'])) {
+    $packageData = fetchAllPackages();
 }
-
-// Close the database connection
-$conn->close();
 ?>

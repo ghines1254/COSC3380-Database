@@ -29,8 +29,9 @@
 require_once 'init.php';
 require_once 'connection.php';
         ?>
-      
+   
   </head>
+
   <body>
     <div class="employee-checkout-page">
       <div class="minibackground9">
@@ -103,7 +104,6 @@ require_once 'connection.php';
     
     </div>
 
-
 <?php
 $query = "SELECT product_id, product_name, product_price, stock_remaining FROM IN_STORE_PRODUCTS";
 
@@ -117,8 +117,9 @@ if (!$result)
 while ($row = $result->fetch_assoc()) 
 {
     echo "<div>";
-    echo "<span>{$row['product_id']}</span>";
-    echo "<span>{$row['product_name']}</span>";
+    echo "<span>{$row['product_id']} </span>";
+    echo "<span>{$row['product_name']} </span>";
+    echo "<span> Price: {$row['product_price']} </span>";
     echo "<span id='stock_{$row['product_id']}'>Stock: {$row['stock_remaining']}</span>";
     echo "<button onclick=\"updateStock('{$row['product_id']}', 'increment')\">+</button>";
     echo "<button onclick=\"updateStock('{$row['product_id']}', 'decrement')\">-</button>";
