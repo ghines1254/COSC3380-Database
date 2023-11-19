@@ -110,8 +110,8 @@
                     <b class="button-242">Account</b>
                   </div>
                 </div>
-                <div class = "portal-page25"></div>
               </div>
+              <div class = "portal-page25"></div>
             </div>
           </div>
         </div>
