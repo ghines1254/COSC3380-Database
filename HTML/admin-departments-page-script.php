@@ -1,22 +1,23 @@
 <?php
-
 // Database connection details
 $host = "34.68.154.206";
 $database = "Post_Office_Schema";
 $user = "root";
 $password = "umapuma";
 
-// Create connection
-$conn = new mysqli($host, $user, $password, $database);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
+// Function to fetch employee report
 function fetchEmployeeReport() {
-    global $conn;
+    global $host, $user, $password, $database;
 
+    // Create connection
+    $conn = new mysqli($host, $user, $password, $database);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Query to fetch employee data
     $query = "
         SELECT 
             e.idnum, 
@@ -34,17 +35,19 @@ function fetchEmployeeReport() {
         LEFT JOIN TRACKING_INFO ti ON e.idnum = ti.delivered_by
         GROUP BY e.idnum
     ";
+
     $result = $conn->query($query);
-
-    if ($result === false) {
-        die("Error: " . $conn->error);
-    }
-
     $employees = [];
-    while ($row = $result->fetch_assoc()) {
-        $employees[] = $row;
+
+    if ($result) {
+        while ($row = $result->fetch_assoc()) {
+            $employees[] = $row;
+        }
+    } else {
+        echo "Error: " . $conn->error;
     }
 
     $conn->close();
     return $employees;
 }
+?>
