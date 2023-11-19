@@ -1,42 +1,50 @@
-<?php
-session_start();
-require_once 'init.php'; // Initialization file
-
-$user_email = $_SESSION['user_email'] ?? '';
-
-$stmt = $conn->prepare("
-    SELECT pn.tracking_number, pn.notification_message 
-    FROM PACKAGE_NOTIFICATIONS pn
-    JOIN PACKAGE p ON pn.tracking_number = p.tracking_number
-    WHERE p.sender_email = ? AND pn.notification_sent = FALSE
-");
-$stmt->bind_param("s", $user_email);
-$stmt->execute();
-$result = $stmt->get_result();
-?>
-
-<!-- HTML for displaying notifications -->
-<?php
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        echo "<p>" . htmlspecialchars($row['notification_message']) . " (Tracking Number: " . htmlspecialchars($row['tracking_number']) . ")</p>";
-        // Optionally, mark notification as sent
-        $updateStmt = $conn->prepare("UPDATE PACKAGE_NOTIFICATIONS SET notification_sent = TRUE WHERE tracking_number = ?");
-        $updateStmt->bind_param("s", $row['tracking_number']);
-        $updateStmt->execute();
-    }
-} else {
-    echo "<p>No new delivery notifications.</p>";
-}
-$stmt->close();
-$updateStmt->close();
-?>
-
-
-
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
+    <!-- Head contents like meta tags, title, and links to CSS -->
+</head>
+<body>
+    <?php
+    session_start();
+    require_once 'init.php'; // Initialization file
+
+    $user_email = $_SESSION['user_email'] ?? '';
+
+    // Prepare and execute the statement
+    $stmt = $conn->prepare("
+        SELECT pn.tracking_number, pn.notification_message 
+        FROM PACKAGE_NOTIFICATIONS pn
+        JOIN PACKAGE p ON pn.tracking_number = p.tracking_number
+        WHERE p.sender_email = ? AND pn.notification_sent = FALSE
+    ");
+    $stmt->bind_param("s", $user_email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    // Display notifications
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            echo "<p>" . htmlspecialchars($row['notification_message']) . " (Tracking Number: " . htmlspecialchars($row['tracking_number']) . ")</p>";
+            // Update PACKAGE_NOTIFICATIONS table
+            $updateStmt = $conn->prepare("UPDATE PACKAGE_NOTIFICATIONS SET notification_sent = TRUE WHERE tracking_number = ?");
+            $updateStmt->bind_param("s", $row['tracking_number']);
+            $updateStmt->execute();
+        }
+    } else {
+        echo "<p>No new delivery notifications.</p>";
+    }
+
+    // Close statements
+    $stmt->close();
+    if (isset($updateStmt)) {
+        $updateStmt->close();
+    }
+    ?>
+
+
+</body>
+</html>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
