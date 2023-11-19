@@ -60,7 +60,6 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
     } else {
         echo "Error inserting customer status or no changes made.";
         header("Location: cutomer-portal-nofications-page.html");
-        exit();
     }
 
     $stmt->close();
