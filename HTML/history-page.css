@@ -294,7 +294,7 @@
 	gap: var(--gap-3xs);
 	font-size: var(--font-size-29xl);
 }
-.history-component-parent {
+.history-table {
 	position: absolute;
 	top: 287px;
 	left: calc(50% - 253px);
