@@ -1589,13 +1589,13 @@
             //Code to display notifications for users current packaged
             $notificationsLimit = 10;
             $count = 0;
-            $stmt=$conn->prepare("SELECT PACKAGE.tracking_number, TRACKING_INFO.last_updated, PACKAGE.tracking_message
-                      FROM CUSTOMER
-                      JOIN CUSTOMER_TO_PACKAGE ON CUSTOMER.customer_id = CUSTOMER_TO_PACKAGE.customer_id
-                      JOIN PACKAGE ON CUSTOMER_TO_PACKAGE.package_id = PACKAGE.package_id
-                      JOIN TRACKING_INFO ON PACKAGE.package_id = TRACKING_INFO.package_id
-                      WHERE CUSTOMER.customer_email = ?
-                      ORDER BY TRACKING_INFO.last_updated DESC");
+            $stmt=$conn->prepare("SELECT PACKAGE.tracking_number, TRACKING_INFO.last_updated, PACKAGE.message
+                                  FROM CUSTOMER
+                                  JOIN Customer_To_Package ON CUSTOMER.customer_id = Customer_To_Package.customer_id
+                                  JOIN PACKAGE ON Customer_To_Package.package_id = PACKAGE.tracking_number
+                                  JOIN TRACKING_INFO ON PACKAGE.tracking_number = TRACKING_INFO.package_id
+                                  WHERE CUSTOMER.email = ?
+                                  ORDER BY TRACKING_INFO.last_updated DESC");
             $stmt->bind_param("s", $user_info['email']);
             if (!$stmt->execute()) {
               echo "Execution failed: " . $stmt->error;
