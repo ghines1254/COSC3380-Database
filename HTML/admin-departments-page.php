@@ -24,6 +24,49 @@
       <div class="admin-departments-page-child"></div>
       <div class="minibackground1">
         <img class="image-1-icon1" alt="" src="./public/image-12@2x.png" />
+
+
+  <!-- Centered Generate Report Form -->
+        <div style="text-align: center; padding: 20px;">
+            <form method="post" action="">
+                <input type="submit" name="generate_report" value="Generate Report">
+            </form>
+        </div>
+
+        <!-- Employee Data Display -->
+        <div class="employee-data-report">
+            <?php
+            include 'admin-departments-page-script.php';
+
+            if (isset($_POST['generate_report'])) {
+                $employeeData = fetchEmployeeReport();
+                
+                if (!empty($employeeData)): ?>
+                    <table>
+                        <!-- Table Headers -->
+                        <tr>
+                            <th>ID</th>
+                            <th>First Name</th>
+                            <!-- Other headers -->
+                        </tr>
+                        <!-- Table Rows -->
+                        <?php foreach ($employeeData as $data): ?>
+                            <tr>
+                                <td><?= htmlspecialchars($data['idnum']) ?></td>
+                                <td><?= htmlspecialchars($data['first_name']) ?></td>
+                                <!-- Other data cells -->
+                            </tr>
+                        <?php endforeach; ?>
+                    </table>
+                <?php else: ?>
+                    <p>No employee data found.</p>
+                <?php endif;
+            }
+            ?>
+        </div>
+    </div>
+
+        
       </div>
       <div class="navigation-bar-light1">
         <div class="navigation-bar1"></div>
