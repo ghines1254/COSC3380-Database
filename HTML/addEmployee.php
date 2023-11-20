@@ -19,7 +19,7 @@ $ssn = $_POST['ssn'];
 $dept = $_POST['department'];
 $pw = $_POST['password'];
 
-$query = "INSERT INTO EMPLOYEE(first_name, minit, last_name, idnum, sex, birthdate, street_address, city, state, zipcode, phone, email, ssn, dept, emp_password) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+$query = "INSERT INTO EMPLOYEE(first_name, minit, last_name, idnum, sex, birthdate, street_address, city, state, zipcode, phone, email, ssn, dept, emp_password) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($query);
 $stmt->bind_param("sssssssssssssss", $firstName, $middleInitial, $lastName, $empID, $gender, $birthdate, $streetAddress, $city, $state, $zipcode, $phone, $email, $ssn, $dept, $pw);
 
