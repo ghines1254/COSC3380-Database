@@ -512,13 +512,17 @@ function addEmployee() {
         alert('Employee added successfully:', data);
     })
  .catch(error => {
-        console.error('Error adding employee:', error);
+    console.error('Error adding employee:', error);
+    if (error instanceof TypeError) {
+        console.log('Server error response:', error.message);
+    } else {
         return error.text().then(errorMessage => {
             console.log('Server error response:', errorMessage);
         }).catch(innerError => {
             console.error('Error getting error message:', innerError);
         });
-    });
+    }
+});
 }
 </script>
 
