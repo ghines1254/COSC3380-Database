@@ -513,6 +513,10 @@ function addEmployee() {
     })
     .catch(error => {
         alert('Error adding employee:', error);
+        return error.text();
+ })
+    .then(errorMessage => {
+        console.log('Server error response:', errorMessage);
     });
 }
 </script>
