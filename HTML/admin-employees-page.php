@@ -343,10 +343,7 @@ require_once 'init.php';
         id="vector"
       />
 
-      <button class="button429" id="button4">
-        <div class="button4-child27"></div>
-        <b class="generate-report">Generate Report</b>
-      </button>
+
         
 <div class = "frame12">
 <table class="employees-table">
