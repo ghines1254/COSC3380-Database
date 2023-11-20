@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 $firstName = $_POST['firstName'];
-$middleInitial = $_POST['middleInitial'];
+$middleInitial = !empty($_POST['middleInitial']) ? $_POST['middleInitial'] : null;
 $lastName = $_POST['lastName'];
 $empID = $_POST['employeeID'];
 $gender = $_POST['gender'];
