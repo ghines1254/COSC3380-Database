@@ -1,27 +1,20 @@
 <?php
 require_once 'init.php';
+
+
+function getEmployeeList($con)
+{
+$query = "SELECT idnum, first_name, last_name, department FROM EMPLOYEE";
+$result = $conn->query($query);
+
+if ($result) {
+    $employees = $result->fetch_all(MYSQLI_ASSOC);
+    echo json_encode($employees);
+} else {
+    echo json_encode(["error" => "Failed to fetch employee data"]);
+}
+
+$conn->close();
+}
+
 ?>
-
-<?php
-include("connection.php");
-
-function checklogin($con)
-    {
-        if(isset($_SESSION['userid']))
-        {
-            $id = $_SESSION['userid'];
-            $query = "SELECT W.UserId FROM WEBUSERS AS W WHERE W.UserId = '$id' limit 1";
-            $result = mysqli_query($con, $query);
-
-            if($result && mysqli_num_rows > 0)
-            {
-                $userdata = mysqli_fetch_assoc($result);
-                return $userdata;
-            }
-        }
-
-
-        header("Location: login-page.php");
-        die;
-        
-    }
