@@ -86,9 +86,7 @@
           </form>
         </div>
       </div>
-    </div>
-
-    <!-- Employee Data Display outside of admin-portal-outline -->
+         <!-- Employee Data Display outside of admin-portal-outline -->
     <div class="employee-data-report" style="margin-top: 20px;">
       <?php
       include 'admin-departments-page-script.php';
@@ -131,6 +129,10 @@
       }
       ?>
     </div>
+    </div>
+
+    <!-- Employee Data Display outside of admin-portal-outline -->
+  
 
     <img class="vector-icon" alt="" src="./public/vector15.svg" id="vector" />
 
