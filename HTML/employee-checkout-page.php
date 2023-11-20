@@ -170,7 +170,7 @@ function updateStock(productId, action) {
 
             if (response.includes('@error_message:No stock')) {
                 alert("Item is out of stock. Please restock as soon as possible.");
-           } else if (response.includes('@error_message:Low stock')) {
+           } else if (parseInt(response) <= 10) {
                 alert("Stock is running low. Please order new shipment of stock.");
             } else {
                 console.error("Response does not match expected error messages:", response);
