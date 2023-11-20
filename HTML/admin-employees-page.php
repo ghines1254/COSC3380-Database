@@ -508,9 +508,11 @@ function addEmployee() {
         }
         return response.json(); 
     })
-    .then(data => {
-        alert('Employee added successfully:' + JSON.stringify(data));
-    })
+   .then(data => {
+    console.log(data);
+    alert('Employee added successfully: ' + JSON.stringify(data));
+})
+    
  .catch(error => {
     console.error('Error adding employee:', error);
     if (error instanceof TypeError) {
