@@ -481,7 +481,7 @@ while ($row = $result->fetch_assoc())
     <input type="text" id="ssn" name="ssn" pattern="\d{9}" required>
 
     <label for="department">Department (optional):</label>
-    <input type="text" id="department" name="department">
+    <input type="text" id="department" name="department" required>
 
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" required>
