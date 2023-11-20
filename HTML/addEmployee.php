@@ -1,5 +1,7 @@
 <?php
 require_once "init.php";
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
 $firstName = $_POST['firstName'];
 $middleInitial = $_POST['middleInitial'];
