@@ -24,7 +24,7 @@
       <div class="admin-departments-page-child">
 
 
- !-- Centered Generate Report Form -->
+<!--  !-- Centered Generate Report Form --> 
         <div class="generate-report-form" style="text-align: center; padding: 20px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2;">
             <form method="post" action="">
                 <input type="submit" name="generate_report" value="Generate Report">
