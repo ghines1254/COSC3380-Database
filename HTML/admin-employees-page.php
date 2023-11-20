@@ -509,7 +509,7 @@ function addEmployee() {
         return response.json(); 
     })
     .then(data => {
-        alert('Employee added successfully:', data);
+        alert('Employee added successfully:' + data);
     })
  .catch(error => {
     console.error('Error adding employee:', error);
