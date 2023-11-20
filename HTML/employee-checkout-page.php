@@ -170,11 +170,12 @@ function updateStock(productId, action) {
 
             if (response.includes('@error_message:No stock')) {
                 alert("Item is out of stock. Please restock as soon as possible.");
-            } else if (response.includes('@error_message:Low stock')) {
+           } else if (response.includes('@error_message:Low stock')) {
                 alert("Stock is running low.");
             } else {
-                var updatedStock = parseInt(response);
+                console.error("Response does not match expected error messages:", response);
 
+                var updatedStock = parseInt(response);
                 if (!isNaN(updatedStock)) {
                     // Update the displayed stock
                     document.getElementById(`stock_${productId}`).innerText = `${updatedStock}`;
