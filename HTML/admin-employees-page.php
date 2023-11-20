@@ -348,9 +348,38 @@ require_once 'init.php';
         <b class="generate-report">Generate Report</b>
       </button>
 
-        <?php
-            // Your PHP logic can go here if needed
-        ?>
+<table class="employees-table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Description</th>
+            <th>Employee ID</th>
+            <th>Department</th>
+        </tr>
+    </thead>
+    
+ <tbody>
+<?php
+$query = "SELECT first_name, last_name, idnum, dept FROM EMPLOYEE";
+
+$result = $conn->query($query);
+
+if (!$result) 
+{
+    die("Error retrieving product information: " . $conn->error);
+}
+
+while ($row = $result->fetch_assoc()) 
+{
+    echo "<tr>";
+    echo "<td>{$row['first_name']}</td>";
+    echo "<td>{$row['last_name']}</td>";
+    echo "<td>{$row['idnum']}</td>";
+    echo "<td>{$row['dept']}</td>";
+    echo "</tr>";
+}
+?> </tbody></table>
 
         <script>
             var frameContainer1 = document.getElementById("frameContainer1");
