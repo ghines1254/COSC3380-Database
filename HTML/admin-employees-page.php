@@ -356,18 +356,19 @@ require_once 'init.php';
             <th>Last Name</th>
             <th>Employee ID</th>
             <th>Department</th>
+            <th>Location</th>
         </tr>
     </thead>
     
  <tbody>
 <?php
-$query = "SELECT first_name, last_name, idnum, dept FROM EMPLOYEE";
+$query = "SELECT first_name, last_name, idnum, dept, branch_id FROM EMPLOYEE E JOIN DEPARTMENT D ON E.dept = D.dept_id JOIN POST_OFFICE P ON D.works_at = P.branch_id";
 
 $result = $conn->query($query);
 
 if (!$result) 
 {
-    die("Error retrieving product information: " . $conn->error);
+    die("Error retrieving employee information: " . $conn->error);
 }
 
 while ($row = $result->fetch_assoc()) 
@@ -377,6 +378,7 @@ while ($row = $result->fetch_assoc())
     echo "<td>{$row['last_name']}</td>";
     echo "<td>{$row['idnum']}</td>";
     echo "<td>{$row['dept']}</td>";
+    echo "<td>{$row['branch_id']}</td>";
     echo "</tr>";
 }
 ?> </tbody></table></div>
