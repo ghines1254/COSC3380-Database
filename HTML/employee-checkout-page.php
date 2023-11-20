@@ -172,6 +172,13 @@ function updateStock(productId, action) {
                 alert("Item is out of stock. Please restock as soon as possible.");
            } else if (parseInt(response) <= 10) {
                 alert("Stock is running low. Please order new shipment of stock.");
+                var updatedStock = parseInt(response);
+                if (!isNaN(updatedStock)) {
+                    // Update the displayed stock
+                    document.getElementById(`stock_${productId}`).innerText = `${updatedStock}`;
+                } else {
+                    console.error("Invalid stock value received from the server");
+                }
             } else {
                 console.error("Response does not match expected error messages:", response);
 
