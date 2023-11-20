@@ -511,12 +511,13 @@ function addEmployee() {
     .then(data => {
         alert('Employee added successfully:', data);
     })
-    .catch(error => {
-        alert('Error adding employee:', error);
-        return error.text();
- })
-    .then(errorMessage => {
-        console.log('Server error response:', errorMessage);
+ .catch(error => {
+        console.error('Error adding employee:', error);
+        return error.text().then(errorMessage => {
+            console.log('Server error response:', errorMessage);
+        }).catch(innerError => {
+            console.error('Error getting error message:', innerError);
+        });
     });
 }
 </script>
