@@ -9,13 +9,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $productId = $_POST['productId'];
     $action = $_POST['action'];
 
-
-
-    if ($action === 'increment'){
-    $query = "UPDATE IN_STORE_PRODUCTS SET stock_remaining = stock_remaining+1 WHERE product_id = ?";
-    }
-    if ($action === 'decrement'){
-    $query = "UPDATE IN_STORE_PRODUCTS SET stock_remaining = stock_remaining-1 WHERE product_id = ?";
+    if ($action === 'increment') {
+        $query = "UPDATE IN_STORE_PRODUCTS SET stock_remaining = stock_remaining + 1 WHERE product_id = ?";
+    } elseif ($action === 'decrement') {
+        $query = "UPDATE IN_STORE_PRODUCTS SET stock_remaining = stock_remaining - 1 WHERE product_id = ?";
     }
 
     $stmt = $conn->prepare($query);
@@ -23,15 +20,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->execute();
    
     if ($stmt->affected_rows > 0) {
-        // Check if an error message is received
-        if (isset($conn->error) && $conn->error == '@error_message') {
-            echo '@error_message:' . $conn->error;
-        } else {
-            $updatedStock = getUpdatedStock($conn, $productId);
-            echo $updatedStock;
-        }
+        $updatedStock = getUpdatedStock($conn, $productId);
+        echo $updatedStock;
     } else {
-        echo "Error updating stock: " . $conn->error;
+        $error_message = $conn->error;
+        echo "Error updating stock: " . $error_message;
+        echo "<script>parent.window.postMessage('@error_message:$error_message', '*');</script>";
     }
 
     $conn->close();
@@ -49,5 +43,4 @@ function getUpdatedStock($conn, $productId) {
     $stmt->close();
     return $updatedStock;
 }
-
 ?>
