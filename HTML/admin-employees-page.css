@@ -896,6 +896,21 @@
   text-align: left;
   font-size: var(--font-size-sm);
   font-family: var(--font-inter);
+    }
+
+    .frame12 th,
+    .frame12 td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .products-table th {
+        background-color: #f2f2f2;
+    }
+
+
+  
 }
 .current-employee-list {
   position: absolute;
