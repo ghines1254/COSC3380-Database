@@ -347,13 +347,13 @@ require_once 'init.php';
         <div class="button4-child27"></div>
         <b class="generate-report">Generate Report</b>
       </button>
-
+        
+<div class = "frame12">
 <table class="employees-table">
     <thead>
         <tr>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Description</th>
             <th>Employee ID</th>
             <th>Department</th>
         </tr>
@@ -379,7 +379,7 @@ while ($row = $result->fetch_assoc())
     echo "<td>{$row['dept']}</td>";
     echo "</tr>";
 }
-?> </tbody></table>
+?> </tbody></table></div>
 
         <script>
             var frameContainer1 = document.getElementById("frameContainer1");
