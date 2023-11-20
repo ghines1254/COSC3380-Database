@@ -20,9 +20,6 @@
     />
   </head>
   <body>
-    <div class="admin-departments-page">
-      <div class="admin-departments-page-child">
-
 
 <!--  !-- Centered Generate Report Form --> 
         <div class="generate-report-form" style="text-align: center; padding: 20px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2;">
@@ -77,6 +74,13 @@
             ?>
         </div>
     </div>
+
+
+    
+    <div class="admin-departments-page">
+      <div class="admin-departments-page-child">
+
+
 
         
       </div>
