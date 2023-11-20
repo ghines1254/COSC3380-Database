@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } else {
         $error_message = $conn->error;
         echo "Error updating stock: " . $error_message;
-        echo "<script>parent.window.postMessage('@error_message:$error_message', '*');</script>";
+        echo "@error_message:$error_message";
     }
 
     $conn->close();
