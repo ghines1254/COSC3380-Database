@@ -166,6 +166,8 @@ function updateStock(productId, action) {
     xhr.onload = function () {
         if (xhr.status == 200) {
             var response = xhr.responseText.trim();
+            console.log("Server response:", response); // Log the response to the console
+
             if (response.startsWith('@error_message:')) {
                 var errorMessage = response.substring('@error_message:'.length);
                 alert("Stock error received from the server: " + errorMessage);
