@@ -569,30 +569,8 @@ function addEmployee() {
                 vector.addEventListener("click", function (e) {
                 window.location.href = "./admin-portal-nofications-page.html";
                 });
-            }
+            };
 
-            var button4 = document.getElementById("button4");
-
-            if (button4) {
-                button4.addEventListener("click", function (e) {
-                    fetch('get-employee-list.php')         }
-
-                return response.json();
-            }
-            .then(data => {
-
-                console.log(data);
-
-                data.forEach(employee => {
-                    console.log(`First Name: ${EMPLOYEE.first_name}, Last Name: ${employee.last_name}, Email: ${employee.employee_email}, ID: ${employee.idnum}, Dept: ${employee.dept}`);
-                });
-            })
-            .catch(error => {
-                // Handle errors
-                console.error('Fetch error:', error);
-            });
-    });
-                };
             
         </script>
     </div>
