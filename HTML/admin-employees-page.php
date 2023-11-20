@@ -498,6 +498,13 @@ while ($row = $result->fetch_assoc())
 function addEmployee() {
     const formData = new FormData(document.getElementById('addEmployeeForm'));
 
+    for (const [key, value] of formData.entries()) {
+        if (document.getElementById(key).hasAttribute('required') && value.trim() === '') {
+            alert(`Please fill in the required field: ${key}`);
+            return; // Stop form submission
+        }
+    }
+
     fetch('addEmployee.php', {
         method: 'POST',
         body: formData
