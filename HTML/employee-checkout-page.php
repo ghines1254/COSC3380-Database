@@ -168,11 +168,13 @@ function updateStock(productId, action) {
             var response = xhr.responseText.trim();
             console.log("Server response:", response); // Log the response to the console
 
-            if (response.startsWith('@error_message:')) {
-                var errorMessage = response.substring('@error_message:'.length);
-                alert("Stock error received from the server: " + errorMessage);
+            if (response.includes('@error_message:No stock')) {
+                alert("Item is out of stock. Please restock as soon as possible.");
+            } else if (response.includes('@error_message:Low stock')) {
+                alert("Stock is running low.");
             } else {
                 var updatedStock = parseInt(response);
+
                 if (!isNaN(updatedStock)) {
                     // Update the displayed stock
                     document.getElementById(`stock_${productId}`).innerText = `${updatedStock}`;
