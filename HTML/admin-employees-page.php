@@ -362,7 +362,7 @@ require_once 'init.php';
     
  <tbody>
 <?php
-$query = "SELECT first_name, last_name, idnum, dept, branch_id FROM EMPLOYEE E JOIN DEPARTMENT D ON E.dept = D.dept_id JOIN POST_OFFICE P ON D.works_at = P.branch_id";
+$query = "SELECT first_name, last_name, idnum, dept, branch_id FROM EMPLOYEE E JOIN DEPARTMENT D ON E.dept = D.dept_id JOIN POST_OFFICE P ON D.works_at = P.branch_id ORDER BY idnum ASC";
 
 $result = $conn->query($query);
 
