@@ -494,6 +494,29 @@ while ($row = $result->fetch_assoc())
 
 </div>
 
+<script>
+function addEmployee() {
+    const formData = new FormData(document.getElementById('addEmployeeForm'));
+
+    fetch('addEmployee.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json(); 
+    })
+    .then(data => {
+        alert('Employee added successfully:', data);
+    })
+    .catch(error => {
+        alert('Error adding employee:', error);
+    });
+}
+</script>
+
         <script>
             var frameContainer1 = document.getElementById("frameContainer1");
             if (frameContainer1) {
