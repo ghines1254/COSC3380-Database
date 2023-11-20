@@ -23,14 +23,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->execute();
    
     if ($stmt->affected_rows > 0) {
-        $updatedStock = getUpdatedStock($conn, $productId);
-        echo $updatedStock;
+        // Check if an error message is received
+        if (isset($conn->error) && $conn->error == '@error_message') {
+            echo '@error_message:' . $conn->error;
+        } else {
+            $updatedStock = getUpdatedStock($conn, $productId);
+            echo $updatedStock;
+        }
     } else {
         echo "Error updating stock: " . $conn->error;
     }
 
     $conn->close();
-
 } else {
     echo "Invalid request method";
 }
