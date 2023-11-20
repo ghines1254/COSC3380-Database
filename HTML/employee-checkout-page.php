@@ -159,27 +159,24 @@ while ($row = $result->fetch_assoc())
   </div>
 <script>
 function updateStock(productId, action) {
-  
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "updateStock.php", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    
+
     xhr.onload = function () {
         if (xhr.status == 200) {
             var response = xhr.responseText.trim();
-            var updatedStock = parseInt(response);
-
-            if (!isNaN(updatedStock)) {
-                // Update the displayed stock
-                document.getElementById(`stock_${productId}`).innerText = `${updatedStock}`;
-                var lowStockThreshold = 10;
-                if (updatedStock === 0) {
-                  alert("Item is out of stock. Please restock as soon as possible.");
-                } else if (updatedStock <= lowStockThreshold) {
-                    alert("Stock is running low.");
-                }
+            if (response.startsWith('@error_message:')) {
+                var errorMessage = response.substring('@error_message:'.length);
+                alert("Stock error received from the server: " + errorMessage);
             } else {
-                console.error("Invalid stock value received from the server");
+                var updatedStock = parseInt(response);
+                if (!isNaN(updatedStock)) {
+                    // Update the displayed stock
+                    document.getElementById(`stock_${productId}`).innerText = `${updatedStock}`;
+                } else {
+                    console.error("Invalid stock value received from the server");
+                }
             }
         } else {
             console.error("Request failed with status: " + xhr.status);
