@@ -8,18 +8,22 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600;700;800;900&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />
-  <style>
+   <style>
     .report-table {
       width: 100%;
-      max-width: 700px;
       border-collapse: collapse;
-      margin-left: auto;
-      margin-right: auto;
     }
     .report-table th, .report-table td {
       border: 1px solid black;
       padding: 8px;
       text-align: left;
+    }
+    .table-container {
+      max-width: 870px;
+      max-height: 570px;
+      overflow: auto; /* enables scrolling */
+      margin-left: auto;
+      margin-right: auto;
     }
   </style>
 </head>
@@ -92,6 +96,7 @@
       include 'admin-departments-page-script.php';
       if (isset($_POST['generate_report'])) {
         $employeeData = fetchEmployeeReport();
+        <div class="table-container">
         if (!empty($employeeData)): ?>
           <table class="report-table">
             <tr>
