@@ -1,5 +1,5 @@
-
-<?phprequire_once 'init.php';
+<?php
+require_once 'init.php';
 
 // Retrieve the tracking number and filter parameters from the GET parameters
 $trackingNumber = isset($_GET['tracking_number']) ? $_GET['tracking_number'] : '';
@@ -56,7 +56,7 @@ if ($result->num_rows > 0) {
     <meta charset="UTF-8">
     <title>Package History</title>
     <link rel="icon" type="image/x-icon" href="/images/coogpawfavicon.png" />
-    <link rel="icon" type="image/x-icon" href="/images/coogpawfavicon.png" />
+	<link rel="icon" type="image/x-icon" href="/images/coogpawfavicon.png" />
     <!-- add stylesheet here -->
 </head>
 <body>
@@ -110,5 +110,3 @@ if ($result->num_rows > 0) {
     ?>
 </body>
 </html>
-
-
