@@ -14,41 +14,37 @@ $stmt->execute();
 $trackingInfoResult = $stmt->get_result();
 $trackingInfo = $trackingInfoResult->fetch_assoc();
 
-// Construct the query for package history with optional filters
+// Fetch package history data
 $queryPackageHistory = "SELECT * FROM PACKAGE_HISTORY WHERE package_id = ?";
+$parameters = [$packageId];
+
 if (!empty($startDate) && !empty($endDate)) {
     $queryPackageHistory .= " AND time_scanned BETWEEN ? AND ?";
-}
-if (!empty($attribute)) {
-    $queryPackageHistory .= " AND ? IS NOT NULL";
+    array_push($parameters, $startDate, $endDate);
 }
 
 $stmtHistory = $conn->prepare($queryPackageHistory);
-if (!empty($startDate) && !empty($endDate) && !empty($attribute)) {
-    $stmtHistory->bind_param("sss", $packageId, $startDate, $endDate, $attribute);
-} elseif (!empty($startDate) && !empty($endDate)) {
-    $stmtHistory->bind_param("sss", $packageId, $startDate, $endDate);
-} elseif (!empty($attribute)) {
-    $stmtHistory->bind_param("ss", $packageId, $attribute);
-} else {
-    $stmtHistory->bind_param("s", $packageId);
-}
+$stmtHistory->bind_param(str_repeat("s", count($parameters)), ...$parameters);
 $stmtHistory->execute();
 $packageHistoryResult = $stmtHistory->get_result();
 
-// HTML and PHP mix to display the results
+// Get all columns from PACKAGE_HISTORY to use in the filter dropdown
+$columnsQuery = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'Post_Office_Schema' AND TABLE_NAME = 'PACKAGE_HISTORY'";
+$columnsResult = $conn->query($columnsQuery);
+$columns = $columnsResult->fetch_all(MYSQLI_ASSOC);
+
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Package History</title>
-    <!-- Your styles and scripts here -->
+    <!-- Include your stylesheet links and other head elements here -->
 </head>
 <body>
 <h2>Tracking History for Package: <?php echo htmlspecialchars($packageId); ?></h2>
 
 <h3>Tracking Information</h3>
-<table>
+<table border="1">
     <!-- Display the tracking information -->
     <?php foreach ($trackingInfo as $column => $value): ?>
         <tr>
@@ -68,9 +64,12 @@ $packageHistoryResult = $stmtHistory->get_result();
 
     <label for="attribute">Attribute:</label>
     <select id="attribute" name="attribute">
-        <!-- Populate this with options for your attributes -->
         <option value="">Select an attribute</option>
-        <!-- ... Other options ... -->
+        <?php foreach ($columns as $column): ?>
+            <option value="<?php echo $column['COLUMN_NAME']; ?>" <?php echo ($attribute == $column['COLUMN_NAME']) ? 'selected' : ''; ?>>
+                <?php echo $column['COLUMN_NAME']; ?>
+            </option>
+        <?php endforeach; ?>
     </select>
 
     <input type="hidden" name="tracking_number" value="<?php echo htmlspecialchars($packageId); ?>">
@@ -78,19 +77,19 @@ $packageHistoryResult = $stmtHistory->get_result();
 </form>
 
 <h3>Package History</h3>
-<table>
+<table border="1">
     <!-- Headers for package history -->
     <tr>
-        <th>Package ID</th>
-        <th><?php echo !empty($attribute) ? htmlspecialchars($attribute) : 'Attribute'; ?></th>
-        <th>Time Scanned</th>
+        <?php foreach ($columns as $column): ?>
+            <th><?php echo htmlspecialchars($column['COLUMN_NAME']); ?></th>
+        <?php endforeach; ?>
     </tr>
     <!-- Display the package history -->
     <?php while ($row = $packageHistoryResult->fetch_assoc()): ?>
         <tr>
-            <td><?php echo htmlspecialchars($row['package_id']); ?></td>
-            <td><?php echo !empty($attribute) ? htmlspecialchars($row[$attribute]) : 'Value'; ?></td>
-            <td><?php echo htmlspecialchars($row['time_scanned']); ?></td>
+            <?php foreach ($columns as $column): ?>
+                <td><?php echo htmlspecialchars($row[$column['COLUMN_NAME']]); ?></td>
+            <?php endforeach; ?>
         </tr>
     <?php endwhile; ?>
 </table>
