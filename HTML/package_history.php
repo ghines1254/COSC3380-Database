@@ -8,6 +8,38 @@ $selectedAttribute = isset($_GET['attribute']) ? $_GET['attribute'] : '';
 $startDate = isset($_GET['startDate']) ? $_GET['startDate'] : '';
 $endDate = isset($_GET['endDate']) ? $_GET['endDate'] : '';
 
+// Define an array of attributes available in both "Tracking Info" and "Package History"
+$attributes = [
+    'Employee ID',
+    'Location',
+    'Starting Location',
+    // Add more attributes as needed
+];
+
+// Initialize an empty array for params
+$params = [];
+
+// Create a function to build the WHERE clause based on the selected attribute
+function buildWhereClause($selectedAttribute, &$params) {
+    switch ($selectedAttribute) {
+        case 'Employee ID':
+            $whereClause = " WHERE ph.emp_id = ?";
+            break;
+        case 'Location':
+            $whereClause = " WHERE ph.location = ?";
+            break;
+        case 'Starting Location':
+            $whereClause = " WHERE ti.starting_location_id = ?";
+            break;
+        // Add more cases for other attributes as needed
+        default:
+            $whereClause = "";
+    }
+    // Add selected attribute to params
+    $params[] = $selectedAttribute;
+    return $whereClause;
+}
+
 $query = "
     SELECT 
         ph.package_id, ph.emp_id, ph.location_type, ph.location, ph.vin, ph.time_scanned,
@@ -17,31 +49,10 @@ $query = "
     LEFT JOIN 
         TRACKING_INFO ti ON ph.package_id = ti.package_id";
 
-// Initialize an empty array for params
-$params = [];
-
-// Determine the selected attribute header
-$packageHistoryHeader = 'Scanned By Employee'; // Default header
-
 // Apply attribute filter if a specific attribute is selected
 if (!empty($selectedAttribute)) {
-    switch ($selectedAttribute) {
-        case 'Employee ID':
-            $query .= " WHERE ph.emp_id = ?";
-            $packageHistoryHeader = "Employee ID";
-            break;
-        case 'Location':
-            $query .= " WHERE ph.location = ?";
-            $packageHistoryHeader = "Location";
-            break;
-        case 'Starting Location':
-            $query .= " WHERE ti.starting_location_id = ?";
-            $packageHistoryHeader = "Starting Location";
-            break;
-        // Add more cases for other attributes as needed
-    }
-    // Add selected attribute to params
-    $params[] = $selectedAttribute;
+    $whereClause = buildWhereClause($selectedAttribute, $params);
+    $query .= $whereClause;
 }
 
 // Apply date filters for the "Package History" section
@@ -56,13 +67,11 @@ if (!empty($startDate) && !empty($endDate)) {
     $params[] = $endDate;
 }
 
-// Determine the appropriate paramTypes based on the number of params
-$paramTypes = str_repeat('s', count($params));
-
 $stmt = $conn->prepare($query);
 
 // Bind parameters dynamically
-if ($paramTypes) {
+if ($params) {
+    $paramTypes = str_repeat('s', count($params));
     $stmt->bind_param($paramTypes, ...$params);
 }
 
@@ -102,10 +111,11 @@ $conn->close();
         <label for="attribute">Select Attribute:</label>
         <select id="attribute" name="attribute">
             <option value="">-- Select Attribute --</option>
-            <option value="Employee ID">Employee ID</option>
-            <option value="Location">Location</option>
-            <option value="Starting Location">Starting Location</option>
-            <!-- Add more options for other attributes as needed -->
+            <?php foreach ($attributes as $attribute): ?>
+                <option value="<?php echo htmlspecialchars($attribute); ?>" <?php echo ($selectedAttribute == $attribute) ? 'selected' : ''; ?>>
+                    <?php echo htmlspecialchars($attribute); ?>
+                </option>
+            <?php endforeach; ?>
         </select>
         <label for="startDate">Start Date:</label>
         <input type="date" id="startDate" name="startDate" value="<?php echo htmlspecialchars($startDate); ?>">
@@ -151,12 +161,10 @@ $conn->close();
                 <th>Package ID</th>
                 <?php if (!empty($selectedAttribute)): ?>
                     <th><?php echo htmlspecialchars($selectedAttribute); ?></th>
-                <?php else: ?>
-                    <th class="hidden-column">Employee ID</th>
-                    <th class="hidden-column">Location</th>
-                    <th class="hidden-column">Starting Location</th>
-                    <!-- Add more hidden columns for other attributes as needed -->
                 <?php endif; ?>
+                <th class="hidden-column">Employee ID</th>
+                <th class="hidden-column">Location</th>
+                <th class="hidden-column">Starting Location</th>
                 <th>Location Type</th>
                 <th>Location</th>
                 <th>Truck Number</th>
@@ -169,12 +177,10 @@ $conn->close();
                     <td><?php echo htmlspecialchars($record['package_id']); ?></td>
                     <?php if (!empty($selectedAttribute)): ?>
                         <td><?php echo htmlspecialchars($record[$selectedAttribute]); ?></td>
-                    <?php else: ?>
-                        <td class="hidden-column"><?php echo htmlspecialchars($record['emp_id']); ?></td>
-                        <td class="hidden-column"><?php echo htmlspecialchars($record['location']); ?></td>
-                        <td class="hidden-column"><?php echo htmlspecialchars($record['starting_location_id']); ?></td>
-                        <!-- Add more hidden columns for other attributes as needed -->
                     <?php endif; ?>
+                    <td class="hidden-column"><?php echo htmlspecialchars($record['emp_id']); ?></td>
+                    <td class="hidden-column"><?php echo htmlspecialchars($record['location']); ?></td>
+                    <td class="hidden-column"><?php echo htmlspecialchars($record['starting_location_id']); ?></td>
                     <td><?php echo htmlspecialchars($record['location_type']); ?></td>
                     <td><?php echo htmlspecialchars($record['location']); ?></td>
                     <td><?php echo htmlspecialchars($record['vin']); ?></td>
