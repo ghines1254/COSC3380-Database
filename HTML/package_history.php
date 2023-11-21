@@ -1,196 +1,98 @@
 <?php
 require_once 'init.php';
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
 
-$trackingNumber = isset($_GET['tracking_number']) ? $_GET['tracking_number'] : '';
-$selectedAttributes = isset($_POST['attributes']) ? $_POST['attributes'] : [];
-$startDate = isset($_POST['startDate']) ? $_POST['startDate'] : '';
-$endDate = isset($_POST['endDate']) ? $_POST['endDate'] : '';
+$packageId = isset($_GET['tracking_number']) ? $_GET['tracking_number'] : '';
+$startDate = isset($_GET['start_date']) ? $_GET['start_date'] : '';
+$endDate = isset($_GET['end_date']) ? $_GET['end_date'] : '';
+$attribute = isset($_GET['attribute']) ? $_GET['attribute'] : '';
 
-// Define an array of all columns in PACKAGE_HISTORY
-$allAttributes = [
-    'Employee ID',
-    'Location Type',
-    'Location',
-    'VIN',
-    'starting_location_id', // Updated column name
-];
+// Fetch the static tracking information
+$queryTrackingInfo = "SELECT * FROM TRACKING_INFO WHERE package_id = ?";
+$stmt = $conn->prepare($queryTrackingInfo);
+$stmt->bind_param("s", $packageId);
+$stmt->execute();
+$trackingInfoResult = $stmt->get_result();
+$trackingInfo = $trackingInfoResult->fetch_assoc();
 
-// Initialize an empty array for params
-$params = [];
-
-// Create a function to build the SELECT clause based on selected attributes
-function buildSelectClause($selectedAttributes) {
-    $selectClause = 'package_id, time_scanned'; // Always include Package ID and Time Scanned
-    foreach ($selectedAttributes as $attribute) {
-        $selectClause .= ', ' . $attribute;
-    }
-    return $selectClause;
+// Construct the query for package history with optional filters
+$queryPackageHistory = "SELECT * FROM PACKAGE_HISTORY WHERE package_id = ?";
+if (!empty($startDate) && !empty($endDate)) {
+    $queryPackageHistory .= " AND time_scanned BETWEEN ? AND ?";
+}
+if (!empty($attribute)) {
+    $queryPackageHistory .= " AND ? IS NOT NULL";
 }
 
-// Create a function to build the WHERE clause based on start and end dates
-function buildWhereClause($startDate, $endDate, &$params) {
-    $whereClause = '';
-    if (!empty($startDate) && !empty($endDate)) {
-        $whereClause = "WHERE time_scanned BETWEEN ? AND ?";
-        $params[] = $startDate;
-        $params[] = $endDate;
-    }
-    return $whereClause;
+$stmtHistory = $conn->prepare($queryPackageHistory);
+if (!empty($startDate) && !empty($endDate) && !empty($attribute)) {
+    $stmtHistory->bind_param("sss", $packageId, $startDate, $endDate, $attribute);
+} elseif (!empty($startDate) && !empty($endDate)) {
+    $stmtHistory->bind_param("sss", $packageId, $startDate, $endDate);
+} elseif (!empty($attribute)) {
+    $stmtHistory->bind_param("ss", $packageId, $attribute);
+} else {
+    $stmtHistory->bind_param("s", $packageId);
 }
+$stmtHistory->execute();
+$packageHistoryResult = $stmtHistory->get_result();
 
-// Check if "Get Package History!" button is clicked
-if (isset($_POST['getHistory'])) {
-    // Build SELECT clause based on selected attributes
-    $selectClause = buildSelectClause($selectedAttributes);
-    
-    // Build WHERE clause based on start and end dates
-    $whereClause = buildWhereClause($startDate, $endDate, $params);
-    
-    // Prepare and execute the SQL query
-    $query = "SELECT $selectClause FROM PACKAGE_HISTORY $whereClause";
-    $stmt = $conn->prepare($query);
-    
-    // Check for query preparation errors
-    if ($stmt === false) {
-        die("Error preparing query: " . $conn->error);
-    }
-    
-    // Bind parameters dynamically
-    if ($params) {
-        $paramTypes = str_repeat('s', count($params));
-        $stmt->bind_param($paramTypes, ...$params);
-    }
-    
-    // Execute the query
-    if (!$stmt->execute()) {
-        die("Error executing query: " . $stmt->error);
-    }
-    
-    $result = $stmt->get_result();
-    
-    $records = $result->num_rows > 0 ? $result->fetch_all(MYSQLI_ASSOC) : [];
-    
-    $stmt->close();
-}
-
-// Retrieve Tracking Info from the TRACKING_INFO table
-$trackingInfo = [];
-$query = "SELECT * FROM TRACKING_INFO WHERE tracking_number = ?";
-$stmt = $conn->prepare($query);
-if ($stmt === false) {
-    die("Error preparing query: " . $conn->error);
-}
-$stmt->bind_param('s', $trackingNumber);
-if (!$stmt->execute()) {
-    die("Error executing query: " . $stmt->error);
-}
-$result = $stmt->get_result();
-if ($result->num_rows > 0) {
-    $trackingInfo = $result->fetch_assoc();
-}
-$stmt->close();
-
-$conn->close();
+// HTML and PHP mix to display the results
 ?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Package History</title>
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="global.css">
-    <link rel="stylesheet" href="tracking-page.css">
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600;700;800;900&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+    <!-- Your styles and scripts here -->
 </head>
 <body>
-    <h1>Package History for Tracking Number: <?php echo htmlspecialchars($trackingNumber); ?></h1>
+<h2>Tracking History for Package: <?php echo htmlspecialchars($packageId); ?></h2>
 
-    <!-- Display Tracking Info -->
-    <h2>Tracking Info</h2>
-    <table>
-        <tbody>
-            <tr>
-                <td>On Truck</td>
-                <td><?php echo htmlspecialchars($trackingInfo['on_truck']); ?></td>
-            </tr>
-            <tr>
-                <td>Starting Location</td>
-                <td><?php echo htmlspecialchars($trackingInfo['starting_location_id']); ?></td> <!-- Updated column name -->
-            </tr>
-            <tr>
-                <td>Received</td>
-                <td><?php echo $trackingInfo['received'] ? 'YES' : 'NO'; ?></td>
-            </tr>
-            <tr>
-                <td>Delivered By</td>
-                <td><?php echo htmlspecialchars($trackingInfo['delivered_by']); ?></td>
-            </tr>
-            <tr>
-                <td>Created On</td>
-                <td><?php echo htmlspecialchars($trackingInfo['created_on']); ?></td>
-            </tr>
-            <tr>
-                <td>Last Updated</td>
-                <td><?php echo htmlspecialchars($trackingInfo['last_updated']); ?></td>
-            </tr>
-            <tr>
-                <td>ETA</td>
-                <td><?php echo htmlspecialchars($trackingInfo['eta']); ?></td>
-            </tr>
-        </tbody>
-    </table>
+<h3>Tracking Information</h3>
+<table>
+    <!-- Display the tracking information -->
+    <?php foreach ($trackingInfo as $column => $value): ?>
+        <tr>
+            <th><?php echo htmlspecialchars($column); ?></th>
+            <td><?php echo htmlspecialchars($value); ?></td>
+        </tr>
+    <?php endforeach; ?>
+</table>
 
-    <!-- Display Date Selection -->
-    <h2>Date Selection</h2>
-    <form action="package_history.php" method="post">
-        <label for="startDate">Start Date:</label>
-        <input type="date" id="startDate" name="startDate" value="<?php echo htmlspecialchars($startDate); ?>">
-        <label for="endDate">End Date:</label>
-        <input type="date" id="endDate" name="endDate" value="<?php echo htmlspecialchars($endDate); ?>">
-        <input type="submit" name="getHistory" value="Get Package History!">
-    </form>
+<!-- Form for filters -->
+<form method="GET">
+    <label for="start_date">Start Date:</label>
+    <input type="date" id="start_date" name="start_date" value="<?php echo htmlspecialchars($startDate); ?>">
 
-    <!-- Display Package History Selection -->
-    <h2>Package History</h2>
-    <form action="package_history.php" method="post">
-        <?php foreach ($allAttributes as $attribute): ?>
-            <label>
-                <input type="checkbox" name="attributes[]" value="<?php echo htmlspecialchars($attribute); ?>" <?php echo in_array($attribute, $selectedAttributes) ? 'checked' : ''; ?>>
-                <?php echo htmlspecialchars($attribute); ?>
-            </label>
-        <?php endforeach; ?>
-    </form>
+    <label for="end_date">End Date:</label>
+    <input type="date" id="end_date" name="end_date" value="<?php echo htmlspecialchars($endDate); ?>">
 
-    <!-- Display Package History -->
-    <?php if (isset($records)): ?>
-        <h2>Package History Results</h2>
-        <table>
-            <thead>
-                <tr>
-                    <?php foreach ($selectedAttributes as $attribute): ?>
-                        <th><?php echo htmlspecialchars($attribute); ?></th>
-                    <?php endforeach; ?>
-                    <th>Package ID</th>
-                    <th>Time Scanned</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($records as $record): ?>
-                    <tr>
-                        <?php foreach ($selectedAttributes as $attribute): ?>
-                            <td><?php echo htmlspecialchars($record[$attribute]); ?></td>
-                        <?php endforeach; ?>
-                        <td><?php echo htmlspecialchars($record['package_id']); ?></td>
-                        <td><?php echo htmlspecialchars($record['time_scanned']); ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    <?php endif; ?>
+    <label for="attribute">Attribute:</label>
+    <select id="attribute" name="attribute">
+        <!-- Populate this with options for your attributes -->
+        <option value="">Select an attribute</option>
+        <!-- ... Other options ... -->
+    </select>
+
+    <input type="hidden" name="tracking_number" value="<?php echo htmlspecialchars($packageId); ?>">
+    <input type="submit" value="Filter">
+</form>
+
+<h3>Package History</h3>
+<table>
+    <!-- Headers for package history -->
+    <tr>
+        <th>Package ID</th>
+        <th><?php echo !empty($attribute) ? htmlspecialchars($attribute) : 'Attribute'; ?></th>
+        <th>Time Scanned</th>
+    </tr>
+    <!-- Display the package history -->
+    <?php while ($row = $packageHistoryResult->fetch_assoc()): ?>
+        <tr>
+            <td><?php echo htmlspecialchars($row['package_id']); ?></td>
+            <td><?php echo !empty($attribute) ? htmlspecialchars($row[$attribute]) : 'Value'; ?></td>
+            <td><?php echo htmlspecialchars($row['time_scanned']); ?></td>
+        </tr>
+    <?php endwhile; ?>
+</table>
 </body>
 </html>
