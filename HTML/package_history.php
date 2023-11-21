@@ -56,81 +56,57 @@ if ($result->num_rows > 0) {
 <head>
     <meta charset="UTF-8">
     <title>Package History</title>
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
-    
-    <!-- Include the global styles -->
-    <link rel="stylesheet" href="global.css" />
-    
-    <!-- Include the tracking page styles -->
-    <link rel="stylesheet" href="tracking-page.css" />
-    
-    <!-- Fonts -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600;700;800;900&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
-    />
-    
-    <!-- Inline styles for troubleshooting -->
-    <style>
-        /* Apply basic styles directly to ensure they load */
-        body {
-            font-family: var(--font-lexend), sans-serif;
-            background-color: var(--lightmain);
-            color: var(--darktext);
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid var(--color-gainsboro);
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: var(--lightsecond);
-        }
-        tr:nth-child(even) {
-            background-color: var(--gray-8);
-        }
-    </style>
+    <!-- Add your stylesheet links here -->
 </head>
 <body>
-    <div class="tracking-page">
-        <!-- Removed for brevity -->
+    <h1>Package History for Tracking Number: <?php echo htmlspecialchars($trackingNumber); ?></h1>
 
-        <!-- Table of Package History Records -->
-        <?php if (count($historyRecords) > 0): ?>
-            <!-- Inline styles added for diagnostic purposes -->
-            <table style="margin-top: 20px;">
-                <thead>
+    <!-- Filter Form -->
+    <form action="package_history.php" method="get">
+        <input type="hidden" name="tracking_number" value="<?php echo htmlspecialchars($trackingNumber); ?>">
+        
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" name="startDate" value="<?php echo htmlspecialchars($startDate); ?>">
+        
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" name="endDate" value="<?php echo htmlspecialchars($endDate); ?>">
+        
+        <label for="employeeId">Employee ID:</label>
+        <input type="text" id="employeeId" name="employeeId" value="<?php echo htmlspecialchars($employeeId); ?>">
+        
+        <input type="submit" value="Filter">
+    </form>
+
+    <!-- Table of Package History Records -->
+    <?php if (count($historyRecords) > 0): ?>
+        <table>
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Location Type</th>
+                    <th>Location</th>
+                    <th>Time Scanned</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($historyRecords as $record): ?>
                     <tr>
-                        <th>Employee ID</th>
-                        <th>Location Type</th>
-                        <th>Location</th>
-                        <th>Time Scanned</th>
+                        <td><?php echo htmlspecialchars($record['emp_id']); ?></td>
+                        <td><?php echo htmlspecialchars($record['location_type']); ?></td>
+                        <td><?php echo htmlspecialchars($record['location']); ?></td>
+                        <td><?php echo htmlspecialchars($record['time_scanned']); ?></td>
                     </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($historyRecords as $record): ?>
-                        <tr>
-                            <td><?php echo htmlspecialchars($record['emp_id']); ?></td>
-                            <td><?php echo htmlspecialchars($record['location_type']); ?></td>
-                            <td><?php echo htmlspecialchars($record['location']); ?></td>
-                            <td><?php echo htmlspecialchars($record['time_scanned']); ?></td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        <?php else: ?>
-            <p>No history records found for this tracking number.</p>
-        <?php endif; ?>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php else: ?>
+        <p>No history records found for this tracking number.</p>
+    <?php endif; ?>
 
-        <!-- Removed for brevity -->
-    </div>
+    <?php
+    // Now you can close the statement and connection
+    $stmt->close();
+    $conn->close();
+    ?>
 </body>
 </html>
