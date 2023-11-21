@@ -125,7 +125,7 @@ $conn->close();
                 <?php foreach ($records as $record): ?>
                     <tr>
                         <td><?php echo htmlspecialchars($record['on_truck']); ?></td>
-                        <td><?php echo htmlspecialchars($record['starting_location']); ?></td>
+                        <td><?php echo htmlspecialchars($record['starting_location_id']); ?></td>
                         <td><?php echo htmlspecialchars($record['received']); ?></td>
                         <td><?php echo htmlspecialchars($record['delivered_by']); ?></td>
                         <td><?php echo htmlspecialchars($record['created_on']); ?></td>
