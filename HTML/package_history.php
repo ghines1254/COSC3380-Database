@@ -60,7 +60,8 @@ if (isset($_POST['getHistory'])) {
     // Bind parameters dynamically
     if ($params) {
         $paramTypes = str_repeat('s', count($params));
-        if (!$stmt->bind_param($paramTypes, ...$params)) {
+        $paramValues = array_merge([$paramTypes], $params);
+        if (!call_user_func_array([$stmt, 'bind_param'], $paramValues)) {
             die("Error binding parameters: " . $stmt->error);
         }
     }
