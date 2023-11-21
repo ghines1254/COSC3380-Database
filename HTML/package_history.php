@@ -13,7 +13,7 @@ $employeeId = isset($_GET['employeeId']) ? $_GET['employeeId'] : '';
 $query = "
     SELECT 
         ph.package_id, ph.emp_id, ph.location_type, ph.location, ph.vin, ph.time_scanned,
-        ti.on_truck, ti.starting_location, ti.received, ti.delivered_by, ti.created_on, ti.last_updated, ti.eta
+        ti.on_truck, ti.starting_location_id, ti.received, ti.delivered_by, ti.created_on, ti.last_updated, ti.eta
     FROM 
         PACKAGE_HISTORY ph
     LEFT JOIN 
@@ -44,11 +44,6 @@ if (!empty($employeeId)) {
 }
 
 $stmt = $conn->prepare($query);
-$stmt = $conn->prepare($query);
-if (!$stmt) {
-    die("Prepare failed: (" . $conn->errno . ") " . $conn->error);
-}
-
 $stmt->bind_param($paramTypes, ...$params);
 $stmt->execute();
 $result = $stmt->get_result();
