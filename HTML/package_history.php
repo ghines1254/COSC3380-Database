@@ -14,6 +14,7 @@ $allAttributes = [
     'Location Type',
     'Location',
     'VIN',
+    'starting_location_id', // Updated column name
 ];
 
 // Initialize an empty array for params
@@ -118,7 +119,7 @@ $conn->close();
             </tr>
             <tr>
                 <td>Starting Location</td>
-                <td><?php echo htmlspecialchars($trackingInfo['starting_location']); ?></td>
+                <td><?php echo htmlspecialchars($trackingInfo['starting_location_id']); ?></td> <!-- Updated column name -->
             </tr>
             <tr>
                 <td>Received</td>
