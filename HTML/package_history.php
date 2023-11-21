@@ -4,22 +4,12 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 $trackingNumber = isset($_GET['tracking_number']) ? $_GET['tracking_number'] : '';
-$startDate = isset($_GET['startDate']) ? $_GET['startDate'] : '';
-$endDate = isset($_GET['endDate']) ? $_GET['endDate'] : '';
-$employeeId = isset($_GET['employeeId']) ? $_GET['employeeId'] : '';
+$selectedAttribute = isset($_GET['attribute']) ? $_GET['attribute'] : '';
 
-// New query to fetch data for the tracking info
-$queryTrackingInfo = "
+$query = "
     SELECT 
-        ti.starting_location_id,
-        CASE 
-            WHEN ti.received = 1 THEN 'YES'
-            ELSE 'NO'
-        END AS received_status,
-        ti.delivered_by AS delivered_by_employee_id,
-        ti.created_on,
-        ti.last_updated,
-        ti.eta
+        ph.package_id, ph.emp_id, ph.location_type, ph.location, ph.vin, ph.time_scanned,
+        ti.on_truck, ti.starting_location_id, ti.received, ti.delivered_by, ti.created_on, ti.last_updated, ti.eta
     FROM 
         PACKAGE_HISTORY ph
     LEFT JOIN 
@@ -27,58 +17,38 @@ $queryTrackingInfo = "
     WHERE 
         ph.package_id = ?";
 
-if (!empty($startDate) && !empty($endDate)) {
-    $queryTrackingInfo .= " AND ph.time_scanned BETWEEN ? AND ?";
+// Apply attribute filter if a specific attribute is selected
+if (!empty($selectedAttribute)) {
+    switch ($selectedAttribute) {
+        case 'Employee ID':
+            $query .= " AND ph.emp_id = ?";
+            break;
+        case 'Location':
+            $query .= " AND ph.location = ?";
+            break;
+        case 'Starting Location':
+            $query .= " AND ti.starting_location_id = ?";
+            break;
+        // Add more cases for other attributes as needed
+    }
 }
 
-if (!empty($employeeId)) {
-    $queryTrackingInfo .= " AND ph.emp_id = ?";
+$params = [$trackingNumber]; // Starting with tracking number
+$paramTypes = 's'; // Tracking number is a string
+
+if (!empty($selectedAttribute)) {
+    $params[] = $selectedAttribute; // Add the selected attribute to params
+    $paramTypes .= 's'; // Adding a string type for the selected attribute
 }
 
-$paramsTrackingInfo = [$trackingNumber]; // Starting with tracking number
-$paramTypesTrackingInfo = 's'; // Tracking number is a string
+$stmt = $conn->prepare($query);
+$stmt->bind_param($paramTypes, ...$params);
+$stmt->execute();
+$result = $stmt->get_result();
 
-if (!empty($startDate) && !empty($endDate)) {
-    $paramsTrackingInfo[] = $startDate;
-    $paramsTrackingInfo[] = $endDate;
-    $paramTypesTrackingInfo .= 'ss'; // Adding string types for dates
-}
+$records = $result->num_rows > 0 ? $result->fetch_all(MYSQLI_ASSOC) : [];
 
-if (!empty($employeeId)) {
-    $paramsTrackingInfo[] = $employeeId;
-    $paramTypesTrackingInfo .= 's'; // Adding a string type for employee ID
-}
-
-$stmtTrackingInfo = $conn->prepare($queryTrackingInfo);
-if (!$stmtTrackingInfo) {
-    die("Prepare failed: " . mysqli_error($conn));
-}
-
-$stmtTrackingInfo->bind_param($paramTypesTrackingInfo, ...$paramsTrackingInfo);
-$stmtTrackingInfo->execute();
-$resultTrackingInfo = $stmtTrackingInfo->get_result();
-
-$trackingInfo = $resultTrackingInfo->num_rows > 0 ? $resultTrackingInfo->fetch_assoc() : null;
-
-// New query to fetch data for package history
-$queryPackageHistory = "
-    SELECT 
-        ph.package_id, ph.emp_id AS scanned_by_employee, ph.location_type, ph.location,
-        ph.vin AS truck_number, ph.time_scanned
-    FROM 
-        PACKAGE_HISTORY ph
-    WHERE 
-        ph.package_id = ?";
-
-$stmtPackageHistory = $conn->prepare($queryPackageHistory);
-$stmtPackageHistory->bind_param('s', $trackingNumber);
-$stmtPackageHistory->execute();
-$resultPackageHistory = $stmtPackageHistory->get_result();
-
-$packageHistory = $resultPackageHistory->num_rows > 0 ? $resultPackageHistory->fetch_all(MYSQLI_ASSOC) : [];
-
-$stmtTrackingInfo->close();
-$stmtPackageHistory->close();
+$stmt->close();
 $conn->close();
 ?>
 
@@ -100,36 +70,24 @@ $conn->close();
     <!-- Filter Form -->
     <form action="package_history.php" method="get">
         <input type="hidden" name="tracking_number" value="<?php echo htmlspecialchars($trackingNumber); ?>">
-        <label for="startDate">Start Date:</label>
-        <input type="date" id="startDate" name="startDate" value="<?php echo htmlspecialchars($startDate); ?>">
-        <label for="endDate">End Date:</label>
-        <input type="date" id="endDate" name="endDate" value="<?php echo htmlspecialchars($endDate); ?>">
-        <label for="employeeId">Delivered By:</label>
-        <select id="employeeId" name="employeeId">
-            <option value="">All</option>
-            <?php
-            // Fetch the list of employees who have delivered packages
-            $queryEmployees = "SELECT DISTINCT delivered_by FROM TRACKING_INFO";
-            $resultEmployees = $conn->query($queryEmployees);
-            
-            if ($resultEmployees->num_rows > 0) {
-                while ($row = $resultEmployees->fetch_assoc()) {
-                    $employee = $row['delivered_by'];
-                    $selected = $employeeId == $employee ? 'selected' : '';
-                    echo "<option value=\"$employee\" $selected>$employee</option>";
-                }
-            }
-            ?>
+        <label for="attribute">Select Attribute:</label>
+        <select id="attribute" name="attribute">
+            <option value="">-- Select Attribute --</option>
+            <option value="Employee ID">Employee ID</option>
+            <option value="Location">Location</option>
+            <option value="Starting Location">Starting Location</option>
+            <!-- Add more options for other attributes as needed -->
         </select>
         <input type="submit" value="Filter">
     </form>
 
-    <?php if ($trackingInfo): ?>
-        <!-- Tracking Info Table -->
+    <!-- Display Tracking Info -->
+    <?php if ($records): ?>
         <table>
             <caption>Tracking Info</caption>
             <thead>
                 <tr>
+                    <th>On Truck</th>
                     <th>Starting Location</th>
                     <th>Received</th>
                     <th>Delivered By Employee ID</th>
@@ -139,20 +97,25 @@ $conn->close();
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><?php echo htmlspecialchars($trackingInfo['starting_location_id']); ?></td>
-                    <td><?php echo htmlspecialchars($trackingInfo['received_status']); ?></td>
-                    <td><?php echo htmlspecialchars($trackingInfo['delivered_by_employee_id']); ?></td>
-                    <td><?php echo htmlspecialchars($trackingInfo['created_on']); ?></td>
-                    <td><?php echo htmlspecialchars($trackingInfo['last_updated']); ?></td>
-                    <td><?php echo htmlspecialchars($trackingInfo['eta']); ?></td>
-                </tr>
+                <?php foreach ($records as $record): ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($record['on_truck']); ?></td>
+                        <td><?php echo htmlspecialchars($record['starting_location_id']); ?></td>
+                        <td><?php echo ($record['received'] == 1) ? 'YES' : 'NO'; ?></td>
+                        <td><?php echo htmlspecialchars($record['delivered_by']); ?></td>
+                        <td><?php echo htmlspecialchars($record['created_on']); ?></td>
+                        <td><?php echo htmlspecialchars($record['last_updated']); ?></td>
+                        <td><?php echo htmlspecialchars($record['eta']); ?></td>
+                    </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
+    <?php else: ?>
+        <p>No tracking info records found for this tracking number.</p>
     <?php endif; ?>
 
-    <?php if ($packageHistory): ?>
-        <!-- Package History Table -->
+    <!-- Display Package History -->
+    <?php if ($records): ?>
         <table>
             <caption>Package History</caption>
             <thead>
@@ -166,20 +129,20 @@ $conn->close();
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($packageHistory as $record): ?>
+                <?php foreach ($records as $record): ?>
                     <tr>
                         <td><?php echo htmlspecialchars($record['package_id']); ?></td>
-                        <td><?php echo htmlspecialchars($record['scanned_by_employee']); ?></td>
+                        <td><?php echo htmlspecialchars($record['emp_id']); ?></td>
                         <td><?php echo htmlspecialchars($record['location_type']); ?></td>
                         <td><?php echo htmlspecialchars($record['location']); ?></td>
-                        <td><?php echo htmlspecialchars($record['truck_number']); ?></td>
+                        <td><?php echo htmlspecialchars($record['vin']); ?></td>
                         <td><?php echo htmlspecialchars($record['time_scanned']); ?></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
     <?php else: ?>
-        <p>No history records found for this tracking number.</p>
+        <p>No package history records found for this tracking number.</p>
     <?php endif; ?>
 </body>
 </html>
