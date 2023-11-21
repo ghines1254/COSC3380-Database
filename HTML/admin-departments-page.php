@@ -85,11 +85,12 @@
         </div>
 
         <!-- Centered Generate Report Form -->
-      <div class="generate-report-form" style="text-align: center; padding: 20px;">
-        <form method="post" action="">
-          <input type="submit" name="generate_report" value="Generate Report">
-        </form>
-      </div>
+      <div class="generate-report-form" style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+    <form method="post" action="">
+        <input type="submit" name="generate_report" value="Generate Report">
+    </form>
+</div>
+
     </div>
 
     <!-- Employee Data Display outside of admin-portal-outline -->
