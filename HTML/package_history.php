@@ -44,9 +44,15 @@ if (!empty($employeeId)) {
 }
 
 $stmt = $conn->prepare($query);
+$stmt = $conn->prepare($query);
+if (!$stmt) {
+    die("Prepare failed: (" . $conn->errno . ") " . $conn->error);
+}
+
 $stmt->bind_param($paramTypes, ...$params);
 $stmt->execute();
 $result = $stmt->get_result();
+
 
 $records = $result->num_rows > 0 ? $result->fetch_all(MYSQLI_ASSOC) : [];
 
