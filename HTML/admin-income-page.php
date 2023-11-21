@@ -48,7 +48,7 @@
           <div class="rectangle-parent107">
             <div class="frame-child57"></div>
             <div class="welcome-to-your-portal-page-wrapper16">
-              <b class="welcome-to-your18">Products & Stock</b>
+              <b class="welcome-to-your18">Total Income Report</b>
             </div>
           </div>
           <div class="frame-parent41">
