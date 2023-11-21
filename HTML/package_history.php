@@ -11,27 +11,25 @@ $endDate = isset($_GET['endDate']) ? $_GET['endDate'] : '';
 $query = "
     SELECT 
         ph.package_id, ph.emp_id, ph.location_type, ph.location, ph.vin, ph.time_scanned,
-        ti.on_truck, ti.starting_location_id, ti.received, ti.delivered_by, ti.created_on, ti.last_updated, ti.eta
+        ti.on_truck, ti.starting_location, ti.received, ti.delivered_by, ti.created_on, ti.last_updated, ti.eta
     FROM 
         PACKAGE_HISTORY ph
     LEFT JOIN 
-        TRACKING_INFO ti ON ph.package_id = ti.package_id
-    WHERE 
-        ph.package_id = ?";
+        TRACKING_INFO ti ON ph.package_id = ti.package_id";
 
 // Apply attribute filter if a specific attribute is selected
 if (!empty($selectedAttribute)) {
     switch ($selectedAttribute) {
         case 'Employee ID':
-            $query .= " AND ph.emp_id = ?";
+            $query .= " WHERE ph.emp_id = ?";
             $packageHistoryHeader = "Scanned By Employee";
             break;
         case 'Location':
-            $query .= " AND ph.location = ?";
+            $query .= " WHERE ph.location = ?";
             $packageHistoryHeader = "Location";
             break;
         case 'Starting Location':
-            $query .= " AND ti.starting_location_id = ?";
+            $query .= " WHERE ti.starting_location = ?";
             $packageHistoryHeader = "Starting Location";
             break;
         // Add more cases for other attributes as needed
@@ -40,22 +38,31 @@ if (!empty($selectedAttribute)) {
 
 // Apply date filters for the "Package History" section
 if (!empty($startDate) && !empty($endDate)) {
-    $query .= " AND ph.time_scanned BETWEEN ? AND ?";
+    if (strpos($query, 'WHERE') !== false) {
+        $query .= " AND ph.time_scanned BETWEEN ? AND ?";
+    } else {
+        $query .= " WHERE ph.time_scanned BETWEEN ? AND ?";
+    }
 }
 
-$params = [$trackingNumber]; // Starting with tracking number
-$paramTypes = 's'; // Tracking number is a string
+$params = []; // Initialize params array
 
+// Add selected attribute to params if not empty
 if (!empty($selectedAttribute)) {
-    $params[] = $selectedAttribute; // Add the selected attribute to params
-    $paramTypes .= 's'; // Adding a string type for the selected attribute
+    $params[] = $selectedAttribute;
 }
 
+// Add tracking number to params
+$params[] = $trackingNumber;
+
+// Add start and end dates to params if not empty
 if (!empty($startDate) && !empty($endDate)) {
     $params[] = $startDate;
     $params[] = $endDate;
-    $paramTypes .= 'ss'; // Adding string types for dates
 }
+
+// Determine the appropriate paramTypes based on the number of params
+$paramTypes = str_repeat('s', count($params));
 
 $stmt = $conn->prepare($query);
 $stmt->bind_param($paramTypes, ...$params);
@@ -119,7 +126,7 @@ $conn->close();
             <?php foreach ($records as $record): ?>
                 <tr>
                     <td><?php echo htmlspecialchars($record['on_truck']); ?></td>
-                    <td><?php echo htmlspecialchars($record['starting_location_id']); ?></td>
+                    <td><?php echo htmlspecialchars($record['starting_location']); ?></td>
                     <td><?php echo ($record['received'] == 1) ? 'YES' : 'NO'; ?></td>
                     <td><?php echo htmlspecialchars($record['delivered_by']); ?></td>
                     <td><?php echo htmlspecialchars($record['created_on']); ?></td>
