@@ -20,12 +20,15 @@ $query = "
 // Initialize an empty array for params
 $params = [];
 
+// Determine the selected attribute header
+$packageHistoryHeader = 'Scanned By Employee'; // Default header
+
 // Apply attribute filter if a specific attribute is selected
 if (!empty($selectedAttribute)) {
     switch ($selectedAttribute) {
         case 'Employee ID':
             $query .= " WHERE ph.emp_id = ?";
-            $packageHistoryHeader = "Scanned By Employee";
+            $packageHistoryHeader = "Employee ID";
             break;
         case 'Location':
             $query .= " WHERE ph.location = ?";
@@ -140,7 +143,7 @@ $conn->close();
         <thead>
             <tr>
                 <th>Package ID</th>
-                <th><?php echo isset($packageHistoryHeader) ? $packageHistoryHeader : 'Scanned By Employee'; ?></th>
+                <th><?php echo htmlspecialchars($packageHistoryHeader); ?></th>
                 <th>Location Type</th>
                 <th>Location</th>
                 <th>Truck Number</th>
