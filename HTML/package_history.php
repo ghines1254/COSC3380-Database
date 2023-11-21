@@ -5,6 +5,8 @@ error_reporting(E_ALL);
 
 $trackingNumber = isset($_GET['tracking_number']) ? $_GET['tracking_number'] : '';
 $selectedAttribute = isset($_GET['attribute']) ? $_GET['attribute'] : '';
+$startDate = isset($_GET['startDate']) ? $_GET['startDate'] : '';
+$endDate = isset($_GET['endDate']) ? $_GET['endDate'] : '';
 
 $query = "
     SELECT 
@@ -36,12 +38,23 @@ if (!empty($selectedAttribute)) {
     }
 }
 
+// Apply date filters for the "Package History" section
+if (!empty($startDate) && !empty($endDate)) {
+    $query .= " AND ph.time_scanned BETWEEN ? AND ?";
+}
+
 $params = [$trackingNumber]; // Starting with tracking number
 $paramTypes = 's'; // Tracking number is a string
 
 if (!empty($selectedAttribute)) {
     $params[] = $selectedAttribute; // Add the selected attribute to params
     $paramTypes .= 's'; // Adding a string type for the selected attribute
+}
+
+if (!empty($startDate) && !empty($endDate)) {
+    $params[] = $startDate;
+    $params[] = $endDate;
+    $paramTypes .= 'ss'; // Adding string types for dates
 }
 
 $stmt = $conn->prepare($query);
@@ -81,6 +94,10 @@ $conn->close();
             <option value="Starting Location">Starting Location</option>
             <!-- Add more options for other attributes as needed -->
         </select>
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" name="startDate" value="<?php echo htmlspecialchars($startDate); ?>">
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" name="endDate" value="<?php echo htmlspecialchars($endDate); ?>">
         <input type="submit" value="Filter">
     </form>
 
