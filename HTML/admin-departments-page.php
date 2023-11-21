@@ -155,7 +155,7 @@
     </div>
   </div>
 
-  <img class="vector-icon" alt="" src="./public/vector15.svg" id="vector" />
+  <img class="vector-icon" alt="" src="./public/portal-home-butoon.svg" id="vector" />
 
   <script>
     var frameContainer1 = document.getElementById("frameContainer1");
