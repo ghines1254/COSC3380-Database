@@ -56,57 +56,89 @@ if ($result->num_rows > 0) {
 <head>
     <meta charset="UTF-8">
     <title>Package History</title>
-    <!-- Add your stylesheet links here -->
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    
+    <!-- Include the global styles -->
+    <link rel="stylesheet" href="global.css" />
+    
+    <!-- Include the tracking page styles -->
+    <link rel="stylesheet" href="tracking-page.css" />
+    
+    <!-- Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600;700;800;900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+    />
 </head>
 <body>
-    <h1>Package History for Tracking Number: <?php echo htmlspecialchars($trackingNumber); ?></h1>
+    <div class="tracking-page">
 
-    <!-- Filter Form -->
-    <form action="package_history.php" method="get">
-        <input type="hidden" name="tracking_number" value="<?php echo htmlspecialchars($trackingNumber); ?>">
-        
-        <label for="startDate">Start Date:</label>
-        <input type="date" id="startDate" name="startDate" value="<?php echo htmlspecialchars($startDate); ?>">
-        
-        <label for="endDate">End Date:</label>
-        <input type="date" id="endDate" name="endDate" value="<?php echo htmlspecialchars($endDate); ?>">
-        
-        <label for="employeeId">Employee ID:</label>
-        <input type="text" id="employeeId" name="employeeId" value="<?php echo htmlspecialchars($employeeId); ?>">
-        
-        <input type="submit" value="Filter">
-    </form>
+        <!-- Header -->
+        <div class="navigation-bar-light34">
+            <div class="cougarcourier1-4-parent31" id="frameContainer1">
+                <!-- Your logo or home link here -->
+            </div>
+            <div class="navigation-bar-light-inner33">
+                <div class="rectangle-parent166">
+                    <div class="group-child106"></div>
+                    <b class="login37">Package History</b>
+                </div>
+            </div>
+        </div>
 
-    <!-- Table of Package History Records -->
-    <?php if (count($historyRecords) > 0): ?>
-        <table>
-            <thead>
-                <tr>
-                    <th>Employee ID</th>
-                    <th>Location Type</th>
-                    <th>Location</th>
-                    <th>Time Scanned</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($historyRecords as $record): ?>
-                    <tr>
-                        <td><?php echo htmlspecialchars($record['emp_id']); ?></td>
-                        <td><?php echo htmlspecialchars($record['location_type']); ?></td>
-                        <td><?php echo htmlspecialchars($record['location']); ?></td>
-                        <td><?php echo htmlspecialchars($record['time_scanned']); ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    <?php else: ?>
-        <p>No history records found for this tracking number.</p>
-    <?php endif; ?>
+        <!-- Filter Form -->
+        <div class="customer-portal-outline9">
+            <div class="frame-parent76">
+                <div class="frame-parent77">
+                    <form action="package_history.php" method="get" class="frame-wrapper30">
+                        <input type="hidden" name="tracking_number" value="<?php echo htmlspecialchars($trackingNumber); ?>">
+                        
+                        <label for="startDate">Start Date:</label>
+                        <input type="date" id="startDate" name="startDate" value="<?php echo htmlspecialchars($startDate); ?>">
+                        
+                        <label for="endDate">End Date:</label>
+                        <input type="date" id="endDate" name="endDate" value="<?php echo htmlspecialchars($endDate); ?>">
+                        
+                        <label for="employeeId">Employee ID:</label>
+                        <input type="text" id="employeeId" name="employeeId" value="<?php echo htmlspecialchars($employeeId); ?>">
+                        
+                        <input type="submit" value="Filter" class="track2">
+                    </form>
+                    <div class="portal-page29">
+                        <!-- Table of Package History Records -->
+                        <?php if (count($historyRecords) > 0): ?>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Employee ID</th>
+                                        <th>Location Type</th>
+                                        <th>Location</th>
+                                        <th>Time Scanned</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($historyRecords as $record): ?>
+                                        <tr>
+                                            <td><?php echo htmlspecialchars($record['emp_id']); ?></td>
+                                            <td><?php echo htmlspecialchars($record['location_type']); ?></td>
+                                            <td><?php echo htmlspecialchars($record['location']); ?></td>
+                                            <td><?php echo htmlspecialchars($record['time_scanned']); ?></td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        <?php else: ?>
+                            <p>No history records found for this tracking number.</p>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <?php
-    // Now you can close the statement and connection
-    $stmt->close();
-    $conn->close();
-    ?>
+    </div>
 </body>
 </html>
