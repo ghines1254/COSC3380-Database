@@ -9,6 +9,13 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />
    <style>
+
+    /* Adding hover effect */
+    .generate-report-button:hover {
+      background-color: #4CAF50; /* Darker shade for hover */
+      color: white;
+    }
+   
     .report-table {
       width: 100%;
       border-collapse: collapse;
@@ -85,9 +92,17 @@
         </div>
 
         <!-- Centered Generate Report Form -->
-      <div class="generate-report-form" style="text-align: center; margin-top: 20px; margin-bottom: 20px; margin-left: 50px;">
+      <div class="generate-report-form" style="text-align: center; margin-top: -60px; margin-bottom: 20px; margin-left: 50px;">
     <form method="post" action="">
-        <input type="submit" name="generate_report" value="Generate Report">
+        <!-- Button styling added here -->
+      <input type="submit" name="generate_report" value="Generate Report" 
+             style="background-color: #4CAF50; /* Green background */
+                    color: white; /* White text */
+                    padding: 10px 20px; /* Top/bottom and left/right padding */
+                    border: none; /* No border */
+                    border-radius: 5px; /* Rounded corners */
+                    cursor: pointer; /* Cursor changes to pointer on hover */
+                    box-shadow: 2px 2px 5px grey; /* Optional shadow */">
     </form>
 </div>
 
