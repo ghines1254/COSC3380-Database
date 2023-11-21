@@ -84,110 +84,106 @@
         </div>
 
         <!-- Centered Generate Report Form -->
-        <div class="generate-report-form" style="text-align: center; padding: 20px;">
-          <form method="post" action="">
-            <input type="submit" name="generate_report" value="Generate Report">
-          </form>
-        </div>
+      <div class="generate-report-form" style="text-align: center; padding: 20px;">
+        <form method="post" action="">
+          <input type="submit" name="generate_report" value="Generate Report">
+        </form>
       </div>
-         <!-- Employee Data Display outside of admin-portal-outline -->
+    </div>
+
+    <!-- Employee Data Display outside of admin-portal-outline -->
     <div class="employee-data-report" style="margin-top: 20px;">
       <?php
       include 'admin-departments-page-script.php';
       if (isset($_POST['generate_report'])) {
         $employeeData = fetchEmployeeReport();
-        <div class="table-container">
         if (!empty($employeeData)): ?>
-          <table class="report-table">
-            <tr>
-              <th>ID</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Sex</th>
-              <th>Birthdate</th>
-              <th>City</th>
-              <th>State</th>
-              <th>Zipcode</th>
-              <th>Department</th>
-              <th>Created On</th>
-              <th>Packages Delivered</th>
-            </tr>
-            <?php foreach ($employeeData as $data): ?>
-            <tr>
-              <td><?= htmlspecialchars($data['idnum']) ?></td>
-              <td><?= htmlspecialchars($data['first_name']) ?></td>
-              <td><?= htmlspecialchars($data['last_name']) ?></td>
-              <td><?= htmlspecialchars($data['sex']) ?></td>
-              <td><?= htmlspecialchars($data['birthdate']) ?></td>
-              <td><?= htmlspecialchars($data['city']) ?></td>
-              <td><?= htmlspecialchars($data['state']) ?></td>
-              <td><?= htmlspecialchars($data['zipcode']) ?></td>
-              <td><?= htmlspecialchars($data['dept']) ?></td>
-              <td><?= htmlspecialchars($data['created_on']) ?></td>
-              <td><?= htmlspecialchars($data['packages_delivered']) ?></td>
-            </tr>
-            <?php endforeach; ?>
-          </table>
+          <div class="table-container">
+            <table class="report-table">
+              <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Sex</th>
+                <th>Birthdate</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zipcode</th>
+                <th>Department</th>
+                <th>Created On</th>
+                <th>Packages Delivered</th>
+              </tr>
+              <?php foreach ($employeeData as $data): ?>
+              <tr>
+                <td><?= htmlspecialchars($data['idnum']) ?></td>
+                <td><?= htmlspecialchars($data['first_name']) ?></td>
+                <td><?= htmlspecialchars($data['last_name']) ?></td>
+                <td><?= htmlspecialchars($data['sex']) ?></td>
+                <td><?= htmlspecialchars($data['birthdate']) ?></td>
+                <td><?= htmlspecialchars($data['city']) ?></td>
+                <td><?= htmlspecialchars($data['state']) ?></td>
+                <td><?= htmlspecialchars($data['zipcode']) ?></td>
+                <td><?= htmlspecialchars($data['dept']) ?></td>
+                <td><?= htmlspecialchars($data['created_on']) ?></td>
+                <td><?= htmlspecialchars($data['packages_delivered']) ?></td>
+              </tr>
+              <?php endforeach; ?>
+            </table>
+          </div>
         <?php else: ?>
           <p>No employee data found.</p>
         <?php endif;
       }
       ?>
     </div>
-    </div>
+  </div>
 
-    <!-- Employee Data Display outside of admin-portal-outline -->
-  
+  <img class="vector-icon" alt="" src="./public/vector15.svg" id="vector" />
 
-    <img class="vector-icon" alt="" src="./public/vector15.svg" id="vector" />
+  <script>
+    var frameContainer1 = document.getElementById("frameContainer1");
+    if (frameContainer1) {
+      frameContainer1.addEventListener("click", function (e) {
+        window.location.href = "./home-page.html";
+      });
+    }
 
-  
+    var button2Container = document.getElementById("button2Container");
+    if (button2Container) {
+      button2Container.addEventListener("click", function (e) {
+        window.location.href = "./admin-p-o-locations.html";
+      });
+    }
 
+    var button3Container = document.getElementById("button3Container");
+    if (button3Container) {
+      button3Container.addEventListener("click", function (e) {
+        window.location.href = "./admin-products-page.html";
+      });
+    }
 
-    <script>
-      var frameContainer1 = document.getElementById("frameContainer1");
-      if (frameContainer1) {
-        frameContainer1.addEventListener("click", function (e) {
-          window.location.href = "./home-page.html";
-        });
-      }
+    var button5Container = document.getElementById("button5Container");
+    if (button5Container) {
+      button5Container.addEventListener("click", function (e) {
+        window.location.href = "./admin-employees-page.html";
+      });
+    }
 
-      var button2Container = document.getElementById("button2Container");
-      if (button2Container) {
-        button2Container.addEventListener("click", function (e) {
-          window.location.href = "./admin-p-o-locations.html";
-        });
-      }
+    var button7Container = document.getElementById("button7Container");
+    if (button7Container) {
+      button7Container.addEventListener("click", function (e) {
+        window.location.href = "./admin-account-page.html";
+      });
+    }
 
-      var button3Container = document.getElementById("button3Container");
-      if (button3Container) {
-        button3Container.addEventListener("click", function (e) {
-          window.location.href = "./admin-products-page.html";
-        });
-      }
-
-      var button5Container = document.getElementById("button5Container");
-      if (button5Container) {
-        button5Container.addEventListener("click", function (e) {
-          window.location.href = "./admin-employees-page.html";
-        });
-      }
-
-      var button7Container = document.getElementById("button7Container");
-      if (button7Container) {
-        button7Container.addEventListener("click", function (e) {
-          window.location.href = "./admin-account-page.html";
-        });
-      }
-
-      var vector = document.getElementById("vector");
-      if (vector) {
-        vector.addEventListener("click", function (e) {
-          window.location.href = "./admin-portal-nofications-page.html";
-        });
-      }
-    </script>
-  </body>
+    var vector = document.getElementById("vector");
+    if (vector) {
+      vector.addEventListener("click", function (e) {
+        window.location.href = "./admin-portal-nofications-page.html";
+      });
+    }
+  </script>
+</body>
 </html>
 
 
