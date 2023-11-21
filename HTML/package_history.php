@@ -1,5 +1,9 @@
+
 <?php
 require_once 'init.php';
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 
 $trackingNumber = isset($_GET['tracking_number']) ? $_GET['tracking_number'] : '';
 $startDate = isset($_GET['startDate']) ? $_GET['startDate'] : '';
