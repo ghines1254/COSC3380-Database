@@ -60,15 +60,7 @@ if (isset($_POST['getHistory'])) {
     // Bind parameters dynamically
     if ($params) {
         $paramTypes = str_repeat('s', count($params));
-        $paramValues = array_merge([$paramTypes], $params);
-        
-        // Debugging: Print the prepared query and parameters
-        echo "Prepared Query: $query<br>";
-        echo "Parameters: " . implode(', ', $params) . "<br>";
-        
-        if (!call_user_func_array([$stmt, 'bind_param'], $paramValues)) {
-            die("Error binding parameters: " . $stmt->error);
-        }
+        $stmt->bind_param($paramTypes, ...$params);
     }
     
     // Execute the query
