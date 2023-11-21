@@ -50,6 +50,10 @@ if (!empty($employeeId)) {
 }
 
 $stmtTrackingInfo = $conn->prepare($queryTrackingInfo);
+if (!$stmtTrackingInfo) {
+    die("Prepare failed: " . mysqli_error($conn));
+}
+
 $stmtTrackingInfo->bind_param($paramTypesTrackingInfo, ...$paramsTrackingInfo);
 $stmtTrackingInfo->execute();
 $resultTrackingInfo = $stmtTrackingInfo->get_result();
