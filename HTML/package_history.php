@@ -11,7 +11,7 @@ $endDate = isset($_GET['endDate']) ? $_GET['endDate'] : '';
 $query = "
     SELECT 
         ph.package_id, ph.emp_id, ph.location_type, ph.location, ph.vin, ph.time_scanned,
-        ti.on_truck, ti.starting_location, ti.received, ti.delivered_by, ti.created_on, ti.last_updated, ti.eta
+        ti.on_truck, ti.starting_location_id, ti.received, ti.delivered_by, ti.created_on, ti.last_updated, ti.eta
     FROM 
         PACKAGE_HISTORY ph
     LEFT JOIN 
@@ -29,7 +29,7 @@ if (!empty($selectedAttribute)) {
             $packageHistoryHeader = "Location";
             break;
         case 'Starting Location':
-            $query .= " WHERE ti.starting_location = ?";
+            $query .= " WHERE ti.starting_location_id = ?";
             $packageHistoryHeader = "Starting Location";
             break;
         // Add more cases for other attributes as needed
@@ -126,7 +126,7 @@ $conn->close();
             <?php foreach ($records as $record): ?>
                 <tr>
                     <td><?php echo htmlspecialchars($record['on_truck']); ?></td>
-                    <td><?php echo htmlspecialchars($record['starting_location']); ?></td>
+                    <td><?php echo htmlspecialchars($record['starting_location_id']); ?></td>
                     <td><?php echo ($record['received'] == 1) ? 'YES' : 'NO'; ?></td>
                     <td><?php echo htmlspecialchars($record['delivered_by']); ?></td>
                     <td><?php echo htmlspecialchars($record['created_on']); ?></td>
