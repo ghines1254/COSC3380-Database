@@ -86,6 +86,12 @@ $conn->close();
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600;700;800;900&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+    <style>
+        /* Add CSS styles for hiding columns */
+        .hidden-column {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <h1>Package History for Tracking Number: <?php echo htmlspecialchars($trackingNumber); ?></h1>
@@ -143,7 +149,14 @@ $conn->close();
         <thead>
             <tr>
                 <th>Package ID</th>
-                <th><?php echo htmlspecialchars($packageHistoryHeader); ?></th>
+                <?php if (!empty($selectedAttribute)): ?>
+                    <th><?php echo htmlspecialchars($selectedAttribute); ?></th>
+                <?php else: ?>
+                    <th class="hidden-column">Employee ID</th>
+                    <th class="hidden-column">Location</th>
+                    <th class="hidden-column">Starting Location</th>
+                    <!-- Add more hidden columns for other attributes as needed -->
+                <?php endif; ?>
                 <th>Location Type</th>
                 <th>Location</th>
                 <th>Truck Number</th>
@@ -154,7 +167,14 @@ $conn->close();
             <?php foreach ($records as $record): ?>
                 <tr>
                     <td><?php echo htmlspecialchars($record['package_id']); ?></td>
-                    <td><?php echo htmlspecialchars($record['emp_id']); ?></td>
+                    <?php if (!empty($selectedAttribute)): ?>
+                        <td><?php echo htmlspecialchars($record[$selectedAttribute]); ?></td>
+                    <?php else: ?>
+                        <td class="hidden-column"><?php echo htmlspecialchars($record['emp_id']); ?></td>
+                        <td class="hidden-column"><?php echo htmlspecialchars($record['location']); ?></td>
+                        <td class="hidden-column"><?php echo htmlspecialchars($record['starting_location_id']); ?></td>
+                        <!-- Add more hidden columns for other attributes as needed -->
+                    <?php endif; ?>
                     <td><?php echo htmlspecialchars($record['location_type']); ?></td>
                     <td><?php echo htmlspecialchars($record['location']); ?></td>
                     <td><?php echo htmlspecialchars($record['vin']); ?></td>
