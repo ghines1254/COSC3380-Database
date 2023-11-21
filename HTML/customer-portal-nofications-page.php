@@ -93,7 +93,7 @@
                   </div>
                   <div class="products11" id="productsContainer">
                     <div class="products-child9"></div>
-                    <b class="button-254">Products</b>
+                    <b class="button-254">Income</b>
                   </div>
                   <div class="quote22" id="quoteContainer">
                     <div class="tracking-child17"></div>
@@ -1600,9 +1600,9 @@
             if (!$stmt->execute()) {
               echo "Execution failed: " . $stmt->error;
               exit();
-            } 
+            }
             $stmt->bind_result($trackingNumber, $lastUpdated, $trackingMessage);
-            while($stmt->fetch() && $count < 10){ 
+            while($stmt->fetch() && $count < 10){
             ?>
               <div class="notification-component16">
               <div class="rectangle-parent174">

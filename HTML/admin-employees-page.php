@@ -57,7 +57,7 @@ require_once 'init.php';
                 </div>
                 <div class="button316" id="button3Container">
                   <div class="button3-child14"></div>
-                  <b class="button-228">Products</b>
+                  <b class="button-228">Income</b>
                 </div>
                 <div class="button428" id="button4Container">
                   <div class="button2-child26"></div>
@@ -344,7 +344,7 @@ require_once 'init.php';
       />
 
 
-        
+
 <div class = "frame12">
 <table class="employees-table">
     <thead>
@@ -356,19 +356,19 @@ require_once 'init.php';
             <th>Location</th>
         </tr>
     </thead>
-    
+
  <tbody>
 <?php
 $query = "SELECT first_name, last_name, idnum, dept, branch_id FROM EMPLOYEE E JOIN DEPARTMENT D ON E.dept = D.dept_id JOIN POST_OFFICE P ON D.works_at = P.branch_id ORDER BY idnum ASC";
 
 $result = $conn->query($query);
 
-if (!$result) 
+if (!$result)
 {
     die("Error retrieving employee information: " . $conn->error);
 }
 
-while ($row = $result->fetch_assoc()) 
+while ($row = $result->fetch_assoc())
 {
     echo "<tr>";
     echo "<td>{$row['first_name']}</td>";
@@ -462,7 +462,7 @@ while ($row = $result->fetch_assoc())
                       <option value="WI">WI</option>
                       <option value="WV">WV</option>
                       <option value="WY">WY</option>
-        
+
     </select>
 
      <label for="zipcode">Zipcode:</label>
@@ -513,13 +513,13 @@ function addEmployee() {
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        return response.json(); 
+        return response.json();
     })
    .then(data => {
     console.log(data);
     alert('Employee added successfully: ' + JSON.stringify(data));
 })
-    
+
  .catch(error => {
     console.error('Error adding employee:', error);
     if (error instanceof TypeError) {
@@ -553,7 +553,7 @@ function addEmployee() {
             var button3Container = document.getElementById("button3Container");
             if (button3Container) {
                 button3Container.addEventListener("click", function (e) {
-                window.location.href = "./admin-products-page.html";
+                window.location.href = "./admin-income-page.php";
                 });
             }
 
@@ -578,7 +578,7 @@ function addEmployee() {
                 });
             };
 
-            
+
         </script>
     </div>
 </body>
