@@ -1,5 +1,4 @@
 <?php
-// Include the database initialization file
 require_once 'init.php';
 
 // Retrieve the tracking number and filter parameters from the GET parameters
@@ -8,7 +7,7 @@ $startDate = isset($_GET['startDate']) ? $_GET['startDate'] : '';
 $endDate = isset($_GET['endDate']) ? $_GET['endDate'] : '';
 $employeeId = isset($_GET['employeeId']) ? $_GET['employeeId'] : '';
 
-// Start with the base query
+// base query
 $query = "SELECT * FROM PACKAGE_HISTORY WHERE package_id = ?";
 
 // Add conditions based on filters
@@ -56,7 +55,7 @@ if ($result->num_rows > 0) {
 <head>
     <meta charset="UTF-8">
     <title>Package History</title>
-    <!-- Add your stylesheet links here -->
+    <!-- add stylesheet here -->
 </head>
 <body>
     <h1>Package History for Tracking Number: <?php echo htmlspecialchars($trackingNumber); ?></h1>
@@ -104,7 +103,6 @@ if ($result->num_rows > 0) {
     <?php endif; ?>
 
     <?php
-    // Now you can close the statement and connection
     $stmt->close();
     $conn->close();
     ?>
