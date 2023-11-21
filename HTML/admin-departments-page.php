@@ -17,7 +17,7 @@
       border: 1px solid black;
       padding: 8px;
       text-align: left;
-      font-size: smaller; /* Adjust the font size here */
+      font-size: 12px; /* Adjust the font size here */
     }
     .table-container {
       max-width: 870px;
