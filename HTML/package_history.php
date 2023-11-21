@@ -22,12 +22,15 @@ if (!empty($selectedAttribute)) {
     switch ($selectedAttribute) {
         case 'Employee ID':
             $query .= " AND ph.emp_id = ?";
+            $packageHistoryHeader = "Scanned By Employee";
             break;
         case 'Location':
             $query .= " AND ph.location = ?";
+            $packageHistoryHeader = "Location";
             break;
         case 'Starting Location':
             $query .= " AND ti.starting_location_id = ?";
+            $packageHistoryHeader = "Starting Location";
             break;
         // Add more cases for other attributes as needed
     }
@@ -82,67 +85,59 @@ $conn->close();
     </form>
 
     <!-- Display Tracking Info -->
-    <?php if ($records): ?>
-        <table>
-            <caption>Tracking Info</caption>
-            <thead>
+    <table>
+        <caption>Tracking Info</caption>
+        <thead>
+            <tr>
+                <th>On Truck</th>
+                <th>Starting Location</th>
+                <th>Received</th>
+                <th>Delivered By Employee ID</th>
+                <th>Created On</th>
+                <th>Last Updated</th>
+                <th>ETA</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($records as $record): ?>
                 <tr>
-                    <th>On Truck</th>
-                    <th>Starting Location</th>
-                    <th>Received</th>
-                    <th>Delivered By Employee ID</th>
-                    <th>Created On</th>
-                    <th>Last Updated</th>
-                    <th>ETA</th>
+                    <td><?php echo htmlspecialchars($record['on_truck']); ?></td>
+                    <td><?php echo htmlspecialchars($record['starting_location_id']); ?></td>
+                    <td><?php echo ($record['received'] == 1) ? 'YES' : 'NO'; ?></td>
+                    <td><?php echo htmlspecialchars($record['delivered_by']); ?></td>
+                    <td><?php echo htmlspecialchars($record['created_on']); ?></td>
+                    <td><?php echo htmlspecialchars($record['last_updated']); ?></td>
+                    <td><?php echo htmlspecialchars($record['eta']); ?></td>
                 </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($records as $record): ?>
-                    <tr>
-                        <td><?php echo htmlspecialchars($record['on_truck']); ?></td>
-                        <td><?php echo htmlspecialchars($record['starting_location_id']); ?></td>
-                        <td><?php echo ($record['received'] == 1) ? 'YES' : 'NO'; ?></td>
-                        <td><?php echo htmlspecialchars($record['delivered_by']); ?></td>
-                        <td><?php echo htmlspecialchars($record['created_on']); ?></td>
-                        <td><?php echo htmlspecialchars($record['last_updated']); ?></td>
-                        <td><?php echo htmlspecialchars($record['eta']); ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    <?php else: ?>
-        <p>No tracking info records found for this tracking number.</p>
-    <?php endif; ?>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
 
     <!-- Display Package History -->
-    <?php if ($records): ?>
-        <table>
-            <caption>Package History</caption>
-            <thead>
+    <table>
+        <caption>Package History</caption>
+        <thead>
+            <tr>
+                <th>Package ID</th>
+                <th><?php echo isset($packageHistoryHeader) ? $packageHistoryHeader : 'Scanned By Employee'; ?></th>
+                <th>Location Type</th>
+                <th>Location</th>
+                <th>Truck Number</th>
+                <th>Time Scanned</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($records as $record): ?>
                 <tr>
-                    <th>Package ID</th>
-                    <th>Scanned By Employee</th>
-                    <th>Location Type</th>
-                    <th>Location</th>
-                    <th>Truck Number</th>
-                    <th>Time Scanned</th>
+                    <td><?php echo htmlspecialchars($record['package_id']); ?></td>
+                    <td><?php echo htmlspecialchars($record['emp_id']); ?></td>
+                    <td><?php echo htmlspecialchars($record['location_type']); ?></td>
+                    <td><?php echo htmlspecialchars($record['location']); ?></td>
+                    <td><?php echo htmlspecialchars($record['vin']); ?></td>
+                    <td><?php echo htmlspecialchars($record['time_scanned']); ?></td>
                 </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($records as $record): ?>
-                    <tr>
-                        <td><?php echo htmlspecialchars($record['package_id']); ?></td>
-                        <td><?php echo htmlspecialchars($record['emp_id']); ?></td>
-                        <td><?php echo htmlspecialchars($record['location_type']); ?></td>
-                        <td><?php echo htmlspecialchars($record['location']); ?></td>
-                        <td><?php echo htmlspecialchars($record['vin']); ?></td>
-                        <td><?php echo htmlspecialchars($record['time_scanned']); ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    <?php else: ?>
-        <p>No package history records found for this tracking number.</p>
-    <?php endif; ?>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
 </body>
 </html>
