@@ -93,7 +93,7 @@
     </div>
 
     <!-- Employee Data Display outside of admin-portal-outline -->
-    <div class="employee-data-report" style="margin-top: 100px;">
+    <div class="employee-data-report" style="margin-top: 200px;">
       <?php
       include 'admin-departments-page-script.php';
       if (isset($_POST['generate_report'])) {
