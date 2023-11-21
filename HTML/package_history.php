@@ -11,7 +11,7 @@ $employeeId = isset($_GET['employeeId']) ? $_GET['employeeId'] : '';
 // New query to fetch data for the tracking info
 $queryTrackingInfo = "
     SELECT 
-        ti.starting_location,
+        ti.starting_location_id,
         CASE 
             WHEN ti.received = 1 THEN 'YES'
             ELSE 'NO'
@@ -140,7 +140,7 @@ $conn->close();
             </thead>
             <tbody>
                 <tr>
-                    <td><?php echo htmlspecialchars($trackingInfo['starting_location']); ?></td>
+                    <td><?php echo htmlspecialchars($trackingInfo['starting_location_id']); ?></td>
                     <td><?php echo htmlspecialchars($trackingInfo['received_status']); ?></td>
                     <td><?php echo htmlspecialchars($trackingInfo['delivered_by_employee_id']); ?></td>
                     <td><?php echo htmlspecialchars($trackingInfo['created_on']); ?></td>
