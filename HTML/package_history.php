@@ -17,6 +17,9 @@ $query = "
     LEFT JOIN 
         TRACKING_INFO ti ON ph.package_id = ti.package_id";
 
+// Initialize an empty array for params
+$params = [];
+
 // Apply attribute filter if a specific attribute is selected
 if (!empty($selectedAttribute)) {
     switch ($selectedAttribute) {
@@ -34,6 +37,8 @@ if (!empty($selectedAttribute)) {
             break;
         // Add more cases for other attributes as needed
     }
+    // Add selected attribute to params
+    $params[] = $selectedAttribute;
 }
 
 // Apply date filters for the "Package History" section
@@ -43,20 +48,7 @@ if (!empty($startDate) && !empty($endDate)) {
     } else {
         $query .= " WHERE ph.time_scanned BETWEEN ? AND ?";
     }
-}
-
-$params = []; // Initialize params array
-
-// Add selected attribute to params if not empty
-if (!empty($selectedAttribute)) {
-    $params[] = $selectedAttribute;
-}
-
-// Add tracking number to params
-$params[] = $trackingNumber;
-
-// Add start and end dates to params if not empty
-if (!empty($startDate) && !empty($endDate)) {
+    // Add start and end dates to params
     $params[] = $startDate;
     $params[] = $endDate;
 }
@@ -65,7 +57,12 @@ if (!empty($startDate) && !empty($endDate)) {
 $paramTypes = str_repeat('s', count($params));
 
 $stmt = $conn->prepare($query);
-$stmt->bind_param($paramTypes, ...$params);
+
+// Bind parameters dynamically
+if ($paramTypes) {
+    $stmt->bind_param($paramTypes, ...$params);
+}
+
 $stmt->execute();
 $result = $stmt->get_result();
 
