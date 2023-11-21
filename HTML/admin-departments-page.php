@@ -23,7 +23,7 @@
       max-width: 870px;
       max-height: 570px;
       overflow: auto; /* enables scrolling */
-      margin-left: auto;
+      margin-left: 400px;
       margin-right: auto;
     }
   </style>
