@@ -10,12 +10,10 @@ $endDate = isset($_POST['endDate']) ? $_POST['endDate'] : '';
 
 // Define an array of all columns in PACKAGE_HISTORY
 $allAttributes = [
-    'Package ID',
     'Employee ID',
     'Location Type',
     'Location',
     'VIN',
-    'Time Scanned',
 ];
 
 // Initialize an empty array for params
@@ -67,6 +65,18 @@ if (isset($_POST['getHistory'])) {
     $stmt->close();
 }
 
+// Retrieve Tracking Info from the TRACKING_INFO table
+$trackingInfo = [];
+$query = "SELECT * FROM TRACKING_INFO WHERE tracking_number = ?";
+$stmt = $conn->prepare($query);
+$stmt->bind_param('s', $trackingNumber);
+$stmt->execute();
+$result = $stmt->get_result();
+if ($result->num_rows > 0) {
+    $trackingInfo = $result->fetch_assoc();
+}
+$stmt->close();
+
 $conn->close();
 ?>
 
@@ -87,7 +97,48 @@ $conn->close();
 
     <!-- Display Tracking Info -->
     <h2>Tracking Info</h2>
-    <!-- Replace with your code to display "Tracking Info" here -->
+    <table>
+        <tbody>
+            <tr>
+                <td>On Truck</td>
+                <td><?php echo htmlspecialchars($trackingInfo['on_truck']); ?></td>
+            </tr>
+            <tr>
+                <td>Starting Location</td>
+                <td><?php echo htmlspecialchars($trackingInfo['starting_location_id']); ?></td>
+            </tr>
+            <tr>
+                <td>Received</td>
+                <td><?php echo $trackingInfo['received'] ? 'YES' : 'NO'; ?></td>
+            </tr>
+            <tr>
+                <td>Delivered By</td>
+                <td><?php echo htmlspecialchars($trackingInfo['delivered_by']); ?></td>
+            </tr>
+            <tr>
+                <td>Created On</td>
+                <td><?php echo htmlspecialchars($trackingInfo['created_on']); ?></td>
+            </tr>
+            <tr>
+                <td>Last Updated</td>
+                <td><?php echo htmlspecialchars($trackingInfo['last_updated']); ?></td>
+            </tr>
+            <tr>
+                <td>ETA</td>
+                <td><?php echo htmlspecialchars($trackingInfo['eta']); ?></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Display Date Selection -->
+    <h2>Date Selection</h2>
+    <form action="package_history.php" method="post">
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" name="startDate" value="<?php echo htmlspecialchars($startDate); ?>">
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" name="endDate" value="<?php echo htmlspecialchars($endDate); ?>">
+        <input type="submit" name="getHistory" value="Get Package History!">
+    </form>
 
     <!-- Display Package History Selection -->
     <h2>Package History</h2>
@@ -98,11 +149,6 @@ $conn->close();
                 <?php echo htmlspecialchars($attribute); ?>
             </label>
         <?php endforeach; ?>
-        <label for="startDate">Start Date:</label>
-        <input type="date" id="startDate" name="startDate" value="<?php echo htmlspecialchars($startDate); ?>">
-        <label for="endDate">End Date:</label>
-        <input type="date" id="endDate" name="endDate" value="<?php echo htmlspecialchars($endDate); ?>">
-        <input type="submit" name="getHistory" value="Get Package History!">
     </form>
 
     <!-- Display Package History -->
