@@ -60,7 +60,7 @@
                 </div>
                 <div class="button315" id="button3Container">
                   <div class="button3-child13"></div>
-                  <b class="button-227">Products</b>
+                  <b class="button-227">Income</b>
                 </div>
                 <div class="button427" id="button4Container">
                   <div class="button2-child25"></div>
@@ -207,7 +207,7 @@
       var button3Container = document.getElementById("button3Container");
       if (button3Container) {
         button3Container.addEventListener("click", function (e) {
-          window.location.href = "./admin-products-page.html";
+          window.location.href = "./admin-income-page.php";
         });
       }
 

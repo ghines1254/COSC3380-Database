@@ -48,7 +48,7 @@
           <div class="rectangle-parent107">
             <div class="frame-child57"></div>
             <div class="welcome-to-your-portal-page-wrapper16">
-              <b class="welcome-to-your18">Products & Stock</b>
+              <b class="welcome-to-your18">Total Income Report</b>
             </div>
           </div>
           <div class="frame-parent41">
@@ -60,7 +60,7 @@
                 </div>
                 <div class="button318">
                   <div class="button3-child16"></div>
-                  <b class="button-230">Products</b>
+                  <b class="button-230">Income</b>
                 </div>
                 <div class="button431" id="button4Container">
                   <div class="button2-child28"></div>
