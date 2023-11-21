@@ -79,6 +79,9 @@ if (isset($_POST['getHistory'])) {
 $trackingInfo = [];
 $query = "SELECT * FROM TRACKING_INFO WHERE tracking_number = ?";
 $stmt = $conn->prepare($query);
+if ($stmt === false) {
+    die("Error preparing query: " . $conn->error);
+}
 $stmt->bind_param('s', $trackingNumber);
 if (!$stmt->execute()) {
     die("Error executing query: " . $stmt->error);
