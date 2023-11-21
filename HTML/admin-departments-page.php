@@ -85,7 +85,7 @@
         </div>
 
         <!-- Centered Generate Report Form -->
-      <div class="generate-report-form" style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+      <div class="generate-report-form" style="text-align: center; margin-top: 20px; margin-bottom: 20px; margin-left: 50px;">
     <form method="post" action="">
         <input type="submit" name="generate_report" value="Generate Report">
     </form>
