@@ -51,13 +51,24 @@ if (isset($_POST['getHistory'])) {
     $query = "SELECT $selectClause FROM PACKAGE_HISTORY $whereClause";
     $stmt = $conn->prepare($query);
     
+    // Check for query preparation errors
+    if ($stmt === false) {
+        die("Error preparing query: " . $conn->error);
+    }
+    
     // Bind parameters dynamically
     if ($params) {
         $paramTypes = str_repeat('s', count($params));
-        $stmt->bind_param($paramTypes, ...$params);
+        if (!$stmt->bind_param($paramTypes, ...$params)) {
+            die("Error binding parameters: " . $stmt->error);
+        }
     }
     
-    $stmt->execute();
+    // Execute the query
+    if (!$stmt->execute()) {
+        die("Error executing query: " . $stmt->error);
+    }
+    
     $result = $stmt->get_result();
     
     $records = $result->num_rows > 0 ? $result->fetch_all(MYSQLI_ASSOC) : [];
@@ -70,7 +81,9 @@ $trackingInfo = [];
 $query = "SELECT * FROM TRACKING_INFO WHERE tracking_number = ?";
 $stmt = $conn->prepare($query);
 $stmt->bind_param('s', $trackingNumber);
-$stmt->execute();
+if (!$stmt->execute()) {
+    die("Error executing query: " . $stmt->error);
+}
 $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     $trackingInfo = $result->fetch_assoc();
