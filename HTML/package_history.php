@@ -118,7 +118,7 @@ $conn->close();
             </tr>
             <tr>
                 <td>Starting Location</td>
-                <td><?php echo htmlspecialchars($trackingInfo['starting_location_id']); ?></td>
+                <td><?php echo htmlspecialchars($trackingInfo['starting_location']); ?></td>
             </tr>
             <tr>
                 <td>Received</td>
