@@ -21,10 +21,10 @@
   position: absolute;
   height: calc(100% - 24px);
   width: calc(100% - 35px);
-  top: 24px;
-  right: 18px;
+  top: 12px;
+  right: 15px;
   bottom: 0;
-  left: 17px;
+  left: 20px;
   opacity: 0.05;
 }
 .group-item,
