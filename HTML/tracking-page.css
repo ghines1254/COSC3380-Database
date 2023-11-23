@@ -149,7 +149,7 @@
 .tracking-child15 {
   position: absolute;
   top: 1px;
-  left: 5px;
+  
   border-radius: var(--br-3xs);
   background-color: var(--lightaccent);
   width: 227px;

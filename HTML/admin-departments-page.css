@@ -149,7 +149,6 @@
 .button2-child {
   position: absolute;
   top: 1px;
-  left: 5px;
   border-radius: var(--br-3xs);
   background-color: var(--lightaccent);
   width: 227px;
@@ -203,12 +202,10 @@
 .button5,
 .button7 {
   top: 386px;
-  left: 2px;
   cursor: pointer;
 }
 .button7 {
   top: 495px;
-  left: 5px;
 }
 .button2-parent {
   position: relative;
@@ -286,4 +283,3 @@
   color: var(--lightsecond);
   font-family: var(--largetext);
 }
-
