@@ -77,7 +77,67 @@
               </div>
             </div>
             <div class="portal-page18">
-              
+              <div class="generate-report-form" style="text-align: center; margin-top: -100px; margin-bottom: 20px; margin-left: 720px;">
+    <form method="post" action="">
+        <!-- Button styling added here -->
+      <input type="submit" name="generate_report" value="Generate Report"
+             style="background-color: #4CAF50; /* Green background */
+                    color: white; /* White text */
+                    padding: 10px 20px; /* Top/bottom and left/right padding */
+                    border: none; /* No border */
+                    border-radius: 5px; /* Rounded corners */
+                    cursor: pointer; /* Cursor changes to pointer on hover */
+                    box-shadow: 2px 2px 5px grey; /* Optional shadow */">
+    </form>
+</div>
+
+    </div>
+
+    <!-- Employee Data Display outside of admin-portal-outline -->
+    <div class="employee-data-report" style="margin-top: 200px;">
+      <?php
+      include 'admin-departments-page-script.php';
+      if (isset($_POST['generate_report'])) {
+        $employeeData = fetchEmployeeReport();
+        if (!empty($employeeData)): ?>
+          <div class="table-container">
+            <table class="report-table">
+              <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Sex</th>
+                <th>Birthdate</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zipcode</th>
+                <th>Department</th>
+                <th>Created On</th>
+                <th>Packages Delivered</th>
+              </tr>
+              <?php foreach ($employeeData as $data): ?>
+              <tr>
+                <td><?= htmlspecialchars($data['idnum']) ?></td>
+                <td><?= htmlspecialchars($data['first_name']) ?></td>
+                <td><?= htmlspecialchars($data['last_name']) ?></td>
+                <td><?= htmlspecialchars($data['sex']) ?></td>
+                <td><?= htmlspecialchars($data['birthdate']) ?></td>
+                <td><?= htmlspecialchars($data['city']) ?></td>
+                <td><?= htmlspecialchars($data['state']) ?></td>
+                <td><?= htmlspecialchars($data['zipcode']) ?></td>
+                <td><?= htmlspecialchars($data['dept']) ?></td>
+                <td><?= htmlspecialchars($data['created_on']) ?></td>
+                <td><?= htmlspecialchars($data['packages_delivered']) ?></td>
+              </tr>
+              <?php endforeach; ?>
+            </table>
+          </div>
+        <?php else: ?>
+          <p>No employee data found.</p>
+        <?php endif;
+      }
+      ?>
+    </div>
             </div>
           </div>
         </div>

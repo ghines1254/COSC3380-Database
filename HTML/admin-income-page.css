@@ -1,3 +1,26 @@
+/* Adding hover effect */
+.generate-report-button:hover {
+  background-color: #4CAF50; /* Darker shade for hover */
+  color: white;
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.report-table th, .report-table td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+  font-size: 12px; /* Adjust the font size here */
+}
+.table-container {
+  max-width: 870px;
+  max-height: 570px;
+  overflow: auto; /* enables scrolling */
+  margin-left: 400px;
+  margin-right: auto;
+}
 .admin-products-page-child,
 .image-1-icon21 {
   position: absolute;
