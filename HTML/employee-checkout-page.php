@@ -129,7 +129,7 @@ require_once 'connection.php';
     
  <tbody>
 <?php
-$query = "SELECT product_id, product_name, product_price, stock_remaining, product_description FROM IN_STORE_PRODUCTS";
+$query = "SELECT product_id, product_name, product_price, stock_remaining, product_description FROM IN_STORE_PRODUCTS WHERE product_id != 'P0000'";
 
 $result = $conn->query($query);
 
