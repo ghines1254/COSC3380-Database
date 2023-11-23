@@ -81,13 +81,17 @@
     <form method="post" action="">
         <!-- Button styling added here -->
       <input type="submit" name="generate_report" value="Generate Report"
-             style="background-color: #4CAF50; /* Green background */
-                    color: white; /* White text */
-                    padding: 10px 20px; /* Top/bottom and left/right padding */
-                    border: none; /* No border */
-                    border-radius: 5px; /* Rounded corners */
-                    cursor: pointer; /* Cursor changes to pointer on hover */
-                    box-shadow: 2px 2px 5px grey; /* Optional shadow */">
+             style="position: absolute;
+                    top: 640px;
+                    right: 375.5px;
+                    background-color: var(--lightaccent);
+                    round-color: #4CAF50;
+                    color: white;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    box-shadow: 2px 2px 5px grey;">
     </form>
 </div>
 
