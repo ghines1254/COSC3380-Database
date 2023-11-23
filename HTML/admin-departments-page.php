@@ -182,7 +182,7 @@
     var button5Container = document.getElementById("button5Container");
     if (button5Container) {
       button5Container.addEventListener("click", function (e) {
-        window.location.href = "./admin-employees-page.html";
+        window.location.href = "./admin-employees-page.php";
       });
     }
 
