@@ -6,6 +6,18 @@ $startDate = isset($_GET['start_date']) ? $_GET['start_date'] : '';
 $endDate = isset($_GET['end_date']) ? $_GET['end_date'] : '';
 $attribute = isset($_GET['attribute']) ? $_GET['attribute'] : '';
 
+// Define a mapping of database column names to user-friendly display names
+$columnDisplayNameMap = [
+    'emp_id' => 'Employee ID',
+    'location' => 'Location',
+    'time_scanned' => 'Time Scanned',
+    'vin' => 'Truck No.',
+    // Add other columns as necessary, skipping 'location_type' and 'package_id' since they have special treatment
+];
+
+// Create a reverse map for dropdown display names
+$dropdownDisplayNameMap = array_flip($columnDisplayNameMap);
+
 // Fetch the static tracking information
 $queryTrackingInfo = "SELECT * FROM TRACKING_INFO WHERE package_id = ?";
 $stmt = $conn->prepare($queryTrackingInfo);
@@ -27,11 +39,6 @@ $stmtHistory = $conn->prepare($queryPackageHistory);
 $stmtHistory->bind_param(str_repeat("s", count($parameters)), ...$parameters);
 $stmtHistory->execute();
 $packageHistoryResult = $stmtHistory->get_result();
-
-// Get all columns from PACKAGE_HISTORY to use in the filter dropdown
-$columnsQuery = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'Post_Office_Schema' AND TABLE_NAME = 'PACKAGE_HISTORY' AND COLUMN_NAME != 'location_type'";
-$columnsResult = $conn->query($columnsQuery);
-$columns = $columnsResult->fetch_all(MYSQLI_ASSOC);
 
 ?>
 <!DOCTYPE html>
@@ -88,9 +95,9 @@ $columns = $columnsResult->fetch_all(MYSQLI_ASSOC);
     <label for="attribute">Attribute:</label>
     <select id="attribute" name="attribute">
         <option value="">Select an attribute</option>
-        <?php foreach ($columns as $column): ?>
-            <option value="<?php echo $column['COLUMN_NAME']; ?>" <?php echo ($attribute == $column['COLUMN_NAME']) ? 'selected' : ''; ?>>
-                <?php echo $column['COLUMN_NAME']; ?>
+        <?php foreach ($columnDisplayNameMap as $columnName => $displayName): ?>
+            <option value="<?php echo $columnName; ?>" <?php echo ($attribute == $columnName) ? 'selected' : ''; ?>>
+                <?php echo $displayName; ?>
             </option>
         <?php endforeach; ?>
     </select>
@@ -105,15 +112,13 @@ $columns = $columnsResult->fetch_all(MYSQLI_ASSOC);
     <tr>
         <?php if (!empty($attribute)): ?>
             <th>Package ID</th> <!-- Always show Package ID -->
-            <th><?php echo htmlspecialchars($attribute); ?></th> <!-- Show the selected attribute -->
+            <th><?php echo $dropdownDisplayNameMap[$attribute] ?? $attribute; ?></th> <!-- Show the selected attribute with a friendly name -->
             <th>Time Scanned</th> <!-- Always show Time Scanned -->
         <?php else: ?>
             <!-- If no attribute is selected, show all columns except 'location_type' -->
-            <th>Package ID</th> <!-- Moved to be first -->
-            <th>Employee ID</th>
-            <th>Location</th>
-            <th>Time Scanned</th>
-            <th>Truck No.</th>
+            <?php foreach ($columnDisplayNameMap as $columnName => $displayName): ?>
+                <th><?php echo $displayName; ?></th>
+            <?php endforeach; ?>
         <?php endif; ?>
     </tr>
     <!-- Display the package history with the customized column names and values -->
