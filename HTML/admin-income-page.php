@@ -95,8 +95,6 @@
     </form>
 </div>
 
-    </div>
-
     <!-- Employee Data Display outside of admin-portal-outline -->
     <div class="employee-data-report" style="positon: absolute; margin-top: 200px;">
       <?php
@@ -142,6 +140,8 @@
       }
       ?>
     </div>
+    </div>
+
             </div>
           </div>
         </div>
