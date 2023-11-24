@@ -257,18 +257,9 @@ $packageHistoryResult = $stmtHistory->get_result();
                         <td><?php echo htmlspecialchars($row['time_scanned']); ?></td>
                     </tr>
                 <?php endwhile; ?>
-            </table>
+             </table>
             </body>
                         </div>
-
-
-
-            <div class="rectangle-parent168">
-                <button class="track2 group-child107" id="trackButton">
-                    Track
-                </button>
-            </div>
-
 
 
 
