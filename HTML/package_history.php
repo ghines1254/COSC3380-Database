@@ -103,32 +103,44 @@ $columns = $columnsResult->fetch_all(MYSQLI_ASSOC);
 <table border="1">
     <!-- Customized headers for package history -->
     <tr>
-        <th>Package ID</th> <!-- Moved to be first -->
-        <th>Employee ID</th>
-        <th>Location</th>
-        <th>Time Scanned</th>
-        <th>Truck No.</th>
+        <?php if (!empty($attribute)): ?>
+            <th>Package ID</th> <!-- Always show Package ID -->
+            <th><?php echo htmlspecialchars($attribute); ?></th> <!-- Show the selected attribute -->
+            <th>Time Scanned</th> <!-- Always show Time Scanned -->
+        <?php else: ?>
+            <!-- If no attribute is selected, show all columns except 'location_type' -->
+            <th>Package ID</th> <!-- Moved to be first -->
+            <th>Employee ID</th>
+            <th>Location</th>
+            <th>Time Scanned</th>
+            <th>Truck No.</th>
+        <?php endif; ?>
     </tr>
     <!-- Display the package history with the customized column names and values -->
     <?php while ($row = $packageHistoryResult->fetch_assoc()): ?>
         <tr>
-            <td><?php echo htmlspecialchars($row['package_id']); ?></td> <!-- Always first -->
-            <td><?php echo htmlspecialchars($row['emp_id']); ?></td>
-            <td>
-                <?php
-                // Translate the location to the human-readable format
-                switch ($row['location']) {
-                    case '1': echo 'Post Office 1'; break;
-                    case '2': echo 'Post Office 2'; break;
-                    case '3': echo 'Distribution Center'; break;
-                    case '4': echo 'Transit Facility'; break;
-                    case '5': echo 'Delivered'; break;
-                    default: echo htmlspecialchars($row['location']);
-                }
-                ?>
-            </td>
-            <td><?php echo htmlspecialchars($row['time_scanned']); ?></td>
-            <td><?php echo htmlspecialchars($row['vin']); ?></td>
+            <?php if (!empty($attribute)): ?>
+                <td><?php echo htmlspecialchars($row['package_id']); ?></td> <!-- Always show Package ID -->
+                <td><?php echo htmlspecialchars($row[$attribute]); ?></td> <!-- Show the selected attribute value -->
+                <td><?php echo htmlspecialchars($row['time_scanned']); ?></td> <!-- Always show Time Scanned -->
+            <?php else: ?>
+                <!-- If no attribute is selected, show all columns -->
+                <td><?php echo htmlspecialchars($row['package_id']); ?></td>
+                <td><?php echo htmlspecialchars($row['emp_id']); ?></td>
+                <td><?php
+                    // Translate the location to the human-readable format
+                    switch ($row['location']) {
+                        case '1': echo 'Post Office 1'; break;
+                        case '2': echo 'Post Office 2'; break;
+                        case '3': echo 'Distribution Center'; break;
+                        case '4': echo 'Transit Facility'; break;
+                        case '5': echo 'Delivered'; break;
+                        default: echo htmlspecialchars($row['location']);
+                    }
+                    ?></td>
+                <td><?php echo htmlspecialchars($row['time_scanned']); ?></td>
+                <td><?php echo htmlspecialchars($row['vin']); ?></td>
+            <?php endif; ?>
         </tr>
     <?php endwhile; ?>
 </table>
