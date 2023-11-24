@@ -38,11 +38,9 @@
 	text-transform: uppercase;
 }
 .table-container {
-	max-width: 870px;
-	max-height: 570px;
+	width: 890px;
+	height: 570px;
 	overflow: scroll; /* enables scrolling */
-	margin-left: 400px;
-	margin-right: auto;
 }
 .admin-products-page-child,
 .image-1-icon21 {
