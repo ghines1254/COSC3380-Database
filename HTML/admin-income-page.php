@@ -105,31 +105,19 @@
           <div class="table-container">
             <table class="report-table">
               <tr>
-                <th>ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Sex</th>
-                <th>Birthdate</th>
-                <th>City</th>
-                <th>State</th>
-                <th>Zipcode</th>
-                <th>Department</th>
-                <th>Created On</th>
-                <th>Packages Delivered</th>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Price per unit</th>
+                <th>Date Sold</th>
               </tr>
               <?php foreach ($employeeData as $data): ?>
               <tr>
-                <td><?= htmlspecialchars($data['idnum']) ?></td>
-                <td><?= htmlspecialchars($data['first_name']) ?></td>
-                <td><?= htmlspecialchars($data['last_name']) ?></td>
-                <td><?= htmlspecialchars($data['sex']) ?></td>
-                <td><?= htmlspecialchars($data['birthdate']) ?></td>
-                <td><?= htmlspecialchars($data['city']) ?></td>
-                <td><?= htmlspecialchars($data['state']) ?></td>
-                <td><?= htmlspecialchars($data['zipcode']) ?></td>
-                <td><?= htmlspecialchars($data['dept']) ?></td>
-                <td><?= htmlspecialchars($data['created_on']) ?></td>
-                <td><?= htmlspecialchars($data['packages_delivered']) ?></td>
+                <td><?= htmlspecialchars($data['product_id']) ?></td>
+                <td><?= htmlspecialchars($data['product_name']) ?></td>
+                <td><?= htmlspecialchars($data['product_description']) ?></td>
+                <td><?= htmlspecialchars($data['product_price']) ?></td>
+                <td><?= htmlspecialchars($data['date_of_sale']) ?></td>
               </tr>
               <?php endforeach; ?>
             </table>
