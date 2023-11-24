@@ -32,14 +32,14 @@
 	text-align: left;
 	box-sizing: border-box;
 }
-.th {
+.report-table th {
 	width: calc(880px / 5);
 	position: sticky;
 	background-color: #f5f5f5;
 	font-weight: bold;
 	text-transform: uppercase;
 }
-.th {
+.report-table th {
 	height: 54px;
 }
 .table-container {
