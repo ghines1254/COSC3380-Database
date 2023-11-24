@@ -105,31 +105,59 @@
     <div class="employee-data-report">
       <div class="table-container">
             <table class="report-table">
+            <thead>
               <tr>
                 <th>Product ID</th>
                 <th>Product Name</th>
                 <th>Description</th>
-                <th>Price per unit</th>
                 <th>Date Sold</th>
+                <th>Price per unit</th>
               </tr>
-      <?php
+            </thead>
+    <?php
       include 'admin-income-page-script.php';
       if (isset($_POST['generate_report'])) {
         $employeeData = fetchEmployeeReport();
         if (!empty($employeeData)): ?>
               <?php foreach ($employeeData as $data): ?>
-              <tr>
-                <td><?= htmlspecialchars($data['product_id']) ?></td>
-                <td><?= htmlspecialchars($data['product_name']) ?></td>
-                <td><?= htmlspecialchars($data['product_description']) ?></td>
-                <td><?= htmlspecialchars($data['product_price']) ?></td>
-                <td><?= htmlspecialchars($data['date_of_sale']) ?></td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td><?= htmlspecialchars($data['product_id']) ?></td>
+                  <td><?= htmlspecialchars($data['product_name']) ?></td>
+                  <td><?= htmlspecialchars($data['product_description']) ?></td>
+                  <td><?= htmlspecialchars($data['date_of_sale']) ?></td>
+                  <td><?= htmlspecialchars($data['product_price']) ?></td>
+                </tr>
+              </tbody>
               <?php endforeach; ?>
+              <tfoot>
+                <tr>
+                  <td>Shipments</td>
+                  <td>Envelopes</td>
+                  <td>Small Boxes</td>
+                  <td>Medium Boxes</td>
+                  <td>Large Boxes</td>
+                  <td>Tape</td>
+                  <td>Stapler</td>
+                  <td>Pens</td>
+                  <td>Stamps</td>
+                </tr>
+                <tr>
+                  <td>Shipments</td>
+                  <td>Envelopes</td>
+                  <td>Small Boxes</td>
+                  <td>Medium Boxes</td>
+                  <td>Large Boxes</td>
+                  <td>Tape</td>
+                  <td>Stapler</td>
+                  <td>Pens</td>
+                  <td>Stamps</td>
+                </tr>
+              </tfoot>
             </table>
           </div>
         <?php else: ?>
-          <p>No employee data found.</p>
+          <p>No products sold.</p>
         <?php endif;
       }
       ?>
