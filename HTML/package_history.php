@@ -38,6 +38,7 @@ $columns = $columnsResult->fetch_all(MYSQLI_ASSOC);
 <html>
 <head>
     <title>Package History</title>
+    <link rel="icon" type="image/x-icon" href="/images/coogpawfavicon.png" />
     <!-- Include your stylesheet links and other head elements here -->
 </head>
 <body>
