@@ -39,6 +39,9 @@
 	font-weight: bold;
 	text-transform: uppercase;
 }
+.report-table th {
+	height: 54px;
+}
 .table-container {
 	width: 880px;
 	height: 570px;
