@@ -110,8 +110,7 @@
       include 'admin-income-page-script.php';
       if (isset($_POST['generate_report'])) {
         $employeeData = fetchEmployeeReport();
-        //if (!empty($employeeData)): ?>
-
+        if (!empty($employeeData)): ?>
               <?php foreach ($employeeData as $data): ?>
               <tr>
                 <td><?= htmlspecialchars($data['product_id']) ?></td>
