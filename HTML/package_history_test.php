@@ -46,39 +46,41 @@ $packageHistoryResult = $stmtHistory->get_result();
     <title>Package Tracking History</title>
     <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="tracking-page.css">
-    <!-- Add additional stylesheet links here -->
 </head>
 <body>
     <div class="tracking-page">
-        <!-- Navigation Bar -->
+        <!-- Placeholder for Navigation Bar -->
         <div class="navigation-bar-light34">
-            <!-- Navbar content here -->
+            <!-- Navbar content like logo, links, login button goes here -->
         </div>
 
-        <!-- Sidebar -->
+        <!-- Sidebar with Menu -->
         <div class="frame-wrapper30">
-            <!-- Sidebar content here -->
+            <!-- Sidebar content with menu items goes here -->
         </div>
 
         <!-- Main Content Area -->
         <div class="portal-centering-frame22">
             <div class="customer-portal-outline9">
                 <div class="frame-parent76">
-                    <!-- Main tracking area -->
+                    <!-- Replace 'Tracking Packages' header with dynamic package ID -->
+                    <div class="welcome-to-your-portal-page-wrapper27">
+                        <b class="welcome-to-your29">Package History for Package: <?php echo htmlspecialchars($packageId); ?></b>
+                    </div>
+                    
+                    <!-- Main tracking area now contains the PHP generated tables -->
                     <div class="tracking-outline1">
-                        <h2>Tracking History for Package: <?php echo htmlspecialchars($packageId); ?></h2>
-                        
+                        <!-- Tracking Information Table -->
                         <h3>Tracking Information</h3>
                         <table border="1">
-                            <!-- Display the tracking information with customized column names and values -->
                             <?php foreach ($trackingInfo as $column => $value): ?>
-                                <tr>
-                                    <th><?php echo $columnDisplayNameMap[$column] ?? $column; ?></th>
-                                    <td><?php echo htmlspecialchars($value); ?></td>
-                                </tr>
+                            <tr>
+                                <th><?php echo $columnDisplayNameMap[$column] ?? $column; ?></th>
+                                <td><?php echo htmlspecialchars($value); ?></td>
+                            </tr>
                             <?php endforeach; ?>
                         </table>
-
+                        
                         <!-- Form for filters -->
                         <form method="GET">
                             <label for="start_date">Start Date:</label>
@@ -91,48 +93,45 @@ $packageHistoryResult = $stmtHistory->get_result();
                             <select id="attribute" name="attribute">
                                 <option value="">Select an attribute</option>
                                 <?php foreach ($columnDisplayNameMap as $columnName => $displayName): ?>
-                                    <option value="<?php echo $columnName; ?>" <?php echo ($attribute == $columnName) ? 'selected' : ''; ?>>
-                                        <?php echo $displayName; ?>
-                                    </option>
+                                <option value="<?php echo $columnName; ?>" <?php echo ($attribute == $columnName) ? 'selected' : ''; ?>>
+                                    <?php echo $displayName; ?>
+                                </option>
                                 <?php endforeach; ?>
                             </select>
 
                             <input type="hidden" name="tracking_number" value="<?php echo htmlspecialchars($packageId); ?>">
                             <input type="submit" value="Filter">
                         </form>
-                        
+
+                        <!-- Package History Table -->
                         <h3>Package History</h3>
                         <table border="1">
-                            <!-- Customized headers for package history -->
                             <tr>
-                                <!-- Headers for package history -->
                                 <?php foreach ($columnDisplayNameMap as $columnName => $displayName): ?>
-                                    <th><?php echo $displayName; ?></th>
+                                <th><?php echo $displayName; ?></th>
                                 <?php endforeach; ?>
                             </tr>
-                            <!-- Display the package history with the customized column names and values -->
                             <?php while ($row = $packageHistoryResult->fetch_assoc()): ?>
-                                <tr>
-                                    <?php foreach ($columnDisplayNameMap as $columnName => $displayName): ?>
-                                        <td>
-                                            <?php
-                                            if ($columnName == 'location') {
-                                                // Translate the location code to a user-friendly name
-                                                switch ($row[$columnName]) {
-                                                    case '1': echo 'Post Office 1'; break;
-                                                    case '2': echo 'Post Office 2'; break;
-                                                    case '3': echo 'Distribution Center'; break;
-                                                    case '4': echo 'Transit Facility'; break;
-                                                    case '5': echo 'Delivered'; break;
-                                                    default: echo htmlspecialchars($row[$columnName]);
-                                                }
-                                            } else {
-                                                echo htmlspecialchars($row[$columnName]);
-                                            }
-                                            ?>
-                                        </td>
-                                    <?php endforeach; ?>
-                                </tr>
+                            <tr>
+                                <?php foreach ($columnDisplayNameMap as $columnName => $displayName): ?>
+                                <td>
+                                    <?php
+                                    if ($columnName == 'location') {
+                                        switch ($row[$columnName]) {
+                                            case '1': echo 'Post Office 1'; break;
+                                            case '2': echo 'Post Office 2'; break;
+                                            case '3': echo 'Distribution Center'; break;
+                                            case '4': echo 'Transit Facility'; break;
+                                            case '5': echo 'Delivered'; break;
+                                            default: echo htmlspecialchars($row[$columnName]);
+                                        }
+                                    } else {
+                                        echo htmlspecialchars($row[$columnName]);
+                                    }
+                                    ?>
+                                </td>
+                                <?php endforeach; ?>
+                            </tr>
                             <?php endwhile; ?>
                         </table>
                     </div>
