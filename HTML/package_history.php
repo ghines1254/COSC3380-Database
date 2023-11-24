@@ -12,11 +12,8 @@ $columnDisplayNameMap = [
     'location' => 'Location',
     'time_scanned' => 'Time Scanned',
     'vin' => 'Truck No.',
-    // Add other columns as necessary, skipping 'location_type' and 'package_id' since they have special treatment
+    // Other attributes can be added here
 ];
-
-// Create a reverse map for dropdown display names
-$dropdownDisplayNameMap = array_flip($columnDisplayNameMap);
 
 // Fetch the static tracking information
 $queryTrackingInfo = "SELECT * FROM TRACKING_INFO WHERE package_id = ?";
@@ -45,7 +42,6 @@ $packageHistoryResult = $stmtHistory->get_result();
 <html>
 <head>
     <title>Package History</title>
-    <link rel="icon" type="image/x-icon" href="/images/coogpawfavicon.png" />
     <!-- Include your stylesheet links and other head elements here -->
 </head>
 <body>
@@ -74,8 +70,9 @@ $packageHistoryResult = $stmtHistory->get_result();
             <td>
                 <?php
                 switch ($column) {
-                    case 'on_truck': echo $value ? 'Yes' : 'Not yet'; break;
-                    case 'received': echo $value ? 'Yes' : 'No'; break;
+                    case 'on_truck': echo $value == '1' ? 'Yes' : 'Not yet'; break;
+                    case 'received': echo $value == '1' ? 'Yes' : 'No'; break;
+                    case 'starting_location_id': echo $value == 'PO1' ? 'Post Office 1' : ($value == 'PO2' ? 'Post Office 2' : htmlspecialchars($value)); break;
                     default: echo htmlspecialchars($value);
                 }
                 ?>
@@ -110,42 +107,36 @@ $packageHistoryResult = $stmtHistory->get_result();
 <table border="1">
     <!-- Customized headers for package history -->
     <tr>
+        <!-- Always show Package ID -->
+        <th><?php echo $columnDisplayNameMap['package_id'] ?? 'Package ID'; ?></th>
         <?php if (!empty($attribute)): ?>
-            <th>Package ID</th> <!-- Always show Package ID -->
-            <th><?php echo $dropdownDisplayNameMap[$attribute] ?? $attribute; ?></th> <!-- Show the selected attribute with a friendly name -->
-            <th>Time Scanned</th> <!-- Always show Time Scanned -->
+            <!-- Show the selected attribute with a friendly name -->
+            <th><?php echo $columnDisplayNameMap[$attribute] ?? $attribute; ?></th>
         <?php else: ?>
             <!-- If no attribute is selected, show all columns except 'location_type' -->
             <?php foreach ($columnDisplayNameMap as $columnName => $displayName): ?>
                 <th><?php echo $displayName; ?></th>
             <?php endforeach; ?>
         <?php endif; ?>
+        <!-- Always show Time Scanned -->
+        <th><?php echo $columnDisplayNameMap['time_scanned'] ?? 'Time Scanned'; ?></th>
     </tr>
     <!-- Display the package history with the customized column names and values -->
     <?php while ($row = $packageHistoryResult->fetch_assoc()): ?>
         <tr>
+            <!-- Always show Package ID -->
+            <td><?php echo htmlspecialchars($row['package_id']); ?></td>
             <?php if (!empty($attribute)): ?>
-                <td><?php echo htmlspecialchars($row['package_id']); ?></td> <!-- Always show Package ID -->
-                <td><?php echo htmlspecialchars($row[$attribute]); ?></td> <!-- Show the selected attribute value -->
-                <td><?php echo htmlspecialchars($row['time_scanned']); ?></td> <!-- Always show Time Scanned -->
+                <!-- Show the selected attribute value -->
+                <td><?php echo htmlspecialchars($row[$attribute]); ?></td>
             <?php else: ?>
                 <!-- If no attribute is selected, show all columns -->
-                <td><?php echo htmlspecialchars($row['package_id']); ?></td>
-                <td><?php echo htmlspecialchars($row['emp_id']); ?></td>
-                <td><?php
-                    // Translate the location to the human-readable format
-                    switch ($row['location']) {
-                        case '1': echo 'Post Office 1'; break;
-                        case '2': echo 'Post Office 2'; break;
-                        case '3': echo 'Distribution Center'; break;
-                        case '4': echo 'Transit Facility'; break;
-                        case '5': echo 'Delivered'; break;
-                        default: echo htmlspecialchars($row['location']);
-                    }
-                    ?></td>
-                <td><?php echo htmlspecialchars($row['time_scanned']); ?></td>
-                <td><?php echo htmlspecialchars($row['vin']); ?></td>
+                <?php foreach ($columnDisplayNameMap as $columnName => $displayName): ?>
+                    <td><?php echo htmlspecialchars($row[$columnName]); ?></td>
+                <?php endforeach; ?>
             <?php endif; ?>
+            <!-- Always show Time Scanned -->
+            <td><?php echo htmlspecialchars($row['time_scanned']); ?></td>
         </tr>
     <?php endwhile; ?>
 </table>
