@@ -96,7 +96,7 @@
 </div>
 
     <!-- Employee Data Display outside of admin-portal-outline -->
-    <div class="employee-data-report">
+    <div class="report-table">
       <?php
       include 'admin-income-page-script.php';
       if (isset($_POST['generate_report'])) {
