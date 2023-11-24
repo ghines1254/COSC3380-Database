@@ -17,23 +17,16 @@ function fetchEmployeeReport() {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Query to fetch employee data
+    // Query to fetch sales data
     $query = "
         SELECT
-            e.idnum,
-            e.first_name,
-            e.last_name,
-            e.sex,
-            e.birthdate,
-            e.city,
-            e.state,
-            e.zipcode,
-            e.dept,
-            e.created_on,
-            COUNT(ti.delivered_by) AS packages_delivered
-        FROM EMPLOYEE e
-        LEFT JOIN TRACKING_INFO ti ON e.idnum = ti.delivered_by
-        GROUP BY e.idnum
+            s.product_id,
+            isp.product_name,
+            isp.product_description,
+            s.product_price,
+            s.date_of_sale
+        FROM SALES s
+        LEFT JOIN IN_STORE_PRODUCTS isp ON s.product_id = isp.product_id;
     ";
 
     $result = $conn->query($query);
