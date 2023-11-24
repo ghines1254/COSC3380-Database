@@ -198,9 +198,7 @@ $packageHistoryResult = $stmtHistory->get_result();
                                 <th><?php echo $displayName; ?></th>
                             <?php endforeach; ?>
                         <?php endif; ?>
-                        <!-- Always show Time Scanned -->
-                        <th><?php echo $columnDisplayNameMap['time_scanned'] ?? 'Time Scanned'; ?></th>
-                    </tr>
+
                     <!-- Display the package history with the customized column names and values -->
                     <?php while ($row = $packageHistoryResult->fetch_assoc()): ?>
                         <tr>
@@ -247,6 +245,8 @@ $packageHistoryResult = $stmtHistory->get_result();
                                     </td>
                                 <?php endforeach; ?>
                             <?php endif; ?>
+                            <!-- Always show Time Scanned -->
+                            <td><?php echo htmlspecialchars($row['time_scanned']); ?></td>
                         </tr>
                     <?php endwhile; ?>
                 </table>
