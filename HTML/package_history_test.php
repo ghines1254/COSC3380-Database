@@ -341,25 +341,6 @@ $packageHistoryResult = $stmtHistory->get_result();
           window.location.href = "./cutomer-portal-nofications-page.php";
         });
       }
-// tracking stuff
-document.getElementById('trackButton').addEventListener('click', function() {
-    var trackingNumber = document.getElementById('trackingInput').value;
-    fetch('https://coogmail.com/tracking.php?tracking_number=' + encodeURIComponent(trackingNumber))
-    .then(response => response.json())
-    .then(data => {
-        // If the response contains a valid status, redirect to the history page
-        if (data.status) {
-            window.location.href = "./package_history_test.php?tracking_number=" + encodeURIComponent(trackingNumber);
-        } else {
-            alert('Invalid tracking number');
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('An error occurred while tracking the package.');
-    });
-});
-
 
 
         </script>
