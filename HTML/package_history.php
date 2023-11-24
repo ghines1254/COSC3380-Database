@@ -59,7 +59,7 @@ $packageHistoryResult = $stmtHistory->get_result();
                     case 'on_truck': echo 'Out for Delivery?'; break;
                     case 'starting_location_id': echo 'Starting Location'; break;
                     case 'received': echo 'Package Received by Post Office'; break;
-                    case 'delivered_by': echo 'Delivered By'; break;
+                    case 'delivered_by': echo 'Delivered By Employee ID'; break;
                     case 'created_on': echo 'Package Created On'; break;
                     case 'last_updated': echo 'Last Updated'; break;
                     case 'eta': echo 'Estimated Delivery'; break;
@@ -70,7 +70,7 @@ $packageHistoryResult = $stmtHistory->get_result();
             <td>
                 <?php
                 switch ($column) {
-                    case 'on_truck': echo $value == '1' ? 'Yes' : 'Not yet'; break;
+                    case 'on_truck': echo $value == '1' ? 'Yes' : 'No'; break;
                     case 'received': echo $value == '1' ? 'Yes' : 'No'; break;
                     case 'starting_location_id': echo 'Post Office 1'; break; // Assume this is always 'Post Office 1' for this example
                     default: echo htmlspecialchars($value);
