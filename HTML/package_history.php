@@ -109,12 +109,15 @@ $packageHistoryResult = $stmtHistory->get_result();
     <tr>
         <th>Package ID</th> <!-- Always show Package ID -->
         <?php if (!empty($attribute) && $attribute != 'location'): ?>
-            <!-- Show the selected attribute with a friendly name -->
-            <th><?php echo $columnDisplayNameMap[$attribute] ?? $attribute; ?></th>
+            <th><?php echo $columnDisplayNameMap[$attribute] ?? $attribute; ?></th> <!-- Show the selected attribute with a friendly name -->
+            <th>Time Scanned</th> <!-- Always show Time Scanned -->
+            <th>Truck No.</th> <!-- Always show Truck No. -->
         <?php else: ?>
-            <!-- If no attribute is selected or if it's 'location', show all columns with friendly names except 'location' -->
             <th>Employee ID</th>
-            <!-- 'Location' is handled separately, so it is not included here -->
+            <!-- Show 'Location' with friendly names only if it's not the selected attribute for filtering -->
+            <?php if (empty($attribute) || $attribute == 'location'): ?>
+                <th>Location</th>
+            <?php endif; ?>
             <th>Time Scanned</th>
             <th>Truck No.</th>
         <?php endif; ?>
@@ -124,27 +127,30 @@ $packageHistoryResult = $stmtHistory->get_result();
         <tr>
             <td><?php echo htmlspecialchars($row['package_id']); ?></td> <!-- Always show Package ID -->
             <?php if (!empty($attribute) && $attribute != 'location'): ?>
-                <!-- Show the selected attribute value -->
                 <td><?php echo htmlspecialchars($row[$attribute]); ?></td>
+                <td><?php echo htmlspecialchars($row['time_scanned']); ?></td>
+                <td><?php echo htmlspecialchars($row['vin']); ?></td>
             <?php else: ?>
-                <!-- If no attribute is selected or if it's 'location', show all column values except the original 'location' -->
                 <td><?php echo htmlspecialchars($row['emp_id']); ?></td>
-                <!-- Translate the location to the human-readable format -->
-                <td><?php
-                    switch ($row['location']) {
-                        case '1': echo 'Post Office 1'; break;
-                        case '2': echo 'Post Office 2'; break;
-                        case '3': echo 'Distribution Center'; break;
-                        case '4': echo 'Transit Facility'; break;
-                        case '5': echo 'Delivered'; break;
-                        default: echo htmlspecialchars($row['location']);
-                    }
-                ?></td>
+                <!-- Show 'Location' value with friendly names only if it's not the selected attribute for filtering -->
+                <?php if (empty($attribute) || $attribute == 'location'): ?>
+                    <td><?php
+                        switch ($row['location']) {
+                            case '1': echo 'Post Office 1'; break;
+                            case '2': echo 'Post Office 2'; break;
+                            case '3': echo 'Distribution Center'; break;
+                            case '4': echo 'Transit Facility'; break;
+                            case '5': echo 'Delivered'; break;
+                            default: echo htmlspecialchars($row['location']);
+                        }
+                    ?></td>
+                <?php endif; ?>
                 <td><?php echo htmlspecialchars($row['time_scanned']); ?></td>
                 <td><?php echo htmlspecialchars($row['vin']); ?></td>
             <?php endif; ?>
         </tr>
     <?php endwhile; ?>
 </table>
+
 </body>
 </html>
