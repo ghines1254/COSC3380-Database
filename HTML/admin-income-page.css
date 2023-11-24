@@ -4,6 +4,10 @@
 	color: white;
 }
 
+.employee-data-report {
+	position: absolute;
+}
+
 .report-table {
 	position: relative;
 	top: 287px;
