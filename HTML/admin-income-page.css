@@ -5,7 +5,6 @@
 }
 
 .report-table {
-	border-collapse: collapse;
 	position: absolute;
     top: 287px;
     left: calc(50% - 253px);
