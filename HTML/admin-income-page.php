@@ -97,12 +97,7 @@
 
     <!-- Employee Data Display outside of admin-portal-outline -->
     <div class="employee-data-report">
-      <?php
-      include 'admin-income-page-script.php';
-      if (isset($_POST['generate_report'])) {
-        $employeeData = fetchEmployeeReport();
-        if (!empty($employeeData)): ?>
-          <div class="table-container">
+      <div class="table-container">
             <table class="report-table">
               <tr>
                 <th>Product ID</th>
@@ -111,6 +106,12 @@
                 <th>Price per unit</th>
                 <th>Date Sold</th>
               </tr>
+      <?php
+      include 'admin-income-page-script.php';
+      if (isset($_POST['generate_report'])) {
+        $employeeData = fetchEmployeeReport();
+        //if (!empty($employeeData)): ?>
+
               <?php foreach ($employeeData as $data): ?>
               <tr>
                 <td><?= htmlspecialchars($data['product_id']) ?></td>
