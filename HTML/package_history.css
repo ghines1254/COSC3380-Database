@@ -385,12 +385,12 @@
 }
 .frame-frame,
 .frame91 {
-  position: relative;
+  position: absolute;
   overflow: hidden;
 }
 .frame91 {
   width: calc(100% - 334px);
-  top: calc(10% - 242px);
+  top: calc(50% - 242px);
   right: 288px;
   left: 46px;
   display: flex;

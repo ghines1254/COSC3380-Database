@@ -126,222 +126,222 @@ $packageHistoryResult = $stmtHistory->get_result();
                   </div>
                 </div>
               </div>
-              <div class="portal-page29"></div>
-            </div>
-          </div>
-        </div>
-        <div class="frame-frame">
-          <div class="frame91">
-
-            <h3>Tracking Information</h3>
-            <table border="1">
-                <!-- Display the tracking information with customized column names and values -->
-                <?php foreach ($trackingInfo as $column => $value): ?>
-                    <tr>
-                        <th>
-                            <?php
-                            switch ($column) {
-                                case 'package_id': echo 'Package Number'; break;
-                                case 'on_truck': echo 'Out for Delivery?'; break;
-                                case 'starting_location_id': echo 'Starting Location'; break;
-                                case 'received': echo 'Package Received by Post Office'; break;
-                                case 'delivered_by': echo 'Delivered By Employee ID'; break;
-                                case 'created_on': echo 'Package Created On'; break;
-                                case 'last_updated': echo 'Last Updated'; break;
-                                case 'eta': echo 'Estimated Delivery'; break;
-                                default: echo htmlspecialchars($column);
-                            }
-                            ?>
-                        </th>
-                        <td>
-                            <?php
-                            switch ($column) {
-                                case 'on_truck': echo $value == '1' ? 'Yes' : 'No'; break;
-                                case 'received': echo $value == '1' ? 'Yes' : 'No'; break;
-                                case 'starting_location_id': echo 'Post Office 1'; break; // Assume this is always 'Post Office 1' for this example
-                                default: echo htmlspecialchars($value);
-                            }
-                            ?>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </table>
-
-            <!-- Form for filters -->
-            <form method="GET">
-                <label for="start_date">Start Date:</label>
-                <input type="date" id="start_date" name="start_date" value="<?php echo htmlspecialchars($startDate); ?>">
-
-                <label for="end_date">End Date:</label>
-                <input type="date" id="end_date" name="end_date" value="<?php echo htmlspecialchars($endDate); ?>">
-
-                <label for="attribute">Attribute:</label>
-                <select id="attribute" name="attribute">
-                    <option value="">Select an attribute</option>
-                    <?php foreach ($columnDisplayNameMap as $columnName => $displayName): ?>
-                        <option value="<?php echo $columnName; ?>" <?php echo ($attribute == $columnName) ? 'selected' : ''; ?>>
-                            <?php echo $displayName; ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
-
-                <input type="hidden" name="tracking_number" value="<?php echo htmlspecialchars($packageId); ?>">
-                <input type="submit" value="Filter">
-            </form>
-
-            <h3>Package History</h3>
-            <table border="1">
-                <!-- Customized headers for package history -->
-                <tr>
-                    <!-- Always show Package ID -->
-                    <th><?php echo $columnDisplayNameMap['package_id'] ?? 'Package ID'; ?></th>
-                    <?php if (!empty($attribute)): ?>
-                        <!-- Show the selected attribute with a friendly name -->
-                        <th><?php echo $columnDisplayNameMap[$attribute] ?? $attribute; ?></th>
-                    <?php else: ?>
-                        <!-- If no attribute is selected, show all columns -->
-                        <?php foreach ($columnDisplayNameMap as $columnName => $displayName): ?>
-                            <th><?php echo $displayName; ?></th>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
-                    <!-- Always show Time Scanned -->
-                    <th><?php echo $columnDisplayNameMap['time_scanned'] ?? 'Time Scanned'; ?></th>
-                </tr>
-                <!-- Display the package history with the customized column names and values -->
-                <?php while ($row = $packageHistoryResult->fetch_assoc()): ?>
-                    <tr>
-                        <!-- Always show Package ID -->
-                        <td><?php echo htmlspecialchars($row['package_id']); ?></td>
-                        <?php if (!empty($attribute)): ?>
-                            <!-- Show the selected attribute value -->
+              <div class="portal-page29">
+                  <h3>Tracking Information</h3>
+                <table border="1">
+                    <!-- Display the tracking information with customized column names and values -->
+                    <?php foreach ($trackingInfo as $column => $value): ?>
+                        <tr>
+                            <th>
+                                <?php
+                                switch ($column) {
+                                    case 'package_id': echo 'Package Number'; break;
+                                    case 'on_truck': echo 'Out for Delivery?'; break;
+                                    case 'starting_location_id': echo 'Starting Location'; break;
+                                    case 'received': echo 'Package Received by Post Office'; break;
+                                    case 'delivered_by': echo 'Delivered By Employee ID'; break;
+                                    case 'created_on': echo 'Package Created On'; break;
+                                    case 'last_updated': echo 'Last Updated'; break;
+                                    case 'eta': echo 'Estimated Delivery'; break;
+                                    default: echo htmlspecialchars($column);
+                                }
+                                ?>
+                            </th>
                             <td>
                                 <?php
-                                // Convert 'location' column numbers to user-friendly names
-                                if ($attribute == 'location') {
-                                    switch ($row[$attribute]) {
-                                        case '1': echo 'Post Office 1'; break;
-                                        case '2': echo 'Post Office 2'; break;
-                                        case '3': echo 'Distribution Center'; break;
-                                        case '4': echo 'Transit Facility'; break;
-                                        case '5': echo 'Delivered'; break;
-                                        default: echo htmlspecialchars($row[$attribute]);
-                                    }
-                                } else {
-                                    echo htmlspecialchars($row[$attribute]);
+                                switch ($column) {
+                                    case 'on_truck': echo $value == '1' ? 'Yes' : 'No'; break;
+                                    case 'received': echo $value == '1' ? 'Yes' : 'No'; break;
+                                    case 'starting_location_id': echo 'Post Office 1'; break; // Assume this is always 'Post Office 1' for this example
+                                    default: echo htmlspecialchars($value);
                                 }
                                 ?>
                             </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </table>
+
+                <!-- Form for filters -->
+                <form method="GET">
+                    <label for="start_date">Start Date:</label>
+                    <input type="date" id="start_date" name="start_date" value="<?php echo htmlspecialchars($startDate); ?>">
+
+                    <label for="end_date">End Date:</label>
+                    <input type="date" id="end_date" name="end_date" value="<?php echo htmlspecialchars($endDate); ?>">
+
+                    <label for="attribute">Attribute:</label>
+                    <select id="attribute" name="attribute">
+                        <option value="">Select an attribute</option>
+                        <?php foreach ($columnDisplayNameMap as $columnName => $displayName): ?>
+                            <option value="<?php echo $columnName; ?>" <?php echo ($attribute == $columnName) ? 'selected' : ''; ?>>
+                                <?php echo $displayName; ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+
+                    <input type="hidden" name="tracking_number" value="<?php echo htmlspecialchars($packageId); ?>">
+                    <input type="submit" value="Filter">
+                </form>
+
+                <h3>Package History</h3>
+                <table border="1">
+                    <!-- Customized headers for package history -->
+                    <tr>
+                        <!-- Always show Package ID -->
+                        <th><?php echo $columnDisplayNameMap['package_id'] ?? 'Package ID'; ?></th>
+                        <?php if (!empty($attribute)): ?>
+                            <!-- Show the selected attribute with a friendly name -->
+                            <th><?php echo $columnDisplayNameMap[$attribute] ?? $attribute; ?></th>
                         <?php else: ?>
                             <!-- If no attribute is selected, show all columns -->
                             <?php foreach ($columnDisplayNameMap as $columnName => $displayName): ?>
+                                <th><?php echo $displayName; ?></th>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                        <!-- Always show Time Scanned -->
+                        <th><?php echo $columnDisplayNameMap['time_scanned'] ?? 'Time Scanned'; ?></th>
+                    </tr>
+                    <!-- Display the package history with the customized column names and values -->
+                    <?php while ($row = $packageHistoryResult->fetch_assoc()): ?>
+                        <tr>
+                            <!-- Always show Package ID -->
+                            <td><?php echo htmlspecialchars($row['package_id']); ?></td>
+                            <?php if (!empty($attribute)): ?>
+                                <!-- Show the selected attribute value -->
                                 <td>
                                     <?php
                                     // Convert 'location' column numbers to user-friendly names
-                                    if ($columnName == 'location') {
-                                        switch ($row[$columnName]) {
+                                    if ($attribute == 'location') {
+                                        switch ($row[$attribute]) {
                                             case '1': echo 'Post Office 1'; break;
                                             case '2': echo 'Post Office 2'; break;
                                             case '3': echo 'Distribution Center'; break;
                                             case '4': echo 'Transit Facility'; break;
                                             case '5': echo 'Delivered'; break;
-                                            default: echo htmlspecialchars($row[$columnName]);
+                                            default: echo htmlspecialchars($row[$attribute]);
                                         }
                                     } else {
-                                        echo htmlspecialchars($row[$columnName]);
+                                        echo htmlspecialchars($row[$attribute]);
                                     }
                                     ?>
                                 </td>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
-                        <!-- Always show Time Scanned -->
-                        <td><?php echo htmlspecialchars($row['time_scanned']); ?></td>
-                    </tr>
-                <?php endwhile; ?>
-             </table>
-            </body>
-                        </div>
+                            <?php else: ?>
+                                <!-- If no attribute is selected, show all columns -->
+                                <?php foreach ($columnDisplayNameMap as $columnName => $displayName): ?>
+                                    <td>
+                                        <?php
+                                        // Convert 'location' column numbers to user-friendly names
+                                        if ($columnName == 'location') {
+                                            switch ($row[$columnName]) {
+                                                case '1': echo 'Post Office 1'; break;
+                                                case '2': echo 'Post Office 2'; break;
+                                                case '3': echo 'Distribution Center'; break;
+                                                case '4': echo 'Transit Facility'; break;
+                                                case '5': echo 'Delivered'; break;
+                                                default: echo htmlspecialchars($row[$columnName]);
+                                            }
+                                        } else {
+                                            echo htmlspecialchars($row[$columnName]);
+                                        }
+                                        ?>
+                                    </td>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                            <!-- Always show Time Scanned -->
+                            <td><?php echo htmlspecialchars($row['time_scanned']); ?></td>
+                        </tr>
+                    <?php endwhile; ?>
+                </table>
+                </body>
+                            </div>
 
 
 
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+            <div class="frame92" id="frameContainer11">
+              <img
+                class="portal-home-button20"
+                alt=""
+                src="./public/portal-home-button.svg"
+              />
+            </div>
           </div>
         </div>
-        <div class="frame92" id="frameContainer11">
-          <img
-            class="portal-home-button20"
-            alt=""
-            src="./public/portal-home-button.svg"
-          />
+
+        <script>
+          var frameContainer1 = document.getElementById("frameContainer1");
+          if (frameContainer1) {
+            frameContainer1.addEventListener("click", function (e) {
+              window.location.href = "./index.php";
+            });
+          }
+
+          var button2Container = document.getElementById("button2Container");
+          if (button2Container) {
+            button2Container.addEventListener("click", function (e) {
+              window.location.href = "./customer-portal-nofications-page.php";
+            });
+          }
+
+          var button3Text = document.getElementById("button3Text");
+          if (button3Text) {
+            button3Text.addEventListener("click", function (e) {
+              window.location.href = "./products-page.html";
+            });
+          }
+
+          var productsContainer = document.getElementById("productsContainer");
+          if (productsContainer) {
+            productsContainer.addEventListener("click", function (e) {
+              window.location.href = "./products-page.html";
+            });
+          }
+
+          var quoteContainer = document.getElementById("quoteContainer");
+          if (quoteContainer) {
+            quoteContainer.addEventListener("click", function (e) {
+              window.location.href = "./quote-page.html";
+            });
+          }
+
+          var supportContainer = document.getElementById("supportContainer");
+          if (supportContainer) {
+            supportContainer.addEventListener("click", function (e) {
+              window.location.href = "./support-page.html";
+            });
+          }
+
+          var historyContainer = document.getElementById("historyContainer");
+          if (historyContainer) {
+            historyContainer.addEventListener("click", function (e) {
+              window.location.href = "./history-page.php";
+            });
+          }
+
+          var accountContainer = document.getElementById("accountContainer");
+          if (accountContainer) {
+            accountContainer.addEventListener("click", function (e) {
+              window.location.href = "./account-page.php";
+            });
+          }
+
+          var frameContainer11 = document.getElementById("frameContainer11");
+          if (frameContainer11) {
+            frameContainer11.addEventListener("click", function (e) {
+              window.location.href = "./cutomer-portal-nofications-page.php";
+            });
+          }
+              </div>
+
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-
-    <script>
-      var frameContainer1 = document.getElementById("frameContainer1");
-      if (frameContainer1) {
-        frameContainer1.addEventListener("click", function (e) {
-          window.location.href = "./index.php";
-        });
-      }
-
-      var button2Container = document.getElementById("button2Container");
-      if (button2Container) {
-        button2Container.addEventListener("click", function (e) {
-          window.location.href = "./customer-portal-nofications-page.php";
-        });
-      }
-
-      var button3Text = document.getElementById("button3Text");
-      if (button3Text) {
-        button3Text.addEventListener("click", function (e) {
-          window.location.href = "./products-page.html";
-        });
-      }
-
-      var productsContainer = document.getElementById("productsContainer");
-      if (productsContainer) {
-        productsContainer.addEventListener("click", function (e) {
-          window.location.href = "./products-page.html";
-        });
-      }
-
-      var quoteContainer = document.getElementById("quoteContainer");
-      if (quoteContainer) {
-        quoteContainer.addEventListener("click", function (e) {
-          window.location.href = "./quote-page.html";
-        });
-      }
-
-      var supportContainer = document.getElementById("supportContainer");
-      if (supportContainer) {
-        supportContainer.addEventListener("click", function (e) {
-          window.location.href = "./support-page.html";
-        });
-      }
-
-      var historyContainer = document.getElementById("historyContainer");
-      if (historyContainer) {
-        historyContainer.addEventListener("click", function (e) {
-          window.location.href = "./history-page.php";
-        });
-      }
-
-      var accountContainer = document.getElementById("accountContainer");
-      if (accountContainer) {
-        accountContainer.addEventListener("click", function (e) {
-          window.location.href = "./account-page.php";
-        });
-      }
-
-      var frameContainer11 = document.getElementById("frameContainer11");
-      if (frameContainer11) {
-        frameContainer11.addEventListener("click", function (e) {
-          window.location.href = "./cutomer-portal-nofications-page.php";
-        });
-      }
-
+        <div class="frame-frame">
+          <div class="frame91">
 
         </script>
     </body>
