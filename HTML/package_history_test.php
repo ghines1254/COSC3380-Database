@@ -169,7 +169,6 @@ $packageHistoryResult = $stmtHistory->get_result();
                     <label for="end_date">End Date:</label>
                     <input type="date" id="end_date" name="end_date" value="<?php echo htmlspecialchars($endDate); ?>">
 
-                    <label for="attribute">Attribute:</label>
                     <select id="attribute" name="attribute">
                         <option value="">Select an attribute</option>
                         <?php foreach ($columnDisplayNameMap as $columnName => $displayName): ?>
