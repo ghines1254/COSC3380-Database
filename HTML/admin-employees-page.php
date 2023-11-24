@@ -78,7 +78,7 @@ require_once 'init.php';
         </div>
       </div>
       <div class="frame12">
-<!--         <div class="frame13">
+        <div class="frame13">
           <div class="rectangle"></div>
           <b class="employee-id">First Name</b>
         </div>
@@ -249,7 +249,7 @@ require_once 'init.php';
         <div class="frame55">
           <div class="rectangle4"></div>
           <div class="employee-id">-</div>
-        </div> -->
+        </div>
         <div class="frame56">
           <div class="rectangle4"></div>
           <div class="employee-id">-</div>
@@ -345,7 +345,7 @@ require_once 'init.php';
 
 
 
-<div class = "frame12">
+<!-- <div class = "frame12">
 <table class="employees-table">
     <thead>
         <tr>
@@ -359,26 +359,26 @@ require_once 'init.php';
 
  <tbody>
 <?php
-$query = "SELECT first_name, last_name, idnum, dept, branch_id FROM EMPLOYEE E JOIN DEPARTMENT D ON E.dept = D.dept_id JOIN POST_OFFICE P ON D.works_at = P.branch_id ORDER BY idnum ASC";
+// $query = "SELECT first_name, last_name, idnum, dept, branch_id FROM EMPLOYEE E JOIN DEPARTMENT D ON E.dept = D.dept_id JOIN POST_OFFICE P ON D.works_at = P.branch_id ORDER BY idnum ASC";
 
-$result = $conn->query($query);
+// $result = $conn->query($query);
 
-if (!$result)
-{
-    die("Error retrieving employee information: " . $conn->error);
+// if (!$result)
+// {
+//     die("Error retrieving employee information: " . $conn->error);
+// }
+
+// while ($row = $result->fetch_assoc())
+// {
+//     echo "<tr>";
+//     echo "<td>{$row['first_name']}</td>";
+//     echo "<td>{$row['last_name']}</td>";
+//     echo "<td>{$row['idnum']}</td>";
+//     echo "<td>{$row['dept']}</td>";
+//     echo "<td>{$row['branch_id']}</td>";
+//     echo "</tr>";
 }
-
-while ($row = $result->fetch_assoc())
-{
-    echo "<tr>";
-    echo "<td>{$row['first_name']}</td>";
-    echo "<td>{$row['last_name']}</td>";
-    echo "<td>{$row['idnum']}</td>";
-    echo "<td>{$row['dept']}</td>";
-    echo "<td>{$row['branch_id']}</td>";
-    echo "</tr>";
-}
-?> </tbody></table>
+?> </tbody></table> -->
 
 
 <form id="addEmployeeForm">
