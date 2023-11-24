@@ -43,6 +43,12 @@
           <b class="cougar-courier21">Cougar Courier</b>
         </div>
       </div>
+      <img
+        class="vector-icon52"
+        alt=""
+        src="./public/portal-home-button.svg"
+        id="vector6"
+      />
       <div class="admin-portal-outline6">
         <div class="frame-parent40">
           <div class="rectangle-parent107">
@@ -134,12 +140,6 @@
           </div>
         </div>
       </div>
-      <img
-        class="vector-icon52"
-        alt=""
-        src="./public/portal-home-button.svg"
-        id="vector6"
-      />
     </div>
 
     <script>
