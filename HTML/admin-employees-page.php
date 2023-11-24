@@ -346,7 +346,7 @@ require_once 'init.php';
 
 
 <div class = "frame12">
-<table class="employees-table">
+<!-- <table class="employees-table">
     <thead>
         <tr>
             <th>First Name</th>
@@ -378,7 +378,7 @@ while ($row = $result->fetch_assoc())
     echo "<td>{$row['branch_id']}</td>";
     echo "</tr>";
 }
-?> </tbody></table>
+?> </tbody></table> -->
 
 
 <form id="addEmployeeForm">
