@@ -90,7 +90,7 @@ $packageHistoryResult = $stmtHistory->get_result();
             <div class="rectangle-parent167">
               <div class="frame-child84"></div>
               <div class="welcome-to-your-portal-page-wrapper27">
-                <b class="welcome-to-your29">Your Package History</b>
+                <b class="welcome-to-your29">Your Package Tracking</b>
               </div>
             </div>
             <div class="frame-parent77">
@@ -247,8 +247,6 @@ $packageHistoryResult = $stmtHistory->get_result();
                                     </td>
                                 <?php endforeach; ?>
                             <?php endif; ?>
-                            <!-- Always show Time Scanned -->
-                            <td><?php echo htmlspecialchars($row['time_scanned']); ?></td>
                         </tr>
                     <?php endwhile; ?>
                 </table>
