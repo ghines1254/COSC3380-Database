@@ -556,7 +556,7 @@
 	font-family: var(--font-lexend);
 }
 .vector-icon52 {
-	position: absolute;
+	position: relative;
 	top: 184px;
 	left: calc(50% + 567px);
 	width: 70px;
