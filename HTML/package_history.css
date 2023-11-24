@@ -238,6 +238,7 @@
   border-radius: var(--br-mini);
   background-color: var(--lightmain);
   border: 5px solid var(--fullblack);
+  -webkit-text-fill-color: black;
   box-sizing: border-box;
 }
 .frame-wrapper30 {
