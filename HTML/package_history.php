@@ -111,13 +111,14 @@ $packageHistoryResult = $stmtHistory->get_result();
         <?php if (!empty($attribute) && $attribute != 'location'): ?>
             <th><?php echo $columnDisplayNameMap[$attribute] ?? $attribute; ?></th> <!-- Show the selected attribute with a friendly name -->
         <?php else: ?>
-            <!-- If no attribute is selected or if it's 'location', show all columns with friendly names -->
-            <?php foreach ($columnDisplayNameMap as $columnName => $displayName): ?>
-                <th><?php echo $displayName; ?></th>
-            <?php endforeach; ?>
-            <th>Location</th> <!-- Add Location header -->
+            <!-- If no attribute is selected or if it's 'location', show all columns except the original 'location' -->
+            <th>Employee ID</th>
+            <!-- 'Location' is handled separately, so it is not included here -->
+            <th>Time Scanned</th>
+            <th>Truck No.</th>
         <?php endif; ?>
-        <th>Time Scanned</th> <!-- Always show Time Scanned -->
+        <!-- Always show Time Scanned -->
+        <th>Time Scanned</th>
     </tr>
     <!-- Display the package history with the customized column names and values -->
     <?php while ($row = $packageHistoryResult->fetch_assoc()): ?>
@@ -127,10 +128,8 @@ $packageHistoryResult = $stmtHistory->get_result();
                 <!-- Show the selected attribute value -->
                 <td><?php echo htmlspecialchars($row[$attribute]); ?></td>
             <?php else: ?>
-                <!-- If no attribute is selected or if it's 'location', show all column values -->
-                <?php foreach ($columnDisplayNameMap as $columnName => $displayName): ?>
-                    <td><?php echo htmlspecialchars($row[$columnName]); ?></td>
-                <?php endforeach; ?>
+                <!-- If no attribute is selected or if it's 'location', show all column values except the original 'location' -->
+                <td><?php echo htmlspecialchars($row['emp_id']); ?></td>
                 <!-- Translate the location to the human-readable format -->
                 <td><?php
                     switch ($row['location']) {
@@ -142,11 +141,11 @@ $packageHistoryResult = $stmtHistory->get_result();
                         default: echo htmlspecialchars($row['location']);
                     }
                 ?></td>
+                <td><?php echo htmlspecialchars($row['time_scanned']); ?></td>
+                <td><?php echo htmlspecialchars($row['vin']); ?></td>
             <?php endif; ?>
-            <td><?php echo htmlspecialchars($row['time_scanned']); ?></td> <!-- Always show Time Scanned -->
         </tr>
     <?php endwhile; ?>
 </table>
-
 </body>
 </html>
