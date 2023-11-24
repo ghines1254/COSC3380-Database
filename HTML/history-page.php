@@ -125,7 +125,6 @@
       <table class = "history-table">
           <thead>
               <tr>
-
                   <th>Tracking Number</th>
                   <th>Last Updated</th>
                   <th>Delivery Status</th>
