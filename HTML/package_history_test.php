@@ -46,7 +46,7 @@ $packageHistoryResult = $stmtHistory->get_result();
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
     <link rel="stylesheet" href="global.css" />
-    <link rel="stylesheet" href="tracking-page.css" />
+    <link rel="stylesheet" href="package_history.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Lexend Deca:wght@400;500;600;700;800;900&display=swap"
