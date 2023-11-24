@@ -78,7 +78,7 @@ require_once 'init.php';
         </div>
       </div>
       <div class="frame12">
-        <div class="frame13">
+<!--         <div class="frame13">
           <div class="rectangle"></div>
           <b class="employee-id">First Name</b>
         </div>
@@ -249,7 +249,7 @@ require_once 'init.php';
         <div class="frame55">
           <div class="rectangle4"></div>
           <div class="employee-id">-</div>
-        </div>
+        </div> -->
         <div class="frame56">
           <div class="rectangle4"></div>
           <div class="employee-id">-</div>
