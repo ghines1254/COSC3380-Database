@@ -90,7 +90,7 @@ $packageHistoryResult = $stmtHistory->get_result();
             <div class="rectangle-parent167">
               <div class="frame-child84"></div>
               <div class="welcome-to-your-portal-page-wrapper27">
-                <b class="welcome-to-your29">Package History for Package: <?php echo htmlspecialchars($packageId); ?></b>
+                <b class="welcome-to-your29">Your Package History</b>
               </div>
             </div>
             <div class="frame-parent77">

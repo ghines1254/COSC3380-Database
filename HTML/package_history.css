@@ -240,6 +240,7 @@
   border: 5px solid var(--fullblack);
   -webkit-text-fill-color: black;
   box-sizing: border-box;
+  overflow-y: auto;
 }
 .frame-wrapper30 {
   align-self: stretch;
