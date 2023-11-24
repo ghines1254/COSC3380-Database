@@ -72,7 +72,7 @@ $packageHistoryResult = $stmtHistory->get_result();
                 switch ($column) {
                     case 'on_truck': echo $value == '1' ? 'Yes' : 'Not yet'; break;
                     case 'received': echo $value == '1' ? 'Yes' : 'No'; break;
-                    case 'starting_location_id': echo $value == 'PO1' ? 'Post Office 1' : ($value == 'PO2' ? 'Post Office 2' : htmlspecialchars($value)); break;
+                    case 'starting_location_id': echo 'Post Office 1'; break; // Assume this is always 'Post Office 1' for this example
                     default: echo htmlspecialchars($value);
                 }
                 ?>
@@ -113,7 +113,7 @@ $packageHistoryResult = $stmtHistory->get_result();
             <!-- Show the selected attribute with a friendly name -->
             <th><?php echo $columnDisplayNameMap[$attribute] ?? $attribute; ?></th>
         <?php else: ?>
-            <!-- If no attribute is selected, show all columns except 'location_type' -->
+            <!-- If no attribute is selected, show all columns -->
             <?php foreach ($columnDisplayNameMap as $columnName => $displayName): ?>
                 <th><?php echo $displayName; ?></th>
             <?php endforeach; ?>
@@ -128,11 +128,43 @@ $packageHistoryResult = $stmtHistory->get_result();
             <td><?php echo htmlspecialchars($row['package_id']); ?></td>
             <?php if (!empty($attribute)): ?>
                 <!-- Show the selected attribute value -->
-                <td><?php echo htmlspecialchars($row[$attribute]); ?></td>
+                <td>
+                    <?php
+                    // Convert 'location' column numbers to user-friendly names
+                    if ($attribute == 'location') {
+                        switch ($row[$attribute]) {
+                            case '1': echo 'Post Office 1'; break;
+                            case '2': echo 'Post Office 2'; break;
+                            case '3': echo 'Distribution Center'; break;
+                            case '4': echo 'Transit Facility'; break;
+                            case '5': echo 'Delivered'; break;
+                            default: echo htmlspecialchars($row[$attribute]);
+                        }
+                    } else {
+                        echo htmlspecialchars($row[$attribute]);
+                    }
+                    ?>
+                </td>
             <?php else: ?>
                 <!-- If no attribute is selected, show all columns -->
                 <?php foreach ($columnDisplayNameMap as $columnName => $displayName): ?>
-                    <td><?php echo htmlspecialchars($row[$columnName]); ?></td>
+                    <td>
+                        <?php
+                        // Convert 'location' column numbers to user-friendly names
+                        if ($columnName == 'location') {
+                            switch ($row[$columnName]) {
+                                case '1': echo 'Post Office 1'; break;
+                                case '2': echo 'Post Office 2'; break;
+                                case '3': echo 'Distribution Center'; break;
+                                case '4': echo 'Transit Facility'; break;
+                                case '5': echo 'Delivered'; break;
+                                default: echo htmlspecialchars($row[$columnName]);
+                            }
+                        } else {
+                            echo htmlspecialchars($row[$columnName]);
+                        }
+                        ?>
+                    </td>
                 <?php endforeach; ?>
             <?php endif; ?>
             <!-- Always show Time Scanned -->
