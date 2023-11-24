@@ -164,7 +164,6 @@ $packageHistoryResult = $stmtHistory->get_result();
                 <!-- Form for filters -->
 
                 <h3>Package History</h3>
-                <table border="1">
                 <form method="GET">
                     <label for="start_date">Start Date:</label>
                     <input type="date" id="start_date" name="start_date" value="<?php echo htmlspecialchars($startDate); ?>">
@@ -185,6 +184,7 @@ $packageHistoryResult = $stmtHistory->get_result();
                     <input type="submit" value="Filter">
                 </form>
 
+                <table border="1">
                     <!-- Customized headers for package history -->
                     <tr>
                         <!-- Always show Package ID -->
