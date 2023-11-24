@@ -107,36 +107,42 @@ $packageHistoryResult = $stmtHistory->get_result();
 <table border="1">
     <!-- Customized headers for package history -->
     <tr>
-        <!-- Always show Package ID -->
-        <th><?php echo $columnDisplayNameMap['package_id'] ?? 'Package ID'; ?></th>
-        <?php if (!empty($attribute)): ?>
+        <th>Package ID</th> <!-- Always show Package ID -->
+        <?php if (!empty($attribute) && $attribute != 'location'): ?>
             <!-- Show the selected attribute with a friendly name -->
             <th><?php echo $columnDisplayNameMap[$attribute] ?? $attribute; ?></th>
         <?php else: ?>
-            <!-- If no attribute is selected, show all columns except 'location_type' -->
-            <?php foreach ($columnDisplayNameMap as $columnName => $displayName): ?>
-                <th><?php echo $displayName; ?></th>
-            <?php endforeach; ?>
+            <!-- If no attribute is selected or if it's 'location', show all columns with friendly names except 'location' -->
+            <th>Employee ID</th>
+            <!-- 'Location' is handled separately, so it is not included here -->
+            <th>Time Scanned</th>
+            <th>Truck No.</th>
         <?php endif; ?>
-        <!-- Always show Time Scanned -->
-        <th><?php echo $columnDisplayNameMap['time_scanned'] ?? 'Time Scanned'; ?></th>
     </tr>
     <!-- Display the package history with the customized column names and values -->
     <?php while ($row = $packageHistoryResult->fetch_assoc()): ?>
         <tr>
-            <!-- Always show Package ID -->
-            <td><?php echo htmlspecialchars($row['package_id']); ?></td>
-            <?php if (!empty($attribute)): ?>
+            <td><?php echo htmlspecialchars($row['package_id']); ?></td> <!-- Always show Package ID -->
+            <?php if (!empty($attribute) && $attribute != 'location'): ?>
                 <!-- Show the selected attribute value -->
                 <td><?php echo htmlspecialchars($row[$attribute]); ?></td>
             <?php else: ?>
-                <!-- If no attribute is selected, show all columns -->
-                <?php foreach ($columnDisplayNameMap as $columnName => $displayName): ?>
-                    <td><?php echo htmlspecialchars($row[$columnName]); ?></td>
-                <?php endforeach; ?>
+                <!-- If no attribute is selected or if it's 'location', show all column values except the original 'location' -->
+                <td><?php echo htmlspecialchars($row['emp_id']); ?></td>
+                <!-- Translate the location to the human-readable format -->
+                <td><?php
+                    switch ($row['location']) {
+                        case '1': echo 'Post Office 1'; break;
+                        case '2': echo 'Post Office 2'; break;
+                        case '3': echo 'Distribution Center'; break;
+                        case '4': echo 'Transit Facility'; break;
+                        case '5': echo 'Delivered'; break;
+                        default: echo htmlspecialchars($row['location']);
+                    }
+                ?></td>
+                <td><?php echo htmlspecialchars($row['time_scanned']); ?></td>
+                <td><?php echo htmlspecialchars($row['vin']); ?></td>
             <?php endif; ?>
-            <!-- Always show Time Scanned -->
-            <td><?php echo htmlspecialchars($row['time_scanned']); ?></td>
         </tr>
     <?php endwhile; ?>
 </table>
