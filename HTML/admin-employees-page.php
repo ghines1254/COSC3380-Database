@@ -61,11 +61,11 @@ require_once 'init.php';
                 </div>
                 <div class="button428" id="button4Container">
                   <div class="button2-child26"></div>
-                  <b class="button-228">Departments</b>
+                  <b class="button-228">Employee Report</b>
                 </div>
                 <div class="button54">
                   <div class="button2-child26"></div>
-                  <b class="button-228">Employees</b>
+                  <b class="button-228">Add Employee</b>
                 </div>
                 <div class="button716" id="button7Container">
                   <div class="button2-child26"></div>
@@ -335,7 +335,7 @@ require_once 'init.php';
           <div class="employee-id">-</div>
         </div>
       </div>
-      <b class="current-employee-list">Current Employee List</b>
+      <b class="current-employee-list">Add Employee </b>
       <img
         class="vector-icon42"
         alt=""
@@ -346,7 +346,7 @@ require_once 'init.php';
 
 
 <div class = "frame12">
-<table class="employees-table">
+<!-- <table class="employees-table">
     <thead>
         <tr>
             <th>First Name</th>
@@ -378,7 +378,7 @@ while ($row = $result->fetch_assoc())
     echo "<td>{$row['branch_id']}</td>";
     echo "</tr>";
 }
-?> </tbody></table>
+?> </tbody></table> -->
 
 
 <form id="addEmployeeForm">
