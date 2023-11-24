@@ -389,8 +389,8 @@
   overflow: hidden;
 }
 .frame91 {
-  width: 50%;
-  top: 50%;
+  width: calc(100% - 334px);
+  top: calc(10% - 242px);
   right: 288px;
   left: 46px;
   display: flex;
