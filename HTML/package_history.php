@@ -29,7 +29,7 @@ $stmtHistory->execute();
 $packageHistoryResult = $stmtHistory->get_result();
 
 // Get all columns from PACKAGE_HISTORY to use in the filter dropdown
-$columnsQuery = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'Post_Office_Schema' AND TABLE_NAME = 'PACKAGE_HISTORY'";
+$columnsQuery = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'Post_Office_Schema' AND TABLE_NAME = 'PACKAGE_HISTORY' AND COLUMN_NAME != 'location_type'";
 $columnsResult = $conn->query($columnsQuery);
 $columns = $columnsResult->fetch_all(MYSQLI_ASSOC);
 
@@ -45,11 +45,33 @@ $columns = $columnsResult->fetch_all(MYSQLI_ASSOC);
 
 <h3>Tracking Information</h3>
 <table border="1">
-    <!-- Display the tracking information -->
+    <!-- Display the tracking information with customized column names and values -->
     <?php foreach ($trackingInfo as $column => $value): ?>
         <tr>
-            <th><?php echo htmlspecialchars($column); ?></th>
-            <td><?php echo htmlspecialchars($value); ?></td>
+            <th>
+                <?php
+                switch ($column) {
+                    case 'package_id': echo 'Package Number'; break;
+                    case 'on_truck': echo 'Out for Delivery?'; break;
+                    case 'starting_location_id': echo 'Starting Location'; break;
+                    case 'received': echo 'Package Received by Post Office'; break;
+                    case 'delivered_by': echo 'Delivered By'; break;
+                    case 'created_on': echo 'Package Created On'; break;
+                    case 'last_updated': echo 'Last Updated'; break;
+                    case 'eta': echo 'Estimated Delivery'; break;
+                    default: echo htmlspecialchars($column);
+                }
+                ?>
+            </th>
+            <td>
+                <?php
+                switch ($column) {
+                    case 'on_truck': echo $value ? 'Yes' : 'Not yet'; break;
+                    case 'received': echo $value ? 'Yes' : 'No'; break;
+                    default: echo htmlspecialchars($value);
+                }
+                ?>
+            </td>
         </tr>
     <?php endforeach; ?>
 </table>
@@ -78,18 +100,34 @@ $columns = $columnsResult->fetch_all(MYSQLI_ASSOC);
 
 <h3>Package History</h3>
 <table border="1">
-    <!-- Headers for package history -->
+    <!-- Customized headers for package history -->
     <tr>
-        <?php foreach ($columns as $column): ?>
-            <th><?php echo htmlspecialchars($column['COLUMN_NAME']); ?></th>
-        <?php endforeach; ?>
+        <th>Package ID</th> <!-- Moved to be first -->
+        <th>Employee ID</th>
+        <th>Location</th>
+        <th>Time Scanned</th>
+        <th>Truck No.</th>
     </tr>
-    <!-- Display the package history -->
+    <!-- Display the package history with the customized column names and values -->
     <?php while ($row = $packageHistoryResult->fetch_assoc()): ?>
         <tr>
-            <?php foreach ($columns as $column): ?>
-                <td><?php echo htmlspecialchars($row[$column['COLUMN_NAME']]); ?></td>
-            <?php endforeach; ?>
+            <td><?php echo htmlspecialchars($row['package_id']); ?></td> <!-- Always first -->
+            <td><?php echo htmlspecialchars($row['emp_id']); ?></td>
+            <td>
+                <?php
+                // Translate the location to the human-readable format
+                switch ($row['location']) {
+                    case '1': echo 'Post Office 1'; break;
+                    case '2': echo 'Post Office 2'; break;
+                    case '3': echo 'Distribution Center'; break;
+                    case '4': echo 'Transit Facility'; break;
+                    case '5': echo 'Delivered'; break;
+                    default: echo htmlspecialchars($row['location']);
+                }
+                ?>
+            </td>
+            <td><?php echo htmlspecialchars($row['time_scanned']); ?></td>
+            <td><?php echo htmlspecialchars($row['vin']); ?></td>
         </tr>
     <?php endwhile; ?>
 </table>
