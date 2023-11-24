@@ -385,7 +385,7 @@
 }
 .frame-frame,
 .frame91 {
-  position: absolute;
+  position: relative;
   overflow: hidden;
 }
 .frame91 {
