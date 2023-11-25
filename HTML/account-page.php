@@ -221,7 +221,7 @@
                 src="./public/rectangle-271.svg"
               />
 
-              <input class="phone15" placeholder="<?php echo $phone ?>" type="tel" name = "phone" id = "phone"/>
+              <input class="phone15" placeholder="<?php echo $customer_phone ?>" type="tel" name = "phone" id = "phone"/>
             </div>
           </div>
         </div>

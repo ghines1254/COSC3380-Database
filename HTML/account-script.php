@@ -47,10 +47,13 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
                             WHERE customer_id = ?");  
     $stmt->bind_param("sssssssss", $phoneNum, $zipcode, $state, $address1, $city, $firstName, $lastName, $email, $address2);
    
-    if (!$stmt->execute()) {
-        die("Error in executing the statement: " . $stmt->error);
+    $stmt->execute();
+    if ($stmt->affected_rows > 0) {
+        echo "edited properly";
+        exit();
+    } else {
+        echo "Error inserting customer status or no changes made.";
     }
-
     $stmt->close();
     $conn->close();
  
