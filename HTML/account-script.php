@@ -27,20 +27,55 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+$currentUserID = $user_info['customer_id'];
+$stmt = $conn->prepare("SELECT first_name, last_name, street_address_1, street_address_2, city, state, zip, email, customer_phone FROM CUSTOMER where customer_id = ?");
+$stmt->bind_param("s", $currentUserID);
+$stmt->execute();
+$stmt->bind_result($first_name, $last_name, $street_address_1, $street_address_2, $OGcity, $OGstate, $zip, $OGemail, $customer_phone);
+$stmt->fetch();
+$stmt->close();
+
 if($_SERVER["REQUEST_METHOD"] === "POST")
 {
 
 
     $customerID = $user_info['customer_id'];
     $firstName = $_POST['first_name'];
+    if ($firstName == ""){
+        $firstName = $first_name;
+    }
     $lastName = $_POST['last_name'];
+    if ($lastName == ""){
+        $lastName = $first_name;
+    }
     $address1 = $_POST['street_address_1'];
+    if ($address1 == ""){
+        $address1 = $street_address_1;
+    }
     $address2 = $_POST['street_address_2'];
+    if ($address2 == ""){
+        $address2 = $street_address_2;
+    }
     $city = $_POST['city'];
+    if ($city == ""){
+        $city = $OGcity;
+    }
     $state = $_POST['state'];
+    if ($state == ""){
+        $state = $OGstate;
+    }
     $zipcode = $_POST['zip'];
+    if ($zipcode == ""){
+        $zipcode = $zip;
+    }
     $email = $_POST['email'];
+    if ($email == ""){
+        $email = $OGemail;
+    }
     $phoneNum = $_POST['phone'];
+    if ($phoneNum== ""){
+        $phoneNum = $customer_phone;
+    }
 
     $stmt = $conn->prepare("UPDATE CUSTOMER
                             SET customer_phone = ?, zip = ?, state = ?, street_address_1 = ?, city = ?, first_name = ?, last_name = ?, email = ?, street_address_2 = ?
@@ -56,9 +91,9 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
     }
 
     if ($stmt->affected_rows > 0) {
-        echo "Customer updated successfully.";
+        header("Location: ../account-page.php");
     } else {
-        echo "No changes were made or an error occurred.";
+        header("Location: ../account-page.php");
     }
     $stmt->close();
     $conn->close();
