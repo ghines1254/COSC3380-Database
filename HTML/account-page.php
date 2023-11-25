@@ -103,10 +103,7 @@
                     <div class="products-child2"></div>
                     <b class="button-240">Products</b>
                   </div>
-                  <div class="quote8" id="quoteContainer">
-                    <div class="tracking-child10"></div>
-                    <b class="button-240">Quote</b>
-                  </div>
+              
                   <div class="support4" id="supportContainer">
                     <div class="tracking-child10"></div>
                     <b class="button-240">Support</b>
@@ -268,12 +265,7 @@
         });
       }
 
-      var quoteContainer = document.getElementById("quoteContainer");
-      if (quoteContainer) {
-        quoteContainer.addEventListener("click", function (e) {
-          window.location.href = "./quote-page.html";
-        });
-      }
+     
 
       var supportContainer = document.getElementById("supportContainer");
       if (supportContainer) {
