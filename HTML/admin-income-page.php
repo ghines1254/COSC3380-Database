@@ -87,10 +87,10 @@
               <form method="post" action="">
               <div class = "input-filter-class">
                 <label for="start_date">Start Date:</label>
-                <input type="date" id="start_date" name="start_date" required>
+                <input type="date" id="start_date" name="start_date" value = "2023-01-01" required>
 
                 <label for="end_date">End Date:</label>
-                <input type="date" id="end_date" name="end_date" required>
+                <input type="date" id="end_date" name="end_date" value = "2023-12-31" required>
               </div>
               <input type="submit" name="generate_report" value="Generate Report">
                   <input type="submit" name="generate_report" value="Generate Report" class = "generate_report_button">
