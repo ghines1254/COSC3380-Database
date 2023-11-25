@@ -48,7 +48,7 @@
             <div class="rectangle-parent66">
               <div class="frame-child17"></div>
               <div class="welcome-to-your-portal-page-wrapper8">
-                <b class="welcome-to-your10">Welcome to your portal page!</b>
+                <b class="welcome-to-your10">Shipping Center</b>
               </div>
             </div>
             <div class="frame-parent21">
