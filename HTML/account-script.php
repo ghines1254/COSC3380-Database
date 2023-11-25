@@ -45,14 +45,20 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
     $stmt = $conn->prepare("UPDATE CUSTOMER
                             SET customer_phone = ?, zip = ?, state = ?, street_address_1 = ?, city = ?, first_name = ?, last_name = ?, email = ?, street_address_2
                             WHERE customer_id = ?");  
-    $stmt->bind_param("sssssssss", $phoneNum, $zipcode, $state, $address1, $city, $firstName, $lastName, $email, $address2);
-   
-    $stmt->execute();
+    if (!$stmt) {
+        die("Error in preparing the statement: " . $conn->error);
+    }
+
+    $stmt->bind_param("ssssssssss", $phoneNum, $zipcode, $state, $address1, $city, $firstName, $lastName, $email, $address2, $customerID);
+
+    if (!$stmt->execute()) {
+        die("Error executing the statement: " . $stmt->error);
+    }
+
     if ($stmt->affected_rows > 0) {
-        echo "edited properly";
-        exit();
+        echo "Customer updated successfully.";
     } else {
-        echo "Error inserting customer status or no changes made.";
+        echo "No changes were made or an error occurred.";
     }
     $stmt->close();
     $conn->close();
