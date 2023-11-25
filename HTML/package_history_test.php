@@ -246,78 +246,78 @@ $packageHistoryResult = $stmtHistory->get_result();
             </div>
           </div>
         </div>
-        <script>
-          var frameContainer1 = document.getElementById("frameContainer1");
-          if (frameContainer1) {
-            frameContainer1.addEventListener("click", function (e) {
-              window.location.href = "./index.php";
-            });
-          }
-
-          var button2Container = document.getElementById("button2Container");
-          if (button2Container) {
-            button2Container.addEventListener("click", function (e) {
-              window.location.href = "./customer-portal-nofications-page.php";
-            });
-          }
-
-          var button3Text = document.getElementById("button3Text");
-          if (button3Text) {
-            button3Text.addEventListener("click", function (e) {
-              window.location.href = "./products-page.html";
-            });
-          }
-
-          var productsContainer = document.getElementById("productsContainer");
-          if (productsContainer) {
-            productsContainer.addEventListener("click", function (e) {
-              window.location.href = "./products-page.html";
-            });
-          }
-
-          var quoteContainer = document.getElementById("quoteContainer");
-          if (quoteContainer) {
-            quoteContainer.addEventListener("click", function (e) {
-              window.location.href = "./quote-page.html";
-            });
-          }
-
-          var supportContainer = document.getElementById("supportContainer");
-          if (supportContainer) {
-            supportContainer.addEventListener("click", function (e) {
-              window.location.href = "./support-page.html";
-            });
-          }
-
-          var historyContainer = document.getElementById("historyContainer");
-          if (historyContainer) {
-            historyContainer.addEventListener("click", function (e) {
-              window.location.href = "./history-page.php";
-            });
-          }
-
-          var accountContainer = document.getElementById("accountContainer");
-          if (accountContainer) {
-            accountContainer.addEventListener("click", function (e) {
-              window.location.href = "./account-page.php";
-            });
-          }
-
-          var frameContainer11 = document.getElementById("frameContainer11");
-          if (frameContainer11) {
-            frameContainer11.addEventListener("click", function (e) {
-              window.location.href = "./cutomer-portal-nofications-page.php";
-            });
-          }
-              </div>
-
-            </div>
-          </div>
-        </div>
-        <div class="frame-frame">
-          <div class="frame91">
-
-        </script>
+     <script>
+       var frameContainer1 = document.getElementById("frameContainer1");
+       if (frameContainer1) {
+         frameContainer1.addEventListener("click", function (e) {
+           window.location.href = "./index.php";
+         });
+       }
+   
+       var button2Container = document.getElementById("button2Container");
+       if (button2Container) {
+         button2Container.addEventListener("click", function (e) {
+           window.location.href = "./customer-portal-nofications-page.php";
+         });
+       }
+   
+       var button3Text = document.getElementById("button3Text");
+       if (button3Text) {
+         button3Text.addEventListener("click", function (e) {
+           window.location.href = "./products-page.html";
+         });
+       }
+   
+       var productsContainer = document.getElementById("productsContainer");
+       if (productsContainer) {
+         productsContainer.addEventListener("click", function (e) {
+           window.location.href = "./products-page.html";
+         });
+       }
+   
+       var quoteContainer = document.getElementById("quoteContainer");
+       if (quoteContainer) {
+         quoteContainer.addEventListener("click", function (e) {
+           window.location.href = "./quote-page.html";
+         });
+       }
+   
+       var supportContainer = document.getElementById("supportContainer");
+       if (supportContainer) {
+         supportContainer.addEventListener("click", function (e) {
+           window.location.href = "./support-page.html";
+         });
+       }
+   
+       var historyContainer = document.getElementById("historyContainer");
+       if (historyContainer) {
+         historyContainer.addEventListener("click", function (e) {
+           window.location.href = "./history-page.php";
+         });
+       }
+   
+       var accountContainer = document.getElementById("accountContainer");
+       if (accountContainer) {
+         accountContainer.addEventListener("click", function (e) {
+           window.location.href = "./account-page.php";
+         });
+       }
+   
+       var frameContainer11 = document.getElementById("frameContainer11");
+       if (frameContainer11) {
+         frameContainer11.addEventListener("click", function (e) {
+           window.location.href = "./cutomer-portal-nofications-page.php";
+         });
+       }
+           </div>
+   
+         </div>
+       </div>
+     </div>
+     <div class="frame-frame">
+       <div class="frame91">
+   
+     </script>
 
     </body>
 </html>

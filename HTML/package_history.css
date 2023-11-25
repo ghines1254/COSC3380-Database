@@ -389,6 +389,7 @@
 .frame91 {
   position: absolute;
   overflow: hidden;
+  -webkit-text-fill-color: white;
 }
 .frame91 {
   width: calc(100% - 334px);
