@@ -18,7 +18,7 @@
 	display: block;
 	width: 880px;
 	max-height: 600px;
-	overflow-y: scroll;
+	/*overflow-y: scroll;*/
 	text-align: center;
 	background-color: var(--lightsecond);
 	font-size: var(--font-size-mid);
