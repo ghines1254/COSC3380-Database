@@ -39,7 +39,7 @@ function fetchEmployeeReport() {
             LEFT JOIN IN_STORE_PRODUCTS isp ON s.product_id = isp.product_id
             CROSS JOIN (
                 SELECT COUNT(*) AS p0000sum FROM SALES WHERE product_id = 'P0000'
-            ) AS 00000_counts
+            ) AS p0000_counts
             CROSS JOIN (
                 SELECT COUNT(*) AS p1000sum FROM SALES WHERE product_id = 'P1000'
             ) AS p1000_counts
