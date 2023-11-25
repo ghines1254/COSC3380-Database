@@ -71,7 +71,7 @@ require_once 'connection.php';
             <div class="rectangle-parent61">
               <div class="frame-child15"></div>
               <div class="welcome-to-your-portal-page-wrapper6">
-                <b class="welcome-to-your8">Welcome to your portal page!</b>
+                <b class="welcome-to-your8">Check Out Page</b>
               </div>
             </div>
             <div class="frame-parent17">
@@ -94,11 +94,11 @@ require_once 'connection.php';
                     <b class="button-216">Delivery</b>
                   </div>
                   <div class="button417" id="button4Container1">
-                    <div class="button2-child14"></div>
+<!--                     <div class="button2-child14"></div> -->
                     <b class="button-216">Dependent</b>
                   </div>
                   <div class="button78" id="button7Container">
-                    <div class="button2-child14"></div>
+<!--                     <div class="button2-child14"></div> -->
                     <b class="button-216">Account</b>
                   </div>
                 </div>
