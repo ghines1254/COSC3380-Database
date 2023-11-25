@@ -43,7 +43,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
     $phoneNum = $_POST['phone'];
 
     $stmt = $conn->prepare("UPDATE CUSTOMER
-                            SET customer_phone = ?, zip = ?, state = ?, street_address_1 = ?, city = ?, first_name = ?, last_name = ?, email = ?, street_address_2
+                            SET customer_phone = ?, zip = ?, state = ?, street_address_1 = ?, city = ?, first_name = ?, last_name = ?, email = ?, street_address_2 = ?
                             WHERE customer_id = ?");  
     if (!$stmt) {
         die("Error in preparing the statement: " . $conn->error);
