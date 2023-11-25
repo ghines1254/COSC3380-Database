@@ -118,7 +118,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //add shipment to SALES table
     $packageProductID = "P0000";
     $packagePrice = 5.99;
-    $currentBranch = $emp_info('branch_id');
+    $currentBranch = $emp_info['branch_id'];
     $stmt = $conn->prepare("INSERT INTO SALES (product_id, product_price, branch_id) VALUES (?, ?, ?)");
     $stmt->bind_param("sss", $packageProductID, $packagePrice, $currentBranch);
     $stmt->execute();
