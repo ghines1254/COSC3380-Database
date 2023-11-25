@@ -83,7 +83,7 @@
                 <b style="font-size: 20px;" class="departments">Add Employee</b>
               </div>
               <div class="button7" id="button7Container">
-                <div class="button2-child"></div>
+<!--                 <div class="button2-child"></div> -->
                 <b class="departments">Account</b>
               </div>
             </div>
