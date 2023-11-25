@@ -97,7 +97,7 @@
                 <option value="PO1">PO1</option>
                 <option value="PO2">PO2</option>
                 <option value="both">Both</option>
-                
+                </select>
               </div>
               <input type="submit" name="generate_report" value="Generate Report">
                   <input type="submit" name="generate_report" value="Generate Report" class = "generate_report_button">
