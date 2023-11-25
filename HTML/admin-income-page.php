@@ -99,17 +99,7 @@
                 <input type="date" id="end_date" name="end_date" required>
               </div>
               <input type="submit" name="generate_report" value="Generate Report">
-                  <input type="submit" name="generate_report" value="Generate Report"
-                        style="position: absolute;
-                              bottom: 20.5px;
-                              right: 375.5px;
-                              background-color: var(--lightaccent);
-                              color: white;
-                              padding: 10px 20px;
-                              border: none;
-                              border-radius: 5px;
-                              cursor: pointer;
-                              box-shadow: 2px 2px 5px grey;">
+                  <input type="submit" name="generate_report" value="Generate Report" class = "generate_report_button">
     </form>
 </div>
 

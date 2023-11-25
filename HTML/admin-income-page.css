@@ -3,10 +3,23 @@
 	color: white;
 }
 
+.generate_report_button {
+	position: absolute;
+	bottom: 17px;
+	right: 375.5px;
+	background-color: var(--lightaccent);
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	box-shadow: 2px 2px 5px grey;
+}
 .input-filter-class {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
+	bottom: 10%;
 	width: calc(100% - 10px);
 	margin-left: 5px;
 	margin-right: 5px;
