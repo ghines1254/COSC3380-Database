@@ -91,13 +91,6 @@
 
                 <label for="end_date">End Date:</label>
                 <input type="date" id="end_date" name="end_date" value = "2023-12-31" required>
-
-                <label for="branch_id">Post Office:</label>
-                <select id="branch_id" name="branch_id">
-                <option value="PO1">PO1</option>
-                <option value="PO2">PO2</option>
-                <option value="both">Both</option>
-                </select>
                 
               </div>
               <input type="submit" name="generate_report" value="Generate Report">
