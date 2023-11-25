@@ -179,7 +179,7 @@
               <table class="total-table">
                 <thead>
                   <tr>
-                    <th>Total:</td>
+                    <th>Total:</th>
                     <th id="totalSum"></th>
                   </tr>
                 </thead>

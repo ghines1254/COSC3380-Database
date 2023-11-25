@@ -85,7 +85,8 @@
 	height: 54px;
 }
 .total-table th {
-	width: 5%;
+	width: 50%;
+	height: auto;
 	font-size: xx-large;
 	bottom: 0px;
 	position: sticky;
