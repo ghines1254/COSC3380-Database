@@ -87,11 +87,11 @@ require_once "connection.php";
                     <b class="button-223">Delivery</b>
                   </div>
                   <div class="button424" id="button4Container1">
-                    <div class="button2-child21"></div>
+<!--                     <div class="button2-child21"></div> -->
                     <b class="button-223">Dependent</b>
                   </div>
                   <div class="button712" id="button7Container">
-                    <div class="button2-child21"></div>
+<!--                     <div class="button2-child21"></div> -->
                     <b class="button-223">Account</b>
                   </div>
                 </div>
