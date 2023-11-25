@@ -40,7 +40,7 @@
 	font-weight: bold;
 	text-transform: uppercase;
 }
-.tfoot th {
+.tfoot td {
 	width: calc(880px / 9);
 	position: sticky;
 	background-color: #f5f5f5;
