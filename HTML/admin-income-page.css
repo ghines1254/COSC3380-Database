@@ -67,7 +67,8 @@
 }
 .report-table thead,
 .report-table tr,
-.total-table tbody {
+.total-table tbody,
+.total-table tr {
 	width: 100%;
 }
 .report-table th,
