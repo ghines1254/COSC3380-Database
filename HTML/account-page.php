@@ -1,4 +1,39 @@
+<?php
+  session_start();
 
+  // Check if the user is logged in
+  if (!isset($_SESSION['user_info'])) {
+      // Redirect to the login page if the user is not logged in
+      header('Location: login-page.php');
+      exit();
+  }
+
+  $user_info = $_SESSION['user_info'];
+
+
+  // Database connection details
+  $host = "34.68.154.206";
+  $database = "Post_Office_Schema";
+  $user = "root";
+  $password = "umapuma";
+
+  // Create connection
+  $conn = new mysqli($host, $user, $password, $database);
+
+  // Check connection
+  if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+  }
+
+  $currentUserID = $user_info['customer_id'];
+  $stmt = $conn->prepare("SELECT first_name, last_name, street_address_1, street_address_2, city, state, zip, email, customer_phone FROM CUSTOMER where customer_id = ?");
+  $stmt->bind_param("s", $currentUserID);
+  $stmt->execute();
+  $stmt->bind_result($first_name, $last_name, $street_address_1, $street_address_2, $city, $state, $zip, $email, $customer_phone);
+  $stmt->fetch();
+  $stmt->close();
+
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -102,7 +137,7 @@
           <div class="firstname-parent6">
             <div class="firstname8">
               <div class="firstname-child6"></div>
-              <input class="first-name9" placeholder="First Name" type="text" />
+              <input class="first-name9" placeholder= "<?php echo $first_name ?>" type="text" name = "first_name" id = "first_name" />
             </div>
             <div class="middleinitial8">
               <div class="middleinitial-child6"></div>
@@ -119,7 +154,7 @@
                 src="./public/rectangle-26.svg"
               />
 
-              <input class="last-name9" placeholder="Last Name" type="text" />
+              <input class="last-name9" placeholder="<?php echo $last_name ?>" type="text" name = "last_name" id = "last_name"/>
             </div>
           </div>
           <div class="firstname-parent6">
@@ -132,8 +167,10 @@
 
               <input
                 class="address-line-17"
-                placeholder="Address Line 1"
+                placeholder="<?php echo $street_address_1?>"
                 type="text"
+                name = "street_address_1"
+                id = "street_address_1"
               />
             </div>
             <div class="addressline17">
@@ -145,23 +182,25 @@
 
               <input
                 class="address-line-27"
-                placeholder="Address Line 2"
+                placeholder="<?php echo $street_address_2?>"
                 type="text"
+                name = "street_address_2"
+                id = "street_address_2"
               />
             </div>
           </div>
           <div class="firstname-parent6">
             <div class="city14">
               <div class="city-child5"></div>
-              <input class="city15" placeholder="City" type="text" />
+              <input class="city15" placeholder="<?php echo $city ?>" type="text" name = "city" id = "city"/>
             </div>
             <div class="state14">
               <div class="state-child5"></div>
-              <input class="state15" placeholder="State" type="text" />
+              <input class="state15" placeholder="<?php echo $state ?>" type="text" name = "state" id = "state"/>
             </div>
             <div class="zip14">
               <div class="zip-child5"></div>
-              <input class="zip15" placeholder="Zip Code" type="text" />
+              <input class="zip15" placeholder="<?php echo $zip ?>" type="text" name = "zip" id = "zip" />
             </div>
           </div>
           <div class="firstname-parent6">
@@ -172,7 +211,7 @@
                 src="./public/rectangle-271.svg"
               />
 
-              <input class="email15" placeholder="Email" type="email" />
+              <input class="email15" placeholder="<?php echo $email ?>" type="email" name = "email" id = "email"/>
             </div>
             <div class="email14">
               <img
@@ -181,7 +220,7 @@
                 src="./public/rectangle-271.svg"
               />
 
-              <input class="phone15" placeholder="Phone #" type="tel" />
+              <input class="phone15" placeholder="<?php echo $phone ?>" type="tel" name = "phone" id = "phone"/>
             </div>
           </div>
         </div>
@@ -194,7 +233,7 @@
             <p class="save7">Save</p>
           </div>
         </div>
-        <b class="customer-id3">Customer ID:</b>
+        <b class="customer-id3">Customer ID: <?php echo $user_info['customer_id']?></b>
         <div class="account-outline-child3"></div>
       </div>
     </div>
