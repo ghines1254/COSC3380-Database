@@ -67,7 +67,7 @@
 }
 .report-table thead,
 .report-table tr,
-.total-table tbody,
+.total-table thead,
 .total-table tr {
 	width: 100%;
 }
@@ -75,7 +75,7 @@
 .report-table td,
 .sum-table th,
 .sum-table td,
-.total-table td {
+.total-table th {
 	color: var(--fullblack);
 	border: 1px solid #ddd;
 	font-size: 12px; /* Adjust the font size here */
@@ -84,7 +84,7 @@
 	box-sizing: border-box;
 	height: 54px;
 }
-.total-table td {
+.total-table th {
 	width: calc(100% / 2);
 	font-size: xx-large;
 	bottom: 0px;

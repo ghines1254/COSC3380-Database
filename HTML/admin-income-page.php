@@ -178,8 +178,8 @@
               </tbody>
               <table class="total-table">
                 <tr>
-                  <td>Total:</td>
-                  <td id="totalSum"></td>
+                  <th>Total:</td>
+                  <th id="totalSum"></th>
                 </tr>
               </table>
             </table>
