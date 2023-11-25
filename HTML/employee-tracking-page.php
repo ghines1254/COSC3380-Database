@@ -75,11 +75,11 @@ require_once 'init.php';
                     <b class="delivery">Delivery</b>
                   </div>
                   <div class="button41" id="button4Container1">
-                    <div class="button2-child"></div>
+<!--                     <div class="button2-child"></div> -->
                     <b class="delivery">Dependent</b>
                   </div>
                   <div class="button7" id="button7Container">
-                    <div class="button2-child"></div>
+<!--                     <div class="button2-child"></div> -->
                     <b class="delivery">Account</b>
                   </div>
                 </div>
