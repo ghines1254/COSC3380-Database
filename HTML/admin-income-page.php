@@ -177,10 +177,12 @@
                   <td class="sum-cell"><?= '$' .htmlspecialchars($data['p1007sum']* 9.99) ?></td>
               </tbody>
               <table class="total-table">
-                <tr>
-                  <th>Total:</td>
-                  <th id="totalSum"></th>
-                </tr>
+                <thead>
+                  <tr>
+                    <th>Total:</td>
+                    <th id="totalSum"></th>
+                  </tr>
+                </thead>
               </table>
             </table>
           </div>
