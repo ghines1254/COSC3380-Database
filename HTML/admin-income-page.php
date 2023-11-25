@@ -158,27 +158,27 @@
               </tbody>
               <thead>
                 <tr>
-                  <th>Shipments sum</th>
-                  <th>Envelopes sum</th>
-                  <th>Small Boxes sum</th>
-                  <th>Medium Boxes sum</th>
-                  <th>Large Boxes sum</th>
-                  <th>Tape sum</th>
-                  <th>Stapler sum</th>
-                  <th>Pens sum</th>
-                  <th>Stamps sum</th>
+                  <th>Shipments profit</th>
+                  <th>Envelopes profit</th>
+                  <th>Small Boxes profit</th>
+                  <th>Medium Boxes profit</th>
+                  <th>Large Boxes profit</th>
+                  <th>Tape profit</th>
+                  <th>Stapler profit</th>
+                  <th>Pens profit</th>
+                  <th>Stamps profit</th>
                 </tr>
               </thead>
               <tbody>
-                  <td><?= htmlspecialchars($data['p0000sum']* 5.99) ?></td>
-                  <td><?= htmlspecialchars($data['p1000sum']* 1.99) ?></td>
-                  <td><?= htmlspecialchars($data['p1001sum']* 2.99) ?></td>
-                  <td><?= htmlspecialchars($data['p1002sum']* 3.99) ?></td>
-                  <td><?= htmlspecialchars($data['p1003sum']* 4.99) ?></td>
-                  <td><?= htmlspecialchars($data['p1004sum']* 4.99) ?></td>
-                  <td><?= htmlspecialchars($data['p1005sum']* 4.99) ?></td>
-                  <td><?= htmlspecialchars($data['p1006sum']* 2.99) ?></td>
-                  <td><?= htmlspecialchars($data['p1007sum']* 9.99) ?></td>
+                  <td><?= '$' .htmlspecialchars($data['p0000sum']* 5.99) ?></td>
+                  <td><?= '$' .htmlspecialchars($data['p1000sum']* 1.99) ?></td>
+                  <td><?= '$' .htmlspecialchars($data['p1001sum']* 2.99) ?></td>
+                  <td><?= '$' .htmlspecialchars($data['p1002sum']* 3.99) ?></td>
+                  <td><?= '$' .htmlspecialchars($data['p1003sum']* 4.99) ?></td>
+                  <td><?= '$' .htmlspecialchars($data['p1004sum']* 4.99) ?></td>
+                  <td><?= '$' .htmlspecialchars($data['p1005sum']* 4.99) ?></td>
+                  <td><?= '$' .htmlspecialchars($data['p1006sum']* 2.99) ?></td>
+                  <td><?= '$' .htmlspecialchars($data['p1007sum']* 9.99) ?></td>
               </tbody>
             </table>
           </div>
