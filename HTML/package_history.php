@@ -108,10 +108,7 @@ $packageHistoryResult = $stmtHistory->get_result();
                     <div class="products-child7"></div>
                     <b class="button-329" id="button3Text">Products</b>
                   </div>
-                  <div class="quote18" id="quoteContainer">
-                    <div class="tracking-child15"></div>
-                    <b class="button-250">Quote</b>
-                  </div>
+                
                   <div class="support9" id="supportContainer">
                     <div class="tracking-child15"></div>
                     <b class="button-250">Support</b>
@@ -272,13 +269,6 @@ $packageHistoryResult = $stmtHistory->get_result();
        if (productsContainer) {
          productsContainer.addEventListener("click", function (e) {
            window.location.href = "./products-page.html";
-         });
-       }
-   
-       var quoteContainer = document.getElementById("quoteContainer");
-       if (quoteContainer) {
-         quoteContainer.addEventListener("click", function (e) {
-           window.location.href = "./quote-page.html";
          });
        }
    
