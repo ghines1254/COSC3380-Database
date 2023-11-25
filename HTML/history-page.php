@@ -1,25 +1,23 @@
 <?php
   session_start();
 
-  // Check if the user is logged in
   if (!isset($_SESSION['user_info'])) {
-      // Redirect to the login page if the user is not logged in
       header('Location: login-page.php');
       exit();
   }
   $user_info = $_SESSION['user_info'];
 
 
-  // Database connection details
+ 
   $host = "34.68.154.206";
   $database = "Post_Office_Schema";
   $user = "root";
   $password = "umapuma";
 
-  // Create connection
+
   $conn = new mysqli($host, $user, $password, $database);
 
-  // Check connection
+
   if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
   }
@@ -92,10 +90,6 @@
                   <div class="products5" id="productsContainer">
                     <div class="tracking-child11"></div>
                     <b class="button-242">Products</b>
-                  </div>
-                  <div class="quote10" id="quoteContainer">
-                    <div class="tracking-child11"></div>
-                    <b class="button-242">Quote</b>
                   </div>
                   <div class="support5" id="supportContainer">
                     <div class="tracking-child11"></div>
@@ -204,13 +198,6 @@
       if (productsContainer) {
         productsContainer.addEventListener("click", function (e) {
           window.location.href = "./products-page.html";
-        });
-      }
-
-      var quoteContainer = document.getElementById("quoteContainer");
-      if (quoteContainer) {
-        quoteContainer.addEventListener("click", function (e) {
-          window.location.href = "./quote-page.html";
         });
       }
 
