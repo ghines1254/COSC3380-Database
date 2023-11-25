@@ -66,7 +66,8 @@
 	font-family: var(--font-lexend);
 }
 .report-table thead,
-.report-table tr {
+.report-table tr,
+.total-table tbody {
 	width: 100%;
 }
 .report-table th,
@@ -84,6 +85,7 @@
 }
 .total-table td {
 	width: calc(100% / 2);
+	font-size: xx-large;
 	bottom: 0px;
 	position: sticky;
 	background-color: #f5f5f5;
