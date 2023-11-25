@@ -60,7 +60,7 @@
         <div class="rectangle-container">
           <div class="frame-child"></div>
           <div class="welcome-to-your-portal-page-wrapper">
-            <b class="welcome-to-your">Departments</b>
+            <b class="welcome-to-your">Employee Report</b>
           </div>
         </div>
         <div class="frame-group">
@@ -76,15 +76,15 @@
               </div>
               <div class="button4">
                 <div class="button2-child"></div>
-                <b class="departments">Departments</b>
+                <b style="font-size: 20px;" class="departments">Employee Report</b>
               </div>
               <div class="button5" id="button5Container">
                 <div class="button2-child"></div>
-                <b class="departments">Employees</b>
+                <b style="font-size: 20px;" class="departments">Add Employee</b>
               </div>
-              <div class="button7" id="button7Container">
+<!--               <div class="button7" id="button7Container">
                 <div class="button2-child"></div>
-                <b class="departments">Account</b>
+                <b class="departments">Account</b> -->
               </div>
             </div>
           </div>
