@@ -46,7 +46,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
     }
     $lastName = $_POST['last_name'];
     if ($lastName == ""){
-        $lastName = $first_name;
+        $lastName = $last_name;
     }
     $address1 = $_POST['street_address_1'];
     if ($address1 == ""){
