@@ -105,20 +105,20 @@
     <div class="employee-data-report">
       <div class="table-container">
             <table class="report-table">
-            <thead>
-              <tr>
-                <th>Product ID</th>
-                <th>Product Name</th>
-                <th>Description</th>
-                <th>Date Sold</th>
-                <th>Price per unit</th>
-              </tr>
-            </thead>
     <?php
       include 'admin-income-page-script.php';
       if (isset($_POST['generate_report'])) {
         $employeeData = fetchEmployeeReport();
         if (!empty($employeeData)): ?>
+              <thead>
+                <tr>
+                  <th>Product ID</th>
+                  <th>Product Name</th>
+                  <th>Description</th>
+                  <th>Date Sold</th>
+                  <th>Price per unit</th>
+                </tr>
+              </thead>
               <?php foreach ($employeeData as $data): ?>
               <tbody>
                 <tr>
