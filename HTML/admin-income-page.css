@@ -5,6 +5,8 @@
 }
 
 .input-filter-class {
+	display: flex;
+	align-content: center;
 	bottom: 11%;
 	width: calc(100% - 10px);
 	margin-left: 5px;

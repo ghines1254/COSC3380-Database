@@ -91,7 +91,6 @@
                                                       bottom: 10px;
                                                       position: absolute;">
               <form method="post" action="">
-              <!-- Add date input fields -->
               <div class = "input-filter-class">
                 <label for="start_date">Start Date:</label>
                 <input type="date" id="start_date" name="start_date" required>
