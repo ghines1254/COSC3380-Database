@@ -292,7 +292,7 @@
       var portalHomeButton = document.getElementById("portalHomeButton");
       if (portalHomeButton) {
         portalHomeButton.addEventListener("click", function (e) {
-          window.location.href = "./cutomer-portal-nofications-page.html";
+          window.location.href = "./customer-portal-nofications-page.php";
         });
       }
       </script>
