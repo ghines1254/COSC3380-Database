@@ -56,6 +56,7 @@
     />
   </head>
   <body>
+  <form action="account-script.php" method="POST">
     <div class="account-page">
       <div class="minibackground29">
         <img class="image-1-icon29" alt="" src="./public/image-1@2x.png" />
@@ -227,7 +228,7 @@
         <div class="to-update-your2">
           To update your account info, just click 'Save'
         </div>
-        <div class="rectangle-parent142">
+        <button type = "submit" class="rectangle-parent142">
           <div class="group-child93"></div>
           <div class="save6">
             <p class="save7">Save</p>
@@ -295,5 +296,6 @@
         });
       }
       </script>
+     </form>
   </body>
 </html>
