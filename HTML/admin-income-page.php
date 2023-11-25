@@ -130,30 +130,32 @@
                 </tr>
               </tbody>
               <?php endforeach; ?>
-              <tfoot>
+            </table>
+            <table class = "sum-table">
+              <thead>
                 <tr>
-                  <td>Shipments</td>
-                  <td>Envelopes</td>
-                  <td>Small Boxes</td>
-                  <td>Medium Boxes</td>
-                  <td>Large Boxes</td>
-                  <td>Tape</td>
-                  <td>Stapler</td>
-                  <td>Pens</td>
-                  <td>Stamps</td>
+                  <th>Shipments sold</th>
+                  <th>Envelopes sold</th>
+                  <th>Small Boxes sold</th>
+                  <th>Medium Boxes sold</th>
+                  <th>Large Boxes sold</th>
+                  <th>Tape sold</th>
+                  <th>Stapler sold</th>
+                  <th>Pens sold</th>
+                  <th>Stamps sold</th>
                 </tr>
-                <tr>
-                  <td>Shipments</td>
-                  <td>Envelopes</td>
-                  <td>Small Boxes</td>
-                  <td>Medium Boxes</td>
-                  <td>Large Boxes</td>
-                  <td>Tape</td>
-                  <td>Stapler</td>
-                  <td>Pens</td>
-                  <td>Stamps</td>
-                </tr>
-              </tfoot>
+              </thead>
+              <tbody>
+                  <td><?= htmlspecialchars($data['p0000sum']) ?></td>
+                  <td><?= htmlspecialchars($data['p1000sum']) ?></td>
+                  <td><?= htmlspecialchars($data['p1001sum']) ?></td>
+                  <td><?= htmlspecialchars($data['p1002sum']) ?></td>
+                  <td><?= htmlspecialchars($data['p1003sum']) ?></td>
+                  <td><?= htmlspecialchars($data['p1004sum']) ?></td>
+                  <td><?= htmlspecialchars($data['p1005sum']) ?></td>
+                  <td><?= htmlspecialchars($data['p1006sum']) ?></td>
+                  <td><?= htmlspecialchars($data['p1007sum']) ?></td>
+              </tbody>
             </table>
           </div>
         <?php else: ?>
