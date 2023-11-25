@@ -2,7 +2,7 @@
   session_start();
 
   if (!isset($_SESSION['emp_info'])) {
-      // Redirect to login page if user is not logged in
+
       header('Location: employee-login-page.php');
       exit();
   }
@@ -166,7 +166,7 @@ function updateStock(productId, action) {
     xhr.onload = function () {
         if (xhr.status == 200) {
             var response = xhr.responseText.trim();
-            console.log("Server response:", response); // Log the response to the console
+            console.log("Server response:", response);
 
             if (response.includes('@error_message:No stock')) {
                 alert("Item is out of stock. Please restock as soon as possible.");
@@ -174,7 +174,7 @@ function updateStock(productId, action) {
                 alert("Stock is running low. Please order new shipment of stock.");
                 var updatedStock = parseInt(response);
                 if (!isNaN(updatedStock)) {
-                    // Update the displayed stock
+                  
                     document.getElementById(`stock_${productId}`).innerText = `${updatedStock}`;
                 } else {
                     console.error("Invalid stock value received from the server");
@@ -182,7 +182,7 @@ function updateStock(productId, action) {
             } else {
                 var updatedStock = parseInt(response);
                 if (!isNaN(updatedStock)) {
-                    // Update the displayed stock
+                    
                     document.getElementById(`stock_${productId}`).innerText = `${updatedStock}`;
                 } else {
                     console.error("Invalid stock value received from the server");
