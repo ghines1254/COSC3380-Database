@@ -83,13 +83,7 @@
               </div>
             </div>
             <div class="portal-page18">
-              <div class="generate-report-form" style="
-                                                      width: 100%;
-                                                      height: 100%;
-                                                      text-align: center;
-                                                      top: 0px;color: var(--fullblack);
-                                                      bottom: 10px;
-                                                      position: absolute;">
+              <div class="generate-report-form">
               <form method="post" action="">
               <div class = "input-filter-class">
                 <label for="start_date">Start Date:</label>

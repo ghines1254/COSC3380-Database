@@ -3,6 +3,15 @@
 	color: white;
 }
 
+.generate-report-form {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	top: 0px;
+	color: var(--fullblack);
+	bottom: 10px;
+	position: absolute;
+}
 .generate_report_button {
 	position: absolute;
 	bottom: 17px;
