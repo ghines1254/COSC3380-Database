@@ -39,7 +39,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } elseif ($action === 'decrement') {
         $updateQuery = "UPDATE IN_STORE_PRODUCTS SET stock_remaining = stock_remaining - 1 WHERE product_id = ?";
         $salesQuery = "INSERT INTO SALES(product_id, product_price, branch_id, date_of_sale) VALUES (?, ?, ?, now())";
-        $branchId = $_SESSION['branch_id'];
+        $empID = $_SESSION['idnum'];
+        $getbranchquery = "SELECT P.branch_id from EMPLOYEE E JOIN DEPARTMENT D ON E.dept = D.dept_id JOIN POST_OFFICE P ON D.works_at = P.branch_id WHERE E.idnum = ?";
+        $branchstmt = $conn->prepare($getbranchquery);
+        $branchstmt->bind_param('s', $empID);
+        $branchstmt->execute();
+        $branchResult = $branchstmt->get_result();
+        $branchRow = $branchResult->fetchassoc();
+        $branchId = $branchRow['branch_id'];
+        
 
         $stmt = $conn->prepare($updateQuery);
         $stmt->bind_param('s', $productId);  
