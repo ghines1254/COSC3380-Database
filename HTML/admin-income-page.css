@@ -29,10 +29,11 @@
 
 .input-filter-class label {
 	margin-right: 10px;
+	margin-left: 10%;
 }
 
 .input-filter-class input {
-	flex-grow: 1;
+	width: fit-content;
 }
 
 .employee-data-report {
