@@ -67,7 +67,9 @@ function fetchEmployeeReport() {
             ) AS p1006_counts
             CROSS JOIN (
                 SELECT COUNT(*) AS p1007sum FROM SALES WHERE product_id = 'P1007' AND date_of_sale BETWEEN '$start_date' AND '$end_date'
-            ) AS p1007_counts;";
+            ) AS p1007_counts
+        WHERE
+            s.date_of_sale BETWEEN '$start_date' AND '$end_date';";
 
     $result = $conn->query($query);
     $employees = [];
