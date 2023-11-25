@@ -60,7 +60,8 @@
 .table-container {
 	width: 880px;
 	height: 570px;
-	overflow: scroll; /* enables scrolling */
+	overflow: scroll;
+	background-color: var(--lightsecond);
 }
 .admin-products-page-child,
 .image-1-icon21 {
