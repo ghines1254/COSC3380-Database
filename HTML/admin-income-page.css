@@ -24,7 +24,8 @@
 	font-size: var(--font-size-mid);
 	font-family: var(--font-lexend);
 }
-.report-table thead {
+.report-table thead,
+.report-table tr {
 	width: 100%;
 }
 .report-table th,
