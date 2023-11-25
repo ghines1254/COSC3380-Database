@@ -1,10 +1,13 @@
-
-
-
-
 <?php
-session_start(); // Start the session at the beginning of the script
+session_start(); 
 
+if (!isset($_SESSION['emp_info'])) {
+  // Redirect to login page if user is not logged in
+  header('Location: employee-login-page.php');
+  exit();
+}
+
+$emp_info = $_SESSION['emp_info'];
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -111,8 +114,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $conn->prepare("INSERT INTO TRACKING_INFO (package_id, starting_location_id, received) VALUES(?,?,?)");
     $stmt->bind_param("sss",$trackingNumber, $startingPostOffice, $receivedTrue);
     $stmt->execute();
-    //Automatically update TRACKING_INFO with default values
 
+    //add shipment to SALES table
+    $packageProductID = "P0000";
+    $packagePrice = 5.99;
+    $currentBranch = $emp_info['branch_id'];
+    $stmt = $conn->prepare("INSERT INTO SALES (product_id, product_price, branch_id) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $packageProductID, $packagePrice, $currentBranch);
+    $stmt->execute();
 
     // Redirect or confirm successful submission
     header("Location: employee-shipping-page-confimration.php"); // Redirect to a confirmation page
