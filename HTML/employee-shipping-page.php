@@ -71,11 +71,11 @@
                     <b class="button-220">Delivery</b>
                   </div>
                   <div class="button421" id="button4Container1">
-                    <div class="button2-child18"></div>
+<!--                     <div class="button2-child18"></div> -->
                     <b class="button-220">Dependent</b>
                   </div>
                   <div class="button710" id="button7Container">
-                    <div class="button2-child18"></div>
+<!--                     <div class="button2-child18"></div> -->
                     <b class="button-220">Account</b>
                   </div>
                 </div>
@@ -224,7 +224,7 @@
 </div>
           </form>
 
-        <div class="vector-container">
+<!--         <div class="vector-container">
           <img class="vector-icon17" alt="" src="./public/vector9.svg" />
 
           <button class="large-box1">Large Box</button>
@@ -235,10 +235,10 @@
           <button class="small-box1">Small Box</button>
           <button class="medium-box1">Medium Box</button>
           <button class="envelope1">Envelope</button>
-          <img class="vector-icon20" alt="" src="./public/vector12.svg" />
+          <img class="vector-icon20" alt="" src="./public/vector12.svg" /> -->
         </div>
         <div class="select-one">
-          <p class="select-one1">Select one</p>
+<!--           <p class="select-one1">Select one</p> -->
         </div>
 <!--         <div class="rectangle-parent67" id="groupContainer1">
           <div class="group-child48"></div>
