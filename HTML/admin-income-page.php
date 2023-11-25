@@ -172,16 +172,22 @@
                 </tr>
               </thead>
               <tbody>
-                  <td><?= '$' .htmlspecialchars($data['p0000sum']* 5.99) ?></td>
-                  <td><?= '$' .htmlspecialchars($data['p1000sum']* 1.99) ?></td>
-                  <td><?= '$' .htmlspecialchars($data['p1001sum']* 2.99) ?></td>
-                  <td><?= '$' .htmlspecialchars($data['p1002sum']* 3.99) ?></td>
-                  <td><?= '$' .htmlspecialchars($data['p1003sum']* 4.99) ?></td>
-                  <td><?= '$' .htmlspecialchars($data['p1004sum']* 4.99) ?></td>
-                  <td><?= '$' .htmlspecialchars($data['p1005sum']* 4.99) ?></td>
-                  <td><?= '$' .htmlspecialchars($data['p1006sum']* 2.99) ?></td>
-                  <td><?= '$' .htmlspecialchars($data['p1007sum']* 9.99) ?></td>
+                  <td class="sum-cell"><?= '$' .htmlspecialchars($data['p0000sum']* 5.99) ?></td>
+                  <td class="sum-cell"><?= '$' .htmlspecialchars($data['p1000sum']* 1.99) ?></td>
+                  <td class="sum-cell"><?= '$' .htmlspecialchars($data['p1001sum']* 2.99) ?></td>
+                  <td class="sum-cell"><?= '$' .htmlspecialchars($data['p1002sum']* 3.99) ?></td>
+                  <td class="sum-cell"><?= '$' .htmlspecialchars($data['p1003sum']* 4.99) ?></td>
+                  <td class="sum-cell"><?= '$' .htmlspecialchars($data['p1004sum']* 4.99) ?></td>
+                  <td class="sum-cell"><?= '$' .htmlspecialchars($data['p1005sum']* 4.99) ?></td>
+                  <td class="sum-cell"><?= '$' .htmlspecialchars($data['p1006sum']* 2.99) ?></td>
+                  <td class="sum-cell"><?= '$' .htmlspecialchars($data['p1007sum']* 9.99) ?></td>
               </tbody>
+              <table class="total-table">
+                <tr>
+                  <td>Total:</td>
+                  <td id="totalSum"></td>
+                </tr>
+              </table>
             </table>
           </div>
         <?php else: ?>
@@ -199,6 +205,26 @@
     </div>
 
     <script>
+      document.addEventListener('DOMContentLoaded', function () {
+              // Get all elements with the class "sum-cell"
+              var sumCells = document.querySelectorAll('.sum-cell');
+
+              // Initialize sum variable
+              var totalSum = 0;
+
+              // Loop through each sum cell and add its value to the total
+              sumCells.forEach(function (cell) {
+                  // Extract the numeric value from the cell content
+                  var value = parseFloat(cell.textContent.replace('$', '').trim());
+
+                  // Add the numeric value to the total sum
+                  totalSum += value;
+              });
+
+              // Display the total sum in the "totalSum" cell
+              document.getElementById('totalSum').textContent = '$' + totalSum.toFixed(2);
+          });
+
       var frameContainer1 = document.getElementById("frameContainer1");
       if (frameContainer1) {
         frameContainer1.addEventListener("click", function (e) {
