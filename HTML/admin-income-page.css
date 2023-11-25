@@ -24,6 +24,9 @@
 	font-size: var(--font-size-mid);
 	font-family: var(--font-lexend);
 }
+.report-table thead {
+	width: 100%;
+}
 .report-table th,
 .report-table td,
 .sum-table th,
