@@ -4,6 +4,11 @@
 	color: white;
 }
 
+.input-filter-class {
+	position: absolute;
+	background-color: var(--lightsecond);
+}
+
 .employee-data-report {
 	top: 5px;
 	left: 5px;
@@ -18,7 +23,6 @@
 	display: block;
 	width: 100%;
 	max-height: 600px;
-	/*overflow-y: scroll;*/
 	text-align: center;
 	background-color: var(--lightsecond);
 	font-size: var(--font-size-mid);

@@ -86,19 +86,19 @@
               <div class="generate-report-form" style="text-align: center; margin-top: -100px; margin-bottom: 20px; margin-left: 720px;">
     <form method="post" action="">
     <!-- Add date input fields -->
-    <label for="start_date">Start Date:</label>
-    <input type="date" id="start_date" name="start_date" required>
+    <div class = "input-filter-class">
+      <label for="start_date">Start Date:</label>
+      <input type="date" id="start_date" name="start_date" required>
 
-    <label for="end_date">End Date:</label>
-    <input type="date" id="end_date" name="end_date" required>
-
+      <label for="end_date">End Date:</label>
+      <input type="date" id="end_date" name="end_date" required>
+    </div>
     <input type="submit" name="generate_report" value="Generate Report">
         <input type="submit" name="generate_report" value="Generate Report"
               style="position: absolute;
-                      top: 640px;
+                      bottom: 10px;
                       right: 375.5px;
                       background-color: var(--lightaccent);
-                      round-color: #4CAF50;
                       color: white;
                       padding: 10px 20px;
                       border: none;
