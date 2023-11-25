@@ -45,7 +45,7 @@ require_once 'init.php';
           <div class="rectangle-parent103">
             <div class="frame-child55"></div>
             <div class="welcome-to-your-portal-page-wrapper14">
-              <b class="welcome-to-your16">Employee Details</b>
+              <b class="welcome-to-your16">Add New Employee</b>
             </div>
           </div>
           <div class="frame-parent37">
@@ -53,22 +53,22 @@ require_once 'init.php';
               <div class="button2-parent14">
                 <div class="button228" id="button2Container">
                   <div class="button2-child26"></div>
-                  <b class="button-228">PO Locations</b>
+                  <b style="font-size: 24px;" class="button-228">PO Locations</b>
                 </div>
                 <div class="button316" id="button3Container">
                   <div class="button3-child14"></div>
-                  <b class="button-228">Income</b>
+                  <b style="font-size: 24px;" class="button-228">Income</b>
                 </div>
                 <div class="button428" id="button4Container">
                   <div class="button2-child26"></div>
-                  <b class="button-228">Employee Report</b>
+                  <b style="font-size: 24px;" class="button-228">Employee Report</b>
                 </div>
                 <div class="button54">
                   <div class="button2-child26"></div>
-                  <b class="button-228">Add Employee</b>
+                  <b style="font-size: 24px;" class="button-228">Add Employee</b>
                 </div>
                 <div class="button716" id="button7Container">
-                  <div class="button2-child26"></div>
+<!--                   <div class="button2-child26"></div> -->
                   <b class="button-228">Account</b>
                 </div>
               </div>
