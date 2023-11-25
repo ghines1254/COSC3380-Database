@@ -38,14 +38,14 @@
 }
 .report-table th {
 	top: 0px;
-	width: calc(880px / 5);
+	width: calc(100% / 5);
 	position: sticky;
 	background-color: #f5f5f5;
 	font-weight: bold;
 	text-transform: uppercase;
 }
 .sum-table th {
-	width: calc(880px / 9);
+	width: calc(100% / 9);
 	bottom: 0px;
 	position: sticky;
 	background-color: #f5f5f5;
