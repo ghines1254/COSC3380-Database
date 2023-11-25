@@ -56,22 +56,22 @@
               <div class="button2-parent11">
                 <div class="button225" id="button2Container">
                   <div class="button5-item"></div>
-                  <b class="button-225">PO Locations</b>
+                  <b style="font-size: 24px;" class="button-225">PO Locations</b>
                 </div>
                 <div class="button313" id="button3Container">
                   <div class="button3-child11"></div>
-                  <b class="button-225">Products</b>
+                  <b style="font-size: 24px;" class="button-225">Income</b>
                 </div>
                 <div class="button425" id="button4Container">
                   <div class="button5-item"></div>
-                  <b class="button-225">Departments</b>
+                  <b style="font-size: 24px;" class="button-225">Employee Report</b>
                 </div>
                 <div class="button51" id="button5Container">
                   <div class="button5-item"></div>
-                  <b class="button-225">Employees</b>
+                  <b style="font-size: 24px;" class="button-225">Add Employee</b>
                 </div>
                 <div class="button713" id="button7Container">
-                  <div class="button5-item"></div>
+<!--                   <div class="button5-item"></div> -->
                   <b class="button-225">Account</b>
                 </div>
               </div>
@@ -83,10 +83,10 @@
       <div class="rectangle-parent93">
         <div class="group-child55"></div>
         <b class="of-employees-container">
-          <p class="of-employees"># of Employees:</p>
+          <p class="of-employees"># of Employees: 5</p>
           <p class="of-employees">&nbsp;</p>
-          <p class="of-employees"># of Vehicles:</p>
-          <p class="of-employees">Departments:</p>
+          <p class="of-employees"># of Vehicles: 1</p>
+<!--           <p class="of-employees">Departments:</p> -->
           <p class="of-employees">&nbsp;</p>
           <p class="of-employees">Business Hours: 8 AM - 5 PM</p>
           <p class="of-employees">&nbsp;</p>
@@ -129,14 +129,14 @@
       var button3Container = document.getElementById("button3Container");
       if (button3Container) {
         button3Container.addEventListener("click", function (e) {
-          window.location.href = "./admin-products-page.html";
+          window.location.href = "./admin-income-page.php";
         });
       }
 
       var button4Container = document.getElementById("button4Container");
       if (button4Container) {
         button4Container.addEventListener("click", function (e) {
-          window.location.href = "./admin-departments-page.html";
+          window.location.href = "./admin-departments-page.php";
         });
       }
 
