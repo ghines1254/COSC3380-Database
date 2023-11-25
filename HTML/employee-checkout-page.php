@@ -180,8 +180,6 @@ function updateStock(productId, action) {
                     console.error("Invalid stock value received from the server");
                 }
             } else {
-                console.error("Response does not match expected error messages:", response);
-
                 var updatedStock = parseInt(response);
                 if (!isNaN(updatedStock)) {
                     // Update the displayed stock
