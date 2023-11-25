@@ -184,22 +184,31 @@ $packageHistoryResult = $stmtHistory->get_result();
                 </form>
 
                 <table border="1">
-                    <!-- Customized headers for package history -->
-                    <tr>
-                        <th>Package ID</th>
+                <!-- Customized headers for package history -->
+                <tr>
+                    <!-- Conditional display based on the selected attribute -->
+                    <th>Package ID</th>
+                    <?php if (empty($attribute) || $attribute == 'emp_id'): ?>
                         <th>Employee ID</th>
+                    <?php endif; ?>
+                    <?php if (empty($attribute) || $attribute == 'location'): ?>
                         <th>Location</th>
+                    <?php endif; ?>
+                    <?php if (empty($attribute) || $attribute == 'vin'): ?>
                         <th>Truck No.</th>
-                        <th>Time Scanned</th>
-                    </tr>
-                    <!-- Display the package history with the customized column names and values -->
-                    <?php while ($row = $packageHistoryResult->fetch_assoc()): ?>
-                        <tr>
-                            <td><?php echo htmlspecialchars($row['package_id']); ?></td>
+                    <?php endif; ?>
+                    <th>Time Scanned</th>
+                </tr>
+                <!-- Display the package history with the customized column names and values -->
+                <?php while ($row = $packageHistoryResult->fetch_assoc()): ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($row['package_id']); ?></td>
+                        <?php if (empty($attribute) || $attribute == 'emp_id'): ?>
                             <td><?php echo htmlspecialchars($row['emp_id']); ?></td>
+                        <?php endif; ?>
+                        <?php if (empty($attribute) || $attribute == 'location'): ?>
                             <td>
                                 <?php
-                                // Translate the 'location' column numbers to user-friendly names
                                 switch ($row['location']) {
                                     case '1': echo 'Post Office 1'; break;
                                     case '2': echo 'Post Office 2'; break;
@@ -210,11 +219,14 @@ $packageHistoryResult = $stmtHistory->get_result();
                                 }
                                 ?>
                             </td>
+                        <?php endif; ?>
+                        <?php if (empty($attribute) || $attribute == 'vin'): ?>
                             <td><?php echo htmlspecialchars($row['vin']); ?></td>
-                            <td><?php echo htmlspecialchars($row['time_scanned']); ?></td>
-                        </tr>
-                    <?php endwhile; ?>
-                </table>
+                        <?php endif; ?>
+                        <td><?php echo htmlspecialchars($row['time_scanned']); ?></td>
+                    </tr>
+                <?php endwhile; ?>
+            </table>
                 </body>
                             </div>
 
