@@ -201,7 +201,7 @@ require_once 'init.php';
       var frameContainer11 = document.getElementById("frameContainer11");
       if (frameContainer11) {
         frameContainer11.addEventListener("click", function (e) {
-          window.location.href = "./cutomer-portal-nofications-page.php";
+          window.location.href = "./customer-portal-nofications-page.php";
         });
       }
 // tracking stuff
