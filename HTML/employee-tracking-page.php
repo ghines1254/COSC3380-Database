@@ -52,7 +52,7 @@ require_once 'init.php';
             <div class="rectangle-container">
               <div class="frame-child"></div>
               <div class="welcome-to-your-portal-page-wrapper">
-                <b class="welcome-to-your">Welcome to your portal page!</b>
+                <b class="welcome-to-your">Tracking Center</b>
               </div>
             </div>
             <div class="frame-group">
