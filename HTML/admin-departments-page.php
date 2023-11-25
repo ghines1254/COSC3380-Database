@@ -82,9 +82,9 @@
                 <div class="button2-child"></div>
                 <b style="font-size: 20px;" class="departments">Add Employee</b>
               </div>
-<!--               <div class="button7" id="button7Container">
+              <div class="button7" id="button7Container">
                 <div class="button2-child"></div>
-                <b class="departments">Account</b> -->
+                <b class="departments">Account</b>
               </div>
             </div>
           </div>
@@ -92,7 +92,7 @@
         </div>
 
         <!-- Centered Generate Report Form -->
-      <div class="generate-report-form" style="text-align: center; margin-top: -1000px; margin-bottom: 20px; margin-left: 720px;">
+      <div class="generate-report-form" style="text-align: center; margin-top: -100px; margin-bottom: 20px; margin-left: 720px;">
     <form method="post" action="">
         <!-- Button styling added here -->
       <input type="submit" name="generate_report" value="Generate Report" 
