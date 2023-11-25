@@ -192,17 +192,17 @@ document.getElementById('trackButton').addEventListener('click', function() {
     fetch('https://coogmail.com/tracking.php?tracking_number=' + encodeURIComponent(trackingNumber))
     .then(response => response.json())
     .then(data => {
-            if (data.status === 'At Post Office') {
-                window.location.href = "./employee-tracking-page-2.php?tracking_number=" + encodeURIComponent(trackingNumber);
-            } else if (data.status === 'En Route') {
-                window.location.href = "./employee-tracking-page-3.php?tracking_number=" + encodeURIComponent(trackingNumber);
-            } else if (data.status === 'Delivered') {
-                window.location.href = "./employee-tracking-page-4.php?tracking_number=" + encodeURIComponent(trackingNumber);
-            } else {
-                alert('Invalid tracking number');
-            }
-        })
-        .catch(error => console.error('Error:', error));
+        // If the response contains a valid status, redirect to the history page
+        if (data.status) {
+            window.location.href = "./package_history.php?tracking_number=" + encodeURIComponent(trackingNumber);
+        } else {
+            alert('Invalid tracking number');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred while tracking the package.');
+    });
 });
 
 
