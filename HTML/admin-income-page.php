@@ -130,7 +130,9 @@
                 </tr>
               </tbody>
               <?php endforeach; ?>
-              <tfoot>
+            </table>
+            <table class = "sum-table">
+              <thead>
                 <tr>
                   <td>Shipments</td>
                   <td>Envelopes</td>
@@ -142,18 +144,7 @@
                   <td>Pens</td>
                   <td>Stamps</td>
                 </tr>
-                <tr>
-                  <td>Shipments</td>
-                  <td>Envelopes</td>
-                  <td>Small Boxes</td>
-                  <td>Medium Boxes</td>
-                  <td>Large Boxes</td>
-                  <td>Tape</td>
-                  <td>Stapler</td>
-                  <td>Pens</td>
-                  <td>Stamps</td>
-                </tr>
-              </tfoot>
+              </thead>
             </table>
           </div>
         <?php else: ?>
