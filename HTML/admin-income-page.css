@@ -1,18 +1,25 @@
-/* Adding hover effect */
 .generate-report-button:hover {
-	background-color: var(--lightaccent); /* Darker shade for hover */
+	background-color: var(--lightaccent);
 	color: white;
 }
 
 .input-filter-class {
 	display: flex;
-	align-content: center;
-	bottom: 11%;
+	align-items: center;
+	justify-content: space-between;
 	width: calc(100% - 10px);
 	margin-left: 5px;
 	margin-right: 5px;
 	position: absolute;
 	background-color: var(--lightsecond);
+}
+
+.input-filter-class label {
+	margin-right: 10px;
+}
+
+.input-filter-class input {
+	flex-grow: 1;
 }
 
 .employee-data-report {
