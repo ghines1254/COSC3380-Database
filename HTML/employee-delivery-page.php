@@ -76,11 +76,11 @@ require_once 'init.php';
                     <b class="delivery">Delivery</b>
                   </div>
                   <div class="button41" id="button4Container1">
-                    <div class="button2-child"></div>
+<!--                     <div class="button2-child"></div> -->
                     <b class="delivery">Dependent</b>
                   </div>
                   <div class="button7" id="button7Container">
-                    <div class="button2-child"></div>
+<!--                     <div class="button2-child"></div> -->
                     <b class="delivery">Account</b>
                   </div>
                 </div>
@@ -107,7 +107,7 @@ require_once 'init.php';
               <img class="vector-icon" alt="" src="./public/vector.svg" />
             </div>
             <div class="package-id-wrapper">
-              <div class="package-id">Package ID:</div>
+              <div class="package-id">Tracking #:</div>
             </div>
           </div>
           <div class="id">
