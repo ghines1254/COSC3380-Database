@@ -17,7 +17,11 @@ function fetchEmployeeReport() {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Query to fetch sales data
+// Get the start and end dates from the form submission
+    $start_date = $_POST['start_date'];
+    $end_date = $_POST['end_date'];
+
+// Query to fetch sales data with date range
     $query = "
         SELECT
             s.product_id,
@@ -38,32 +42,34 @@ function fetchEmployeeReport() {
             SALES s
             LEFT JOIN IN_STORE_PRODUCTS isp ON s.product_id = isp.product_id
             CROSS JOIN (
-                SELECT COUNT(*) AS p0000sum FROM SALES WHERE product_id = 'P0000'
+                SELECT COUNT(*) AS p0000sum FROM SALES WHERE product_id = 'P0000' AND date_of_sale BETWEEN '$start_date' AND '$end_date'
             ) AS p0000_counts
             CROSS JOIN (
-                SELECT COUNT(*) AS p1000sum FROM SALES WHERE product_id = 'P1000'
+                SELECT COUNT(*) AS p1000sum FROM SALES WHERE product_id = 'P1000' AND date_of_sale BETWEEN '$start_date' AND '$end_date'
             ) AS p1000_counts
             CROSS JOIN (
-                SELECT COUNT(*) AS p1001sum FROM SALES WHERE product_id = 'P1001'
+                SELECT COUNT(*) AS p1001sum FROM SALES WHERE product_id = 'P1001' AND date_of_sale BETWEEN '$start_date' AND '$end_date'
             ) AS p1001_counts
             CROSS JOIN (
-                SELECT COUNT(*) AS p1002sum FROM SALES WHERE product_id = 'P1002'
+                SELECT COUNT(*) AS p1002sum FROM SALES WHERE product_id = 'P1002' AND date_of_sale BETWEEN '$start_date' AND '$end_date'
             ) AS p1002_counts
             CROSS JOIN (
-                SELECT COUNT(*) AS p1003sum FROM SALES WHERE product_id = 'P1003'
+                SELECT COUNT(*) AS p1003sum FROM SALES WHERE product_id = 'P1003' AND date_of_sale BETWEEN '$start_date' AND '$end_date'
             ) AS p1003_counts
             CROSS JOIN (
-                SELECT COUNT(*) AS p1004sum FROM SALES WHERE product_id = 'P1004'
+                SELECT COUNT(*) AS p1004sum FROM SALES WHERE product_id = 'P1004' AND date_of_sale BETWEEN '$start_date' AND '$end_date'
             ) AS p1004_counts
             CROSS JOIN (
-                SELECT COUNT(*) AS p1005sum FROM SALES WHERE product_id = 'P1005'
+                SELECT COUNT(*) AS p1005sum FROM SALES WHERE product_id = 'P1005' AND date_of_sale BETWEEN '$start_date' AND '$end_date'
             ) AS p1005_counts
             CROSS JOIN (
-                SELECT COUNT(*) AS p1006sum FROM SALES WHERE product_id = 'P1006'
+                SELECT COUNT(*) AS p1006sum FROM SALES WHERE product_id = 'P1006' AND date_of_sale BETWEEN '$start_date' AND '$end_date'
             ) AS p1006_counts
             CROSS JOIN (
-                SELECT COUNT(*) AS p1007sum FROM SALES WHERE product_id = 'P1007'
-            ) AS p1007_counts;";
+                SELECT COUNT(*) AS p1007sum FROM SALES WHERE product_id = 'P1007' AND date_of_sale BETWEEN '$start_date' AND '$end_date'
+            ) AS p1007_counts
+        WHERE
+            s.date_of_sale BETWEEN '$start_date' AND '$end_date';";
 
     $result = $conn->query($query);
     $employees = [];

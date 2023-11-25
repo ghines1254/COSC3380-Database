@@ -1,7 +1,38 @@
-/* Adding hover effect */
 .generate-report-button:hover {
-	background-color: var(--lightaccent); /* Darker shade for hover */
+	background-color: var(--lightaccent);
 	color: white;
+}
+
+.generate_report_button {
+	position: absolute;
+	bottom: 17px;
+	right: 375.5px;
+	background-color: var(--lightaccent);
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	box-shadow: 2px 2px 5px grey;
+}
+.input-filter-class {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	bottom: 10%;
+	width: calc(100% - 10px);
+	margin-left: 5px;
+	margin-right: 5px;
+	position: absolute;
+	background-color: var(--lightsecond);
+}
+
+.input-filter-class label {
+	margin-right: 10px;
+}
+
+.input-filter-class input {
+	flex-grow: 1;
 }
 
 .employee-data-report {
@@ -18,11 +49,14 @@
 	display: block;
 	width: 100%;
 	max-height: 600px;
-	/*overflow-y: scroll;*/
 	text-align: center;
 	background-color: var(--lightsecond);
 	font-size: var(--font-size-mid);
 	font-family: var(--font-lexend);
+}
+.report-table thead,
+.report-table tr {
+	width: 100%;
 }
 .report-table th,
 .report-table td,
@@ -56,7 +90,8 @@
 .table-container {
 	width: 880px;
 	height: 570px;
-	overflow: scroll; /* enables scrolling */
+	overflow: scroll;
+	background-color: var(--lightsecond);
 }
 .admin-products-page-child,
 .image-1-icon21 {

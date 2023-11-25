@@ -83,21 +83,23 @@
               </div>
             </div>
             <div class="portal-page18">
-              <div class="generate-report-form" style="text-align: center; margin-top: -100px; margin-bottom: 20px; margin-left: 720px;">
-    <form method="post" action="">
-        <!-- Button styling added here -->
-      <input type="submit" name="generate_report" value="Generate Report"
-             style="position: absolute;
-                    top: 640px;
-                    right: 375.5px;
-                    background-color: var(--lightaccent);
-                    round-color: #4CAF50;
-                    color: white;
-                    padding: 10px 20px;
-                    border: none;
-                    border-radius: 5px;
-                    cursor: pointer;
-                    box-shadow: 2px 2px 5px grey;">
+              <div class="generate-report-form" style="
+                                                      width: 100%;
+                                                      height: 100%;
+                                                      text-align: center;
+                                                      top: 0px;color: var(--fullblack);
+                                                      bottom: 10px;
+                                                      position: absolute;">
+              <form method="post" action="">
+              <div class = "input-filter-class">
+                <label for="start_date">Start Date:</label>
+                <input type="date" id="start_date" name="start_date" required>
+
+                <label for="end_date">End Date:</label>
+                <input type="date" id="end_date" name="end_date" required>
+              </div>
+              <input type="submit" name="generate_report" value="Generate Report">
+                  <input type="submit" name="generate_report" value="Generate Report" class = "generate_report_button">
     </form>
 </div>
 
@@ -105,20 +107,20 @@
     <div class="employee-data-report">
       <div class="table-container">
             <table class="report-table">
-            <thead>
-              <tr>
-                <th>Product ID</th>
-                <th>Product Name</th>
-                <th>Description</th>
-                <th>Date Sold</th>
-                <th>Price per unit</th>
-              </tr>
-            </thead>
     <?php
       include 'admin-income-page-script.php';
       if (isset($_POST['generate_report'])) {
         $employeeData = fetchEmployeeReport();
         if (!empty($employeeData)): ?>
+              <thead>
+                <tr>
+                  <th>Product ID</th>
+                  <th>Product Name</th>
+                  <th>Description</th>
+                  <th>Date Sold</th>
+                  <th>Price per unit</th>
+                </tr>
+              </thead>
               <?php foreach ($employeeData as $data): ?>
               <tbody>
                 <tr>
@@ -155,6 +157,30 @@
                   <td><?= htmlspecialchars($data['p1005sum']) ?></td>
                   <td><?= htmlspecialchars($data['p1006sum']) ?></td>
                   <td><?= htmlspecialchars($data['p1007sum']) ?></td>
+              </tbody>
+              <thead>
+                <tr>
+                  <th>Shipments profit</th>
+                  <th>Envelopes profit</th>
+                  <th>Small Boxes profit</th>
+                  <th>Medium Boxes profit</th>
+                  <th>Large Boxes profit</th>
+                  <th>Tape profit</th>
+                  <th>Stapler profit</th>
+                  <th>Pens profit</th>
+                  <th>Stamps profit</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <td><?= '$' .htmlspecialchars($data['p0000sum']* 5.99) ?></td>
+                  <td><?= '$' .htmlspecialchars($data['p1000sum']* 1.99) ?></td>
+                  <td><?= '$' .htmlspecialchars($data['p1001sum']* 2.99) ?></td>
+                  <td><?= '$' .htmlspecialchars($data['p1002sum']* 3.99) ?></td>
+                  <td><?= '$' .htmlspecialchars($data['p1003sum']* 4.99) ?></td>
+                  <td><?= '$' .htmlspecialchars($data['p1004sum']* 4.99) ?></td>
+                  <td><?= '$' .htmlspecialchars($data['p1005sum']* 4.99) ?></td>
+                  <td><?= '$' .htmlspecialchars($data['p1006sum']* 2.99) ?></td>
+                  <td><?= '$' .htmlspecialchars($data['p1007sum']* 9.99) ?></td>
               </tbody>
             </table>
           </div>
