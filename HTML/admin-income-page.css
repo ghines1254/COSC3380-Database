@@ -38,10 +38,12 @@
 
 .input-filter-class label {
 	margin-right: 10px;
-	margin-left: 10%;
+	margin-left: 10px;
 }
 
-.input-filter-class input {
+.input-filter-class input, .input-filter-class select {
+	font-size: 14px;
+	padding: 5px;
 	width: fit-content;
 }
 
