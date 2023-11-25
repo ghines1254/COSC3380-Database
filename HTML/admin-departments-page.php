@@ -68,19 +68,19 @@
             <div class="button2-parent">
               <div class="button2" id="button2Container">
                 <div class="button2-child"></div>
-                <b class="departments">PO Locations</b>
+                <b style="font-size: 24px;" class="departments">PO Locations</b>
               </div>
               <div class="button3" id="button3Container">
                 <div class="button3-child"></div>
-                <b class="departments">Income</b>
+                <b style="font-size: 24px;" class="departments">Income</b>
               </div>
               <div class="button4">
                 <div class="button2-child"></div>
-                <b style="font-size: 20px;" class="departments">Employee Report</b>
+                <b style="font-size: 24px;" class="departments">Employee Report</b>
               </div>
               <div class="button5" id="button5Container">
                 <div class="button2-child"></div>
-                <b style="font-size: 20px;" class="departments">Add Employee</b>
+                <b style="font-size: 24px;" class="departments">Add Employee</b>
               </div>
               <div class="button7" id="button7Container">
 <!--                 <div class="button2-child"></div> -->
