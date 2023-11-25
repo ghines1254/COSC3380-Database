@@ -72,7 +72,8 @@
 .report-table th,
 .report-table td,
 .sum-table th,
-.sum-table td .total-table td {
+.sum-table td,
+.total-table td {
 	color: var(--fullblack);
 	border: 1px solid #ddd;
 	font-size: 12px; /* Adjust the font size here */
