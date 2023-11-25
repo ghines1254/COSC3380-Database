@@ -134,15 +134,15 @@
             <table class = "sum-table">
               <thead>
                 <tr>
-                  <td>Shipments</td>
-                  <td>Envelopes</td>
-                  <td>Small Boxes</td>
-                  <td>Medium Boxes</td>
-                  <td>Large Boxes</td>
-                  <td>Tape</td>
-                  <td>Stapler</td>
-                  <td>Pens</td>
-                  <td>Stamps</td>
+                  <th>Shipments</th>
+                  <th>Envelopes</th>
+                  <th>Small Boxes</th>
+                  <th>Medium Boxes</th>
+                  <th>Large Boxes</th>
+                  <th>Tape</th>
+                  <th>Stapler</th>
+                  <th>Pens</th>
+                  <th>Stamps</th>
                 </tr>
               </thead>
             </table>
