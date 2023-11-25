@@ -212,7 +212,7 @@ document.getElementById('trackButton').addEventListener('click', function() {
     .then(data => {
         // If the response contains a valid status, redirect to the history page
         if (data.status) {
-            window.location.href = "./package_history_test.php?tracking_number=" + encodeURIComponent(trackingNumber);
+            window.location.href = "./package_history.php?tracking_number=" + encodeURIComponent(trackingNumber);
         } else {
             alert('Invalid tracking number');
         }
