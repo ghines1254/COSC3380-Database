@@ -134,17 +134,28 @@
             <table class = "sum-table">
               <thead>
                 <tr>
-                  <th>Shipments</th>
-                  <th>Envelopes</th>
-                  <th>Small Boxes</th>
-                  <th>Medium Boxes</th>
-                  <th>Large Boxes</th>
-                  <th>Tape</th>
-                  <th>Stapler</th>
-                  <th>Pens</th>
-                  <th>Stamps</th>
+                  <th>Shipments sold</th>
+                  <th>Envelopes sold</th>
+                  <th>Small Boxes sold</th>
+                  <th>Medium Boxes sold</th>
+                  <th>Large Boxes sold</th>
+                  <th>Tape sold</th>
+                  <th>Stapler sold</th>
+                  <th>Pens sold</th>
+                  <th>Stamps sold</th>
                 </tr>
               </thead>
+              <tbody>
+                  <td><?= htmlspecialchars($data['p0000sum']) ?></td>
+                  <td><?= htmlspecialchars($data['p1000sum']) ?></td>
+                  <td><?= htmlspecialchars($data['p1001sum']) ?></td>
+                  <td><?= htmlspecialchars($data['p1002sum']) ?></td>
+                  <td><?= htmlspecialchars($data['p1003sum']) ?></td>
+                  <td><?= htmlspecialchars($data['p1004sum']) ?></td>
+                  <td><?= htmlspecialchars($data['p1005sum']) ?></td>
+                  <td><?= htmlspecialchars($data['p1006sum']) ?></td>
+                  <td><?= htmlspecialchars($data['p1007sum']) ?></td>
+              </tbody>
             </table>
           </div>
         <?php else: ?>
