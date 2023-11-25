@@ -85,15 +85,18 @@
 	height: 54px;
 }
 .total-table th {
-	width: calc(100% / 2);
+	width: 5%;
 	font-size: xx-large;
 	bottom: 0px;
 	position: sticky;
 	background-color: #f5f5f5;
 	font-weight: bold;
 	text-transform: uppercase;
+	text-align: center;
 }
 .report-table th {
+	position: sticky;
+	top: 0px;
 	width: calc(100% / 5);
 	background-color: #f5f5f5;
 	font-weight: bold;
