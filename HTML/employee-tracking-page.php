@@ -134,7 +134,7 @@ require_once 'init.php';
       var button2Container = document.getElementById("button2Container");
       if (button2Container) {
         button2Container.addEventListener("click", function (e) {
-          window.location.href = "./employee-shipping-page.html";
+          window.location.href = "./employee-shipping-page.php";
         });
       }
 
