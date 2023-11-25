@@ -34,14 +34,16 @@
 	height: 54px;
 }
 .report-table th {
+	top: 0px;
 	width: calc(880px / 5);
 	position: sticky;
 	background-color: #f5f5f5;
 	font-weight: bold;
 	text-transform: uppercase;
 }
-.tfoot td {
+.report-table tfoot td {
 	width: calc(880px / 9);
+	bottom: 0px;
 	position: sticky;
 	background-color: #f5f5f5;
 	font-weight: bold;
