@@ -62,22 +62,22 @@
               <div class="button2-parent16">
                 <div class="button230" id="button2Container">
                   <div class="button2-child28"></div>
-                  <b class="button-230">PO Locations</b>
+                  <b style="font-size: 24px;" class="button-230">PO Locations</b>
                 </div>
                 <div class="button318">
                   <div class="button3-child16"></div>
-                  <b class="button-230">Income</b>
+                  <b style="font-size: 24px;" class="button-230">Income</b>
                 </div>
                 <div class="button431" id="button4Container">
                   <div class="button2-child28"></div>
-                  <b class="button-230">Departments</b>
+                  <b style="font-size: 24px;" class="button-230">Employee Report</b>
                 </div>
                 <div class="button56" id="button5Container">
                   <div class="button2-child28"></div>
-                  <b class="button-230">Employees</b>
+                  <b style="font-size: 24px;" class="button-230">Add Employee</b>
                 </div>
                 <div class="button718" id="button7Container">
-                  <div class="button2-child28"></div>
+<!--                   <div class="button2-child28"></div> -->
                   <b class="button-230">Account</b>
                 </div>
               </div>
