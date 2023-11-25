@@ -101,7 +101,7 @@
                   </div>
                   <div class="products4" id="productsContainer">
                     <div class="products-child2"></div>
-                    <b class="button-240">Income</b>
+                    <b class="button-240">Prodcuts</b>
                   </div>
                   <div class="quote8" id="quoteContainer">
                     <div class="tracking-child10"></div>
