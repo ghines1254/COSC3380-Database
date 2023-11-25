@@ -93,7 +93,7 @@
                   </div>
                   <div class="products11" id="productsContainer">
                     <div class="products-child9"></div>
-                    <b class="button-254">Income</b>
+                    <b class="button-254">Products</b>
                   </div>
                   <div class="quote22" id="quoteContainer">
                     <div class="tracking-child17"></div>
