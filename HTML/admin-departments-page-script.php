@@ -1,20 +1,16 @@
 <?php
-// Database connection details
-$host = "34.68.154.206";
-$database = "Post_Office_Schema";
-$user = "root";
-$password = "umapuma";
+require_once "init.php";
 
 // Function to fetch employee report
-function fetchEmployeeReport() {
-    global $host, $user, $password, $database;
+function fetchEmployeeReport($department_filter) {
+    
+    $departmentFilter = $_POST['department_filter'] ?? 'both';
 
-    // Create connection
-    $conn = new mysqli($host, $user, $password, $database);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+    $whereClause = "";
+    if ($departmentFilter == 'D1') {
+        $whereClause = "WHERE e.dept = 'D1'";
+    } elseif ($departmentFilter == 'D2') {
+        $whereClause = "WHERE e.dept = 'D2'";
     }
 
     // Query to fetch employee data
@@ -33,6 +29,7 @@ function fetchEmployeeReport() {
             COUNT(ti.delivered_by) AS packages_delivered
         FROM EMPLOYEE e
         LEFT JOIN TRACKING_INFO ti ON e.idnum = ti.delivered_by
+        $whereClause
         GROUP BY e.idnum
     ";
 
