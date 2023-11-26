@@ -96,7 +96,7 @@
                 <select id="branch_id" name="branch_id">
                 <option value="PO1">PO1</option>
                 <option value="PO2">PO2</option>
-                <option value="both">Both</option>
+                <option value="both" selected>Both</option>
                 </select>
               </div>
               <input type="submit" name="generate_report" value="Generate Report">
