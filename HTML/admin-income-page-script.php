@@ -6,7 +6,7 @@ $user = "root";
 $password = "umapuma";
 
 // Function to fetch employee report
-function fetchEmployeeReport() {
+function fetchEmployeeReport($start_date, $end_date, $branch_id) {
     global $host, $user, $password, $database;
 
     // Create connection
@@ -42,34 +42,34 @@ function fetchEmployeeReport() {
             SALES s
             LEFT JOIN IN_STORE_PRODUCTS isp ON s.product_id = isp.product_id
             CROSS JOIN (
-                SELECT COUNT(*) AS p0000sum FROM SALES WHERE product_id = 'P0000' AND date_of_sale BETWEEN '$start_date' AND '$end_date'
+                SELECT COUNT(*) AS p0000sum FROM SALES WHERE product_id = 'P0000' AND date_of_sale BETWEEN '$start_date' AND '$end_date' AND (branch_id = '$branch_id' OR '$branch_id' = 'both')
             ) AS p0000_counts
             CROSS JOIN (
-                SELECT COUNT(*) AS p1000sum FROM SALES WHERE product_id = 'P1000' AND date_of_sale BETWEEN '$start_date' AND '$end_date'
+                SELECT COUNT(*) AS p1000sum FROM SALES WHERE product_id = 'P1000' AND date_of_sale BETWEEN '$start_date' AND '$end_date' AND (branch_id = '$branch_id' OR '$branch_id' = 'both')
             ) AS p1000_counts
             CROSS JOIN (
-                SELECT COUNT(*) AS p1001sum FROM SALES WHERE product_id = 'P1001' AND date_of_sale BETWEEN '$start_date' AND '$end_date'
+                SELECT COUNT(*) AS p1001sum FROM SALES WHERE product_id = 'P1001' AND date_of_sale BETWEEN '$start_date' AND '$end_date' AND (branch_id = '$branch_id' OR '$branch_id' = 'both')
             ) AS p1001_counts
             CROSS JOIN (
-                SELECT COUNT(*) AS p1002sum FROM SALES WHERE product_id = 'P1002' AND date_of_sale BETWEEN '$start_date' AND '$end_date'
+                SELECT COUNT(*) AS p1002sum FROM SALES WHERE product_id = 'P1002' AND date_of_sale BETWEEN '$start_date' AND '$end_date' AND (branch_id = '$branch_id' OR '$branch_id' = 'both')
             ) AS p1002_counts
             CROSS JOIN (
-                SELECT COUNT(*) AS p1003sum FROM SALES WHERE product_id = 'P1003' AND date_of_sale BETWEEN '$start_date' AND '$end_date'
+                SELECT COUNT(*) AS p1003sum FROM SALES WHERE product_id = 'P1003' AND date_of_sale BETWEEN '$start_date' AND '$end_date' AND (branch_id = '$branch_id' OR '$branch_id' = 'both')
             ) AS p1003_counts
             CROSS JOIN (
-                SELECT COUNT(*) AS p1004sum FROM SALES WHERE product_id = 'P1004' AND date_of_sale BETWEEN '$start_date' AND '$end_date'
+                SELECT COUNT(*) AS p1004sum FROM SALES WHERE product_id = 'P1004' AND date_of_sale BETWEEN '$start_date' AND '$end_date' AND (branch_id = '$branch_id' OR '$branch_id' = 'both')
             ) AS p1004_counts
             CROSS JOIN (
-                SELECT COUNT(*) AS p1005sum FROM SALES WHERE product_id = 'P1005' AND date_of_sale BETWEEN '$start_date' AND '$end_date'
+                SELECT COUNT(*) AS p1005sum FROM SALES WHERE product_id = 'P1005' AND date_of_sale BETWEEN '$start_date' AND '$end_date' AND (branch_id = '$branch_id' OR '$branch_id' = 'both')
             ) AS p1005_counts
             CROSS JOIN (
-                SELECT COUNT(*) AS p1006sum FROM SALES WHERE product_id = 'P1006' AND date_of_sale BETWEEN '$start_date' AND '$end_date'
+                SELECT COUNT(*) AS p1006sum FROM SALES WHERE product_id = 'P1006' AND date_of_sale BETWEEN '$start_date' AND '$end_date' AND (branch_id = '$branch_id' OR '$branch_id' = 'both')
             ) AS p1006_counts
             CROSS JOIN (
-                SELECT COUNT(*) AS p1007sum FROM SALES WHERE product_id = 'P1007' AND date_of_sale BETWEEN '$start_date' AND '$end_date'
+                SELECT COUNT(*) AS p1007sum FROM SALES WHERE product_id = 'P1007' AND date_of_sale BETWEEN '$start_date' AND '$end_date' AND (branch_id = '$branch_id' OR '$branch_id' = 'both')
             ) AS p1007_counts
         WHERE
-            s.date_of_sale BETWEEN '$start_date' AND '$end_date';";
+            s.date_of_sale BETWEEN '$start_date' AND '$end_date' AND (s.branch_id = '$branch_id' OR '$branch_id' = 'both');";
 
     $result = $conn->query($query);
     $employees = [];
