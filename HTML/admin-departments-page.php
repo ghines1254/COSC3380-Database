@@ -95,7 +95,7 @@
       <div class="generate-report-form" style="text-align: center; margin-top: -100px; margin-bottom: 20px; margin-left: 720px;">
     <form method="post" action="">
 
-              <label for="department_filter">Filter by Department:</label>
+              <label style="font-size: 24px;" for="department_filter">Filter by Department:</label>
         <select id="department_filter" name="department_filter">
             <option value="D1">D1</option>
             <option value="D2">D2</option>
