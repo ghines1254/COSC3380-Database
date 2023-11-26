@@ -220,7 +220,7 @@
     </div>
 </div>
           <div class="submit-container">
-    <button type="submit" class="submit-button" style="position: fixed; top: 70%; left: 60%; transform: translate(-50%, -50%);">Submit</button>
+    <button type="submit" class="submit-button" style="position: absolute; bottom: 10%; left: 40%; transform: translate(-50%, -50%);">Submit</button>
 </div>
           </form>
 
