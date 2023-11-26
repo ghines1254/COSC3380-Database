@@ -111,7 +111,10 @@
     <?php
       include 'admin-income-page-script.php';
       if (isset($_POST['generate_report'])) {
-        $employeeData = fetchEmployeeReport();
+        $start_date = $_POST['start_date'];
+        $end_date = $_POST['end_date'];
+        $branch_id = $_POST['branch_id'];
+        $employeeData = fetchEmployeeReport($start_date, $end_date, $branch_id);
         if (!empty($employeeData)): ?>
               <thead>
                 <tr>
