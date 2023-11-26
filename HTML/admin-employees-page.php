@@ -14,7 +14,7 @@ require_once 'init.php';
 
    .form-container {
         max-width: 870px; /* Maximum width of the container */
-        height: 570px; /* Fixed height of the container */
+        height: 520px; /* Fixed height of the container */
         overflow-y: auto; /* Enables vertical scrolling */
         margin: auto;
         padding: 20px;
