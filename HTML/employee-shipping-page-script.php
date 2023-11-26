@@ -57,10 +57,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $receiver_phone = $_POST['receiver_phone'];
 
   
-    // Generate unique tracking number
-    $trackingNumber = substr(uniqid(), 0, 6); // Adjust the second parameter as needed
+   
+    $trackingNumber = substr(uniqid(), 0, 6); 
 
-    // Insert sender info into CUSTOMER table
+
     $stmt = $conn->prepare("SELECT customer_id FROM CUSTOMER WHERE email = ?");
     $stmt->bind_param("s", $email);
 
