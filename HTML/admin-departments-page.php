@@ -94,6 +94,13 @@
         <!-- Centered Generate Report Form -->
       <div class="generate-report-form" style="text-align: center; margin-top: -100px; margin-bottom: 20px; margin-left: 720px;">
     <form method="post" action="">
+
+              <label for="department_filter">Filter by Department:</label>
+        <select id="department_filter" name="department_filter">
+            <option value="D1">D1</option>
+            <option value="D2">D2</option>
+            <option value="both">Both</option>
+        </select>
         <!-- Button styling added here -->
       <input type="submit" name="generate_report" value="Generate Report" 
              style="background-color: #4CAF50; /* Green background */
