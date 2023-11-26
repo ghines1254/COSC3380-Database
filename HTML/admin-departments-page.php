@@ -120,7 +120,8 @@
       <?php
       include 'admin-departments-page-script.php';
       if (isset($_POST['generate_report'])) {
-        $employeeData = fetchEmployeeReport();
+        $departmentFilter = isset($_POST['department_filter']) ? $_POST['department_filter'] : 'both';
+        $employeeData = fetchEmployeeReport($departmentFilter);
         if (!empty($employeeData)): ?>
           <div class="table-container">
             <table class="report-table">
