@@ -5,6 +5,60 @@ require_once 'init.php';
 <!DOCTYPE html>
 <html>
 <head>
+
+ <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        #addEmployeeForm {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+        }
+
+        #addEmployeeForm label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        #addEmployeeForm input[type="text"],
+        #addEmployeeForm input[type="number"],
+        #addEmployeeForm input[type="date"],
+        #addEmployeeForm input[type="email"],
+        #addEmployeeForm input[type="password"],
+        #addEmployeeForm input[type="tel"], 
+        #addEmployeeForm select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #addEmployeeForm button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #addEmployeeForm button:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+
+
+
+    
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
