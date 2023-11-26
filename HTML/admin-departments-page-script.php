@@ -30,6 +30,7 @@ function fetchEmployeeReport($department_filter) {
         LEFT JOIN TRACKING_INFO ti ON e.idnum = ti.delivered_by
         $whereClause
         GROUP BY e.idnum
+        ORDER BY e.idnum ASC
     ";
 
     $result = $conn->query($query);
