@@ -12,6 +12,17 @@ require_once 'init.php';
             color: #333;
         }
 
+   .form-container {
+        max-width: 870px; /* Maximum width of the container */
+        height: 570px; /* Fixed height of the container */
+        overflow-y: auto; /* Enables vertical scrolling */
+        margin: auto;
+        padding: 20px;
+        background-color: #f2f2f2;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow for a framed look */
+    }
+
         #addEmployeeForm {
             max-width: 500px;
             margin: auto;
@@ -434,7 +445,7 @@ while ($row = $result->fetch_assoc())
 }
 ?> </tbody></table> -->
 
-
+<div class="form-container">
 <form id="addEmployeeForm">
     <label for="firstName">First Name:</label>
     <input type="text" id="firstName" name="firstName" required>
@@ -544,7 +555,7 @@ while ($row = $result->fetch_assoc())
 </form>
 
 
-
+</div>
 
 </div>
 
