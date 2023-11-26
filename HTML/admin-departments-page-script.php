@@ -1,15 +1,14 @@
 <?php
-require_once "init.php";
+
 
 // Function to fetch employee report
 function fetchEmployeeReport($department_filter) {
-    
-    $departmentFilter = $_POST['department_filter'] ?? 'both';
+    require_once "init.php";
 
     $whereClause = "";
-    if ($departmentFilter == 'D1') {
+    if ($department_filter == 'D1') {
         $whereClause = "WHERE e.dept = 'D1'";
-    } elseif ($departmentFilter == 'D2') {
+    } elseif ($department_filter == 'D2') {
         $whereClause = "WHERE e.dept = 'D2'";
     }
 
